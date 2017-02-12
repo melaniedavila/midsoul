@@ -36,7 +36,7 @@ Note: Corresponding views and styling will be completed at all phases.
 **Objective**: Users will be able to log their workouts and visit a dashboard that tracks completed activities.
 
 ### Phase 4: Friends (1 day)
-**Objective**: Users can search for and friend other users. Users may also follow friends and see friends' activities in a feed.
+**Objective**: Users can search for and friend other users. Users can see friends' activities in a feed.
 
 ### Phase 5: Comments CRUD (1 day, W2 Th 6pm)
 **Objective**: Users can create, view, update, and delete comments on runs.
