@@ -53,6 +53,7 @@
 | id  | integer  |  not null, primary key |
 | requestor_id  | integer  |  not null, foreign key, indexed with requestee_id |
 | requestee_id  | integer  |  not null, foreign key, indexed with requestor_id |
+| status | enum | not null |
 | created_at  | timestamp  | not null |
 | updated_at  | timestamp  | not null |
 
