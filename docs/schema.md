@@ -25,6 +25,7 @@
 | title  | string  |  not null |
 | description | text  |  not null |
 | path | line_string (PostGIS) |  not null, geometric |
+| image_url | string |  not null |
 | distance | float  |  not null |
 | elevation_gain | float  |  not null |
 | created_at  | timestamp  | not null |
@@ -42,6 +43,7 @@
 | start_time  | time  |  not null |
 | end_time  | time  |  not null |
 | description | text  |  not null |
+| image_url | string |  not null |
 | created_at  | timestamp  | not null |
 | updated_at  | timestamp  | not null |
 
@@ -90,5 +92,8 @@
 | author_id  | integer  |  not null, foreign key |
 | type  | enum  |  not null |
 | target  | integer  |  not null |
+| description | text  |   |
 | start_date  | date  |  not null |
 | end_date  | date  |  not null |
+| logged_time | integer | |
+| logged_distance | integer | |
