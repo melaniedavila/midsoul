@@ -76,6 +76,6 @@
 | /find-friends | FindFriendsContainer |
 | /friend-requests | FriendRequestsContainer |
 | /feed | ActivityFeedContainer |
-| /user/:id | UserShowContainer |
+| /users/:id | UserShowContainer |
 | /goals | GoalsIndexContainer |
 | /create-goal | NewGoalContainer |
