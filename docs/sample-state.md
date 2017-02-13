@@ -1,9 +1,12 @@
 ```js
 {
   session: {
-    currentUserId: 1,
-    errors: []
+    currentUserId: 1
   },
+  errors: {
+    signUpErrors: [],
+    logInErrors: []
+  }
   myFriends: {
     userIds: [11]
   },
