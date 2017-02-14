@@ -1,7 +1,7 @@
 # Midsoul
-
-- [ ] [Heroku](http://midsoul.run) (will be added after Tuesday's Heroku lecture)
+- [ ] [Heroku](https://midsoul.herokuapp.com/)
 - [ ] [Trello](https://trello.com/b/Dqb447z7/midsoul)
+- [ ] [Live](http://midsoul.run) (will be added during job search curriculum)
 
 ## Minimum Viable Product
 
