@@ -12,3 +12,8 @@ function mapDispatchToProps(dispatch) {
     clearErrors: () => dispatch(receiveErrors({}))
   });
 }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LogInForm);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import ErrorsList from '../errors/errors_list';
 
 export default class LogInForm extends Component {
   constructor(props){
@@ -19,7 +20,7 @@ export default class LogInForm extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.login(this.state);
+    this.props.login(this.state).then(() => this.props.router.push('/');
   }
 
   render(){

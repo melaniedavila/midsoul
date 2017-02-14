@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
+import ErrorsList from '../errors/errors_list';
+
 
 export default class SignUpForm extends Component {
   constructor(props){
@@ -19,7 +21,7 @@ export default class SignUpForm extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.signup(this.state);
+    this.props.signup(this.state).then(() => this.props.router.push('/'));
   }
 
   render(){
