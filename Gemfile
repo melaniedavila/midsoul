@@ -31,6 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'activerecord-postgis-adapter'
+gem 'validates_email_format_of'
 
 group :development, :test do
   gem 'annotate'
