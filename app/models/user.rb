@@ -16,12 +16,14 @@
 class User < ActiveRecord::Base
   validates :email, :f_name, :l_name, :password_digest, :session_token, presence: true
   validates :email, :session_token, uniqueness: true
+  # validates :email, email_format: { message: 'Invalid email address' }
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
   attr_reader :password
 
   def self.find_by_credentials(params)
-    user = User.find_by(username: params[:username])
+    user = User.find_by(email: params[:email])
     return user if user && user.is_password?(params[:password])
   end
 
