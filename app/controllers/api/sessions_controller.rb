@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
       log_in!(@user)
       render 'api/users/show'
     else
-      render json: { base: ['Invalid username/password'] }, status: 422
+      render json: { base: ['Invalid username/password combination.'] }, status: 422
     end
   end
 
@@ -21,6 +21,6 @@ class Api::SessionsController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:email, :f_name, :l_name, :password, :image_url)
   end
 end
