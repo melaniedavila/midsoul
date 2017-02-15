@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
 import SignUpFormContainer from './signup/signup_form_container';
 import LogInFormContainer from './login/login_form_container';
 import configureStore from '../store/store';
@@ -25,7 +25,6 @@ export default function Root() {
   }
 
   function requireLogIn(nextState, replace) {
-    console.log('requiring login');
     if (!isLoggedIn()) {
       replace('/login');
     }
@@ -36,7 +35,12 @@ export default function Root() {
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
           {/* change index route below to Feed and add requireLogIn hook*/}
-          <IndexRoute component={ FeedContainer } onEnter={requireLogIn}/>
+          // <IndexRoute component={ FeedContainer } onEnter={requireLogIn}/>
+          <IndexRedirect to='/feed'/>
+          <Route
+            path='/feed'
+            component={ FeedContainer }
+            onEnter={ requireLogIn }/>
           <Route
             path='/signup'
             component={ SignUpFormContainer }

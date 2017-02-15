@@ -29,7 +29,7 @@
 import React, { Component } from 'react';
 import Spinner from './spinner';
 import ErrorsList from './error_list';
-import { withRouter, hashHistory } from 'react-router';
+import { withRouter } from 'react-router';
 
 class AuthForm extends Component {
 
@@ -48,9 +48,9 @@ class AuthForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.submitForm(Object.assign({}, this.state))
+    this.props
+      .submitForm(Object.assign({}, this.state))
       .then(() => this.props.router.push('/'));
-      // .then(() => hashHistory.push('/'));
   }
 
   render() {

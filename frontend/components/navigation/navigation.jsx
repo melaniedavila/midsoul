@@ -23,5 +23,4 @@ const Navigation = function (props) {
   }
 };
 
-
 export default Navigation;
