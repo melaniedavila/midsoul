@@ -11,25 +11,45 @@ const Navigation = function (props) {
 
   if (props.currentUser) {
     return(
-      <div>
-        <p>remove h2 below</p>
-        <h2>{`Welcome, ${props.currentUser.f_name} ${props.currentUser.l_name}`}</h2>
-        <img src={`${props.currentUser.image_url}`}/>
-        <br />
-        <button onClick={props.logout}>Log Out</button>
-      </div>
+      <header>
+        <nav className='main-nav'>
+          <nav className='left-nav'>
+            <img src='../../../assets/images/logo/midsoul-logo.jpg'/>
+          </nav>
+          <nav className='right-nav'>
+            <img src={`${props.currentUser.image_url}`}/>
+            { /* add below as drop down upon hover on image */}
+            <button
+              className='button-log-out'
+              onClick={props.logout}>LOG OUT</button>
+          </nav>
+        </nav>
+      </header>
     );
   }
   else {
     return(
-      <ul>
-        <li>
-          <button onClick={redirectTo('/login')}>LOG IN</button>
-        </li>
-        <li>
-          <button onClick={redirectTo('/signup')}> SIGN UP</button>
-        </li>
-      </ul>
+      <nav className='main-nav'>
+        <nav className='left-nav'>
+          <img src='../../../assets/images/logo/midsoul-logo.jpg'/>
+        </nav>
+        <nav className='right-nav'>
+          <ul>
+            <li>
+              <button
+                className='button-log-in'
+                onClick={redirectTo('/login')}>
+                LOG IN</button>
+            </li>
+            <li>
+              <button
+                className='button-sign-up'
+                onClick={redirectTo('/signup')}>
+                SIGN UP</button>
+            </li>
+          </ul>
+        </nav>
+      </nav>
     );
   }
 };

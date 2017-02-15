@@ -56,8 +56,8 @@ export default class SignUpForm extends React.Component {
               onChange={this.update('password')}/>
             <ErrorsList errors={ errors.password } />
           <br />
-          
-          <input type='submit' value='SIGN UP'/>
+
+          <input type='submit' value='JOIN NOW'/>
         </form>
         <h6>Already have an account? </h6><Link to='/login'>Login</Link>
       </section>
