@@ -5,5 +5,8 @@
       user: current_user
     ).html_safe %>
   <% end %>
+
+  window.midsoulAssets = {  localLogo: "<%= asset_path('midsoul-logo.jpg')%>",
+                            defaultProfPic: "<%= asset_path('default-prof-pic.png') %>"}
 </script>
 <main id='root'></main>

@@ -10,15 +10,17 @@ const Navigation = function (props) {
   }
 
   if (props.currentUser) {
+    const img_url = props.currentUser.image_url || window.midsoulAssets.defaultProfPic;
+    debugger
     return(
       <header>
         <nav className='main-nav'>
           <nav className='left-nav'>
-            <img src={'../../../assets/images/logo/midsoul-logo.jpg'}/>
+            <img src={window.midsoulAssets.localLogo}/>
           </nav>
           <nav className='right-nav'>
             <div className='nav-user-img'>
-              <img src={`${props.currentUser.image_url}`}/>
+              <img src={`${img_url}`}/>
             </div>
             { /* add below as drop down upon hover on image */}
             <div className='nav-log-out'>
@@ -35,7 +37,7 @@ const Navigation = function (props) {
     return(
       <nav className='main-nav'>
         <nav className='left-nav'>
-          <img src={'../../../assets/images/logo/midsoul-logo.jpg'}/>
+          <img src={window.midsoulAssets.localLogo}/>
         </nav>
         <nav className='right-nav'>
           <ul>
