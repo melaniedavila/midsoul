@@ -19,3 +19,11 @@ User.create!(
   email: 'test2@example.com',
   password: 'password'
 )
+
+# For Guest Log In:
+User.create!(
+  f_name: 'Scott',
+  l_name: 'Jurek',
+  email: 'scott-jurek@example.com',
+  password: 'password'
+)
