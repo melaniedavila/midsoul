@@ -1,11 +1,12 @@
 import React from 'react';
+import configureStore from '../store/store';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
-import SignUpFormContainer from './signup/signup_form_container';
-import LogInFormContainer from './login/login_form_container';
-import configureStore from '../store/store';
 import App from './app';
 import FeedContainer from './feed/feed_container';
+import HomeContainer from './home/home_container';
+import LogInFormContainer from './login/login_form_container';
+import SignUpFormContainer from './signup/signup_form_container';
 
 export default function Root() {
   const preloadedState = window.currentUser ?
@@ -20,7 +21,7 @@ export default function Root() {
 
   function redirectIfLoggedIn(nextState, replace) {
     if (isLoggedIn()) {
-      replace('/');
+      replace('/feed');
     }
   }
 
@@ -30,13 +31,14 @@ export default function Root() {
     }
   }
 
+  {/* change index route below to Feed and add requireLogIn hook*/}
+  // <IndexRoute component={ FeedContainer } onEnter={requireLogIn}/>
+  // <IndexRedirect to='/feed'/>
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
-          {/* change index route below to Feed and add requireLogIn hook*/}
-          // <IndexRoute component={ FeedContainer } onEnter={requireLogIn}/>
-          <IndexRedirect to='/feed'/>
+          <IndexRoute component={ HomeContainer } onEnter={redirectIfLoggedIn}/>
           <Route
             path='/feed'
             component={ FeedContainer }
