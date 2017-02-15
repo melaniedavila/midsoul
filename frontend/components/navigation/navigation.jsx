@@ -17,11 +17,15 @@ const Navigation = function (props) {
             <img src='../../../assets/images/logo/midsoul-logo.jpg'/>
           </nav>
           <nav className='right-nav'>
-            <img src={`${props.currentUser.image_url}`}/>
+            <div className='nav-user-img'>
+              <img src={`${props.currentUser.image_url}`}/>
+            </div>
             { /* add below as drop down upon hover on image */}
-            <button
-              className='button-log-out'
-              onClick={props.logout}>LOG OUT</button>
+            <div className='nav-log-out'>
+              <button
+                className='button-log-out'
+                onClick={props.logout}>LOG OUT</button>
+            </div>
           </nav>
         </nav>
       </header>

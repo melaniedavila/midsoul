@@ -20,7 +20,7 @@
 }
 
 
-.right-nav > ul > li > button, .right-nav > button {
+.right-nav > ul > li > button, .button-log-out {
   font-family: Helvetica, Arial, $sans-serif;
   font-weight: 500px;
   font-size: 14px;
@@ -29,6 +29,11 @@
   transition: background-color 0.2s;
   transition: color 0.05s;
   letter-spacing: 0.8px;
+  padding: 0 12px;
+}
+
+.nav-user-img, .nav-log-out {
+  float: left;
   padding: 0 12px;
 }
 
