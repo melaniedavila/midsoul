@@ -31,9 +31,6 @@ export default function Root() {
     }
   }
 
-  {/* change index route below to Feed and add requireLogIn hook*/}
-  // <IndexRoute component={ FeedContainer } onEnter={requireLogIn}/>
-  // <IndexRedirect to='/feed'/>
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
