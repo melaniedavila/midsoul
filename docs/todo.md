@@ -1,1 +1,2 @@
+- fix default prof pic. img not found
 - fix sign up blank first and last name errors
