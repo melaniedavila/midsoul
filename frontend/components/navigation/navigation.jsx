@@ -14,7 +14,7 @@ const Navigation = function (props) {
       <header>
         <nav className='main-nav'>
           <nav className='left-nav'>
-            <img src='../../../assets/images/logo/midsoul-logo.jpg'/>
+            <img src={'../../../assets/images/logo/midsoul-logo.jpg'}/>
           </nav>
           <nav className='right-nav'>
             <div className='nav-user-img'>
@@ -35,7 +35,7 @@ const Navigation = function (props) {
     return(
       <nav className='main-nav'>
         <nav className='left-nav'>
-          <img src='../../../assets/images/logo/midsoul-logo.jpg'/>
+          <img src={'../../../assets/images/logo/midsoul-logo.jpg'}/>
         </nav>
         <nav className='right-nav'>
           <ul>
