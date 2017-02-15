@@ -30,34 +30,33 @@ export default class SignUpForm extends React.Component {
         <h4>Create a midSoul account</h4>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <ErrorsList errors={ errors.base } />
-          <label>First Name:
             <input type='text'
                     value={this.state.f_name}
+                    placeholder={'First Name'}
                     onChange={this.update('f_name')}/>
                   <ErrorsList errors={ errors.f_name } />
-          </label>
           <br />
-          <label>Last Name:
+
             <input type='text'
                     value={this.state.l_name}
+                    placeholder={'Last Name'}
                     onChange={this.update('l_name')}/>
                   <ErrorsList errors={ errors.l_name } />
-          </label>
           <br />
-          <label>Email:
+
             <input type='text'
               value={this.state.email}
+              placeholder={'Email'}
               onChange={this.update('email')}/>
               <ErrorsList errors={ errors.email } />
-
-          </label>
           <br />
-          <label>Password:
+
             <input type='password'
+              placeholder={'Password'}
               onChange={this.update('password')}/>
             <ErrorsList errors={ errors.password } />
-          </label>
           <br />
+          
           <input type='submit' value='SIGN UP'/>
         </form>
         <h6>Already have an account? </h6><Link to='/login'>Login</Link>
