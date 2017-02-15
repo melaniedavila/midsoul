@@ -1,8 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import SignUpForm from './signup/signup_form';
-import LogInForm from './login/login_form';
+import SignUpFormContainer from './signup/signup_form_container';
+import LogInFormContainer from './login/login_form_container';
+import configureStore from '../store/store';
+import App from './app';
 
 export default function Root() {
   const preloadedState = window.currentUser ?
@@ -31,13 +33,15 @@ export default function Root() {
     <Provider store={ store }>
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
+          {/* change index route below to Feed and add requireLogIn hook*/}
+          <IndexRoute component={ LogInFormContainer }/>
           <Route
             path='/signup'
-            component={ SignUpForm }
+            component={ SignUpFormContainer }
             onEnter={ redirectIfLoggedIn }/>
           <Route
             path='/login'
-            component={ LogInForm }
+            component={ LogInFormContainer }
             onEnter={redirectIfLoggedIn}/>
         </Route>
       </Router>

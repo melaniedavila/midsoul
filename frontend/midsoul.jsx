@@ -9,10 +9,10 @@ import { signup, login, logout } from './actions/session_actions';
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
     const store = configureStore();
-    window.store = store;
+    // window.store = store;
     ReactDOM.render(<Root store={store}/>, root);
 });
 
-window.signup = signup;
-window.login = login;
-window.logout = logout;
+// window.signup = signup;
+// window.login = login;
+// window.logout = logout;

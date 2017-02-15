@@ -1,10 +1,11 @@
 import React from 'react';
 
+
 const App = function (props) {
+  // <NavigationContainer />
   return(
     <div>
       <h1>midSoul</h1>
-      <NavigationContainer />
       { props.children }
     </div>
   );

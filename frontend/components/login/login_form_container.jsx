@@ -3,14 +3,14 @@ import LogInForm from './login_form';
 import { login, receiveErrors } from '../../actions/session_actions';
 
 function mapStateToProps(state) {
-  return ({errors: state.session.errors});
+  return {errors: state.session.errors};
 }
 
 function mapDispatchToProps(dispatch) {
-  return ({
+  return {
     login: (user) => dispatch(login(user)),
     clearErrors: () => dispatch(receiveErrors({}))
-  });
+  };
 }
 
 export default connect(

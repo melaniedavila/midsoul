@@ -35,7 +35,7 @@ export function logout() {
   };
 }
 
-export function signup(user) {
+export function signUp(user) {
   return function (dispatch) {
     return APIUtil.signup(user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
