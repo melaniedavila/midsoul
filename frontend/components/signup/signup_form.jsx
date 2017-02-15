@@ -7,13 +7,11 @@ export default class SignUpForm extends React.Component {
   constructor(props){
     super(props);
     this.state = { email: '', f_name:'', l_name:'', password: '' };
-    // this.handleSubmit.bind(this);
   }
 
   componentDidMount(){
     this.props.clearErrors();
   }
-
 
   update(field){
     return e => this.setState({ [field]: e.currentTarget.value });

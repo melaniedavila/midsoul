@@ -5,6 +5,7 @@ import SignUpFormContainer from './signup/signup_form_container';
 import LogInFormContainer from './login/login_form_container';
 import configureStore from '../store/store';
 import App from './app';
+import FeedContainer from './feed/feed_container';
 
 export default function Root() {
   const preloadedState = window.currentUser ?
@@ -24,8 +25,9 @@ export default function Root() {
   }
 
   function requireLogIn(nextState, replace) {
+    console.log('requiring login');
     if (!isLoggedIn()) {
-      replace('/');
+      replace('/login');
     }
   }
 
@@ -34,7 +36,7 @@ export default function Root() {
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
           {/* change index route below to Feed and add requireLogIn hook*/}
-          <IndexRoute component={ LogInFormContainer }/>
+          <IndexRoute component={ FeedContainer } onEnter={requireLogIn}/>
           <Route
             path='/signup'
             component={ SignUpFormContainer }

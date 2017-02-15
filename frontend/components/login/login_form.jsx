@@ -6,7 +6,6 @@ export default class LogInForm extends React.Component {
   constructor(props){
     super(props);
     this.state = { email: '', password: '' };
-    // this.handleSubmit.bind(this);
   }
 
   componentDidMount(){

@@ -9,7 +9,9 @@ const mapStateToProps = function (state) {
 };
 
 const mapDispatchToProps = function (dispatch) {
-  return ({ logout: () => dispatch(logout()) });
+  return {
+    logout: () => dispatch(logout())
+  };
 };
 
 export default connect(

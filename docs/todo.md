@@ -1,0 +1,1 @@
+- fix sign up blank first and last name errors
