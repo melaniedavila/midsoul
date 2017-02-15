@@ -1,0 +1,50 @@
+@import '../base/fonts.scss';
+@import '../base/colors.scss';
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid $light-gray;
+}
+
+.left-nav,
+.right-nav > ul {
+  display: flex;
+  align-items: center;
+}
+
+.right-nav > ul > li {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+
+.right-nav > ul > li > button, .right-nav > button {
+  font-family: Helvetica, Arial, $sans-serif;
+  font-weight: 500px;
+  font-size: 14px;
+  line-height: 36px;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+  transition: color 0.05s;
+  letter-spacing: 0.8px;
+  padding: 0 12px;
+}
+
+.button-log-in {
+  color: $medium-gray;
+}
+
+.button-log-in:hover {
+  color: black;
+}
+
+.button-sign-up, .button-log-out {
+  background-color: $form-green;
+  color: white;
+}
+
+.button-sign-up:hover, .button-log-out:hover {
+  background-color: $hover-green;
+}

@@ -14,15 +14,15 @@
  *= require_self
  */
  // CSS Reset
- @import "base/reset.scss";
+ @import "api/base/reset.scss";
 
  // Core
- @import "base/colors.scss";
- @import "base/fonts.scss";
- @import "base/layout.scss";
+ @import "api/base/colors.scss";
+ @import "api/base/fonts.scss";
+ @import "api/base/layout.scss";
 
  // Grid
- @import "base/grid.scss";
+ @import "api/base/grid.scss";
 
  // Components
- // @import "components/*";
+ @import "api/components/*";
