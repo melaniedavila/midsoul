@@ -1,7 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 const Navigation = function (props) {
+  function redirectTo(url) {
+    return function (e) {
+      e.preventDefault();
+      hashHistory.push(url);
+    };
+  }
+
   if (props.currentUser) {
     return(
       <div>
@@ -16,8 +23,12 @@ const Navigation = function (props) {
   else {
     return(
       <ul>
-        <li><Link to='/signup'>Sign Up</Link></li>
-        <li><Link to='/login'>Log In</Link></li>
+        <li>
+          <button onClick={redirectTo('/login')}>LOG IN</button>
+        </li>
+        <li>
+          <button onClick={redirectTo('/signup')}> SIGN UP</button>
+        </li>
       </ul>
     );
   }
