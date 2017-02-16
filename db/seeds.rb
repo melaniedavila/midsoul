@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.destroy_all
-User.create!(
+u1 = User.create!(
   f_name: 'test1',
   l_name: 'test1',
   email: 'test1@example.com',
@@ -14,7 +14,7 @@ User.create!(
   image_url: '../app/assets/images/profile_pic/default_prof_pic.png'
 )
 
-User.create!(
+u2 = User.create!(
   f_name: 'test2',
   l_name: 'test2',
   email: 'test2@example.com',
@@ -23,7 +23,7 @@ User.create!(
 )
 
 # For Guest Log In:
-User.create!(
+u3 = User.create!(
   f_name: 'Scott',
   l_name: 'Jurek',
   email: 'scott-jurek@example.com',
@@ -34,7 +34,7 @@ User.create!(
 
 Route.destroy_all
 Route.create!(
-  creator_id: 1,
+  creator_id: u1.id,
   title: 'Title1',
   description: 'Description 1',
   path: 'linestring1',
@@ -44,7 +44,7 @@ Route.create!(
 )
 
 Route.create!(
-  creator_id: 2,
+  creator_id: u2.id,
   title: 'Title2',
   description: 'Description2',
   path: 'linestring2',
@@ -54,7 +54,7 @@ Route.create!(
 )
 
 Route.create!(
-  creator_id: 3,
+  creator_id: u3.id,
   title: 'Title3',
   description: 'Description3',
   path: 'linestring3',
