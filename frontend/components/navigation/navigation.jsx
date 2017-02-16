@@ -10,17 +10,18 @@ const Navigation = function (props) {
   }
 
   if (props.currentUser) {
-    const img_url = props.currentUser.image_url || window.midsoulAssets.defaultProfPic;
-    debugger
+    const img_url = props.currentUser.image_url || window.midSoulAssets.defaultProfPic;
     return(
       <header>
         <nav className='main-nav'>
           <nav className='left-nav'>
-            <img src={window.midsoulAssets.localLogo}/>
+            <Link to='/'><img src={window.midSoulAssets.localLogo}/></Link>
           </nav>
           <nav className='right-nav'>
             <div className='nav-user-img'>
-              <img src={`${img_url}`}/>
+              { /* toggle below after adding prof pics via paperclip*/}
+              {/* <img src={`${img_url}`}/> */}
+              <p>{`Welcome, ${props.currentUser.f_name}`}</p>
             </div>
             { /* add below as drop down upon hover on image */}
             <div className='nav-log-out'>
@@ -37,7 +38,7 @@ const Navigation = function (props) {
     return(
       <nav className='main-nav'>
         <nav className='left-nav'>
-          <img src={window.midsoulAssets.localLogo}/>
+          <Link to='/'><img src={window.midSoulAssets.localLogo}/></Link>
         </nav>
         <nav className='right-nav'>
           <ul>
