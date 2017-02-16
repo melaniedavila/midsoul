@@ -47,11 +47,11 @@
 .splash-text {
     position: absolute;
     z-index: 100;
-    text-align: center;
+    text-align: left;
     align-items: center;
     justify-content: center;
-    top: 50%;
-    left: 30%;
+    top: 35%;
+    left: 45%;
 }
 
 .splash-header {
@@ -62,20 +62,25 @@
   font-size: 16px;
 }
 
+.splash-guest {
+  font-size: 15px;
+}
+
 .button-guest-log-in {
-  background-color: $form-green;
+  background-color: $dark-gray;
   color: white;
   font-family: Helvetica, Arial, $sans-serif;
   font-weight: 500px;
   font-size: 14px;
   line-height: 36px;
-  border-radius: 3px;
+  border-radius: 5px;
   transition: background-color 0.2s;
   transition: color 0.05s;
   letter-spacing: 0.8px;
   padding: 0 12px;
+  cursor: pointer;
 }
 
 .button-guest-log-in:hover {
-  background-color: $hover-green;
+  background-color: $darker-gray;
 }

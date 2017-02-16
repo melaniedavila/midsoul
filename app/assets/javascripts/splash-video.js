@@ -1,5 +1,25 @@
 // From coverr.co
 //jQuery is required to run this code
+// $( document ).ready(function() {
+//     setTimeout(() => {
+//
+//       scaleVideoContainer();
+//
+//       initBannerVideoSize('.video-container .poster img');
+//       initBannerVideoSize('.video-container .filter');
+//       initBannerVideoSize('.video-container video');
+//
+//
+//       $(window).on('resize', function() {
+//         scaleVideoContainer();
+//         scaleBannerVideoSize('.video-container .poster img');
+//         scaleBannerVideoSize('.video-container .filter');
+//         scaleBannerVideoSize('.video-container video');
+//       });
+//     }, 2000);
+//
+// });
+
 $( document ).ready(function() {
 
     scaleVideoContainer();
@@ -31,20 +51,17 @@ function initBannerVideoSize(element){
         $(this).data('height', $(this).height());
         $(this).data('width', $(this).width());
     });
-
     scaleBannerVideoSize(element);
 
 }
 
 function scaleBannerVideoSize(element){
-
     var windowWidth = $(window).width(),
     windowHeight = $(window).height() + 5,
     videoWidth,
     videoHeight;
 
     // console.log(windowHeight);
-
     $(element).each(function(){
         var videoAspectRatio = $(this).data('height')/$(this).data('width');
 

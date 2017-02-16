@@ -59,10 +59,10 @@
 }
 
 .button-sign-up, .button-log-out {
-  background-color: $form-green;
+  background-color: $dark-gray;
   color: white;
 }
 
 .button-sign-up:hover, .button-log-out:hover {
-  background-color: $hover-green;
+  background-color: $darkest-gray;
 }
