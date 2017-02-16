@@ -11,11 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214160140) do
+ActiveRecord::Schema.define(version: 20170216183701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
+
+  create_table "routes", force: :cascade do |t|
+    t.integer  "creator_id",                                              null: false
+    t.string   "title",                                                   null: false
+    t.text     "description",                                             null: false
+    t.geometry "path",           limit: {:srid=>0, :type=>"line_string"}, null: false
+    t.string   "image_url",                                               null: false
+    t.float    "distance",                                                null: false
+    t.float    "elevation_gain",                                          null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
