@@ -22,6 +22,13 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   attr_reader :password
 
+  has_many(
+    :routes,
+    primary_key: :id,
+    foreign_key: :creator_id,
+    class_name: 'Route'
+  )
+
   def self.find_by_credentials(params)
     user = User.find_by(email: params[:email])
     return user if user && user.is_password?(params[:password])
