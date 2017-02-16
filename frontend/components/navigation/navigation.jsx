@@ -15,7 +15,37 @@ const Navigation = function (props) {
       <header>
         <nav className='main-nav'>
           <nav className='left-nav'>
-            <Link to='/'><img src={window.midSoulAssets.localLogo}/></Link>
+            <div className='nav-links-dropdowns'>
+              <div className='logo'>
+                <ul>
+                  <li><Link to='/'><img src={window.midSoulAssets.localLogo}/></Link></li>
+                </ul>
+              </div>
+
+              <div className='dropdown'>
+                <button>Training</button>
+                <ul className='dropdown-menu'>
+                  <li><Link to='#'>Log Run</Link></li>
+                  <li><Link to='#'>My Runs</Link></li>
+                </ul>
+              </div>
+
+              <div className='dropdown'>
+                <button>Routes</button>
+                <ul className='dropdown-menu'>
+                  <li><Link to='#'>Create Route</Link></li>
+                  <li><Link to='#'>My Routes</Link></li>
+                </ul>
+              </div>
+
+              <div className='dropdown'>
+                <button>Community<Link to='#'></Link></button>
+              </div>
+
+              <div className='dropdown'>
+                <button>Feed<Link to='#'></Link></button>
+              </div>
+            </div>
           </nav>
           <nav className='right-nav'>
             <div className='nav-user-img'>
