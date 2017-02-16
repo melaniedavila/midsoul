@@ -15,6 +15,10 @@
 #
 
 class Route < ActiveRecord::Base
+  validates :creator_id, :title, :description, :path, :image_url, :distance,
+            :elevation_gain, presence: true
+
+
   belongs_to(
     :creator,
     primary_key: :id,
