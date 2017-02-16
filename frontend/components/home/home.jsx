@@ -17,11 +17,18 @@ const Home = function (props) {
     return(
       <main className='splash-page'>
         <div className='splash-text'>
-          <h1>MAKE EVERY MILE COUNT</h1>
-          <h2>JOIN OUR COMMUNITY OF RUNNERS</h2>
-          <h4>You pound the pavement, we provide the motivation
-            Plan each stride and learn from every route with midSoul.</h4>
-          <p>Not convinced</p> <button onClick={loginGuest(guest)}>LOG IN AS GUEST</button>
+          <h1 className='splash-header'>MAKE EVERY MILE COUNT</h1>
+          <br/>
+          <h4>
+            You pound the pavement, we provide the motivation.
+          </h4>
+          <h4>
+            Plan each stride and learn from every route with midSoul.
+          </h4>
+          <p className='splash-guest'>Need convincing?</p>
+            <button
+            className='button-guest-log-in'
+            onClick={loginGuest(guest)}>GUEST LOG IN</button>
         </div>
         <div className='splash-video'>
           <SplashVideo />

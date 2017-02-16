@@ -27,7 +27,9 @@ const Navigation = function (props) {
             <div className='nav-log-out'>
               <button
                 className='button-log-out'
-                onClick={props.logout}>LOG OUT</button>
+                onClick={props.logout}>
+                LOG OUT
+              </button>
             </div>
           </nav>
         </nav>

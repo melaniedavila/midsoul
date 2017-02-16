@@ -24,7 +24,6 @@
   margin-right: 15px;
 }
 
-
 .right-nav > ul > li > button, .button-log-out {
   font-family: Helvetica, Arial, $sans-serif;
   font-weight: 500px;
@@ -43,14 +42,13 @@
 //   padding: 0 12px;
 // }
 
-
 // Remove below when replacing user f_name with image
+// .nav-log-out, .nav-user-img {
 .nav-log-out, .nav-user-img {
   float: left;
   padding: 0 12px;
   font-size: 15px;
 }
-
 
 .button-log-in {
   color: $medium-gray;

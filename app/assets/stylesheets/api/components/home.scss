@@ -1,5 +1,7 @@
-// From coverr.co
+@import '../base/fonts.scss';
+@import '../base/colors.scss';
 
+// From coverr.co
 .homepage-hero-module {
     border-right: none;
     border-left: none;
@@ -42,11 +44,6 @@
     width: 100%;
 }
 
-// .splash-video {
-//     position: relative;
-//     z-index: 1;
-// }
-
 .splash-text {
     position: absolute;
     z-index: 100;
@@ -55,4 +52,30 @@
     justify-content: center;
     top: 50%;
     left: 30%;
+}
+
+.splash-header {
+  font-size: 45px;
+}
+
+.splash-text > h4 {
+  font-size: 16px;
+}
+
+.button-guest-log-in {
+  background-color: $form-green;
+  color: white;
+  font-family: Helvetica, Arial, $sans-serif;
+  font-weight: 500px;
+  font-size: 14px;
+  line-height: 36px;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+  transition: color 0.05s;
+  letter-spacing: 0.8px;
+  padding: 0 12px;
+}
+
+.button-guest-log-in:hover {
+  background-color: $hover-green;
 }
