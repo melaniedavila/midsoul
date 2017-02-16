@@ -10,6 +10,26 @@ class Api::RoutesController < ApplicationController
     end
   end
 
+  def show
+    @route = Route.find(params[:id])
+    render :show
+  end
+
+  def destroy
+    @route = Route.find(params[:id])
+    @route.destroy
+    render :index
+  end
+
+  def update
+    @route = Route.find(params[:id])
+    if @route.update(route_params)
+      render :show
+    else
+      render json: { base: @route.errors.full_messages }, status: 422
+    end
+  end
+
   private
   def route_params
     params.require(:route).permit(:title, :description, :path)
