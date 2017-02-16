@@ -56,8 +56,11 @@
 }
 
 button {
-  padding: 0 15px;
+  padding: 0 30px;
+  font-size: 15px;
+  color: $medium-gray;
 }
+
 
 .dropdown {
   top: 100%;
@@ -73,13 +76,37 @@ button {
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 2px;
   margin: 0;
 }
 
 .dropdown:hover .dropdown-menu {
   /** Show dropdown menu */
   display: block;
+  // width: 100%;
+}
+
+
+// ul.dropdown-menu {
+//   padding-left: 20px;
+//   border: 1px solid $darkest-gray;
+// }
+
+li.dropdown-item {
+  padding-left: 28px;
+  border: 1px solid $medium-gray;
+  border-radius: 1px;
+  list-style: none;
+  background-color: white;
+
+  a {
+    text-decoration: none;
+    font-size: 13px;
+    color: $dark-gray;
+    text-align: left;
+    // float: left;
+    // align-items: left;
+  }
 }
 
 
