@@ -28,5 +28,6 @@ User.create!(
   l_name: 'Jurek',
   email: 'scott-jurek@example.com',
   password: 'password',
-  image_url: 'http://vegan-magazine.com/wp-content/uploads/2012/06/Scott-Jurek-running.jpg'
+  image_url: '../app/assets/images/profile_pic/default_prof_pic.png'
+  # image_url: 'http://vegan-magazine.com/wp-content/uploads/2012/06/Scott-Jurek-running.jpg'
 )
