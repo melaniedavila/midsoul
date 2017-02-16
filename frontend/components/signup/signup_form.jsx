@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import ErrorsList from '../errors/errors_list';
-import SplashVideo from '../splash/SplashVideo';
+import SplashVideo from '../splash/splashVideo';
 
 export default class SignUpForm extends React.Component {
   constructor(props){

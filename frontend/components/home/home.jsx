@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import SplashVideo from '../splash/SplashVideo';
+import SplashVideo from '../splash/splashVideo';
 
 
 const Home = function (props) {
