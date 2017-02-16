@@ -4,7 +4,7 @@ class CreateRoutes < ActiveRecord::Migration
       t.integer :creator_id, null: false
       t.string :title, null: false
       t.text :description, null: false
-      t.line_string :path, null: false
+      t.string :path, null: false
       t.string :image_url, null: false
       t.float :distance, null: false
       t.float :elevation_gain, null: false

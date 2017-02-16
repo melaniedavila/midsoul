@@ -18,15 +18,15 @@ ActiveRecord::Schema.define(version: 20170216183701) do
   enable_extension "postgis"
 
   create_table "routes", force: :cascade do |t|
-    t.integer  "creator_id",                                              null: false
-    t.string   "title",                                                   null: false
-    t.text     "description",                                             null: false
-    t.geometry "path",           limit: {:srid=>0, :type=>"line_string"}, null: false
-    t.string   "image_url",                                               null: false
-    t.float    "distance",                                                null: false
-    t.float    "elevation_gain",                                          null: false
-    t.datetime "created_at",                                              null: false
-    t.datetime "updated_at",                                              null: false
+    t.integer  "creator_id",     null: false
+    t.string   "title",          null: false
+    t.text     "description",    null: false
+    t.string   "path",           null: false
+    t.string   "image_url",      null: false
+    t.float    "distance",       null: false
+    t.float    "elevation_gain", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|
