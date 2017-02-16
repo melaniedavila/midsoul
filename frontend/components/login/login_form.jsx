@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import ErrorsList from '../errors/errors_list';
+import SplashVideo from '../splash/SplashVideo';
 
 export default class LogInForm extends React.Component {
   constructor(props){
@@ -26,25 +27,40 @@ export default class LogInForm extends React.Component {
 
     return(
       <section>
-        <h4>Log in</h4>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <ErrorsList errors={ errors.base } />
-          <input type='text'
-            value={this.state.email}
-            placeholder={'Email'}
-            onChange={this.update('email')}/>
-          <ErrorsList errors={ errors.email } />
-          <br />
+        <div className='login-form-container'>
+          <form onSubmit={this.handleSubmit.bind(this)}>
+            <br/>
+            <h4>LOG IN</h4>
+            <br/>
+
+            <div className='errors-list'>
+              <ErrorsList  errors={ errors.base } />
+              <ErrorsList className='errors-list' errors={ errors.f_name } />
+              <ErrorsList className='errors-list' errors={ errors.l_name } />
+              <ErrorsList className='errors-list' errors={ errors.email } />
+              <ErrorsList className='errors-list' errors={ errors.password } />
+            </div>
+
+            <br/>
+
+            <input type='text'
+              value={this.state.email}
+              placeholder={'Email'}
+              onChange={this.update('email')}/>
+            <br />
 
             <input  type='password'
-                    placeholder={'Password'}
-                    onChange={this.update('password')}/>
-            <ErrorsList errors={ errors.password } />
-          <br />
+              placeholder={'Password'}
+              onChange={this.update('password')}/>
+            <br />
 
-          <input type='submit' value='LOG IN'/>
-        </form>
-        <h6>New to midSoul? </h6><Link to='/signup'>Join Now</Link>
+            <input type='submit' value='LOG IN'/>
+            <h6>New to midSoul?  <Link to='/signup'>Join Now</Link></h6>
+          </form>
+        </div>
+        <div className='splash-video'>
+          <SplashVideo />
+        </div>
       </section>
     );
   }

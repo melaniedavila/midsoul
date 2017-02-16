@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import ErrorsList from '../errors/errors_list';
-
+import SplashVideo from '../splash/SplashVideo';
 
 export default class SignUpForm extends React.Component {
   constructor(props){
@@ -27,39 +27,52 @@ export default class SignUpForm extends React.Component {
 
     return(
       <section>
-        <h4>Create a midSoul account</h4>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <ErrorsList errors={ errors.base } />
-            <input type='text'
-                    value={this.state.f_name}
-                    placeholder={'First Name'}
-                    onChange={this.update('f_name')}/>
-                  <ErrorsList errors={ errors.f_name } />
-          <br />
+        <div className='signup-form-container'>
+          <form onSubmit={this.handleSubmit.bind(this)}>
+            <br />
+            <h4>Create a midSoul account</h4>
+            <br />
+
+            <div className='errors-list'>
+              <ErrorsList errors={ errors.base } />
+              <ErrorsList errors={ errors.f_name } />
+              <ErrorsList errors={ errors.l_name } />
+              <ErrorsList errors={ errors.email } />
+              <ErrorsList errors={ errors.password } />
+            </div>
+
+            <br />
 
             <input type='text'
-                    value={this.state.l_name}
-                    placeholder={'Last Name'}
-                    onChange={this.update('l_name')}/>
-                  <ErrorsList errors={ errors.l_name } />
-          <br />
+              value={this.state.f_name}
+              placeholder={'First Name'}
+              onChange={this.update('f_name')}/>
+            <br />
+
+            <input type='text'
+              value={this.state.l_name}
+              placeholder={'Last Name'}
+              onChange={this.update('l_name')}/>
+            <br />
 
             <input type='text'
               value={this.state.email}
               placeholder={'Email'}
               onChange={this.update('email')}/>
-              <ErrorsList errors={ errors.email } />
-          <br />
+            <br />
 
             <input type='password'
               placeholder={'Password'}
               onChange={this.update('password')}/>
-            <ErrorsList errors={ errors.password } />
-          <br />
+            <br />
 
-          <input type='submit' value='JOIN NOW'/>
-        </form>
-        <h6>Already have an account? </h6><Link to='/login'>Login</Link>
+            <input type='submit' value='JOIN NOW'/>
+            <h6>Already have an account?  <Link to='/login'>Log In</Link></h6>
+          </form>
+        </div>
+        <div className='splash-video'>
+          <SplashVideo />
+        </div>
       </section>
     );
   }
