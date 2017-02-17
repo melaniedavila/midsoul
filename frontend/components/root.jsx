@@ -50,15 +50,15 @@ export default function Root() {
             onEnter={redirectIfLoggedIn}/>
           <Route
             path="/routes"
-            component={RouteIndexContainer}
+            component={ RouteIndexContainer }
             onEnter={ requireLogIn }/>
           <Route
             path="/routes/:routeId"
-            component={RouteShowContainer}
+            component={ RouteShowContainer }
             onEnter={ requireLogIn }/>
           <Route
             path="/routes/:routeId/edit"
-            component={RouteFormContainer}
+            component={ RouteFormContainer }
             onEnter={ requireLogIn }/>
         </Route>
       </Router>
