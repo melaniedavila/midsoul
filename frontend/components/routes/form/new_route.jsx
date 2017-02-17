@@ -1,29 +1,51 @@
 import React from 'react';
 
-// If editing map, center based on old map coords instead
-const createMapCenteredOnUserLocation = function () {
-  let center;
-  const zoom = 9;
+// const createMapCenteredOnUserLocation = function () {
+//   let center;
+//   const zoom = 9;
 
-  if (GBrowserIsCompatible())
-  {
-    const map = new google.maps.Map2(document.getElementById("map"));
+  // if (GBrowserIsCompatible())
+  // {
+    // const map = new google.maps.Map2(document.getElementById("map"));
+  //
+  //   if (google.loader.ClientLocation){
+  //       center = new google.maps.LatLng(
+  //       google.loader.ClientLocation.latitude,
+  //       google.loader.ClientLocation.longitude
+  //     );
+  //   }
+  // }
+//   const map = new google.maps.Map2(document.getElementById("map"));
+//
+//
+//   map.setCenter({lat: 37.773972, lng: -122.431297}, zoom);
+// }
+// let _mapOptions = {
+//   center: {lat: 37.773972, lng: -122.431297}, // San Francisco coords
+//   zoom: 13
+// };
 
-    if (google.loader.ClientLocation){
-        center = new google.maps.LatLng(
-        google.loader.ClientLocation.latitude,
-        google.loader.ClientLocation.longitude
-      );
-    }
-  }
 
-  map.setCenter(center, zoom);
-}
+// const _defaultMapOptions = {
+//   center: {lat: 40.7128, lng: 74.0059 },
+//   zoom: 10
+// }
+//
+// const _customMapOptions = function (pos) {
+//   return ({
+//     center: { lat: pos.coords.latitude, lng: pos.coords.longitude },
+//     zoom: 10
+//   });
+// }
 
+
+let _mapOptions = {
+  center: {lat: 37.773972, lng: -122.431297}, // San Francisco coords
+  zoom: 13
+};
 
 export default class NewRoute extends React.Component {
   constructor(props) {
-    debugger
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {  title: '',
@@ -33,8 +55,9 @@ export default class NewRoute extends React.Component {
 
   componentDidMount() {
     this.props.clearErrors();
-
-    createMapCenteredOnUserLocation();
+    const map = this.refs.map;
+    this.map = new google.maps.Map(map, _mapOptions);
+    debugger
   }
 
   componentWillReceiveProps(newProps) {
@@ -54,54 +77,19 @@ export default class NewRoute extends React.Component {
 
 
   errors() {
-    debugger
     if (this.props.errors.length > 0) {
       return (
         this.props.errors.map(error, idx => {
-          debugger
           return (<li className="error" key={idx}>{error}</li>);
         })
       );
     }
   }
 
-
-  render () {
+  render() {
     debugger
-    const formHeader = "CREATE A ROUTE"
-    debugger
-    return (
-      <div>
-        <h3>{formHeader}</h3>
-        {this.errors()}
-        <form onSubmit={this.handleSubmit}>
-          <label>Title
-            <input
-              type="text"
-              value={this.state.title}
-              onChange={this.update('title')} />
-          </label>
-
-          <label>Description
-            <textarea
-              value={this.state.description}
-              onChange={this.update('description')} />
-          </label>
-
-          <label>Path
-            <div id='map'>
-                {/*render map here*/}
-            </div>
-
-
-            <textarea
-              value={this.state.path}
-              onChange={this.update('path')} />
-          </label>
-
-          <input type="submit" value={formHeader} />
-        </form>
-      </div>
-    );
+    return <div className="map" ref="map">Map</div>;
   }
 }
+
+// return (<div ref={ map => this.mapNode = map }></div>);
