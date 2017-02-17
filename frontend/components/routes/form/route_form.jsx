@@ -1,5 +1,29 @@
 import React from 'react';
 
+// If editing map, center based on old map coords instead
+const createMapCenteredOnUserLocation = function () {
+  let center;
+  const zoom = 9;
+
+  if (GBrowserIsCompatible())
+  {
+    const map = new google.maps.Map2(document.getElementById("map"));
+
+    if (google.loader.ClientLocation){
+        center = new google.maps.LatLng(
+        google.loader.ClientLocation.latitude,
+        google.loader.ClientLocation.longitude
+      );
+
+    } else {
+      center = {lat: 40.7128, long: 74.0059 };
+    }
+  }
+
+  map.setCenter(center, zoom);
+}
+
+
 export default class RouteForm extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +36,9 @@ export default class RouteForm extends React.Component {
 
     if (this.props.params) {
       this.props.requestSingleRoute(this.props.params.routeId);
+      // should center map based on old map coords
+    } else {
+      createMapCenteredOnUserLocation();
     }
   }
 
@@ -63,6 +90,11 @@ export default class RouteForm extends React.Component {
           </label>
 
           <label>Path
+            <div id='map'>
+
+            </div>
+
+
             <textarea
               value={this.state.path}
               onChange={this.update('path')} />

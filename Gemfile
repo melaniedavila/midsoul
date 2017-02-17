@@ -32,6 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'activerecord-postgis-adapter'
 gem 'validates_email_format_of'
+gem 'figaro'
 
 group :development, :test do
   gem 'annotate'
