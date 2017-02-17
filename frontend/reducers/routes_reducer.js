@@ -1,4 +1,4 @@
-import { merge } from 'lodash';
+import { merge, assign } from 'lodash';
 import {  RECEIVE_ALL_ROUTES, RECEIVE_SINGLE_ROUTE, REMOVE_ROUTE,
           RECEIVE_NEW_ROUTE, RECEIVE_ROUTE_ERRORS } from '../actions/routes_actions';
 

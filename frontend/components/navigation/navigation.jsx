@@ -33,8 +33,9 @@ const Navigation = function (props) {
               <div className='dropdown'>
                 <button>Routes</button>
                 <ul className='dropdown-menu'>
-                  <li className='dropdown-item'><Link to='#'>Create Route</Link></li>
+                  <li className='dropdown-item'><Link to='/routes/create-route'>Create Route</Link></li>
                   <li className='dropdown-item'><Link to='#'>My Routes</Link></li>
+                  <li className='dropdown-item'><Link to='/routes'>Routes Index</Link></li>
                 </ul>
               </div>
 
