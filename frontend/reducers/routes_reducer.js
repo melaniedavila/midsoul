@@ -1,6 +1,6 @@
 import { merge } from 'lodash';
 import {  RECEIVE_ALL_ROUTES, RECEIVE_SINGLE_ROUTE, REMOVE_ROUTE,
-          RECEIVE_NEW_ROUTE } from '../actions/routes_actions';
+          RECEIVE_NEW_ROUTE, RECEIVE_ROUTE_ERRORS } from '../actions/routes_actions';
 
 export default function routesReducer(state = {}, action) {
   Object.freeze(state);
@@ -14,6 +14,8 @@ export default function routesReducer(state = {}, action) {
       let newState = merge({}, state);
       delete newState[action.route.id];
       return newState;
+    case RECEIVE_ROUTE_ERRORS:
+      return assign({}, state, { errors: action.errors });
     default:
       return state;
   }

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import RouteForm from './route_form';
-import { requestSingleRoute, createRoute, updateRoute } from '../../../actions/routes_actions';
+import { requestSingleRoute, createRoute, updateRoute, receiveRouteErrors } from '../../../actions/routes_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let route = { title: "", description: "", path: "" };
@@ -17,7 +17,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   const action = ownProps.formType === "new" ? createRoute : updateRoute;
   return {
     requestSingleRoute: id => dispatch(requestSingleRoute(id)),
-    action: route => dispatch(action(route))
+    action: route => dispatch(action(route)),
+    clearErrors: () => dispatch(receiveRouteErrors({}))
   }
 }
 

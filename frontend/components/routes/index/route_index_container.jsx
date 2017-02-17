@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import RouteIndex from './route_index';
 import { selectAllRoutes } from '../../../reducers/selectors';
-import { requestAllRoutes } from '../../../actions/route_actions';
+import { requestAllRoutes } from '../../../actions/routes_actions';
 
 function mapStateToProps(state) {
   return {
