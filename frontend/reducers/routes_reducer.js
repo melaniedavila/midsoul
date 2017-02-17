@@ -11,10 +11,8 @@ export default function routesReducer(state = {}, action) {
     case RECEIVE_NEW_ROUTE:
       return merge({}, state, { [action.route.id]: action.route });
     case REMOVE_ROUTE:
-      debugger
       let newState = merge({}, state);
       delete newState[action.route.id];
-      debugger
       return newState;
     default:
       return state;

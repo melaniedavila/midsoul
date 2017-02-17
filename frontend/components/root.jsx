@@ -48,6 +48,18 @@ export default function Root() {
             path='/login'
             component={ LogInFormContainer }
             onEnter={redirectIfLoggedIn}/>
+          <Route
+            path="/routes"
+            component={RouteIndexContainer}
+            onEnter={ requireLogIn }/>
+          <Route
+            path="/routes/:routeId"
+            component={RouteShowContainer}
+            onEnter={ requireLogIn }/>
+          <Route
+            path="/routes/:routeId/edit"
+            component={RouteFormContainer}
+            onEnter={ requireLogIn }/>
         </Route>
       </Router>
     </Provider>
