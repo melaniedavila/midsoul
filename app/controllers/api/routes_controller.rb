@@ -1,12 +1,20 @@
 class Api::RoutesController < ApplicationController
   def create
     @route = Route.new(route_params)
-    @route.creator_id = current_user.id
+    # @route.creator_id = current_user.id
+
+    ##### below for testing only
+    @route.creator_id = 8
+    @route.image_url = 'url'
+    @route.distance = 1
+    @route.elevation_gain = 1
+    ##### above for testing only
+
     ensure_stat_and_image_attributes!(@route)
     if @route.save
       render :show
     else
-      render json: { base: @route.errors.full_messages }, status: 422
+      render json: @route.errors.full_messages, status: 422
     end
   end
 
@@ -18,7 +26,8 @@ class Api::RoutesController < ApplicationController
   def destroy
     @route = Route.find(params[:id])
     @route.destroy
-    render :index
+    @routes = Route.all
+    render :show
   end
 
   def update
@@ -26,8 +35,13 @@ class Api::RoutesController < ApplicationController
     if @route.update(route_params)
       render :show
     else
-      render json: { base: @route.errors.full_messages }, status: 422
+      render json: @route.errors.full_messages, status: 422
     end
+  end
+
+  def index
+    @routes = Route.all
+    render :index
   end
 
   private
