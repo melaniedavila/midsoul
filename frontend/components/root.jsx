@@ -9,7 +9,7 @@ import LogInFormContainer from './login/login_form_container';
 import SignUpFormContainer from './signup/signup_form_container';
 import RouteIndexContainer from './routes/index/route_index_container';
 import RouteShowContainer from './routes/show/route_show_container';
-import RouteFormContainer from './routes/form/route_form_container';
+import NewRouteContainer from './routes/form/new_route_container';
 
 export default function Root() {
   const preloadedState = window.currentUser ?
@@ -56,12 +56,12 @@ export default function Root() {
             component={ RouteIndexContainer }
             onEnter={ requireLogIn }/>
           <Route
-            path="/routes/:routeId"
-            component={ RouteShowContainer }
+            path='/routes/create-route'
+            component={ NewRouteContainer }
             onEnter={ requireLogIn }/>
           <Route
-            path="/routes/:routeId/edit"
-            component={ RouteFormContainer }
+            path="/routes/:routeId"
+            component={ RouteShowContainer }
             onEnter={ requireLogIn }/>
         </Route>
       </Router>
