@@ -33,7 +33,7 @@ u3 = User.create!(
 )
 
 Route.destroy_all
-Route.create!(
+route1 = Route.create!(
   creator_id: u1.id,
   title: 'Title1',
   description: 'Description 1',
@@ -43,7 +43,7 @@ Route.create!(
   elevation_gain: 1
 )
 
-Route.create!(
+route2 =Route.create!(
   creator_id: u2.id,
   title: 'Title2',
   description: 'Description2',
@@ -53,7 +53,7 @@ Route.create!(
   elevation_gain: 2
 )
 
-Route.create!(
+route3 = Route.create!(
   creator_id: u3.id,
   title: 'Title3',
   description: 'Description3',
@@ -61,4 +61,30 @@ Route.create!(
   image_url:'url',
   distance: 3,
   elevation_gain: 3
+)
+
+
+Run.destroy_all
+run1 = Run.create!(
+  runner_id: u1.id,
+  route_id: route1.id,
+  date: Date.today,
+  description: 'Run1',
+  duration: 1
+)
+
+run2 = Run.create!(
+  runner_id: u2.id,
+  route_id: route2.id,
+  date: Date.today,
+  description: 'Run2',
+  duration: 1
+)
+
+run3 = Run.create!(
+  runner_id: u3.id,
+  route_id: route3.id,
+  date: Date.today,
+  description: 'Run3',
+  duration: 1
 )
