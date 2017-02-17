@@ -8,6 +8,12 @@ import Root from './components/root';
 // import { requestAllRoutes, requestSingleRoute, createRoute, updateRoute, deleteRoute } from './actions/route_actions';
 // import { receiveAllRoutes, receiveSingleRoute, receiveNewRoute, removeRoute, receiveRouteErrors } from './actions/routes_actions';
 
+import { receiveAllRuns, receiveSingleRun, receiveNewRun, removeRun, receiveRunErrors } from './actions/runs_actions';
+import { fetchAllRuns, fetchSingleRun, createRun, updateRun, deleteRun } from './util/runs_api_util';
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -35,3 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // window.receiveNewRoute = receiveNewRoute;
 // window.removeRoute = removeRoute;
 // window.receiveRouteErrors = receiveRouteErrors;
+
+window.fetchAllRuns = fetchAllRuns;
+window.fetchSingleRun = fetchSingleRun;
+window.createRun = createRun;
+window.updateRun = updateRun;
+window.deleteRun = deleteRun;
+window.receiveAllRuns = receiveAllRuns;
+window.receiveSingleRun = receiveSingleRun;
+window.receiveNewRun = receiveNewRun;
+window.removeRun = removeRun;
+window.receiveRunErrors = receiveRunErrors;
