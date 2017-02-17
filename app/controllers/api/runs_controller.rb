@@ -6,10 +6,10 @@ class Api::RunsController < ApplicationController
     # @run.distance = @running_route.distance
 
     ##### below for testing only
-    @run.creator_id = 1
+    @run.runner_id = 1
     @run.route_id = 1
+    @run.date = Date.today
     ##### above for testing only
-
     if @run.save
       render :show
     else
