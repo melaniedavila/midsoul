@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import RouteShow from './route_show';
 import { requestSingleRoute } from '../../../actions/routes_actions';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   route: state.routes[ownProps.params.routeId],
   loading: state.loading.singleItemLoading
 });

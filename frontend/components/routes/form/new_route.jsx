@@ -14,9 +14,6 @@ const createMapCenteredOnUserLocation = function () {
         google.loader.ClientLocation.latitude,
         google.loader.ClientLocation.longitude
       );
-
-    } else {
-      center = {lat: 40.7128, long: 74.0059 };
     }
   }
 
@@ -24,22 +21,20 @@ const createMapCenteredOnUserLocation = function () {
 }
 
 
-export default class RouteForm extends React.Component {
+export default class NewRoute extends React.Component {
   constructor(props) {
+    debugger
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = this.props.route;
+    this.state = {  title: '',
+                    description: '',
+                    path: '' };
   }
 
   componentDidMount() {
     this.props.clearErrors();
 
-    if (this.props.params) {
-      this.props.requestSingleRoute(this.props.params.routeId);
-      // should center map based on old map coords
-    } else {
-      createMapCenteredOnUserLocation();
-    }
+    createMapCenteredOnUserLocation();
   }
 
   componentWillReceiveProps(newProps) {
@@ -59,9 +54,11 @@ export default class RouteForm extends React.Component {
 
 
   errors() {
-    if (this.props.errors) {
+    debugger
+    if (this.props.errors.length > 0) {
       return (
         this.props.errors.map(error, idx => {
+          debugger
           return (<li className="error" key={idx}>{error}</li>);
         })
       );
@@ -70,7 +67,9 @@ export default class RouteForm extends React.Component {
 
 
   render () {
-    const formHeader = this.props.formType === 'new' ? "CREATE A ROUTE" : "UPDATE ROUTE";
+    debugger
+    const formHeader = "CREATE A ROUTE"
+    debugger
     return (
       <div>
         <h3>{formHeader}</h3>
@@ -91,7 +90,7 @@ export default class RouteForm extends React.Component {
 
           <label>Path
             <div id='map'>
-
+                {/*render map here*/}
             </div>
 
 

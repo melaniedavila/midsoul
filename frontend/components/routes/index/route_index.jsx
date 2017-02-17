@@ -2,7 +2,7 @@ import React from 'react';
 import RouteIndexItem from './route_index_item';
 import LoadingIcon from '../../loading/loading_icon';
 
-class RoutesIndex extends Component {
+export default class RouteIndex extends React.Component {
   componentDidMount() {
     this.props.requestAllRoutes();
   }
@@ -24,5 +24,3 @@ class RoutesIndex extends Component {
     }
   }
 }
-
-export default PokemonIndex;

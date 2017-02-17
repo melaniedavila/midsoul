@@ -14,7 +14,8 @@ export default class PostShow extends React.Component {
   }
 
   render () {
-    const route = this.props.post;
+    const route = this.props.route;
+
     if (!route) {
       return <LoadingIcon />;
     } else{

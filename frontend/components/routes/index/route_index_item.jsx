@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 
 // need router below????
-const RouteIndexItem = ({ route, router }) => (
+const RouteIndexItem = ({ route, router }) => {
+  return (
   <li className="route-index-item">
     <Link to={`/routes/${route.id}`}>
       <span>{route.id}</span>
@@ -12,6 +13,6 @@ const RouteIndexItem = ({ route, router }) => (
       <span>{route.distance}</span>
     </Link>
   </li>
-);
+)};
 
 export default RouteIndexItem;
