@@ -4,8 +4,6 @@ import loadingReducer from './loading_reducer';
 import routesReducer from './routes_reducer';
 import sessionReducer from './session_reducer';
 
-
-
 const rootReducer = combineReducers({
   errors: errorsReducer,
   loading: loadingReducer,
