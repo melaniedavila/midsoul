@@ -8,8 +8,10 @@ class RoutesIndex extends Component {
   }
 
   render() {
-    // confirm children below????
-    const { routes, loading, children } = this.props;
+    // need children below???? only need it if we want
+    // both RouteIndexContainer and RouteShowContainer to
+    // be rendred at same time
+    const { routes, loading } = this.props;
     if (loading) {
       return <LoadingIcon />;
     } else {
@@ -18,7 +20,6 @@ class RoutesIndex extends Component {
         <ul>
           {routes.map(route => <RouteIndexItem key={route.id} route={route} />)}
         </ul>
-        {children}
       </section> );
     }
   }

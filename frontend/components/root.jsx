@@ -7,6 +7,9 @@ import FeedContainer from './feed/feed_container';
 import HomeContainer from './home/home_container';
 import LogInFormContainer from './login/login_form_container';
 import SignUpFormContainer from './signup/signup_form_container';
+import RouteIndexContainer from './routes/index/route_index_container';
+import RouteShowContainer from './routes/show/route_show_container';
+import RouteFormContainer from './routes/form/routes_form_container';
 
 export default function Root() {
   const preloadedState = window.currentUser ?
