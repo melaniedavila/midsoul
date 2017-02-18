@@ -19,7 +19,15 @@ class Api::RunsController < ApplicationController
 
   def show
     @run = Run.find(params[:id])
-    render :show
+    if current_user.id == @run.runner_id # or we are a friend of runner:
+      debugger
+      render :show
+    else
+      # ???? below ok? remove base ????
+      debugger
+      # render json: { base: ['You are not authorized to see this run.'] }, status: 422
+      render json: ['You are not authorized to see this page.'], status: 422
+    end
   end
 
   def destroy
@@ -38,12 +46,12 @@ class Api::RunsController < ApplicationController
   end
 
   def index
-    @runs = Run.all
+    @runs = Run.where(runner_id: current_user.id)
     render :index
   end
 
   private
   def run_params
-    params.require(:run).permit(:date, :description, :duration, :route_id)
+    params.require(:run).permit(:date, :description, :duration, :route_id, :title)
   end
 end
