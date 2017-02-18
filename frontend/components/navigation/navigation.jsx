@@ -25,8 +25,8 @@ const Navigation = function (props) {
               <div className='dropdown'>
                 <button>Training</button>
                 <ul className='dropdown-menu'>
-                  <li className='dropdown-item'><Link to='#'>Log Run</Link></li>
-                  <li className='dropdown-item'><Link to='#'>My Runs</Link></li>
+                  <li className='dropdown-item'><Link to='/log-run'>Log Run</Link></li>
+                  <li className='dropdown-item'><Link to='/my-runs'>My Runs</Link></li>
                 </ul>
               </div>
 

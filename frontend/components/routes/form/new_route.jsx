@@ -90,7 +90,7 @@ export default class NewRoute extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // update path based on markers
-    this.props.action(this.state);
+    this.props.createRoute(this.state);
   }
 
   errors() {

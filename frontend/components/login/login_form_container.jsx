@@ -3,6 +3,7 @@ import LogInForm from './login_form';
 import { login, receiveErrors } from '../../actions/session_actions';
 
 function mapStateToProps(state) {
+  debugger
   return {errors: state.session.errors};
 }
 

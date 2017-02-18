@@ -10,6 +10,9 @@ import SignUpFormContainer from './signup/signup_form_container';
 import RouteIndexContainer from './routes/index/route_index_container';
 import RouteShowContainer from './routes/show/route_show_container';
 import NewRouteContainer from './routes/form/new_route_container';
+import RunIndexContainer from './runs/index/run_index_container';
+import RunShowContainer from './runs/show/run_show_container';
+import NewRunContainer from './runs/form/new_run_container';
 
 export default function Root() {
   const preloadedState = window.currentUser ?
@@ -62,6 +65,18 @@ export default function Root() {
           <Route
             path="/routes/:routeId"
             component={ RouteShowContainer }
+            onEnter={ requireLogIn }/>
+          <Route
+            path="/my-runs"
+            component={ RunIndexContainer }
+            onEnter={ requireLogIn }/>
+          <Route
+            path='/log-run'
+            component={ NewRunContainer }
+            onEnter={ requireLogIn }/>
+          <Route
+            path="/runs/:runId"
+            component={ RunShowContainer }
             onEnter={ requireLogIn }/>
         </Route>
       </Router>

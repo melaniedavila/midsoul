@@ -6,7 +6,7 @@ export default function ErrorsList({ errors }) {
   }
 
   const errorListItems = errors.map(error => <li key={error}>{error}</li>);
-
+  debugger
   return (
     <ul>
       { errorListItems }

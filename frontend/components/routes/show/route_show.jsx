@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import LoadingIcon from '../../loading/loading_icon';
 
-export default class PostShow extends React.Component {
+export default class RouteShow extends React.Component {
   componentDidMount() {
     this.props.requestSingleRoute(this.props.params.routeId);
   }
