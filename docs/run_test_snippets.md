@@ -42,15 +42,14 @@ store.getState();
 
 store.getState();
 b = run => store.dispatch(receiveSingleRun(run));
-fetchSingleRun(8).then(b);
+fetchSingleRun(1).then(b);
 store.getState();
 
 
 
 testrun = {
-title: 'testcreate',
-description: 'Description4',
-path: 'linestring4'
+description: 'Description1',
+duration: 1
 }
 store.getState();
 c = run => store.dispatch(receiveSingleRun(run));
@@ -60,16 +59,27 @@ store.getState();
 
 
 testrunupdate = {
-  id: 12,
-  title: 'updated'
+  id: 1,
+  description: 'yahooo',
+  duration: 1
 }
 store.getState();
 const d = run => store.dispatch(receiveSingleRun(run));
 updateRun(testrunupdate).then(d);
 store.getState();
 
-
 store.getState();
 const e = run => store.dispatch(removeRun(run));
-deleteRun(16).then(e);
+deleteRun(5).then(e);
 store.getState();
+
+
+//////////////////////////////
+
+initialState = store.getState();
+selectAllRuns(initialState);
+
+store.dispatch(requestAllRuns());
+
+populatedState = store.getState();
+selectAllRuns(populatedState);
