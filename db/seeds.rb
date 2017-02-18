@@ -66,6 +66,7 @@ route3 = Route.create!(
 
 Run.destroy_all
 run1 = Run.create!(
+  title: 'run1',
   runner_id: u1.id,
   route_id: route1.id,
   date: Date.today,
@@ -74,7 +75,8 @@ run1 = Run.create!(
 )
 
 run2 = Run.create!(
-  runner_id: u2.id,
+  title: 'run2',
+  runner_id: 3,
   route_id: route2.id,
   date: Date.today,
   description: 'Run2',
@@ -82,7 +84,8 @@ run2 = Run.create!(
 )
 
 run3 = Run.create!(
-  runner_id: u3.id,
+  title: 'run3',
+  runner_id: 3,
   route_id: route3.id,
   date: Date.today,
   description: 'Run3',
