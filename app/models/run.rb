@@ -13,7 +13,7 @@
 #
 
 class Run < ActiveRecord::Base
-  validates :runner_id, :route_id, :date, :duration,
+  validates :runner_id, :route_id, :date, :duration, :title,
             :description, presence: true
 
   belongs_to(
