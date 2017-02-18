@@ -7,7 +7,8 @@ export default class NewRun extends React.Component {
     this.state = {  title: '',
                     date: '',
                     description: '',
-                    duration: '' };
+                    duration: '',
+                    route_id: 0};
   }
 
 
@@ -39,7 +40,6 @@ export default class NewRun extends React.Component {
         <h3>LOG A RUN</h3>
         {this.errors()}
         <form onSubmit={this.handleSubmit}>
-          <h4>Run Details: </h4>
           <br/>
 
           <label>Title:
@@ -50,6 +50,21 @@ export default class NewRun extends React.Component {
           </label>
           <br/>
 
+          <label>Date:
+            <input
+              type="text"
+              value={this.state.date}
+              onChange={this.update('date')} />
+          </label>
+          <br/>
+
+          <label>Duration:
+            <input
+              type="text"
+              value={this.state.date}
+              onChange={this.update('date')} />
+          </label>
+          <br/>
 
           <label>Description:
             <textarea
@@ -58,6 +73,17 @@ export default class NewRun extends React.Component {
           </label>
           <br/>
 
+          <label>Route:
+            <select
+              value={this.state.route_id}
+              onChange={this.update('route_id')}
+              defaultValue="Select Route">
+              {ROUTES.map((route, i) => {
+                return <option value={route} key={route.id}>{route}</option>;
+              })}
+            </select>
+          </label>
+          <br/>
           <input type="submit" value='SAVE ROUTE' />
         </form>
       </div>
