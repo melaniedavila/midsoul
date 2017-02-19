@@ -15,7 +15,7 @@ export default class RouteShow extends React.Component {
 
   render () {
     const route = this.props.route;
-
+    debugger
     if (!route) {
       return <LoadingIcon />;
     } else{
@@ -23,6 +23,9 @@ export default class RouteShow extends React.Component {
         <div>
           <h3>{route.title}</h3>
           <p>{route.description}</p>
+          <div className='route-map-img'>
+            <img src={`https://maps.googleapis.com/maps/api/staticmap?size=300x150&path=color:0x0c5d94%7Cenc:${route.polyline}&key=${window.googleMapsApiKey}`}></img>
+          </div>
           <Link to="/routes">Back to Routes</Link>
         </div>
       );
