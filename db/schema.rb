@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219044227) do
+ActiveRecord::Schema.define(version: 20170219044120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "postgis"
 
   create_table "routes", force: :cascade do |t|
     t.integer  "creator_id",     null: false
@@ -39,19 +38,13 @@ ActiveRecord::Schema.define(version: 20170219044227) do
     t.string   "title",       null: false
   end
 
-  create_table "spatial_ref_sys", primary_key: "srid", force: :cascade do |t|
-    t.string  "auth_name", limit: 256
-    t.integer "auth_srid"
-    t.string  "srtext",    limit: 2048
-    t.string  "proj4text", limit: 2048
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                        null: false
     t.string   "f_name",                       null: false
     t.string   "l_name",                       null: false
     t.string   "password_digest",              null: false
     t.string   "session_token",                null: false
+    t.string   "image_url"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.string   "profile_picture_file_name"

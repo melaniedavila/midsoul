@@ -2,16 +2,14 @@ u1 = User.create!(
   f_name: 'test1',
   l_name: 'test1',
   email: 'test1@example.com',
-  password: 'password',
-  image_url: '../app/assets/images/profile_pic/default_prof_pic.png'
+  password: 'password'
 )
 
 u2 = User.create!(
   f_name: 'test2',
   l_name: 'test2',
   email: 'test2@example.com',
-  password: 'password',
-  image_url: '../app/assets/images/profile_pic/default_prof_pic.png'
+  password: 'password'
 )
 
 # For Guest Log In:
@@ -19,9 +17,7 @@ u3 = User.create!(
   f_name: 'Scott',
   l_name: 'Jurek',
   email: 'scott-jurek@example.com',
-  password: 'password',
-  image_url: '../app/assets/images/profile_pic/default_prof_pic.png'
-  # image_url: 'http://vegan-magazine.com/wp-content/uploads/2012/06/Scott-Jurek-running.jpg'
+  password: 'password'
 )
 
 route1 = Route.create!(

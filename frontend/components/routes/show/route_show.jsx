@@ -15,7 +15,6 @@ export default class RouteShow extends React.Component {
 
   render () {
     const route = this.props.route;
-    debugger
     if (!route) {
       return <LoadingIcon />;
     } else{

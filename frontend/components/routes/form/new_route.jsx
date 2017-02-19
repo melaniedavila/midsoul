@@ -87,7 +87,6 @@ export default class NewRoute extends React.Component {
   newRouteParams() {
     const directions = this.directionsRenderer.getDirections();
     const polyline = directions.routes[0].overview_polyline;
-    console.log(polyline);
     // in meters:
     const distance = directions.routes[0].legs[0].distance.value;
 
@@ -101,6 +100,7 @@ export default class NewRoute extends React.Component {
   }
 
   errors() {
+    debugger
     if (this.props.errors.length > 0) {
       return (
         this.props.errors.map(error, idx => {
@@ -217,37 +217,46 @@ export default class NewRoute extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>CREATE A ROUTE</h3>
-        {this.errors()}
-        <form onSubmit={this.handleSubmit}>
-          <h4>Route Details: </h4>
-          <br/>
-          <h5>{`${this.state.distanceInMiles.toFixed(2)} miles`}</h5>
-          <h5>{`${this.state.elevation_gain.toFixed(2)} meters`}</h5>
+      <main>
+        <div className='map-flex-container'>
+          <div className='map-flex-left'>
+            <form onSubmit={this.handleSubmit}>
+              <div className='route-details'>
+                <h3>ROUTE DETAILS </h3>
+                <h5>Distance: {`${this.state.distanceInMiles.toFixed(2)} miles`}</h5>
+                <h5>Elevation Gain: {`${this.state.elevation_gain.toFixed(2)} meters`}</h5>
+              </div>
 
-          <label>Title:
-            <input
-              type="text"
-              value={this.state.title}
-              onChange={this.update('title')} />
-          </label>
-          <br/>
+              <div className='map-form-fields'>
+                {this.errors()}
+                <h3>CREATE A ROUTE</h3>
 
-          <label>Description:
-            <textarea
-              value={this.state.description}
-              onChange={this.update('description')} />
-          </label>
-          <br/>
+                <label>Title:</label>
+                  <input
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.update('title')} />
+                  <label>Description:</label>
+                  <textarea
+                    value={this.state.description}
+                    onChange={this.update('description')} />
+                <input type="submit" value='SAVE ROUTE' />
+              </div>
+            </form>
+          </div>
 
-          <div className="map" ref="map">Map</div>
-          <br/>
-          <button onClick={this.removeLastRoutePathPoint.bind(this)}>Undo Last Click</button>
-          <br/>
-          <input type="submit" value='SAVE ROUTE' />
-        </form>
-      </div>
+          <div className='map-flex-right'>
+            <p>
+              Click on the map to create a route. You may also drag the route path
+              to modify your route.
+            </p>
+            <div className='interactive-map'>
+              <button onClick={this.removeLastRoutePathPoint.bind(this)}>Undo Last Click</button>
+              <div className="map" ref="map">Map</div>
+            </div>
+          </div>
+        </div>
+      </main>
     );
   }
 }
