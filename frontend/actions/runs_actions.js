@@ -63,7 +63,7 @@ export const createRun = (run) => (dispatch) => (
 	APIUtil.createRun(run).then(run => {
 		dispatch(receiveNewRun(run));
 		return run;
-	}).fail(error => dispatch(receiveRunErrors(error.responseJSON)))
+  }).fail(error => dispatch(receiveRunErrors(error.responseJSON)))
 );
 
 export const updateRun = (run) => (dispatch) => (
