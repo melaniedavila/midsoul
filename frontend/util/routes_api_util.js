@@ -1,6 +1,5 @@
 import { hashHistory } from 'react-router';
 
-
 export const fetchAllRoutes = () => {
   return $.ajax({
     method: 'GET',
@@ -24,9 +23,6 @@ export const createRoute = (route) => {
     data: { route },
     success: function (res) {
       hashHistory.push(`/routes/${res.id}`);
-    },
-    error: function (res) {
-      console.log('error response', res);
     }
   });
 };
