@@ -1,7 +1,10 @@
 class Api::RoutesController < ApplicationController
+  MILES_PER_METER = 0.000621371
+
   def create
     @route = Route.new(route_params)
     @route.creator_id = current_user.id
+    @route.distance = convert_meters_to_miles(@route.distance)
 
     ##### below for testing only
     # @route.creator_id = 8
@@ -46,5 +49,9 @@ class Api::RoutesController < ApplicationController
   private
   def route_params
     params.require(:route).permit(:title, :description, :polyline, :distance, :elevation_gain)
+  end
+
+  def convert_meters_to_miles(meters)
+    meters * MILES_PER_METER
   end
 end

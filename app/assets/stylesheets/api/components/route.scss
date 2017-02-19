@@ -6,15 +6,12 @@
   margin: 25px;
   border: 1px solid $medium-gray;
   border-radius: 5px;
-  // align-items: center;
   display: flex;
-  // justify-content: center;
   flex-direction: column;
 
   h3 {
     display: flex;
     justify-content: center;
-    // align-items: center;
     font-size: 18px;
     font-family: Helvetica, Arial, $sans-serif;
     font-weight: 500px;
@@ -23,7 +20,6 @@
   }
 
   h5 {
-    // float:left;
     font-size: 14px;
     font-family: Helvetica, Arial, $sans-serif;
     color: $darker-gray;
@@ -46,7 +42,6 @@
     color: $darker-gray;
   }
   textarea {
-    // width: 100%;
     height: 100px;
     margin-bottom: 20px;
   }
@@ -73,12 +68,9 @@
     text-align: left;
 
     ul {
-      // background-color: white;
-      // border: 1px red solid;
       border-radius: 5px;
       li {
         list-style: circle;
-        // margin: 10px 0px;
         font-size: 14px;
         color: $dark-gray;
         margin-left: 7px;
@@ -88,9 +80,11 @@
 }
 
 .route-map-img {
-  // width: 300px;
-  height: 150px;
-  margin-bottom: 20px;
+  img {
+    height: 125px;
+    width: 250px;
+    margin-bottom: 20px;
+  }
 }
 
 .map-flex-container {
@@ -101,7 +95,6 @@
 
 .map-flex-right {
   width: 100%;
-  // height: 100%;
   margin: 25px;
 
   p {
@@ -140,5 +133,83 @@
       height: 91%;
       flex-shrink: 0;
     }
+  }
+}
+
+.route-show-details {
+  padding: 15px;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-family: Helvetica, Arial, $sans-serif;
+    font-weight: 700;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $medium-gray;
+  }
+
+  p {
+    font-size: 16px;
+    color: $midSoul-blue;
+    font-family: $sans-serif;
+    font-weight: 500;
+  }
+
+  a {
+    padding-bottom: 15px;
+    font-size: 13px;
+  }
+}
+
+.route-show-flex-container {
+  flex-direction: column;
+}
+
+.interactive-route-show-map {
+  height: 300px;
+  width: 600px;
+  margin-bottom: 20px;
+
+  .map {
+    position: absolute;
+    width: 94%;
+    height: 60%;
+    flex-shrink: 0;
+  }
+}
+
+.mini-routes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.routes-index {
+  h2 {
+    justify-content: center;
+    font-size: 22px;
+    font-family: Helvetica, Arial, $sans-serif;
+    font-weight: 700;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $medium-gray;
+  }
+}
+
+.route-index-item {
+  padding: 20px;
+  .route-title {
+    // align-items: center;
+    // text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .route-distance {
+    font-size: 12px;
+    font-weight: 400;
   }
 }
