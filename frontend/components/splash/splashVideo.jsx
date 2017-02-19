@@ -67,12 +67,12 @@ export default class SplashVideo extends React.Component {
       <div className="homepage-hero-module">
         <div className="video-container">
           // creates a weird overlay that prevents us from clicking on anything
-          // <div className="filter"></div>
-          <video autoPlay loop className="fillWidth">
-            <source src={ window.midSoulAssets.splashPageMP4 } type="video/mp4" />
-            <source src={ window.midSoulAssets.splashPageWEBM } type="video/webm" />
-          </video>
-        // </div>
+          <div className="filter"></div>
+            <video autoPlay loop className="fillWidth">
+              <source src={ window.midSoulAssets.splashPageMP4 } type="video/mp4" />
+              <source src={ window.midSoulAssets.splashPageWEBM } type="video/webm" />
+            </video>
+          </div>
       </div>
     );
   }

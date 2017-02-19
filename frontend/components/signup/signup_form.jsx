@@ -38,6 +38,7 @@ export default class SignUpForm extends React.Component {
               <ErrorsList errors={ errors.f_name } />
               <ErrorsList errors={ errors.l_name } />
               <ErrorsList errors={ errors.email } />
+              <ErrorsList errors={ errors.profile_picture } />
               <ErrorsList errors={ errors.password } />
             </div>
 
@@ -64,6 +65,9 @@ export default class SignUpForm extends React.Component {
             <input type='password'
               placeholder={'Password'}
               onChange={this.update('password')}/>
+            <br />
+
+            <input type='file'/>
             <br />
 
             <input type='submit' value='JOIN NOW'/>

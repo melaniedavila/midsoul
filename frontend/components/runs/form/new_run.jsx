@@ -52,7 +52,7 @@ export default class NewRun extends React.Component {
 
           <label>Date:
             <input
-              type="text"
+              type="date"
               value={this.state.date}
               onChange={this.update('date')} />
           </label>
@@ -60,9 +60,9 @@ export default class NewRun extends React.Component {
 
           <label>Duration:
             <input
-              type="text"
-              value={this.state.date}
-              onChange={this.update('date')} />
+              type="number"
+              value={this.state.duration}
+              onChange={this.update('duration')} />
           </label>
           <br/>
 
@@ -73,7 +73,7 @@ export default class NewRun extends React.Component {
           </label>
           <br/>
 
-          <label>Route:
+          {/*<label>Route:
             <select
               value={this.state.route_id}
               onChange={this.update('route_id')}
@@ -82,7 +82,7 @@ export default class NewRun extends React.Component {
                 return <option value={route} key={route.id}>{route}</option>;
               })}
             </select>
-          </label>
+          </label>*/}
           <br/>
           <input type="submit" value='SAVE ROUTE' />
         </form>
