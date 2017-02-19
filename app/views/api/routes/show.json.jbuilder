@@ -1,4 +1,4 @@
-json.extract! @route, :id, :creator_id, :title, :description, :image_url, :distance, :elevation_gain
+json.extract! @route, :id, :creator_id, :title, :description, :distance, :elevation_gain, :polyline
 # json.image_url asset_path(@route.image_url)
 
 # line below resulted in response with id and creator_id being the same (even if false)

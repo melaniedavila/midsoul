@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS']}" %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}" %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <script>
+    window.googleMapsApiKey = "<%= ENV['GOOGLE_STATIC_MAPS_API_KEY'] %>"
+  </script>
 </head>
 <body>
 
