@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219033341) do
+ActiveRecord::Schema.define(version: 20170219044227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,15 +39,25 @@ ActiveRecord::Schema.define(version: 20170219033341) do
     t.string   "title",       null: false
   end
 
+  create_table "spatial_ref_sys", primary_key: "srid", force: :cascade do |t|
+    t.string  "auth_name", limit: 256
+    t.integer "auth_srid"
+    t.string  "srtext",    limit: 2048
+    t.string  "proj4text", limit: 2048
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string   "email",           null: false
-    t.string   "f_name",          null: false
-    t.string   "l_name",          null: false
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
-    t.string   "image_url"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "email",                        null: false
+    t.string   "f_name",                       null: false
+    t.string   "l_name",                       null: false
+    t.string   "password_digest",              null: false
+    t.string   "session_token",                null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "profile_picture_file_name"
+    t.string   "profile_picture_content_type"
+    t.integer  "profile_picture_file_size"
+    t.datetime "profile_picture_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

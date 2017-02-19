@@ -36,7 +36,14 @@ class User < ActiveRecord::Base
     class_name: 'Run'
   )
 
-
+  has_attached_file :profile_picture, styles: {
+    big: "600x600>",
+    small: "50x50#"
+  }
+  validates_attachment_content_type(
+    :profile_picture,
+    content_type: /\Aimage\/.*\Z/
+  )
 
   def self.find_by_credentials(params)
     user = User.find_by(email: params[:email])
