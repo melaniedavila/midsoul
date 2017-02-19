@@ -1,14 +1,14 @@
 class Api::RunsController < ApplicationController
   def create
     @run = Run.new(run_params)
-    # @run.creator_id = current_user.id
-    # @running_route = Route.find_by(id: @run.route_id)
+    @run.runner_id = current_user.id
+    @running_route = Route.find_by(id: @run.route_id)
     # @run.distance = @running_route.distance
 
     ##### below for testing only
-    @run.runner_id = 1
-    @run.route_id = 1
-    @run.date = Date.today
+    # @run.runner_id = 1
+    # @run.route_id = 1
+    # @run.date = Date.today
     ##### above for testing only
     if @run.save
       render :show
@@ -18,9 +18,8 @@ class Api::RunsController < ApplicationController
   end
 
   def show
-    @run = Run.find(params[:id])
+    @run = Run.includes(:runner).find(params[:id])
     if current_user.id == @run.runner_id # or we are a friend of runner:
-      debugger
       render :show
     else
       # ???? below ok? remove base ????
