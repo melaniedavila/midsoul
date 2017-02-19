@@ -87,7 +87,6 @@ export default class NewRoute extends React.Component {
   newRouteParams() {
     const directions = this.directionsRenderer.getDirections();
     var polyline, distance;
-    debugger
     if (directions) {
       polyline = directions.routes[0].overview_polyline;
       // in meters:
@@ -100,7 +99,7 @@ export default class NewRoute extends React.Component {
       polyline,
       distance: distance || this.state.distanceInMiles,
       elevation_gain: this.state.elevation_gain
-    }
+    };
   }
 
   errors() {
@@ -111,7 +110,6 @@ export default class NewRoute extends React.Component {
 
       return (<ul>{ errorListItems }</ul>);
     }
-
   }
 
   registerListeners() {
