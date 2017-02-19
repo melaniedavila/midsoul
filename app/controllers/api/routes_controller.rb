@@ -10,7 +10,7 @@ class Api::RoutesController < ApplicationController
     # @route.polyline ||= 'foo'
     ##### above for testing only
 
-    if @route.save!
+    if @route.save
       render :show
     else
       render json: @route.errors.full_messages, status: 422

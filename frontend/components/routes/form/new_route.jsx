@@ -86,28 +86,32 @@ export default class NewRoute extends React.Component {
 
   newRouteParams() {
     const directions = this.directionsRenderer.getDirections();
-    const polyline = directions.routes[0].overview_polyline;
-    // in meters:
-    const distance = directions.routes[0].legs[0].distance.value;
+    var polyline, distance;
+    debugger
+    if (directions) {
+      polyline = directions.routes[0].overview_polyline;
+      // in meters:
+      distance = directions.routes[0].legs[0].distance.value;
+    }
 
     return {
       title: this.state.title,
       description: this.state.description,
       polyline,
-      distance,
+      distance: distance || this.state.distanceInMiles,
       elevation_gain: this.state.elevation_gain
     }
   }
 
   errors() {
-    debugger
     if (this.props.errors.length > 0) {
-      return (
-        this.props.errors.map(error, idx => {
+      const errorListItems = this.props.errors.map((error, idx) => {
           return (<li className="error" key={idx}>{error}</li>);
-        })
-      );
+        });
+
+      return (<ul>{ errorListItems }</ul>);
     }
+
   }
 
   registerListeners() {
@@ -228,7 +232,9 @@ export default class NewRoute extends React.Component {
               </div>
 
               <div className='map-form-fields'>
-                {this.errors()}
+                <div className='errors-list'>
+                  {this.errors()}
+                </div>
                 <h3>CREATE A ROUTE</h3>
 
                 <label>Title:</label>
