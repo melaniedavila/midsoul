@@ -15,19 +15,20 @@ export default class RunShow extends React.Component {
     }
   }
 
+
   render () {
     const run = this.props.run;
     const errors = this.props.errors;
-    debugger
     if (!run) {
       return <LoadingIcon />;
     } else{
       return (
         <div>
-          <ErrorsList  errors={ errors } />
-          <h3>{run.date}</h3>
+          <ErrorsList errors={ errors } />
+          <h4>{run.runner.f_name} ran {run.route.distance} miles on {run.date}</h4>
           <p>{run.description}</p>
-          <div>{run.route.image_url}</div> {/*????? */}
+            <img src={`https://maps.googleapis.com/maps/api/staticmap?size=300x150&path=color:0x0c5d94%7Cenc:${run.route.polyline}&key=${window.googleMapsApiKey}`}
+                  alt={run.route.title}></img>
           <Link to="/my-runs">Back to My Runs</Link>
         </div>
       );
