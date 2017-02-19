@@ -1,17 +1,16 @@
 class Api::RoutesController < ApplicationController
   def create
     @route = Route.new(route_params)
-    # @route.creator_id = current_user.id
+    @route.creator_id = current_user.id
 
     ##### below for testing only
-    @route.creator_id = 8
-    @route.image_url = 'url'
-    @route.distance = 1
-    @route.elevation_gain = 1
+    # @route.creator_id = 8
+    # @route.distance = 1
+    # @route.elevation_gain = 1
+    # @route.polyline ||= 'foo'
     ##### above for testing only
 
-    ensure_stat_and_image_attributes!(@route)
-    if @route.save
+    if @route.save!
       render :show
     else
       render json: @route.errors.full_messages, status: 422
@@ -46,24 +45,6 @@ class Api::RoutesController < ApplicationController
 
   private
   def route_params
-    params.require(:route).permit(:title, :description, :path)
-  end
-
-  def ensure_stat_and_image_attributes!(route)
-    generate_distance!(route)
-    generate_elevation_gain!(route)
-    generate_image_url!(route)
-  end
-
-  def generate_distance!(route)
-    ###
-  end
-
-  def generate_elevation_gain!(route)
-    ###
-  end
-
-  def generate_image_url!(route)
-    ###
+    params.require(:route).permit(:title, :description, :polyline, :distance, :elevation_gain)
   end
 end

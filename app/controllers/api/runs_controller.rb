@@ -24,7 +24,7 @@ class Api::RunsController < ApplicationController
       render :show
     else
       # ???? below ok? remove base ????
-      debugger
+      # debugger
       # render json: { base: ['You are not authorized to see this run.'] }, status: 422
       render json: ['You are not authorized to see this page.'], status: 422
     end
