@@ -1,44 +1,26 @@
 import React from 'react';
 
-// const createMapCenteredOnUserLocation = function () {
-//   let center;
-//   const zoom = 9;
-
-  // if (GBrowserIsCompatible())
-  // {
-    // const map = new google.maps.Map2(document.getElementById("map"));
-  //
-  //   if (google.loader.ClientLocation){
-  //       center = new google.maps.LatLng(
-  //       google.loader.ClientLocation.latitude,
-  //       google.loader.ClientLocation.longitude
-  //     );
-  //   }
-  // }
-//   const map = new google.maps.Map2(document.getElementById("map"));
-//
-//
-//   map.setCenter({lat: 37.773972, lng: -122.431297}, zoom);
-// }
-
-
-// let _mapOptions = {
-//   center: {lat: 37.773972, lng: -122.431297}, // San Francisco coords
-//   zoom: 13
-// };
-
 const _defaultMapOptions = {
   center: {lat: 40.7128, lng: -74.0059 },
   zoom: 12
-}
+};
 
 const _customMapOptions = function (pos) {
   return ({
     center: { lat: pos.coords.latitude, lng: pos.coords.longitude },
     zoom: 12
   });
+};
+
+const _directionsRendererOptions = {
+  draggable: true,
+  polylineOptions: {
+    strokeWeight: 5,
+    strokeColor: "#0c5d94"
+  }
 }
 
+const milesPerMeter = 0.000621371;
 
 export default class NewRoute extends React.Component {
   constructor(props) {
@@ -47,31 +29,40 @@ export default class NewRoute extends React.Component {
     this.initializeMap = this.initializeMap.bind(this);
     this.initializeCustomMap = this.initializeCustomMap.bind(this);
     this.initializeDefaultMap = this.initializeDefaultMap.bind(this);
-    this.state = {  title: '',
-                    description: '',
-                    path: '' };
+    this.originMarker = null;
+    this.state = {
+      title: '',
+      description: '',
+      routePath: [],
+      distanceInMiles: 0,
+      elevation_gain: 0
+    };
   }
 
   componentDidMount() {
     this.props.clearErrors();
     this.mapNode = this.refs.map;
     this.map = this.initializeMap();
-  }
-
-  componentWillReceiveProps(newProps) {
-    this.setState(newProps.route);
+    this.directionsService = new google.maps.DirectionsService();
+    this.directionsRenderer =
+      new google.maps.DirectionsRenderer(_directionsRendererOptions);
+    this.directionsRenderer.setMap(this.map);
+    this.elevationService = new google.maps.ElevationService();
+    this.registerListeners();
   }
 
   initializeMap () {
-    if (navigator.geolocation) {
-      return this.initializeCustomMap();
-    } else {
-      return this.initializeDefaultMap();
-    }
+    return this.initializeDefaultMap();
+
+    // TODO: make it work this way
+    // if (navigator.geolocation) {
+    //   return this.initializeCustomMap();
+    // } else {
+    //   return this.initializeDefaultMap();
+    // }
   }
 
   initializeCustomMap() {
-    const form = this;
     return (navigator.geolocation.getCurrentPosition(
       (pos) => (new google.maps.Map(this.mapNode, _customMapOptions(pos)))
     ));
@@ -90,7 +81,23 @@ export default class NewRoute extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // update path based on markers
-    this.props.createRoute(this.state);
+    this.props.createRoute(this.newRouteParams());
+  }
+
+  newRouteParams() {
+    const directions = this.directionsRenderer.getDirections();
+    const polyline = directions.routes[0].overview_polyline;
+    console.log(polyline);
+    // in meters:
+    const distance = directions.routes[0].legs[0].distance.value;
+
+    return {
+      title: this.state.title,
+      description: this.state.description,
+      polyline,
+      distance,
+      elevation_gain: this.state.elevation_gain
+    }
   }
 
   errors() {
@@ -103,6 +110,111 @@ export default class NewRoute extends React.Component {
     }
   }
 
+  registerListeners() {
+    this.map.addListener('click', this.handleClickOnMap.bind(this));
+    this.directionsRenderer.addListener(
+      'directions_changed',
+      this.handleDisplayRendererDirectionsChange.bind(this)
+    );
+  }
+
+  handleClickOnMap(e) {
+    const lat = e.latLng.lat();
+    const lng = e.latLng.lng();
+    const position = {lat, lng};
+    const marker = new google.maps.Marker({position});
+
+    if (this.originMarker === null) {
+      // add marker to map if it's the first point, i.e. the origin
+      this.originMarker = marker;
+      this.originMarker.setMap(this.map);
+    } else if (this.state.routePath.length === 1) {
+      // clears extra marker near start
+      this.originMarker.setMap(null);
+    }
+
+    this.setState({
+      routePath: this.state.routePath.concat(marker.position)
+    });
+
+    if (this.state.routePath.length >= 2) {
+      this.requestDirections();
+    }
+  }
+
+  requestDirections() {
+    const routePath = this.state.routePath;
+    const origin = this.originMarker.position;
+    const destination = routePath[routePath.length - 1];
+    const waypoints = routePath
+      .slice(0, routePath.length - 1)
+      .map(routePathPoint => {
+        return {
+          location: routePathPoint,
+          stopover: false
+        };
+      });
+
+    const requestDetails = {
+      origin,
+      destination,
+      waypoints,
+      travelMode: google.maps.TravelMode.WALKING,
+    };
+
+    this.directionsService.route(
+      requestDetails,
+      this.handleDirectionsServiceResponse.bind(this)
+    );
+  }
+
+  handleDirectionsServiceResponse(response, status) {
+    if (status === 'OK') {
+      this.displayDirections(response);
+    } else {
+      console.error(
+        'status', status,
+        'response', response
+      );
+    }
+  }
+
+  handleDisplayRendererDirectionsChange() {
+    const directions = this.directionsRenderer.getDirections();
+    const waypoints = directions.routes[0].legs[0].via_waypoints;
+    const routePath = waypoints.concat(directions.routes[0].legs[0].end_location);
+    const distanceInMeters = directions.routes[0].legs[0].distance.value;
+    const distanceInMiles = distanceInMeters * milesPerMeter;
+
+    this.setState({ routePath, distanceInMiles });
+
+    this.elevationService.getElevationAlongPath({
+      path: this.state.routePath,
+      samples: this.state.routePath.length
+    }, (response, status) => {
+      const elevationValues = response.map(elevSamplePoint => {
+        return elevSamplePoint.elevation;
+      });
+
+      const minElevation = Math.min(...elevationValues);
+      const maxElevation = Math.max(...elevationValues);
+      const elevation_gain = maxElevation - minElevation;
+      this.setState({ elevation_gain });
+    });
+  }
+
+  displayDirections(response) {
+    this.directionsRenderer.setDirections(response);
+  }
+
+  removeLastRoutePathPoint(e) {
+    e.preventDefault();
+
+    this.setState({
+      routePath: this.state.routePath.slice(0, -1)
+    }, this.requestDirections.bind(this));
+  }
+
   render() {
     return (
       <div>
@@ -111,6 +223,8 @@ export default class NewRoute extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <h4>Route Details: </h4>
           <br/>
+          <h5>{`${this.state.distanceInMiles.toFixed(2)} miles`}</h5>
+          <h5>{`${this.state.elevation_gain.toFixed(2)} meters`}</h5>
 
           <label>Title:
             <input
@@ -119,7 +233,6 @@ export default class NewRoute extends React.Component {
               onChange={this.update('title')} />
           </label>
           <br/>
-
 
           <label>Description:
             <textarea
@@ -130,10 +243,11 @@ export default class NewRoute extends React.Component {
 
           <div className="map" ref="map">Map</div>
           <br/>
-
+          <button onClick={this.removeLastRoutePathPoint.bind(this)}>Undo Last Click</button>
+          <br/>
           <input type="submit" value='SAVE ROUTE' />
         </form>
       </div>
-    )
+    );
   }
 }
