@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import SplashVideo from '../splash/splashVideo';
 
-
 const Home = function (props) {
     const guest = { email: 'scott-jurek@example.com',
                             password: 'password' };

@@ -24,7 +24,7 @@ export default class LogInForm extends React.Component {
 
   render(){
     const errors = this.props.errors;
-    debugger
+    // debugger
     return(
       <section>
         <div className='login-form-container'>
