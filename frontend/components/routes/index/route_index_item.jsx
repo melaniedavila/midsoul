@@ -5,13 +5,14 @@ import { Link } from 'react-router';
 const RouteIndexItem = ({ route, router }) => {
   return (
   <li className="route-index-item">
-    <Link to={`/routes/${route.id}`}>
-      <span>{route.id}</span>
-      <img src={route.image_url} alt={route.title} />
-      <span>{route.title}</span>
-      <span>{route.description}</span>
-      <span>{route.distance}</span>
-    </Link>
+      <span className='route-title'>{route.title}</span>
+        <div className='route-map-img'>
+          <Link to={`/routes/${route.id}`}>
+          <img src={`https://maps.googleapis.com/maps/api/staticmap?size=300x150&path=color:0x0c5d94%7Cenc:${route.polyline}&key=${window.googleMapsApiKey}`}
+                alt={route.title}></img>
+          </Link>
+        </div>
+      <span className='route-distance'>{route.distance.toFixed(2)} miles</span>
   </li>
 )};
 

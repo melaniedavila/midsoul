@@ -17,7 +17,8 @@ export default class RouteIndex extends React.Component {
     } else {
       return (
       <section className="routes-index">
-        <ul>
+        <h2>Routes</h2>
+        <ul className='mini-routes'>
           {routes.map(route => <RouteIndexItem key={route.id} route={route} />)}
         </ul>
       </section> );

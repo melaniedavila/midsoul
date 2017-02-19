@@ -1,10 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import LoadingIcon from '../../loading/loading_icon';
+
+const _mapOptions = {
+  center: { lat: 0, lng: 0 },
+  zoom: 12
+};
 
 export default class RouteShow extends React.Component {
   componentDidMount() {
-    this.props.requestSingleRoute(this.props.params.routeId);
+    this.props.requestSingleRoute(this.props.params.routeId).then(() => {
+      this.generateMapFromPolyline();
+    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -13,19 +20,66 @@ export default class RouteShow extends React.Component {
     }
   }
 
+  redirectTo(url) {
+    return function (e) {
+      e.preventDefault();
+      hashHistory.push(url);
+    };
+  }
+
+  generateMapFromPolyline(){
+    this.mapNode = this.refs.map;
+    this.map = new google.maps.Map(this.mapNode, _mapOptions);
+
+    const routePath = this.generateRoutePathFromPolyline();
+    const bounds = this.generateMapBoundsFromRoutePath(routePath);
+
+    // Bounds will ensure map actually orients itself over path stored
+    // in the route's encoded polyline
+    this.map.fitBounds(bounds);
+    routePath.setMap(this.map);
+  }
+
+  generateRoutePathFromPolyline() {
+    const polyline = this.props.route.polyline;
+    const latLngPositions = google.maps.geometry.encoding.decodePath(polyline);
+    // Below consists of an array of LatLng locations, and creates a series
+    // of line segments that connect those locations in an ordered sequence.
+    return new google.maps.Polyline({
+      path: latLngPositions,
+      strokeWeight: 5,
+      strokeColor: "#0c5d94"
+    });
+  }
+
+  generateMapBoundsFromRoutePath(routePath) {
+    let bounds = new google.maps.LatLngBounds();
+    // contains array of LatLng positions
+    const path = routePath.getPath();
+    for (let i = 0; i < path.length; i++) {
+      // b is a property of path that is the actual array of LatLng positions
+      // mentionded above
+       bounds.extend(path.b[i]);
+    }
+
+    return bounds;
+  }
+
   render () {
     const route = this.props.route;
     if (!route) {
       return <LoadingIcon />;
     } else{
       return (
-        <div>
+        <div className='route-show-details'>
           <h3>{route.title}</h3>
           <p>{route.description}</p>
-          <div className='route-map-img'>
-            <img src={`https://maps.googleapis.com/maps/api/staticmap?size=300x150&path=color:0x0c5d94%7Cenc:${route.polyline}&key=${window.googleMapsApiKey}`}></img>
+          <Link to='/routes'>Back to Routes</Link>
+          <div className='route-show-flex-container'>
+            <div className='interactive-route-show-map'>
+              <div className="map" ref="map">Map</div>
+            </div>
           </div>
-          <Link to="/routes">Back to Routes</Link>
         </div>
       );
     }
