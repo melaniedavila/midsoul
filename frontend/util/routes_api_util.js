@@ -1,3 +1,6 @@
+import { hashHistory } from 'react-router';
+
+
 export const fetchAllRoutes = () => {
   return $.ajax({
     method: 'GET',
@@ -13,12 +16,18 @@ export const fetchSingleRoute = (id) => {
 };
 
 export const createRoute = (route) => {
+  // TODO: uncomment below when comments impemented
   // route.comments = Object.keys(route.comments).map(idx => route.comments[idx]);
-  //TODO: uncomment above when comments impemented
   return $.ajax({
     method: 'POST',
     url: 'api/routes/',
-    data: { route }
+    data: { route },
+    success: function (res) {
+      hashHistory.push(`/routes/${res.id}`);
+    },
+    error: function (res) {
+      console.log('error response', res);
+    }
   });
 };
 
