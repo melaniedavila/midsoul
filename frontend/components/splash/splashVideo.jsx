@@ -66,29 +66,14 @@ export default class SplashVideo extends React.Component {
     return(
       <div className="homepage-hero-module">
         <div className="video-container">
-          <div className="filter"></div>
+          // creates a weird overlay that prevents us from clicking on anything
+          // <div className="filter"></div>
           <video autoPlay loop className="fillWidth">
             <source src={ window.midSoulAssets.splashPageMP4 } type="video/mp4" />
             <source src={ window.midSoulAssets.splashPageWEBM } type="video/webm" />
           </video>
-        </div>
+        // </div>
       </div>
     );
   }
 }
-
-// const SplashVideo = function () {
-//   return(
-//     <div className="homepage-hero-module">
-//       <div className="video-container">
-//         <div className="filter"></div>
-//         <video autoPlay loop className="fillWidth">
-//           <source src={ window.midSoulAssets.splashPageMP4 } type="video/mp4" />
-//           <source src={ window.midSoulAssets.splashPageWEBM } type="video/webm" />
-//         </video>
-//       </div>
-//     </div>
-//   );
-// };
-//
-// export default SplashVideo;
