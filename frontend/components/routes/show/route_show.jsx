@@ -67,7 +67,6 @@ export default class RouteShow extends React.Component {
 
   handleDeleteRouteClick(e){
     return (e) => {
-      // debugger
       e.preventDefault();
       this.props.deleteRoute(this.props.route.id)
         .then(() => (hashHistory.push('/routes')));

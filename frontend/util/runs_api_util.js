@@ -17,7 +17,6 @@ export const fetchSingleRun = (id) => {
 export const createRun = (run) => {
   // run.comments = Object.keys(run.comments).map(idx => run.comments[idx]);
   //TODO: uncomment above when comments impemented
-  // debugger
   return $.ajax({
     method: 'POST',
     url: 'api/runs/',
