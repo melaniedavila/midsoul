@@ -6,7 +6,6 @@ import { requestAllRuns } from '../../../actions/runs_actions';
 function mapStateToProps(state) {
   currentUser: state.session.currentUser
 
-
   return {
     runs: selectAllRuns(state),
     loading: state.loading.indexLoading

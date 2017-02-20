@@ -1,25 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-// need router below????
-const RunIndexItem = ({ run, router }) => {
+const RunIndexItem = ({ run }) => {
   return (
   <li className="run-index-item">
+    <span>Date: {run.date}</span>
+    <span>Distance: {run.route.distance} miles</span>
+    <span>Pace: {((run.duration / 60) / run.route.distance).toFixed(2)} mins/mi</span>
     <Link to={`/runs/${run.id}`}>
-      <span>{run.id}</span>
-      <img src={run.route.image_url} alt={run.title} />
-      <span>Date: {run.date}</span>
-      <br/>
-
-      <span>Description: {run.description}</span>
-      <br/>
-
-      <span>Duration: {run.duration}</span>
-      <br/>
-
-      <span>Distance: {run.route.distance}</span>
-      <br/>
-      <br/>
+      <img src={`https://maps.googleapis.com/maps/api/staticmap?size=300x150&path=color:0x0c5d94%7Cenc:${run.route.polyline}&key=${window.googleMapsApiKey}`}
+            alt={run.route.title}></img>
     </Link>
   </li>
 )};
