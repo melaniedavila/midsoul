@@ -5,9 +5,12 @@ import { requestSingleUser, updateUser } from '../../../actions/users_actions';
 const mapStateToProps = (state, ownProps) => {
 
   return(
-    {currentUser: state.session.currentUser,
-    user: state.users[ownProps.params.userId],
-    loading: state.loading.singleItemLoading}
+    {
+      errors: state.errors,
+      currentUser: state.session.currentUser,
+      user: state.users[ownProps.params.userId],
+      loading: state.loading.singleItemLoading
+    }
   );
 };
 

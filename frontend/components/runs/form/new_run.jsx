@@ -2,7 +2,7 @@ import React from 'react';
 
 const _numericFields = [
   'route_id', 'durationHours', 'durationMinutes', 'durationSeconds'
-]
+];
 
 export default class NewRun extends React.Component {
   constructor(props) {
