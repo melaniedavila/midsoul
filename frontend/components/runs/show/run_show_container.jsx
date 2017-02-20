@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import RunShow from './run_show';
-import { requestSingleRun } from '../../../actions/runs_actions';
+import { requestSingleRun, deleteRun } from '../../../actions/runs_actions';
 import { requestSingleUser } from '../../../actions/users_actions';
 
 const mapStateToProps = function (state, ownProps) {
@@ -12,12 +12,14 @@ const mapStateToProps = function (state, ownProps) {
   return({
     errors: errors,
     run: state.runs[ownProps.params.runId],
+    currentUser: state.session.currentUser,
     loading: state.loading.singleItemLoading
   });
 };
 
 const mapDispatchToProps = dispatch => ({
   requestSingleRun: id => dispatch(requestSingleRun(id)),
+  deleteRun: id => dispatch(deleteRun(id))
 });
 
 export default connect(
