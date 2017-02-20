@@ -13,6 +13,8 @@ import NewRouteContainer from './routes/form/new_route_container';
 import RunIndexContainer from './runs/index/run_index_container';
 import RunShowContainer from './runs/show/run_show_container';
 import NewRunContainer from './runs/form/new_run_container';
+import UserEditContainer from './users/form/user_edit_container';
+import UserShowContainer from './users/show/user_show_container';
 
 export default function Root() {
   const preloadedState = window.currentUser ?
@@ -77,6 +79,14 @@ export default function Root() {
           <Route
             path="/runs/:runId"
             component={ RunShowContainer }
+            onEnter={ requireLogIn }/>
+          <Route
+            path="/users/:userId"
+            component={ UserShowContainer }
+            onEnter={ requireLogIn }/>
+          <Route
+            path="/users/:userId/edit"
+            component={ UserEditContainer }
             onEnter={ requireLogIn }/>
         </Route>
       </Router>
