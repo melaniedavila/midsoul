@@ -65,16 +65,22 @@ export default class UserShow extends React.Component {
       return (
         <div className='user-show-details'>
           <h2>{user.f_name} {user.l_name}</h2>
-          <p>User image here</p>
-          <p>Member since: {memberDate}</p>
-          <p>Routes: {user.routes.length}</p>
-          <p>Runs: {user.runs.length}</p>
-
-        <button>ADD FRIEND</button>
-
-
-        {/*render user activities/maps if friend or self*/}
-
+          <div className='user-show-and-activity-feed-flex-container'>
+            <div className='user-show-details-flex-container'>
+              <div className='user-show-details-flex-left'>
+                <p>User image here</p>
+                <button>ADD FRIEND</button>
+              </div>
+              <div className='user-show-details-flex-right'>
+                <p>Member since: {memberDate}</p>
+                <p>Routes: {user.routes.length}</p>
+                <p>Runs: {user.runs.length}</p>
+              </div>
+            </div>
+            <div className='user-activity-details'>
+              Render user activities here if friend or self
+            </div>
+          </div>
         </div>
       );
     }
