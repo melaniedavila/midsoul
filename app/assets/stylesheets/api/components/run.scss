@@ -106,23 +106,10 @@
 .new-run-flex-right {
   display: flex;
   align-items: center;
-  // justify-content: center;
-  // margin: 100px;
-  // width: 100%;
-  // height: 100%;
   align-content: center;
   margin: 0 auto;
   width: 60%;
   margin-top: 50px;
-  
-  // vertical-align: center;
-  img {
-    // margin: 0 auto;
-    // width: 100%;
-    // height: 100%;
-    // margin:0 auto;
-    // padding: 20px;
-  }
 }
 
 
@@ -158,11 +145,85 @@
         font-size: 14px;
         font-weight: 600;
       }
-
     }
+  }
+}
 
+// //////////////////////////////////////////
 
+.run-show-details {
+  padding: 15px;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
 
+  h3 {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-family: Helvetica, Arial, $sans-serif;
+    font-weight: 700;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $medium-gray;
   }
 
+  h4 {
+    font-size: 20px;
+    font-family: Helvetica, Arial, $sans-serif;
+    font-weight: 700;
+    color: $midSoul-blue;
+  }
+
+  h5 {
+    font-size: 18px;
+    font-family: Helvetica, Arial, $sans-serif;
+    font-weight: 700;
+    color: $midSoul-blue;
+  }
+
+  p {
+    font-size: 16px;
+    color: $midSoul-blue;
+    font-family: $sans-serif;
+    font-weight: 500;
+  }
+
+  .run-show-links {
+    display: flex;
+    justify-content: space-between;
+
+
+    a {
+      padding-bottom: 15px;
+      font-size: 13px;
+    }
+
+    button {
+      text-transform: uppercase;
+      z-index: 100;
+      background-color: $dark-gray;
+      color: white;
+      font-family: Helvetica, Arial, $sans-serif;
+      font-weight: 500px;
+      font-size: 14px;
+      line-height: 36px;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+      transition: color 0.05s;
+      letter-spacing: 0.8px;
+      padding: 0 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+}
+
+.run-show-map {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto;
+  width: 70%;
+  margin-top: 50px;
 }
