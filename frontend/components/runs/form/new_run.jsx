@@ -85,94 +85,83 @@ export default class NewRun extends React.Component {
     var mapImg;
 
     if (this.state.route) {
-      mapImg = (<img src={`https://maps.googleapis.com/maps/api/staticmap?size=300x150&path=color:0x0c5d94%7Cenc:${this.state.route.polyline}&key=${window.googleMapsApiKey}`}
-            alt={this.state.route.title}></img>)
+      mapImg = (<img src={`https://maps.googleapis.com/maps/api/staticmap?size=500x250&path=color:0x0c5d94%7Cenc:${this.state.route.polyline}&key=${window.googleMapsApiKey}`}
+            alt={this.state.route.title}></img>);
     }
 
     return (
-      <div>
-        <h3>LOG A RUN</h3>
-          <ul className='errors-list'>
-            {this.errors()}
-          </ul>
-        <form onSubmit={this.handleSubmit}>
-          <br/>
+      <main className='log-run-main'>
+        <h3 className='log-run-header'>LOG A RUN</h3>
+        <div className='new-run-flex-container'>
+          <div className='new-run-flex-left'>
+            <form onSubmit={this.handleSubmit}>
 
-          <label>Title:
-            <input
-              type="text"
-              value={this.state.title}
-              onChange={this.update('title')} />
-          </label>
-          <br/>
+              <div className='errors-list'>
+                {this.errors()}
+              </div>
 
-          <label>Date:
-            <input
-              type="date"
-              max={this.maxRunDate()}
-              value={this.state.date}
-              onChange={this.update('date')} />
-          </label>
-          <br/>
+              <label>Title:</label>
+                <input
+                  type="text"
+                  value={this.state.title}
+                  onChange={this.update('title')} />
 
-          <label>Duration:
-            <input
-              type="number"
-              value={this.state.durationHours}
-              min={0}
-              onChange={this.update('durationHours')} />
-            <input
-              type="number"
-              value={this.state.durationMinutes}
-              max={59}
-              min={0}
-              onChange={this.update('durationMinutes')} />
-            <input
-              type="number"
-              value={this.state.durationSeconds}
-              max={59}
-              min={0}
-              onChange={this.update('durationSeconds')} />
-          </label>
-          <br/>
+              <label>Date:</label>
+                <input
+                  type="date"
+                  max={this.maxRunDate()}
+                  value={this.state.date}
+                  onChange={this.update('date')} />
 
-          <label>Description:
-            <textarea
-              value={this.state.description}
-              onChange={this.update('description')} />
-          </label>
-          <br/>
+                <label>Duration (HH/MM/SS):</label>
+                <div className='run-duration-fields'>
+                  <input
+                    type="number"
+                    value={this.state.durationHours}
+                    min={0}
+                    onChange={this.update('durationHours')} />hours&nbsp;&nbsp;
+                  <input
+                    type="number"
+                    value={this.state.durationMinutes}
+                    max={59}
+                    min={0}
+                    onChange={this.update('durationMinutes')} />mins&nbsp;&nbsp;
+                  <input
+                    type="number"
+                    value={this.state.durationSeconds}
+                    max={59}
+                    min={0}
+                    onChange={this.update('durationSeconds')} />secs&nbsp;&nbsp;
+                </div>
 
-          <label>Route:
-            <select
-              onChange={this.update('route_id')}>
-              <option disabled selected>Select Route</option>
-              {this.props.routes.map((route) => {
-                return (
-                  <option
-                    key={route.id}
-                    value={route.id}>{route.title}
-                  </option>
-                );
-              })}
-            </select>
-          </label>
+              <label>Description:</label>
+                <textarea
+                  value={this.state.description}
+                  onChange={this.update('description')} />
 
-          {/*<label>Route:
-            <select
-              value={this.state.route_id}
-              onChange={this.update('route_id')}
-              defaultValue="Select Route">
-              {ROUTES.map((route, i) => {
-                return <option value={route} key={route.id}>{route}</option>;
-              })}
-            </select>
-          </label>*/}
-          <br/>
-          <input type="submit" value='SAVE ROUTE' />
-        </form>
-        {mapImg}
-      </div>
-    )
+              <label>Route:</label>
+                <select
+                  onChange={this.update('route_id')}>
+                  <option disabled selected>Select Route</option>
+                  {this.props.routes.map((route) => {
+                    return (
+                      <option
+                        key={route.id}
+                        value={route.id}>{route.title}
+                      </option>
+                    );
+                  })}
+                </select>
+              <input type="submit" value='SAVE RUN' />
+            </form>
+          </div>
+
+          <div className='new-run-flex-right'>
+            {mapImg}
+          </div>
+
+        </div>
+      </main>
+    );
   }
 }

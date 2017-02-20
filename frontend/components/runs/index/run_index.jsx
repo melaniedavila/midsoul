@@ -14,7 +14,8 @@ export default class RunIndex extends React.Component {
     } else {
       return (
       <section className="runs-index">
-        <ul>
+        <h2>My Runs</h2>
+        <ul className='mini-runs'>
           {runs.map(run => <RunIndexItem key={run.id} run={run} />)}
         </ul>
       </section> );
