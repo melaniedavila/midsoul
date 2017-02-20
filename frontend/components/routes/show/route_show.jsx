@@ -65,16 +65,34 @@ export default class RouteShow extends React.Component {
     return bounds;
   }
 
+  handleDeleteRouteClick(e){
+    return (e) => {
+      // debugger
+      e.preventDefault();
+      this.props.deleteRoute(this.props.route.id)
+        .then(() => (hashHistory.push('/routes')));
+    };
+  }
+
   render () {
     const route = this.props.route;
     if (!route) {
       return <LoadingIcon />;
     } else{
+      let deleteButton;
+      if (this.props.currentUser.id === route.creator_id) {
+        deleteButton = (<button
+                        onClick={this.handleDeleteRouteClick()}>
+                        DELETE ROUTE
+                      </button>);
+      }
+
       return (
         <div className='route-show-details'>
           <h3>{route.title}</h3>
           <p>{route.description}</p>
           <Link to='/routes'>Back to Routes</Link>
+          {deleteButton}
           <div className='route-show-flex-container'>
             <div className='interactive-route-show-map'>
               <div className="map" ref="map">Map</div>
