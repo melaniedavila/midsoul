@@ -90,7 +90,7 @@ export default class RouteShow extends React.Component {
       return (
         <div className='route-show-details'>
           <h3>{route.title}</h3>
-          <p>Distance: {(route.distance * 0.000621371).toFixed(2)} miles</p>
+          <p>Distance: {(route.distance).toFixed(2)} miles</p>
           <p>Elevation Gain: {route.elevation_gain.toFixed(2)} meters</p>
 
           <p>{route.description}</p>
