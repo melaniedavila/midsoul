@@ -31,7 +31,10 @@ export const updateUser = (user) => {
   return $.ajax({
     method: 'PATCH',
     url: `api/users/${user.id}`,
-    data: { user }
+    data: { user },
+    success: function (res) {
+      hashHistory.push(`/users/${res.id}`);
+    }
   });
 };
 
