@@ -4,6 +4,7 @@ import {  RECEIVE_ALL_ROUTES, RECEIVE_SINGLE_ROUTE, REMOVE_ROUTE,
 
 export default function routesReducer(state = {}, action) {
   Object.freeze(state);
+  // debugger
   switch (action.type) {
     case RECEIVE_ALL_ROUTES:
       console.log('state in reducer', state);
