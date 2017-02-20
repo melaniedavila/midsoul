@@ -2,15 +2,19 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  email           :string           not null
-#  f_name          :string           not null
-#  l_name          :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  image_url       :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                           :integer          not null, primary key
+#  email                        :string           not null
+#  f_name                       :string           not null
+#  l_name                       :string           not null
+#  password_digest              :string           not null
+#  session_token                :string           not null
+#  image_url                    :string
+#  created_at                   :datetime         not null
+#  updated_at                   :datetime         not null
+#  profile_picture_file_name    :string
+#  profile_picture_content_type :string
+#  profile_picture_file_size    :integer
+#  profile_picture_updated_at   :datetime
 #
 
 class User < ActiveRecord::Base

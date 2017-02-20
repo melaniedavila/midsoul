@@ -6,11 +6,11 @@
 #  creator_id     :integer          not null
 #  title          :string           not null
 #  description    :text             not null
-#  polyline       :string           not null
 #  distance       :float            not null
 #  elevation_gain :float            not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  polyline       :text             not null
 #
 
 class Route < ActiveRecord::Base
