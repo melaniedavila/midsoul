@@ -81,11 +81,18 @@
 
 
 .user-show-details {
-  h2 {
-    padding: 20px;
-    display: block;
-    font-size: 32px;
-    font-weight: bold;
+
+  .user-name-and-edit-button-flex-container {
+    display: flex;
+    align-content: flex-start;
+
+    h2 {
+      padding: 20px;
+      display: block;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
   }
 
 
@@ -123,6 +130,9 @@
       }
     }
   }
+}
 
 
+.user-activity-details {
+  padding: 20px;
 }

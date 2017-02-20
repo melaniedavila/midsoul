@@ -53,6 +53,11 @@ export default class UserShow extends React.Component {
     return `${month} ${year}`;
   }
 
+  redirectToEdit(e) {
+    e.preventDefault();
+    hashHistory.push(`users/${this.props.user.id}/edit/`);
+  }
+
   render () {
     const user = this.props.user;
     const errors = this.props.errors;
@@ -61,10 +66,16 @@ export default class UserShow extends React.Component {
     } else {
 
       const memberDate = this.parseMembershipDate(user.created_at);
-
+      let editButton;
+      if (this.props.currentUser.id === this.props.user.id) {
+        editButton = <button onClick={this.redirectToEdit.bind(this)}>EDIT PROFILE</button>;
+      }
       return (
         <div className='user-show-details'>
-          <h2>{user.f_name} {user.l_name}</h2>
+          <div className='user-name-and-edit-button-flex-container'>
+            <h2>{user.f_name} {user.l_name}</h2>
+            {editButton}
+          </div>
           <div className='user-show-and-activity-feed-flex-container'>
             <div className='user-show-details-flex-container'>
               <div className='user-show-details-flex-left'>
@@ -86,29 +97,3 @@ export default class UserShow extends React.Component {
     }
   }
 }
-
-
-// if (!user) {
-//   return <LoadingIcon />;
-// } else {
-//   return (
-//     <div className='run-show-details'>
-//       <h3>{run.title}</h3>
-//       <ErrorsList errors={ errors } />
-//       <h4>{run.runner.f_name} ran {run.route.distance} miles on {run.date}&nbsp;
-//       at a pace of {((run.duration / 60) / run.route.distance).toFixed(2)} mins/mi</h4>
-//
-//       <p>{run.description}</p>
-//
-//       <div className='run-show-links'>
-//         <Link to="/my-users">Back to My Runs</Link>
-//         {deleteButton}
-//       </div>
-//
-//       <div className='run-show-map'>
-//         <img src={`https://maps.googleapis.com/maps/api/staticmap?size=500x250&path=color:0x0c5d94%7Cenc:${run.route.polyline}&key=${window.googleMapsApiKey}`}
-//           alt={run.route.title}></img>
-//       </div>
-//     </div>
-//   );
-// }
