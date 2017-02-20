@@ -159,9 +159,34 @@
     font-weight: 500;
   }
 
-  a {
-    padding-bottom: 15px;
-    font-size: 13px;
+  .route-show-links {
+    display: flex;
+    justify-content: space-between;
+
+
+    a {
+      padding-bottom: 15px;
+      font-size: 13px;
+    }
+
+    button {
+      text-transform: uppercase;
+      z-index: 100;
+      background-color: $dark-gray;
+      color: white;
+      font-family: Helvetica, Arial, $sans-serif;
+      font-weight: 500px;
+      font-size: 14px;
+      line-height: 36px;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+      transition: color 0.05s;
+      letter-spacing: 0.8px;
+      padding: 0 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      text-align: center;
+    }
   }
 }
 

@@ -90,9 +90,14 @@ export default class RouteShow extends React.Component {
       return (
         <div className='route-show-details'>
           <h3>{route.title}</h3>
+          <p>Distance: {(route.distance * 0.000621371).toFixed(2)} miles</p>
+          <p>Elevation Gain: {route.elevation_gain.toFixed(2)} meters</p>
+
           <p>{route.description}</p>
-          <Link to='/routes'>Back to Routes</Link>
-          {deleteButton}
+          <div className='route-show-links'>
+            <Link to='/routes'>Back to Routes</Link>
+            {deleteButton}
+          </div>
           <div className='route-show-flex-container'>
             <div className='interactive-route-show-map'>
               <div className="map" ref="map">Map</div>
