@@ -39,6 +39,18 @@ export default function Root() {
     }
   }
 
+  // function requireCurrentUser(nextState, replace) {
+  //   debugger
+  //   if (isLoggedIn()) {
+  //     const currentUserId = store.getState().session.currentUser.id;
+  //     debugger
+  //     const requestedUserId = parseInt(nextState.params.userId);
+  //     if (currentUserId !== requestedUserId) {
+  //       replace(`users/${currentUserId}/edit`);
+  //     }
+  //   }
+  // }
+
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>

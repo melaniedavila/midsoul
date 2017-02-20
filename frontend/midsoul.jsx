@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       store = configureStore();
     }
-    window.store = store;
+    // window.store = store;
     ReactDOM.render(<Root store={store}/>, root);
 });
 
@@ -59,16 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
 // window.requestAllRuns = requestAllRuns;
 
 
-window.fetchAllUsers = fetchAllUsers;
-window.fetchSingleUser = fetchSingleUser;
-window.createUser = createUser;
-window.updateUser = updateUser;
-window.deleteUser = deleteUser;
-window.receiveAllUsers = receiveAllUsers;
-window.receiveSingleUser = receiveSingleUser;
-window.receiveNewUser = receiveNewUser;
-window.removeUser = removeUser;
-window.receiveUserErrors = receiveUserErrors;
-// window.selectAllRoutes = selectAllRoutes;
-// window.selectAllUsers = selectAllUsers;
-window.requestAllUsers = requestAllUsers;
+// window.fetchAllUsers = fetchAllUsers;
+// window.fetchSingleUser = fetchSingleUser;
+// window.createUser = createUser;
+// window.updateUser = updateUser;
+// window.deleteUser = deleteUser;
+// window.receiveAllUsers = receiveAllUsers;
+// window.receiveSingleUser = receiveSingleUser;
+// window.receiveNewUser = receiveNewUser;
+// window.removeUser = removeUser;
+// window.receiveUserErrors = receiveUserErrors;
+// // window.selectAllRoutes = selectAllRoutes;
+// // window.selectAllUsers = selectAllUsers;
+// window.requestAllUsers = requestAllUsers;
