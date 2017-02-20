@@ -53,7 +53,7 @@ run1 = Run.create!(
   route_id: route1.id,
   date: Date.today,
   description: 'Hibernation is over!',
-  duration: 1
+  duration: 430
 )
 
 run2 = Run.create!(
@@ -62,7 +62,7 @@ run2 = Run.create!(
   route_id: route2.id,
   date: Date.today,
   description: 'Freezing today!',
-  duration: 1
+  duration: 3000
 )
 
 run3 = Run.create!(
@@ -71,5 +71,5 @@ run3 = Run.create!(
   route_id: route3.id,
   date: Date.today,
   description: 'Training for 5k',
-  duration: 1
+  duration: 2256
 )
