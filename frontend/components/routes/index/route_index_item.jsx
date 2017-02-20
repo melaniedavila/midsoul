@@ -12,7 +12,7 @@ const RouteIndexItem = ({ route, router }) => {
                 alt={route.title}></img>
           </Link>
         </div>
-      <span className='route-distance'>{route.distance.toFixed(2)} miles</span>
+      <span className='route-distance'>Distance: {route.distance.toFixed(2)} miles</span>
   </li>
 )};
 
