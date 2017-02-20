@@ -12,6 +12,8 @@ import Root from './components/root';
 // import { fetchAllRuns, fetchSingleRun, createRun, updateRun, deleteRun } from './util/runs_api_util';
 // import { selectAllRoutes, selectAllRuns } from './reducers/selectors';
 
+import { receiveAllUsers, receiveSingleUser, receiveNewUser, removeUser, receiveUserErrors, requestAllUsers } from './actions/users_actions';
+import { fetchAllUsers, fetchSingleUser, createUser, updateUser, deleteUser } from './util/users_api_util';
 
 
 
@@ -55,3 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
 // window.selectAllRoutes = selectAllRoutes;
 // window.selectAllRuns = selectAllRuns;
 // window.requestAllRuns = requestAllRuns;
+
+
+window.fetchAllUsers = fetchAllUsers;
+window.fetchSingleUser = fetchSingleUser;
+window.createUser = createUser;
+window.updateUser = updateUser;
+window.deleteUser = deleteUser;
+window.receiveAllUsers = receiveAllUsers;
+window.receiveSingleUser = receiveSingleUser;
+window.receiveNewUser = receiveNewUser;
+window.removeUser = removeUser;
+window.receiveUserErrors = receiveUserErrors;
+// window.selectAllRoutes = selectAllRoutes;
+// window.selectAllUsers = selectAllUsers;
+window.requestAllUsers = requestAllUsers;
