@@ -67,7 +67,6 @@ export default class SignUpForm extends React.Component {
               onChange={this.update('password')}/>
             <br />
 
-            <input type='file'/>
             <br />
 
             <input type='submit' value='JOIN NOW'/>
