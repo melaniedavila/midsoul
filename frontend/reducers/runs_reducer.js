@@ -14,8 +14,6 @@ export default function runsReducer(state = {}, action) {
       let newState = merge({}, state);
       delete newState[action.run.id];
       return newState;
-    case RECEIVE_RUN_ERRORS:
-      return assign({}, state, { errors: action.errors });
     default:
       return state;
   }
