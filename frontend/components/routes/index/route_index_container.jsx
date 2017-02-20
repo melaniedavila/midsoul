@@ -4,9 +4,12 @@ import { selectAllRoutes } from '../../../reducers/selectors';
 import { requestAllRoutes } from '../../../actions/routes_actions';
 
 function mapStateToProps(state) {
+  const routes = selectAllRoutes(state);
+  const loading = state.loading.indexLoading || Object.keys(routes).length === 0;
+
   return {
-    routes: selectAllRoutes(state),
-    loading: state.loading.indexLoading
+    routes,
+    loading
   };
 }
 
