@@ -40,10 +40,15 @@ class User < ActiveRecord::Base
     class_name: 'Run'
   )
 
-  has_attached_file :profile_picture, styles: {
-    big: "600x600>",
-    small: "50x50#"
-  }
+  has_attached_file(
+    :profile_picture,
+    default_url: '/assets/profile_pic/default-prof-pic.png',
+    styles: {
+      big: "600x600>",
+      small: "50x50#",
+    },
+  )
+
   validates_attachment_content_type(
     :profile_picture,
     content_type: /\Aimage\/.*\Z/
