@@ -1,14 +1,14 @@
 u1 = User.create!(
-  f_name: 'test1',
-  l_name: 'test1',
-  email: 'test1@example.com',
+  f_name: 'Matilda',
+  l_name: 'Jeffries',
+  email: 'matilda@example.com',
   password: 'password'
 )
 
 u2 = User.create!(
-  f_name: 'test2',
-  l_name: 'test2',
-  email: 'test2@example.com',
+  f_name: 'Katinka',
+  l_name: 'Ingaborgovinananananana',
+  email: 'katinka@example.com',
   password: 'password'
 )
 
@@ -120,6 +120,12 @@ friend_request1 = FriendRequest.create!(
   status: 0
 )
 
+FriendRequest.create!(
+  requestor_id: 6,
+  requestee_id: 3,
+  status: 0
+)
+
 friend_request2 = FriendRequest.create!(
   requestor_id: u2.id,
   requestee_id: u3.id,
@@ -142,6 +148,24 @@ friend_request6 = FriendRequest.create!(
   requestor_id: u4.id,
   requestee_id: u5.id,
   status: 2
+)
+
+friend_request7 = FriendRequest.create!(
+  requestor_id: u1.id,
+  requestee_id: u3.id,
+  status: 0
+)
+
+friend_request8 = FriendRequest.create!(
+  requestor_id: u5.id,
+  requestee_id: u3.id,
+  status: 0
+)
+
+friend_request9 = FriendRequest.create!(
+  requestor_id: u6.id,
+  requestee_id: u3.id,
+  status: 0
 )
 
 friendship1 = Friendship.create!(
