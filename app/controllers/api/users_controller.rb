@@ -29,6 +29,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def friends
+    @friends = current_user.friends
+    render :friends
+  end
+
   private
   def user_params
     params.require(:user).
