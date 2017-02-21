@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import errorsReducer from './errors_reducer';
 import friendRequestsReducer from './friend_requests_reducer';
+import friendsSearchReducer from './friendsSearchReducer';
 import friendshipsReducer from './friendships_reducer';
 import loadingReducer from './loading_reducer';
 import routesReducer from './routes_reducer';
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   session: sessionReducer,
   users: usersReducer,
   friendRequests: friendRequestsReducer,
-  friendships: friendshipsReducer
+  friendships: friendshipsReducer,
+  friendsSearch: friendsSearchReducer
 });
 
 export default rootReducer;
