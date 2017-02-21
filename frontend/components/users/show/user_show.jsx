@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import LoadingIcon from '../../loading/loading_icon';
 import ErrorsList from '../../errors/errors_list';
-
+import UserRunsList from './user_runs_list';
 
 export default class UserShow extends React.Component {
   componentDidMount() {
@@ -79,7 +79,7 @@ export default class UserShow extends React.Component {
           <div className='user-show-and-activity-feed-flex-container'>
             <div className='user-show-details-flex-container'>
               <div className='user-show-details-flex-left'>
-                <p>User image here</p>
+                <img src={user.profile_picture} alt='Profile picture'></img>
                 <button>ADD FRIEND</button>
               </div>
               <div className='user-show-details-flex-right'>
@@ -90,6 +90,7 @@ export default class UserShow extends React.Component {
             </div>
             <div className='user-activity-details'>
               Render user activities here if friend or self
+              <UserRunsList runs={user.runs}/>
             </div>
           </div>
         </div>
