@@ -20,6 +20,28 @@ u3 = User.create!(
   password: 'password'
 )
 
+u4 = User.create!(
+  f_name: 'Jacobim',
+  l_name: 'Mugatu',
+  email: 'jacobim@mugatu.com',
+  password: 'password'
+)
+
+u5 = User.create!(
+  f_name: 'Derek',
+  l_name: 'Zoolander',
+  email: 'derek@bluesteel.com',
+  password: 'password'
+)
+
+u6 = User.create!(
+  f_name: 'Hansel',
+  l_name: 'McDonald',
+  email: 'hansel@whatever.com',
+  password: 'password'
+)
+
+
 route1 = Route.create!(
   creator_id: u1.id,
   title: 'Reservoir Loop',
@@ -66,10 +88,88 @@ run2 = Run.create!(
 )
 
 run3 = Run.create!(
-  title: 'Brazil!',
+  title: 'Brazil again!',
   runner_id: u3.id,
   route_id: route3.id,
   date: Date.today,
+  description: 'Training for 5k again',
+  duration: 2250
+)
+
+run4 = Run.create!(
+  title: 'Brazil!',
+  runner_id: u3.id,
+  route_id: route3.id,
+  date: Date.yesterday,
   description: 'Training for 5k',
   duration: 2256
+)
+
+run5 = Run.create!(
+  title: 'Bridge Hills!',
+  runner_id: u3.id,
+  route_id: route2.id,
+  date: Date.yesterday,
+  description: 'Hills workouts',
+  duration: 2256
+)
+
+friend_request1 = FriendRequest.create!(
+  requestor_id: u1.id,
+  requestee_id: u2.id,
+  status: 0
+)
+
+friend_request2 = FriendRequest.create!(
+  requestor_id: u2.id,
+  requestee_id: u3.id,
+  status: 1
+)
+
+friend_request4 = FriendRequest.create!(
+  requestor_id: u4.id,
+  requestee_id: u3.id,
+  status: 1
+)
+
+friend_request5 = FriendRequest.create!(
+  requestor_id: u6.id,
+  requestee_id: u5.id,
+  status: 1
+)
+
+friend_request6 = FriendRequest.create!(
+  requestor_id: u4.id,
+  requestee_id: u5.id,
+  status: 2
+)
+
+friendship1 = Friendship.create!(
+  user_id: u2.id,
+  friend_id: u3.id
+)
+
+friendship2 = Friendship.create!(
+  user_id: u3.id,
+  friend_id: u2.id
+)
+
+friendship3 = Friendship.create!(
+  user_id: u4.id,
+  friend_id: u3.id
+)
+
+friendship4 = Friendship.create!(
+  user_id: u3.id,
+  friend_id: u4.id
+)
+
+friendship5 = Friendship.create!(
+  user_id: u5.id,
+  friend_id: u6.id
+)
+
+friendship6 = Friendship.create!(
+  user_id: u6.id,
+  friend_id: u5.id
 )
