@@ -1,5 +1,6 @@
 class Api::FriendRequestsController < ApplicationController
 
+  # TODO: is index action needed?
   def index
     @friend_requests = FriendRequest.where(requestee_id: current_user.id)
     render :index
@@ -19,14 +20,16 @@ class Api::FriendRequestsController < ApplicationController
     @friend_request = FriendRequest.find(params[:id])
 
     if @friend_request.update(friend_request_params)
+
       if @friend_request.accepted?
+
         @friendships = [
-          requestor.friendships.create!(friend: requestee),
-          requestee.friendships.create!(friend: requestor),
+          Friendship.create!(user_id: @friend_request.requestor_id, friend_id: @friend_request.requestee_id),
+          Friendship.create!(user_id: @friend_request.requestee_id, friend_id: @friend_request.requestor_id),
         ]
       end
 
-      render json: @friendships
+      render json: @friend_request
     else
       render json: @friend_request.errors.full_messages, status: 422
     end
