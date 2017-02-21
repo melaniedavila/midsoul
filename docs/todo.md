@@ -1,13 +1,10 @@
 user show-
-- style prof pic
-- add single user's activities; think about how you can reuse it with friends feed
-- ensure only self and friends can see profile
+- ensure only self and friends can see profile activity feed
 - styling
 
 user edit
 - add prof pic
 - styling
-
 
 todos:
 friends
@@ -15,7 +12,6 @@ search
 friend request
 friend feed
 inc user pic/name, activity description and map pic
-paperclip
 
 /////////////////////////////////////////////////////////////////////////////
 
