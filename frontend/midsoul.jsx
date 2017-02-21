@@ -10,11 +10,14 @@ import Root from './components/root';
 
 // import { receiveAllRuns, receiveSingleRun, receiveNewRun, removeRun, receiveRunErrors, requestAllRuns } from './actions/runs_actions';
 // import { fetchAllRuns, fetchSingleRun, createRun, updateRun, deleteRun } from './util/runs_api_util';
-// import { selectAllRoutes, selectAllRuns } from './reducers/selectors';
+// import { selectAllRoutes, selectAllRuns, selectAllFriendRequests } from './reducers/selectors';
 
-import { receiveAllUsers, receiveSingleUser, receiveNewUser, removeUser, receiveUserErrors, requestAllUsers } from './actions/users_actions';
-import { fetchAllUsers, fetchSingleUser, createUser, updateUser, deleteUser } from './util/users_api_util';
+// import { receiveAllUsers, receiveSingleUser, receiveNewUser, removeUser, receiveUserErrors, requestAllUsers } from './actions/users_actions';
+// import { fetchAllUsers, fetchSingleUser, createUser, updateUser, deleteUser } from './util/users_api_util';
 
+
+// import { receiveCurrentUserReceivedFriendRequests, receiveSingleFriendRequest, receiveNewFriendRequest, receiveFriendRequestErrors, requestCurrentUserReceivedFriendRequests } from './actions/friend_requests_actions';
+// import { fetchCurrentUserReceivedFriendRequests, createFriendRequest, updateFriendRequest } from './util/friend_requests_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,6 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // window.store = store;
     ReactDOM.render(<Root store={store}/>, root);
 });
+
+
+// window.receiveCurrentUserReceivedFriendRequests = receiveCurrentUserReceivedFriendRequests;
+// window.receiveSingleFriendRequest = receiveSingleFriendRequest;
+// window.receiveNewFriendRequest = receiveNewFriendRequest;
+// window.receiveFriendRequestErrors = receiveFriendRequestErrors;
+// window.requestCurrentUserReceivedFriendRequests = requestCurrentUserReceivedFriendRequests;
+// window.fetchCurrentUserReceivedFriendRequests = fetchCurrentUserReceivedFriendRequests;
+// window.createFriendRequest = createFriendRequest;
+// window.updateFriendRequest = updateFriendRequest;
+// window.selectAllFriendRequests = selectAllFriendRequests;
 
 // window.signup = signup;
 // window.login = login;
