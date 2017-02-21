@@ -45,9 +45,9 @@ export const receiveUserErrors = (errors) => ({
 });
 
 
-export const requestAllUsers = () => (dispatch) => {
+export const requestAllUsers = (filters) => (dispatch) => {
 	dispatch(loadAllUsers());
-	return APIUtil.fetchAllUsers()
+	return APIUtil.fetchAllUsers(filters)
 		.then(users => dispatch(receiveAllUsers(users)));
 };
 
