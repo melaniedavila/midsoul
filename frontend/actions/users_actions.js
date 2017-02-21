@@ -74,6 +74,7 @@ export const updateUser = (user) => (dispatch) => (
 	}).fail(error => dispatch(receiveUserErrors(error.responseJSON)))
 );
 
+
 export const deleteUser = (id) => (dispatch) => (
 	APIUtil.deleteUser(id).then(user => {
 		dispatch(removeUser(user));

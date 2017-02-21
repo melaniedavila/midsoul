@@ -27,11 +27,23 @@ export const createUser = (user) => {
   });
 };
 
+
 export const updateUser = (user) => {
+  var formData = new FormData();
+
+  for ( let key in user ) {
+    formData.append(`user[${key}]`, user[key]);
+  }
+
+
+
   return $.ajax({
     method: 'PATCH',
     url: `api/users/${user.id}`,
-    data: { user },
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData,
     success: function (res) {
       hashHistory.push(`/users/${res.id}`);
     }
