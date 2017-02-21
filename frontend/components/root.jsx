@@ -3,7 +3,7 @@ import configureStore from '../store/store';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
 import App from './app';
-import FeedContainer from './feed/feed_container';
+import AllActivityFeedContainer from './feed/all_activity_feed_container';
 import HomeContainer from './home/home_container';
 import LogInFormContainer from './login/login_form_container';
 import SignUpFormContainer from './signup/signup_form_container';
@@ -39,17 +39,16 @@ export default function Root() {
     }
   }
 
-  // function requireCurrentUser(nextState, replace) {
-  //   debugger
-  //   if (isLoggedIn()) {
-  //     const currentUserId = store.getState().session.currentUser.id;
-  //     debugger
-  //     const requestedUserId = parseInt(nextState.params.userId);
-  //     if (currentUserId !== requestedUserId) {
-  //       replace(`users/${currentUserId}/edit`);
-  //     }
-  //   }
-  // }
+  function requireCurrentUser(nextState, replace) {
+    requireLogIn();
+
+    const currentUserId = store.getState().session.currentUser.id;
+    const requestedUserId = parseInt(nextState.params.userId);
+
+    if (currentUserId !== requestedUserId) {
+      replace(`users/${currentUserId}/edit`);
+    }
+  }
 
   return (
     <Provider store={ store }>
@@ -58,7 +57,7 @@ export default function Root() {
           <IndexRoute component={ HomeContainer } onEnter={redirectIfLoggedIn}/>
           <Route
             path='/feed'
-            component={ FeedContainer }
+            component={ AllActivityFeedContainer }
             onEnter={ requireLogIn }/>
           <Route
             path='/signup'
@@ -99,7 +98,7 @@ export default function Root() {
           <Route
             path="/users/:userId/edit"
             component={ UserEditContainer }
-            onEnter={ requireLogIn }/>
+            onEnter={ requireCurrentUser }/>
         </Route>
       </Router>
     </Provider>
