@@ -40,6 +40,15 @@ class User < ActiveRecord::Base
     class_name: 'Run'
   )
 
+  has_many(
+    :friendships,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'Friendship'
+  )
+
+  has_many :friends, through: :friendships, source: :friend
+
   has_attached_file(
     :profile_picture,
     default_url: '/assets/profile_pic/default-prof-pic.png',
@@ -73,6 +82,20 @@ class User < ActiveRecord::Base
     self.save!
     self.session_token
   end
+
+  # test below
+  # def friends
+  #   query = <<-SQL
+  #     SELECT friend_id
+  #     FROM friendships
+  #     WHERE user_id = #{current_user.id}
+  #   SQL
+  #
+  #   friend_ids = ActiveRecord::Base.connection.execute(query)
+  #
+  #   # User.where(id IN friend_ids)
+  #   User.where('id IN (?)', friend_ids)
+  # end
 
   private
   def ensure_session_token
