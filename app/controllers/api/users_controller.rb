@@ -1,8 +1,21 @@
 class Api::UsersController < ApplicationController
+  def index
+    users = User.all
+    if (params[:searchString])
+      searchString = params[:searchString].downcase
+      users = users.where('lower(f_name) LIKE ?', "#{searchString}%")
+      users += users.where('lower(l_name) LIKE ?', "#{searchString}%")
+      users += users.where('lower(email) LIKE ?', "#{searchString}%")
+      users.uniq!
+    end
+
+    @users = users
+    render :index
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
-      # default_profile_pic!(@user) unless @user.image_url
       log_in!(@user)
       render :show
     else
@@ -46,8 +59,4 @@ class Api::UsersController < ApplicationController
         :profile_picture
       )
   end
-
-  # def default_profile_pic!(user)
-  #   user.image_url = '../../assets/images/profile_pic/default_prof_pic.png'
-  # end
 end
