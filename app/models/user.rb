@@ -61,6 +61,12 @@ class User < ActiveRecord::Base
     class_name: 'FriendRequest'
   )
 
+  has_many(
+    :friends,
+    through: :friendships,
+    source: :friend
+  )
+
   has_attached_file(
     :profile_picture,
     default_url: '/assets/profile_pic/default-prof-pic.png',
