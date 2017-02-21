@@ -35,8 +35,6 @@ export const updateUser = (user) => {
     formData.append(`user[${key}]`, user[key]);
   }
 
-
-
   return $.ajax({
     method: 'PATCH',
     url: `api/users/${user.id}`,
