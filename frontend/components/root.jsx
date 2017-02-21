@@ -17,6 +17,9 @@ import UserEditContainer from './users/form/user_edit_container';
 import UserShowContainer from './users/show/user_show_container';
 import FriendRequestIndexContainer from './friends/requests/friend_request_index_container';
 import FriendIndexContainer from './friends/index/friend_index_container';
+import CommunityContainer from './friends/community/community_container';
+
+
 
 export default function Root() {
   const preloadedState = window.currentUser ?
@@ -101,16 +104,51 @@ export default function Root() {
             path="/users/:userId/edit"
             component={ UserEditContainer }
             onEnter={ requireCurrentUser }/>
+
           <Route
-            path="/community/friend-requests"
-            component={ FriendRequestIndexContainer }
-            onEnter={ requireLogIn }/>
-          <Route
-            path="/community/friends"
-            component={ FriendIndexContainer }
-            onEnter={ requireLogIn }/>
+           path="/community"
+           component={ CommunityContainer }
+           onEnter={ requireLogIn }>
+           <IndexRedirect to="/community/friends"/>
+           <Route
+             path="friends"
+             component={ FriendIndexContainer }
+             onEnter={ requireLogIn }/>
+           { /* <Route path="find-friends"
+             component={ FindFriendsContainer }
+             onEnter={ _redirectIfLoggedOut }/>*/}
+           <Route path="friend-requests"
+             component={ FriendRequestIndexContainer }
+             onEnter={ requireLogIn }/>
+         </Route>
         </Route>
       </Router>
     </Provider>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <Route
+//   path="/community/"
+//   component={ CommunityTabsContainer }
+//   onEnter={ requireLogIn }/>
+// <Route
+//   path="/community/friends"
+//   component={ FriendIndexContainer }
+//   onEnter={ requireLogIn }/>
+// <Route
+//   path="/community/friend-requests"
+//   component={ FriendRequestIndexContainer }
+//   onEnter={ requireLogIn }/>
