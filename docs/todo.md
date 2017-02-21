@@ -7,9 +7,9 @@ user edit
 - styling
 
 todos:
+friend request
 friends
 search
-friend request
 friend feed
 inc user pic/name, activity description and map pic
 
@@ -25,6 +25,9 @@ inc user pic/name, activity description and map pic
 - render errors when trying to access run not authorized to see
 - render map details in chart
 - update route JSON views
+- give loading actions corresponding reducers. currently only using loading reducer for routes
+- fix bad naming in friendships. for example friendships index action returns friends
+- add/delete friend button on user show page
 
 git push heroku master
 heroku run bundle exec rake db:migrate
