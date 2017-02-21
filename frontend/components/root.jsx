@@ -15,6 +15,8 @@ import RunShowContainer from './runs/show/run_show_container';
 import NewRunContainer from './runs/form/new_run_container';
 import UserEditContainer from './users/form/user_edit_container';
 import UserShowContainer from './users/show/user_show_container';
+import FriendRequestIndexContainer from './friends/requests/friend_request_index_container';
+import FriendIndexContainer from './friends/requests/friend_index_container';
 
 export default function Root() {
   const preloadedState = window.currentUser ?
@@ -99,6 +101,14 @@ export default function Root() {
             path="/users/:userId/edit"
             component={ UserEditContainer }
             onEnter={ requireCurrentUser }/>
+          <Route
+            path="/community/friend-requests"
+            component={ FriendRequestIndexContainer }
+            onEnter={ requireLogIn }/>
+          <Route
+            path="/community/friends"
+            component={ FriendIndexContainer }
+            onEnter={ requireLogIn }/>
         </Route>
       </Router>
     </Provider>
