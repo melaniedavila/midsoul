@@ -1,8 +1,8 @@
 class Api::FriendRequestsController < ApplicationController
 
-  # TODO: is index action needed?
   def index
-    @friend_requests = FriendRequest.where(requestee_id: current_user.id)
+    # pending requests only
+    @friend_requests = FriendRequest.where(requestee_id: current_user.id).where(status: 0)
     render :index
   end
 
