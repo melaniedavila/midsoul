@@ -6,12 +6,14 @@
     ).html_safe %>
   <% end %>
 
-  window.midSoulAssets =  {  localLogo: "<%= image_path('midsoul-logo.jpg')%>",
-                            defaultProfPic: "<%= asset_path('default-prof-pic.png') %>",
-                            splashPageMP4: "<%= asset_path('splash-page.mp4') %>",
-                            splashPageWEBM: "<%= asset_path('splash-page.webm') %>",
-                            splashPageImage: "<%= asset_path('splash-shoes.jpg')%>"
-                          }
+  window.midSoulAssets =  {
+    localLogo: "<%= image_path('midsoul-logo.jpg')%>",
+    splashPageMP4: "<%= asset_path('splash-page.mp4') %>",
+    splashPageWEBM: "<%= asset_path('splash-page.webm') %>",
+    splashPageImage: "<%= asset_path('splash-shoes.jpg')%>"
+  }
 </script>
 
 <main id='root'></main>
+
+<!-- defaultProfPic: "<%= asset_path('default-prof-pic.png') %>", -->
