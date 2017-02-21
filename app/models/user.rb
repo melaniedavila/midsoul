@@ -47,7 +47,19 @@ class User < ActiveRecord::Base
     class_name: 'Friendship'
   )
 
-  has_many :friends, through: :friendships, source: :friend
+  has_many(
+    :received_friend_requests,
+    primary_key: :id,
+    foreign_key: :requestee_id,
+    class_name: 'FriendRequest'
+  )
+
+  has_many(
+    :sent_friend_requests,
+    primary_key: :id,
+    foreign_key: :requestor_id,
+    class_name: 'FriendRequest'
+  )
 
   has_attached_file(
     :profile_picture,
