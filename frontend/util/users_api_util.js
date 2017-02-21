@@ -1,9 +1,10 @@
 import { hashHistory } from 'react-router';
 
-export const fetchAllUsers = () => {
+export const fetchAllUsers = (data) => {
   return $.ajax({
     method: 'GET',
-    url: 'api/users'
+    url: 'api/users',
+    data
   });
 };
 
