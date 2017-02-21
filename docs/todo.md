@@ -6,10 +6,14 @@ user edit
 - add prof pic
 - styling
 
-todos:
 friend request
+- styling
+
 friends
-search
+- styling
+
+todos:
+search-exclude current user from results
 friend feed
 inc user pic/name, activity description and map pic
 
@@ -28,6 +32,7 @@ inc user pic/name, activity description and map pic
 - give loading actions corresponding reducers. currently only using loading reducer for routes
 - fix bad naming in friendships. for example friendships index action returns friends
 - add/delete friend button on user show page
+- optimize userscontroller index query with .or
 
 git push heroku master
 heroku run bundle exec rake db:migrate
