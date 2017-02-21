@@ -14,6 +14,7 @@ export const loadSingleUserReceivedFriendRequest = () => ({
   type: LOAD_SINGLE_CURRENT_USER_RECEIVED_FRIEND_REQUEST
 });
 
+// pending requests only
 export const receiveCurrentUserReceivedFriendRequests = function (friendRequests) {
   return({
     type: RECEIVE_CURRENT_USER_RECEIVED_FRIEND_REQUESTS,
@@ -27,7 +28,6 @@ export const receiveSingleFriendRequest = function (friendRequest) {
     friendRequest
   });
 };
-
 
 export const receiveNewFriendRequest = (friendRequest) => ({
   type: RECEIVE_NEW_FRIEND_REQUEST,
