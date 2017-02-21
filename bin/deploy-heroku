@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -x
+
+git push heroku master
+heroku run bundle exec rake db:migrate
+heroku run bundle install
+heroku run rake db:seed
