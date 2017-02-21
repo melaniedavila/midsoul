@@ -4,12 +4,11 @@ import { requestCurrentUserReceivedFriendRequests, updateFriendRequest } from '.
 import { selectAllFriendRequests } from '../../../reducers/selectors';
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
 
   return(
     {
       errors: state.errors,
-      currentUser: state.session.currentUser,
       friendRequests: selectAllFriendRequests(state),
       loading: state.loading.indexLoading
     }

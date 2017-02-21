@@ -16,7 +16,7 @@ import NewRunContainer from './runs/form/new_run_container';
 import UserEditContainer from './users/form/user_edit_container';
 import UserShowContainer from './users/show/user_show_container';
 import FriendRequestIndexContainer from './friends/requests/friend_request_index_container';
-import FriendIndexContainer from './friends/requests/friend_index_container';
+import FriendIndexContainer from './friends/index/friend_index_container';
 
 export default function Root() {
   const preloadedState = window.currentUser ?
