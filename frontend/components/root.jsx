@@ -113,9 +113,9 @@ export default function Root() {
              path="friends"
              component={ FriendIndexContainer }
              onEnter={ requireLogIn }/>
-           { /* <Route path="find-friends"
+           <Route path="find-friends"
              component={ FriendSearchContainer }
-             onEnter={ _redirectIfLoggedOut }/>*/}
+             onEnter={ requireLogIn }/>
            <Route path="friend-requests"
              component={ FriendRequestIndexContainer }
              onEnter={ requireLogIn }/>

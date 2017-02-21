@@ -1,3 +1,5 @@
+import React from 'react';
+import Link from 'react-router';
 //Presentational component
 export default class CommunityTabs extends React.Component {
   constructor(props) {

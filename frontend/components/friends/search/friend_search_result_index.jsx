@@ -8,7 +8,7 @@ const FriendSearchResultIndex = ({ foundUsers, createFriendRequest }) => (
     {foundUsers.map((foundUser) => <FriendSearchResultIndexItem
                                         key={foundUser.id}
                                         foundUser={foundUser}
-                                        createFriendRequest{createFriendRequest}
+                                        createFriendRequest={createFriendRequest}
                                         currentUser={currentUser}/>)}
   </div>
 );
