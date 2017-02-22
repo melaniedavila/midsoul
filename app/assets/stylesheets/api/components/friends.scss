@@ -1,0 +1,31 @@
+@import '../base/fonts.scss';
+@import '../base/colors.scss';
+
+.friends-index {
+  padding: 35px 15px 35px 15px;
+
+  .mini-friend-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .friend-index-item {
+      display: flex;
+      flex-direction: column;
+      max-width: 115px;
+      padding: 20px;
+      word-wrap: break-word;
+      // background: $lightest-gray;
+      margin: 15px;
+      // width: 8vw;
+      // height: 8vw;
+
+      p {
+        font-size: 14px;
+        font-weight: bold;
+        // background: $lightest-gray;
+        width: 100%;
+      }
+    }
+  }
+}
