@@ -227,3 +227,17 @@
   width: 70%;
   margin-top: 50px;
 }
+
+.run-show-user-thumb-container {
+  width: 100px;
+  height: 100px;
+}
+
+.run-show-base-details-flex-container {
+  display: flex;
+  align-content: flex-start;
+
+  h4 {
+    padding: 25px;
+  }
+}
