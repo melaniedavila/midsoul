@@ -14,7 +14,6 @@ export default class FriendIndex extends React.Component {
     } else {
       return (
       <section className="friends-index">
-        <h2>MY FRIENDS</h2>
         <ul className='mini-friend-details'>
           {friends.map(friend => <FriendIndexItem
                                     key={friend.id}
