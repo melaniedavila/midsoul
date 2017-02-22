@@ -71,8 +71,12 @@ class User < ActiveRecord::Base
     :profile_picture,
     default_url: '/assets/profile_pic/default-prof-pic.png',
     styles: {
-      big: "600x600>",
-      small: "50x50#",
+      extralarge: "300x300#",
+      large: "250x250#",
+      medium: "200x200#",
+      small: "100x100#",
+      thumb: '75x75#',
+      extrasmall: "50x50#"
     },
   )
 
