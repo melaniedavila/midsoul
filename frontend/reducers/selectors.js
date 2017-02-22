@@ -8,3 +8,6 @@ export const selectAllFriendRequests = ({ friendRequests }) => values(friendRequ
 // json data has friends objects, not friendship objects, despite names of arguments
 // and keys in state
 export const selectAllFriends = ({ friendships }) => values(friendships);
+
+// reducer supplies key of feed
+export const selectAllFeedItems = ({ feeds }) => values(feeds);
