@@ -4,8 +4,8 @@ a = (items) => console.log(receiveMultiUserFeedItems(items));
 fetchMultiUserFeedItems().then(a)
 
 
-b = run => console.log(receiveSingleUserFeedItems(items));
-fetchMultiUserFeedItems(3).then(b);
+b = items => console.log(receiveSingleUserFeedItems(items));
+fetchSingleUserFeedItems(3).then(b);
 
 
 ////////////////////////////////////////////////////////////////////
