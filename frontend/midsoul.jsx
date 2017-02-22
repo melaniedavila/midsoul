@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       store = configureStore();
     }
-    // window.store = store;
+    window.store = store;
     ReactDOM.render(<Root store={store}/>, root);
 });
 
@@ -48,6 +48,7 @@ window.receiveMultiUserFeedItems = receiveMultiUserFeedItems;
 window.receiveSingleUserFeedItems = receiveSingleUserFeedItems;
 window.fetchMultiUserFeedItems = fetchMultiUserFeedItems;
 window.fetchSingleUserFeedItems = fetchSingleUserFeedItems;
+window.selectAllFeedItems = selectAllFeedItems;
 
 
 // window.receiveCurrentUserFriends = receiveCurrentUserFriends;

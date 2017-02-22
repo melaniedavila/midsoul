@@ -1,4 +1,5 @@
 START WITH TESTING FEED ACTIONS!!!!
+then user pic sizing with paperclip
 
 user show-
 - ensure only self and friends can see profile activity feed

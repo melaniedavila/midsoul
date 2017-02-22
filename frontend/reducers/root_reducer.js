@@ -8,6 +8,7 @@ import routesReducer from './routes_reducer';
 import runsReducer from './runs_reducer';
 import sessionReducer from './session_reducer';
 import usersReducer from './users_reducer';
+import feedsReducer from './feeds_reducer';
 
 const rootReducer = combineReducers({
   errors: errorsReducer,
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   users: usersReducer,
   friendRequests: friendRequestsReducer,
   friendships: friendshipsReducer,
-  friendsSearch: friendsSearchReducer
+  friendsSearch: friendsSearchReducer,
+  feeds: feedsReducer
 });
 
 export default rootReducer;

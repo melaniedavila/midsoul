@@ -18,7 +18,7 @@ store.getState();
 
 
 store.getState();
-b = run => store.dispatch(receiveSingleRun(run));
+b = items => store.dispatch(receiveSingleUserFeedItems(items));
 fetchSingleUserFeedItems(1).then(b);
 store.getState();
 
@@ -39,7 +39,7 @@ selectAllFeedItems(populatedState);
 initialState = store.getState();
 selectAllFeedItems(initialState);
 
-store.dispatch(requestSingleUserFeedItems());
+store.dispatch(requestSingleUserFeedItems(1));
 
 populatedState = store.getState();
 selectAllFeedItems(populatedState);
