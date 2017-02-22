@@ -103,23 +103,22 @@ export default function Root() {
             path="/users/:userId/edit"
             component={ UserEditContainer }
             onEnter={ requireCurrentUser }/>
-
           <Route
-           path="/community"
-           component={ CommunityContainer }
-           onEnter={ requireLogIn }>
-           <IndexRedirect to="/community/friends"/>
-           <Route
-             path="friends"
-             component={ FriendIndexContainer }
-             onEnter={ requireLogIn }/>
-           <Route path="find-friends"
-             component={ FriendSearchContainer }
-             onEnter={ requireLogIn }/>
-           <Route path="friend-requests"
-             component={ FriendRequestIndexContainer }
-             onEnter={ requireLogIn }/>
-         </Route>
+            path="/community"
+            component={ CommunityContainer }
+            onEnter={ requireLogIn }>
+            <IndexRedirect to="friends"/>
+            <Route
+              path="friends"
+              component={ FriendIndexContainer }
+              onEnter={ requireLogIn }/>
+            <Route path="find-friends"
+              component={ FriendSearchContainer }
+              onEnter={ requireLogIn }/>
+            <Route path="friend-requests"
+              component={ FriendRequestIndexContainer }
+              onEnter={ requireLogIn }/>
+          </Route>
         </Route>
       </Router>
     </Provider>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'react-router';
+import { Link } from 'react-router';
 //Presentational component
 export default class CommunityTabs extends React.Component {
   constructor(props) {
@@ -60,7 +60,7 @@ export default class CommunityTabs extends React.Component {
         <div className='community-tabs-friend-requests'>
           <Link
             className='friend-requests'
-            to='/friends/friend-requests'
+            to='/community/friend-requests'
             >FRIEND REQUESTS</Link>
         </div>
       </div>

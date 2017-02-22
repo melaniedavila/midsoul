@@ -9,7 +9,6 @@ import runsReducer from './runs_reducer';
 import sessionReducer from './session_reducer';
 import usersReducer from './users_reducer';
 
-
 const rootReducer = combineReducers({
   errors: errorsReducer,
   loading: loadingReducer,
