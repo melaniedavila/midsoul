@@ -120,12 +120,6 @@ friend_request1 = FriendRequest.create!(
   status: 0
 )
 
-FriendRequest.create!(
-  requestor_id: 6,
-  requestee_id: 3,
-  status: 0
-)
-
 friend_request2 = FriendRequest.create!(
   requestor_id: u2.id,
   requestee_id: u3.id,
