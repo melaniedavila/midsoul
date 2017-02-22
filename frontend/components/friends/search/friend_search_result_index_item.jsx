@@ -15,12 +15,16 @@ const FriendSearchResultIndexItem = ({ foundUser, createFriendRequest, currentUs
 
   return (
   <li className="friend-search-result-index-item">
-    <Link to={`/users/${foundUser.id}`}>
-      <img src={foundUser.profile_picture} alt='Profile picture'></img>
-    </Link>
-
-    <p>{foundUser.f_name} {foundUser.l_name}</p>
-
+    <div className='friend-search-img-and-name'>
+      <div className='friend-search-img'>
+        <Link to={`/users/${foundUser.id}`}>
+          <img src={foundUser.profile_picture} alt='Profile picture'></img>
+        </Link>
+      </div>
+      <Link to={`/users/${foundUser.id}`}>
+        <p>{foundUser.f_name} {foundUser.l_name}</p>
+      </Link>
+    </div>
     <button onClick={requestFriendShip(foundUser.id)}>ADD</button>
   </li>
 )};

@@ -4,13 +4,13 @@ import LoadingIcon from '../../loading/loading_icon';
 
 
 const FriendSearchResultIndex = ({ foundUsers, createFriendRequest, currentUser }) => (
-  <div>
+  <ul className='friend-search-results'>
     {foundUsers.map((foundUser) => <FriendSearchResultIndexItem
                                         key={foundUser.id}
                                         foundUser={foundUser}
                                         createFriendRequest={createFriendRequest}
                                         currentUser={currentUser}/>)}
-  </div>
+  </ul>
 );
 
 export default FriendSearchResultIndex;

@@ -8,7 +8,7 @@ export default function FriendSearchFilterForm(props) {
   const { searchString, updateFriendSearchFilter } = props;
 
   return (
-    <div>
+    <div className='friend-search-filter-form'>
       <input
         type="text"
         value={searchString}
