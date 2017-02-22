@@ -15,7 +15,7 @@ export default class Community extends React.Component {
   render() {
     // TODO: confirm location and children
     return (
-      <main>
+      <main className='community-container'>
         <h2>COMMUNITY</h2>
         <CommunityTabs desiredURL={ this.props.location.pathname } />
         { this.props.children }

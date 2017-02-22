@@ -9,13 +9,13 @@ export default class CommunityTabs extends React.Component {
   componentDidMount() {
     switch (this.props.desiredURL) {
       case '/community/friends':
-        $("a.friends").addClass("selected-tab");
+        $("a.friends").addClass("active");
         break;
       case '/community/find-friends':
-        $("a.find-friends").addClass("selected-tab");
+        $("a.find-friends").addClass("active");
         break;
       case '/community/friend-requests':
-        $("a.friend-requests").addClass("selected-tab");
+        $("a.friend-requests").addClass("active");
         break;
     }
   }
@@ -24,19 +24,19 @@ export default class CommunityTabs extends React.Component {
     if (this.props.desiredURL !== nextProps.desiredURL) {
       switch (nextProps.desiredURL) {
         case '/community/friends':
-          $("a.friends").addClass("selected-tab");
-          $("a.find-friends").removeClass("selected-tab");
-          $("a.friend-requests").removeClass("selected-tab");
+          $("a.friends").addClass("active");
+          $("a.find-friends").removeClass("active");
+          $("a.friend-requests").removeClass("active");
           break;
         case '/community/find-friends':
-          $("a.find-friends").addClass("selected-tab");
-          $("a.friends").removeClass("selected-tab");
-          $("a.friend-requests").removeClass("selected-tab");
+          $("a.find-friends").addClass("active");
+          $("a.friends").removeClass("active");
+          $("a.friend-requests").removeClass("active");
           break;
         case '/community/friend-requests':
-          $("a.friend-requests").addClass("selected-tab");
-          $("a.friends").removeClass("selected-tab");
-          $("a.find-friends").removeClass("selected-tab");
+          $("a.friend-requests").addClass("active");
+          $("a.friends").removeClass("active");
+          $("a.find-friends").removeClass("active");
           break;
       }
     }
