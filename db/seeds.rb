@@ -1,15 +1,20 @@
+puts `pwd`
+
 u1 = User.create!(
   f_name: 'Matilda',
   l_name: 'Jeffries',
   email: 'matilda@example.com',
-  password: 'password'
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/matilda_jeffries.jpg")
 )
 
 u2 = User.create!(
   f_name: 'Katinka',
   l_name: 'Ingaborgovinananananana',
   email: 'katinka@example.com',
-  password: 'password'
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/katinka.png")
+
 )
 
 # For Guest Log In:
@@ -17,28 +22,32 @@ u3 = User.create!(
   f_name: 'Scott',
   l_name: 'Jurek',
   email: 'scott-jurek@example.com',
-  password: 'password'
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/scott-jurek.jpeg")
 )
 
 u4 = User.create!(
   f_name: 'Jacobim',
   l_name: 'Mugatu',
   email: 'jacobim@mugatu.com',
-  password: 'password'
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/mugatu.jpg")
 )
 
 u5 = User.create!(
   f_name: 'Derek',
   l_name: 'Zoolander',
   email: 'derek@bluesteel.com',
-  password: 'password'
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/derek-zoolander.jpg")
 )
 
 u6 = User.create!(
   f_name: 'Hansel',
   l_name: 'McDonald',
   email: 'hansel@whatever.com',
-  password: 'password'
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/hansel.jpg")
 )
 
 
