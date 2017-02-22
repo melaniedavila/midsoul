@@ -1,22 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import FeedIndex from './feed_index';
-import { requestMultiUserFeedItems } from '../../actions/feeds_actions';
+import SingleUserFeedIndex from './single_user_feed_index';
+import { requestSingleUserFeedItems } from '../../actions/feeds_actions';
+import { selectAllFeedItems } from '../../reducers/selectors';
 
 
 const mapStateToProps = function (state, ownProps) {
   return {
-    userId: ownProps.params.userId
+    loading: state.loading.indexLoading,
+    feedItems: selectAllFeedItems(state),
   };
 };
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    receiveSingleUserFeedItems: () => dispatch(receiveSingleUserFeedItems())
+    requestSingleUserFeedItems: (id) => dispatch(requestSingleUserFeedItems(id))
   };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(FeedIndex);
+)(SingleUserFeedIndex);

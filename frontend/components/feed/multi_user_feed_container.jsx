@@ -1,10 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import FeedIndex from './feed_index';
+import MultiUserFeedIndex from './multi_user_feed_index';
 import { requestMultiUserFeedItems } from '../../actions/feeds_actions';
 
+const mapStateToProps = function (state, ownProps) {
+  debugger
+  return {
+    loading: state.loading.indexLoading,
+    feedItems: selectAllFeedItems(state),
+  };
+};
 
 const mapDispatchToProps = function (dispatch) {
+  debugger
   return {
     requestMultiUserFeedItems: () => dispatch(requestMultiUserFeedItems())
   };
@@ -13,4 +21,4 @@ const mapDispatchToProps = function (dispatch) {
 export default connect(
   null,
   mapDispatchToProps
-)(FeedIndex);
+)(MultiUserFeedIndex);
