@@ -11,15 +11,12 @@ user show-
 - styling
 
 
-todos:
-friend feed
-inc user pic/name, activity description and map pic
-
 ///////////
 bugs: when i click 'EDIT PROFILE button' on own show page need to refresh before i'm redirected
 
 
 /////////////////////////////////////////////////////////////////////////////
+- fix friend requests styling
 - on friends search page- change 'add' text after clicked
 - require logged in in controllers (all controllers :( )
 - order my runs in reverse chronological order

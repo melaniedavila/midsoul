@@ -23,10 +23,20 @@ const FriendRequestIndexItem = ({ friendRequest, updateFriendRequest }) => {
   return (
   <li className="friend-request-index-item">
     <div className='friend-request-flex-container'>
-      {/*<img src={friendRequest.requestor.profile_picture} alt='Profile picture'></img>*/}
-      <p>{friendRequest.requestor.f_name} {friendRequest.requestor.l_name}</p>
-      <button onClick={acceptFriendRequest}>ACCEPT</button>
-      <button onClick={rejectFriendRequest}>DENY</button>
+      <div className='friend-request-user-img-and-name'>
+        <div className='friend-request-img'>
+          <Link to={`/users/${friendRequest.requestor.id}`}>
+            <img src={friendRequest.requestor.profile_picture} alt='Profile picture'></img>
+          </Link>
+        </div>
+        <Link to={`/users/${friendRequest.requestor.id}`}>
+          <p>{friendRequest.requestor.f_name} {friendRequest.requestor.l_name}</p>
+        </Link>
+      </div>
+      <div className='friend-request-buttons'>
+        <button onClick={acceptFriendRequest}>ACCEPT</button>
+        <button onClick={rejectFriendRequest}>DENY</button>
+      </div>
     </div>
   </li>
 )};

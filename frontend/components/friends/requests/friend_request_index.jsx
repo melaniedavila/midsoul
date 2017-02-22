@@ -13,15 +13,12 @@ export default class FriendRequestIndex extends React.Component {
       return <LoadingIcon />;
     } else {
       return (
-      <section className="friend-requests-index">
-        <h2>FRIEND REQUESTS</h2>
-        <ul className='mini-friend-requests'>
+        <ul className="friend-requests-index">
           {friendRequests.map(friendRequest => <FriendRequestIndexItem
                                                 key={friendRequest.id}
                                                 updateFriendRequest={this.props.updateFriendRequest.bind(this)}
                                                 friendRequest={friendRequest} />)}
-        </ul>
-      </section> );
+        </ul>);
     }
   }
 }
