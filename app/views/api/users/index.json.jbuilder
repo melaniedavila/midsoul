@@ -3,6 +3,6 @@
     json.id user.id
     json.f_name user.f_name
     json.l_name user.l_name
-    json.profile_picture user.profile_picture
+    json.profile_picture user.profile_picture.url(:small)
   end
 end
