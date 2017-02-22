@@ -40,11 +40,11 @@ const Navigation = function (props) {
               </div>
 
               <div className='dropdown'>
-                <button>Community<Link to='#'></Link></button>
+                <button onClick={redirectTo('/community')}>Community</button>
               </div>
 
               <div className='dropdown'>
-                <button>Feed<Link to='#'></Link></button>
+                <button onClick={redirectTo('/feed')}>Feed</button>
               </div>
             </div>
           </nav>
