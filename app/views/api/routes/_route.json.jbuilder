@@ -6,3 +6,7 @@
 json.extract! route, \
   :id, :polyline, :creator_id, :title, :description, \
   :distance, :elevation_gain
+
+  json.set! :creator do
+    json.partial! 'api/users/user', user: route.creator
+  end
