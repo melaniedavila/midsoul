@@ -18,7 +18,7 @@ export default class SingleUserFeedIndex extends React.Component {
       <section className="feed-index">
         <h2>Feed</h2>
         <ul className='feed-items-list'>
-          {feedItems.map(feedItem => <FeedIndexItem key={feedItem.feedable.id} feedItem={feedItem} />)}
+          {feedItems.map((feedItem, idx) => <FeedIndexItem key={idx} feedItem={feedItem} />)}
         </ul>
       </section> );
     }

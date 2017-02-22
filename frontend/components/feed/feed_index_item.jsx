@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const FeedIndexItem = ({ feedItem }) => {
+  debugger
   let feedIndexItemDetails;
   if (feedItem.feedable_type === 'Route') {
 
