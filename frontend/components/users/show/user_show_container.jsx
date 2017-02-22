@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import UserShow from './user_show';
 import { requestSingleUser } from '../../../actions/users_actions';
+import { createFriendRequest } from '../../../actions/friend_requests_actions';
 
 const mapStateToProps = (state, ownProps) => {
   // NOTE: state has no users atm
@@ -13,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestSingleUser: id => dispatch(requestSingleUser(id))
+  requestSingleUser: id => dispatch(requestSingleUser(id)),
+  createFriendRequest: (friendRequest) => dispatch(createFriendRequest(friendRequest))
 });
 
 export default connect(

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import LoadingIcon from '../../loading/loading_icon';
 import ErrorsList from '../../errors/errors_list';
-// import UserRunsList from './user_runs_list';
 import SingleUserFeedIndex from '../../feed/single_user_feed_index';
 import SingleUserFeedIndexContainer from '../../feed/single_user_feed_container';
 
@@ -61,6 +60,18 @@ export default class UserShow extends React.Component {
     hashHistory.push(`users/${this.props.user.id}/edit/`);
   }
 
+  submitFriendRequest(e) {
+    debugger
+    e.preventDefault();
+    const requestor_id = this.props.currentUser.id;
+    const requestee_id = this.props.user.id;
+    this.props.createFriendRequest({
+      requestor_id,
+      requestee_id
+    });
+  }
+
+
   render () {
     const user = this.props.user;
     const errors = this.props.errors;
@@ -78,11 +89,12 @@ export default class UserShow extends React.Component {
             <h2>{user.f_name} {user.l_name}</h2>
             {editButton}
           </div>
+
           <div className='user-show-and-activity-feed-flex-container'>
             <div className='user-show-details-flex-container'>
               <div className='user-show-details-flex-left'>
                 <img src={user.profile_picture} alt='Profile picture'></img>
-                <button>ADD FRIEND</button>
+                <button onClick={this.submitFriendRequest.bind(this)}>ADD FRIEND</button>
               </div>
               <div className='user-show-details-flex-right'>
                 <p>Member since: {memberDate}</p>
@@ -91,9 +103,7 @@ export default class UserShow extends React.Component {
               </div>
             </div>
             <div className='user-activity-details'>
-              Render user activities here if friend or self
               <SingleUserFeedIndexContainer userId={this.props.user.id}/>
-              {/*<UserRunsList runs={user.runs}/>*/}
             </div>
           </div>
         </div>
