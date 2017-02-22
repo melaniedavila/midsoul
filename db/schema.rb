@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170221122343) do
+ActiveRecord::Schema.define(version: 20170222020434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "feed_items", force: :cascade do |t|
+    t.integer  "feedable_id",   null: false
+    t.string   "feedable_type", null: false
+    t.integer  "user_id",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "feed_items", ["feedable_type", "feedable_id"], name: "index_feed_items_on_feedable_type_and_feedable_id", using: :btree
+  add_index "feed_items", ["user_id"], name: "index_feed_items_on_user_id", using: :btree
 
   create_table "friend_requests", force: :cascade do |t|
     t.integer  "requestor_id",             null: false

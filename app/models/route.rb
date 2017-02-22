@@ -31,4 +31,12 @@ class Route < ActiveRecord::Base
     foreign_key: :route_id,
     class_name: 'Run'
   )
+
+  after_create :create_feed_item
+
+  private
+
+    def create_feed_item
+      FeedItem.create!(feedable: self)
+    end
 end

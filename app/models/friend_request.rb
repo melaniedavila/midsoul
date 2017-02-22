@@ -5,7 +5,7 @@
 #  id           :integer          not null, primary key
 #  requestor_id :integer          not null
 #  requestee_id :integer          not null
-#  status       :integer          not null
+#  status       :integer          default("0"), not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
