@@ -1,15 +1,18 @@
 class Api::UsersController < ApplicationController
   def index
-    users = User.all
-    if (params[:searchString])
-      searchString = params[:searchString].downcase
-      users = users.where('lower(f_name) LIKE ?', "#{searchString}%")
-      users += users.where('lower(l_name) LIKE ?', "#{searchString}%")
-      users += users.where('lower(email) LIKE ?', "#{searchString}%")
+    all_users = User.all
+    # binding.pry
+    if params[:searchString]
+      search_string = params[:searchString].downcase
+
+      users = all_users.where('lower(f_name) LIKE ?', "#{search_string}%")
+      users += all_users.where('lower(l_name) LIKE ?', "#{search_string}%")
+      users += all_users.where('lower(email) LIKE ?', "#{search_string}%")
+
       users.uniq!
     end
 
-    @users = users
+    @users = users || []
     render :index
   end
 
