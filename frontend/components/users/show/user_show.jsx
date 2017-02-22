@@ -2,7 +2,10 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import LoadingIcon from '../../loading/loading_icon';
 import ErrorsList from '../../errors/errors_list';
-import UserRunsList from './user_runs_list';
+// import UserRunsList from './user_runs_list';
+import SingleUserFeedIndex from '../../feed/single_user_feed_index';
+import SingleUserFeedIndexContainer from '../../feed/single_user_feed_container';
+
 
 export default class UserShow extends React.Component {
   componentDidMount() {
@@ -90,7 +93,8 @@ export default class UserShow extends React.Component {
             </div>
             <div className='user-activity-details'>
               Render user activities here if friend or self
-              <UserRunsList runs={user.runs}/>
+              <SingleUserFeedIndexContainer userId={this.props.user.id}/>
+              {/*<UserRunsList runs={user.runs}/>*/}
             </div>
           </div>
         </div>

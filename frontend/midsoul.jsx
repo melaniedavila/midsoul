@@ -37,18 +37,18 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       store = configureStore();
     }
-    window.store = store;
+    // window.store = store;
     ReactDOM.render(<Root store={store}/>, root);
 });
 
-
-window.requestMultiUserFeedItems = requestMultiUserFeedItems;
-window.requestSingleUserFeedItems = requestSingleUserFeedItems;
-window.receiveMultiUserFeedItems = receiveMultiUserFeedItems;
-window.receiveSingleUserFeedItems = receiveSingleUserFeedItems;
-window.fetchMultiUserFeedItems = fetchMultiUserFeedItems;
-window.fetchSingleUserFeedItems = fetchSingleUserFeedItems;
-window.selectAllFeedItems = selectAllFeedItems;
+// 
+// window.requestMultiUserFeedItems = requestMultiUserFeedItems;
+// window.requestSingleUserFeedItems = requestSingleUserFeedItems;
+// window.receiveMultiUserFeedItems = receiveMultiUserFeedItems;
+// window.receiveSingleUserFeedItems = receiveSingleUserFeedItems;
+// window.fetchMultiUserFeedItems = fetchMultiUserFeedItems;
+// window.fetchSingleUserFeedItems = fetchSingleUserFeedItems;
+// window.selectAllFeedItems = selectAllFeedItems;
 
 
 // window.receiveCurrentUserFriends = receiveCurrentUserFriends;

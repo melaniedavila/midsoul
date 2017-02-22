@@ -3,7 +3,6 @@ import configureStore from '../store/store';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
 import App from './app';
-import MultiUserFeedContainer from './feed/multi_user_feed_container';
 import HomeContainer from './home/home_container';
 import LogInFormContainer from './login/login_form_container';
 import SignUpFormContainer from './signup/signup_form_container';
@@ -19,6 +18,8 @@ import FriendRequestIndexContainer from './friends/requests/friend_request_index
 import FriendIndexContainer from './friends/index/friend_index_container';
 import FriendSearchContainer from './friends/search/friend_search_container';
 import CommunityContainer from './friends/community/community_container';
+import MultiUserFeedContainer from './feed/multi_user_feed_container';
+
 
 export default function Root() {
   const preloadedState = window.currentUser ?
