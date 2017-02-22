@@ -1,3 +1,5 @@
+START WITH TESTING FEED ACTIONS!!!!
+
 user show-
 - ensure only self and friends can see profile activity feed
 - styling
@@ -12,14 +14,16 @@ friend request
 friends
 - styling
 
+search
+- styling
+
 todos:
-search-exclude current user from results
 friend feed
 inc user pic/name, activity description and map pic
 
 /////////////////////////////////////////////////////////////////////////////
 
-
+- require logged in in controllers (all controllers :( )
 - order my runs in reverse chronological order
 - format date in run-related pages
 - fix default prof pic. img not found
