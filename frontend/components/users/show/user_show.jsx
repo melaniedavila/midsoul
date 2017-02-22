@@ -61,7 +61,6 @@ export default class UserShow extends React.Component {
   }
 
   submitFriendRequest(e) {
-    debugger
     e.preventDefault();
     const requestor_id = this.props.currentUser.id;
     const requestee_id = this.props.user.id;

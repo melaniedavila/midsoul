@@ -1,14 +1,3 @@
-START WITH TESTING FEED ACTIONS!!!!
-then user pic sizing with paperclip
-
-user show-
-- ensure only self and friends can see profile activity feed
-- styling
-
-user edit
-- add prof pic
-- styling
-
 friend request
 - styling
 
@@ -18,12 +7,20 @@ friends
 search
 - styling
 
+user show-
+- styling
+
+
 todos:
 friend feed
 inc user pic/name, activity description and map pic
 
-/////////////////////////////////////////////////////////////////////////////
+///////////
+bugs: when i click 'EDIT PROFILE button' on own show page need to refresh before i'm redirected
 
+
+/////////////////////////////////////////////////////////////////////////////
+- on friends search page- change 'add' text after clicked
 - require logged in in controllers (all controllers :( )
 - order my runs in reverse chronological order
 - format date in run-related pages
@@ -38,6 +35,10 @@ inc user pic/name, activity description and map pic
 - fix bad naming in friendships. for example friendships index action returns friends
 - add/delete friend button on user show page
 - optimize userscontroller index query with .or
+- dont allow users to friend themselves, current friends or people who have sent them requests
+- ensure only self and friends can see profile activity feed
+
+
 
 git push heroku master
 heroku run bundle exec rake db:migrate
