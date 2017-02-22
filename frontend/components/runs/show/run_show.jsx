@@ -44,9 +44,15 @@ export default class RunShow extends React.Component {
         <div className='run-show-details'>
           <h3>{run.title}</h3>
           <ErrorsList errors={ errors } />
-          <h4>{run.runner.f_name} ran {run.route.distance} miles on {run.date}&nbsp;
-          at a pace of {((run.duration / 60) / run.route.distance).toFixed(2)} mins/mi</h4>
-
+            <div className='run-show-base-details-flex-container'>
+                <div className='run-show-user-thumb-container'>
+                  <Link to={`/users/${run.runner.id}`}>
+                    <img src={run.runner.profile_picture} alt='Profile picture'></img>
+                  </Link>
+                </div>
+              <h4>{run.runner.f_name} ran {run.route.distance} miles on {run.date}&nbsp;
+              at a pace of {((run.duration / 60) / run.route.distance).toFixed(2)} mins/mi</h4>
+            </div>
           <p>{run.description}</p>
 
           <div className='run-show-links'>
