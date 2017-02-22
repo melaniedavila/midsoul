@@ -6,10 +6,9 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :update, :show, :index]
     resources :routes, only: [:create, :show, :destroy, :update, :index]
     resources :runs, only: [:create, :show, :destroy, :update, :index]
-    resources :feeds, only: [:show]
+    resources :feed_items, only: [:index]
     resources :friendships, only: [:index], path: 'friends'
     resources :friendships, only: [:create, :destroy]
     resources :friend_requests, only: [:index, :create, :update]
-
   end
 end
