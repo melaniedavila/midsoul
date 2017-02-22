@@ -45,10 +45,12 @@ export const receiveUserErrors = (errors) => ({
 });
 
 
-export const requestAllUsers = (filters) => (dispatch) => {
-	dispatch(loadAllUsers());
-	return APIUtil.fetchAllUsers(filters)
-		.then(users => dispatch(receiveAllUsers(users)));
+export const requestAllUsers = (filters) => {
+  return (dispatch) => {
+  	dispatch(loadAllUsers());
+  	return APIUtil.fetchAllUsers(filters)
+  		.then(users => dispatch(receiveAllUsers(users)));
+  };
 };
 
 export const requestSingleUser = (id) => (dispatch) => {

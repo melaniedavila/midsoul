@@ -3,7 +3,7 @@ import FriendSearchResultIndexItem from './friend_search_result_index_item';
 import LoadingIcon from '../../loading/loading_icon';
 
 
-const FriendSearchResultIndex = ({ foundUsers, createFriendRequest }) => (
+const FriendSearchResultIndex = ({ foundUsers, createFriendRequest, currentUser }) => (
   <div>
     {foundUsers.map((foundUser) => <FriendSearchResultIndexItem
                                         key={foundUser.id}

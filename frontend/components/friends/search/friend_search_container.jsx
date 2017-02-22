@@ -5,11 +5,13 @@ import { selectAllUsers } from '../../../reducers/selectors';
 
 import FriendSearch from './friend_search';
 
-const mapStateToProps = (state) => ({
-  foundUsers: selectAllUsers(state),
-  currentUser: state.session.currentUser,
-  searchString: state.friendsSearch.searchString
-});
+const mapStateToProps = (state) => {
+  return {
+    foundUsers: selectAllUsers(state),
+    currentUser: state.session.currentUser,
+    searchString: state.friendsSearch.searchString
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   updateFriendSearchFilter: (filter, value) => dispatch(updateFriendSearchFilter(filter, value)),

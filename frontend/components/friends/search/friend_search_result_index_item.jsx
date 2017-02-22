@@ -19,7 +19,7 @@ const FriendSearchResultIndexItem = ({ foundUser, createFriendRequest, currentUs
       <img src={foundUser.profile_picture} alt='Profile picture'></img>
     </Link>
 
-    <p>{friend.f_name} {friend.l_name}</p>
+    <p>{foundUser.f_name} {foundUser.l_name}</p>
 
     <button onClick={requestFriendShip(foundUser.id)}>ADD</button>
   </li>
