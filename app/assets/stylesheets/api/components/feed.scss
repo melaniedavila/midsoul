@@ -1,0 +1,66 @@
+@import '../base/fonts.scss';
+@import '../base/colors.scss';
+
+.feed-index {
+  h2 {
+    padding: 15px;
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+  }
+}
+
+.feed-index-item {
+  margin: 0 auto;
+}
+
+.feed-index-item-container {
+  display: flex;
+  align-content: flex-start;
+  // margin: 0 auto;
+
+  margin: 20px;
+  // margin-bottom: 20px;
+  border: 1px solid black;
+  width: 80%;
+  // background-color: $light-gray;
+
+
+  .activity-details-flex-container {
+    display:flex;
+    flex-direction: column;
+    padding-left: 10px;
+    // width: 100%;
+
+    .mini-activity-description-flex-container {
+      display: flex;
+      align-content: flex-start;
+      margin: 10px;
+      background-color: white;
+      // width: 100%;
+
+      h3 {
+        padding-left: 10px;
+        color: $midSoul-blue;
+        align-items: center;
+      }
+      // .img {
+      //   width: 75px;
+      //   height: 75px;
+      // }
+
+      .user-thumb-container {
+        width: 100px;
+        height:100px;
+
+      }
+    }
+
+
+    .activity-comments {
+      padding-top: 10px;
+    }
+  }
+
+
+}

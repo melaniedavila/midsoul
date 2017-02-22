@@ -6,14 +6,16 @@ const FeedIndexItem = ({ feedItem }) => {
   if (feedItem.feedable_type === 'Route') {
 
     feedIndexItemDetails = (
-      <div>
+      <div className='feed-index-item-container'>
         <aside className='feed-index-item-map'>
-          <img src={`https://maps.googleapis.com/maps/api/staticmap?size=300x150&path=color:0x0c5d94%7Cenc:${feedItem.feedable.polyline}&key=${window.googleMapsApiKey}`}
+          <img src={`https://maps.googleapis.com/maps/api/staticmap?size=400x400&path=color:0x0c5d94%7Cenc:${feedItem.feedable.polyline}&key=${window.googleMapsApiKey}`}
                 alt='Map'></img>
         </aside>
         <main className='activity-details-flex-container'>
           <div className='mini-activity-description-flex-container'>
-            <img src={feedItem.feedable.creator.profile_picture} alt='Profile picture'></img>
+            <div className='user-thumb-container'>
+              <img src={feedItem.feedable.creator.profile_picture} alt='Profile picture'></img>
+            </div>
             <h3>{feedItem.feedable.creator.f_name} created the route {feedItem.feedable.title}</h3>
           </div>
           <div className='activity-comments'>
@@ -24,14 +26,16 @@ const FeedIndexItem = ({ feedItem }) => {
     );
   } else {
     feedIndexItemDetails = (
-      <div>
+      <div className='feed-index-item-container'>
         <aside className='feed-index-item-map'>
-          <img src={`https://maps.googleapis.com/maps/api/staticmap?size=300x150&path=color:0x0c5d94%7Cenc:${feedItem.feedable.route.polyline}&key=${window.googleMapsApiKey}`}
+          <img src={`https://maps.googleapis.com/maps/api/staticmap?size=400x400&path=color:0x0c5d94%7Cenc:${feedItem.feedable.route.polyline}&key=${window.googleMapsApiKey}`}
                 alt='Map'></img>
         </aside>
         <main className='activity-details-flex-container'>
           <div className='mini-activity-description-flex-container'>
-            <img src={feedItem.feedable.runner.profile_picture} alt='Profile picture'></img>
+            <div className='user-thumb-container'>
+              <img src={feedItem.feedable.runner.profile_picture} alt='Profile picture'></img>
+            </div>
             <h3>{feedItem.feedable.runner.f_name} ran {feedItem.feedable.route.distance} miles at a pace of {((feedItem.feedable.duration / 60) / feedItem.feedable.route.distance).toFixed(2)} mins/mi</h3>
           </div>
           <div className='activity-comments'>

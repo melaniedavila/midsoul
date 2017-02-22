@@ -1,5 +1,5 @@
 json.extract! user, :id, :f_name, :l_name, :created_at
-json.profile_picture user.profile_picture.url(:thumb) # this sets default profile pic size
+json.profile_picture user.profile_picture.url(:small) # this sets default profile pic size
 
 
 # json.array!(user.runs) do |run|
