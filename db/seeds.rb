@@ -1,5 +1,3 @@
-puts `pwd`
-
 u1 = User.create!(
   f_name: 'Matilda',
   l_name: 'Jeffries',
@@ -50,6 +48,96 @@ u6 = User.create!(
   profile_picture: File.open("./app/assets/images/seed_profile_pictures/hansel.jpg")
 )
 
+u7 = User.create!(
+  f_name: 'Meekus',
+  l_name: 'Smith',
+  email: 'meekus@orangemocha.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/meekus.jpg")
+)
+
+u8 = User.create!(
+  f_name: 'Maury',
+  l_name: 'Ballstein',
+  email: 'maury@example.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/maury.jpg")
+)
+
+
+u9 = User.create!(
+  f_name: 'JP',
+  l_name: 'Prewitt',
+  email: 'hand@model.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/jp.jpg")
+)
+
+u10 = User.create!(
+  f_name: 'Evil',
+  l_name: 'DJ',
+  email: 'relax@dontdoit.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/jp.jpg")
+)
+
+u11 = User.create!(
+  f_name: 'Larry',
+  l_name: 'Zoolander',
+  email: 'coalmine@nj.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/larry.jpg")
+)
+
+
+u12 = User.create!(
+  f_name: 'Scrappy',
+  l_name: 'Zoolander',
+  email: 'mybrothers@merman.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/scrappy.jpg")
+)
+
+u13 = User.create!(
+  f_name: 'Todd',
+  l_name: 'Graham',
+  email: 'foamy@latte.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/todd.jpg")
+)
+
+u14 = User.create!(
+  f_name: 'Brint',
+  l_name: 'Manning',
+  email: 'frappa@cinno.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/brint.jpg")
+)
+
+u15 = User.create!(
+  f_name: 'Rufus',
+  l_name: 'Highsmith',
+  email: 'jitter@bug.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/rufus.jpg")
+)
+
+u16 = User.create!(
+  f_name: 'Tommy',
+  l_name: 'Hilfiger',
+  email: 'tommy@hilfiger.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/tommy.jpg")
+)
+
+u17 = User.create!(
+  f_name: 'Natalie',
+  l_name: 'Portman',
+  email: 'hesalmost@toogoodlooking.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/natalie.jpg")
+)
+
 
 route1 = Route.create!(
   creator_id: u1.id,
@@ -78,12 +166,30 @@ route3 = Route.create!(
   elevation_gain: 3
 )
 
+route4 = Route.create!(
+  creator_id: u4.id,
+  title: "The Derek Zoolander Route for Kids Who Can't Run Good",
+  description: '...and wanna learn to do other stuff good too',
+  polyline: "ml_rFvj|jMl|@e`AdOiElJlbAhe@hmBt|@fdF`jC`_Df~AztBteDlfBbeC~z@~sCj}BhaChsCf`B{\fqAtkAn`B|~Alm@dZeg@yXea@o[dlAceGlzByaBhtAaqBzp@{jArmAegFx`Cu_GjrFyuHfyAgtB`~@e[zyByfDppBgvFlpEsgAtmAs@pu@t|CvDpkHg_@~_D`a@vbAfvAbYetBe_At_@uoJccAehHlhAeyMx]whEy^}gBdfEuhLjlCocB`}CihBfMm^qQymCzsByvC`oCiqBbuCmkAxwAsEbfCnJedC}XlUoy@rGmcCfp@yzDjTwwAjLax@z~@eRxgEp\vdJef@fgEloB~iEdpDtbFtvEvsBfsB~vBvl@zf@|FgIhi@zQ|e@jf@fP|Jw~@wUwK}[uMeaBq`@{vAmg@uiCceCsiEehEaqEslDedCuoAqjBuLqzHb]{rEa]cRfD_MvDs\st@wc@igBeO{d@e_Bw_Awq@qo@mcAst@uoHyv@ge@yJqcAz_@_{@x}@cz@zUueA_d@ccBew@_{AnJifC}PghAwcAqdDoK_w@yf@ojAeKupA}cAwlCcxByaGo}HwfHonJsr@cI_qAuvFef@aGgkBeq@vCofG{l@ewAeHexEjM{rBxP{zAsI_qBc{DkpI|Y{j@rOs|A~R{pA_}@ejBawCwnCo}Au`BfoFq{MpDa`@{kB}vA}wCcqBwdDywAk{Aom@}^kRyz@_Q{_@ro@}If[vNod@xSe\ld@aItnAzn@xmBnt@f{C|wAt{CnxBxrAbcAeRrm@_}AxrEi~AjjAalC`xCctAep@auB}gAkiAym@wsDsiBqmAkpA{g@~FehAdMwsBbKi}AiVa`Bng@ej@_l@kaBkj@ubAhp@cv@lw@obA`F_~AeD_fBspAiq@lW{m@ys@i{@}c@ywBik@q}AoqCkiA_t@s|EqS__Bmz@wrDwdGe{@uvA{s@sb@gv@ohB_eCeiAofBsv@u^isAcu@o\}wAy[cl@wEyfB_f@owHuoAciHmz@myDib@bq@`R`@zZbZj_Af`@_DvBjrAkFbkAwWfqARvx@c]t[e^~a@d@ze@wJfsArEpbEbd@lhCwM`{Ac|@n`E}MjdCz\dhEhq@n{DkFxhAoa@ng@uo@~mA{a@tcCqtB~Kw{EcCeyG{o@gpB_Dif@cUoAvQgk@tBokCjUghCoKwkCqo@aRvDjJeWuQgcA{uByi@ehCyNcsAhLwn@mR}q@cu@udBcjBi~AghBuw@gy@chCcaAybCsmAyEaC",
+  distance: 318,
+  elevation_gain: 30
+)
+
+route5 = Route.create!(
+  creator_id: u5.id,
+  title: "It's a walk off!",
+  description: 'Ultra Secret Walk Off Training Grounds',
+  polyline: "{wntGuaaw@a@v@E@CAmAiBa@o@}@vAcApAMTCN?DMDIFs@lAaIfLECGGX}B@OOwBr@Uz@}@l@c@AK}@cFb@Mq@{D]qAMIOKLu@Ja@fBgFFSp@t@VJHL|A|CNR`@rG`A[@HHXDHT\TL`@m@JPxA~BNHDC|@mB",
+  distance: 1,
+  elevation_gain: 1
+)
+
 run1 = Run.create!(
   title: 'Spring time!',
   runner_id: u1.id,
   route_id: route1.id,
   date: Date.today,
-  description: 'Hibernation is over!',
+  description: "By the way, you were wrong about my outfit. It's the Cheryl Ladd collection and I got it at JC Penney's. On sale!",
   duration: 430
 )
 
@@ -92,7 +198,7 @@ run2 = Run.create!(
   runner_id: u2.id,
   route_id: route2.id,
   date: Date.today,
-  description: 'Freezing today!',
+  description: 'I do not like snoopy reporter with lack of fashion sense, not one little bit.',
   duration: 3000
 )
 
@@ -123,11 +229,31 @@ run5 = Run.create!(
   duration: 2256
 )
 
+
+run6 = Run.create!(
+  title: 'Runway',
+  runner_id: u6.id,
+  route_id: route2.id,
+  date: Date.today,
+  description: 'Are you challenging me to a walk off, Boo-Lander?',
+  duration: 1500
+)
+
+run6 = Run.create!(
+  title: 'Jersey Coal Mines',
+  runner_id: u11.id,
+  route_id: route5.id,
+  date: Date.today,
+  description: "Damnit Derek, I'm a coal miner, not a professional film or television actor.",
+  duration: 700000
+)
+
 friend_request1 = FriendRequest.create!(
   requestor_id: u1.id,
   requestee_id: u2.id,
   status: 0
 )
+
 
 friend_request2 = FriendRequest.create!(
   requestor_id: u2.id,
@@ -154,21 +280,45 @@ friend_request6 = FriendRequest.create!(
 )
 
 friend_request7 = FriendRequest.create!(
-  requestor_id: u1.id,
+  requestor_id: u12.id,
   requestee_id: u3.id,
   status: 0
 )
 
 friend_request8 = FriendRequest.create!(
-  requestor_id: u5.id,
+  requestor_id: u7.id,
   requestee_id: u3.id,
   status: 0
 )
 
 friend_request9 = FriendRequest.create!(
-  requestor_id: u6.id,
+  requestor_id: u8.id,
   requestee_id: u3.id,
   status: 0
+)
+
+friend_request10 = FriendRequest.create!(
+  requestor_id: u11.id,
+  requestee_id: u3.id,
+  status: 1
+)
+
+friend_request11 = FriendRequest.create!(
+  requestor_id: u6.id,
+  requestee_id: u3.id,
+  status: 1
+)
+
+friend_request12 = FriendRequest.create!(
+  requestor_id: u5.id,
+  requestee_id: u3.id,
+  status: 1
+)
+
+friend_request13 = FriendRequest.create!(
+  requestor_id: u1.id,
+  requestee_id: u3.id,
+  status: 1
 )
 
 friendship1 = Friendship.create!(
@@ -199,4 +349,44 @@ friendship5 = Friendship.create!(
 friendship6 = Friendship.create!(
   user_id: u6.id,
   friend_id: u5.id
+)
+
+friendship7 = Friendship.create!(
+  user_id: u3.id,
+  friend_id: u1.id
+)
+
+friendship8 = Friendship.create!(
+  user_id: u1.id,
+  friend_id: u3.id
+)
+
+friendship9 = Friendship.create!(
+  user_id: u3.id,
+  friend_id: u5.id
+)
+
+friendship10 = Friendship.create!(
+  user_id: u5.id,
+  friend_id: u3.id
+)
+
+friendship11 = Friendship.create!(
+  user_id: u6.id,
+  friend_id: u3.id
+)
+
+friendship12 = Friendship.create!(
+  user_id: u3.id,
+  friend_id: u6.id
+)
+
+friendship13 = Friendship.create!(
+  user_id: u3.id,
+  friend_id: u11.id
+)
+
+friendship13 = Friendship.create!(
+  user_id: u11.id,
+  friend_id: u3.id
 )
