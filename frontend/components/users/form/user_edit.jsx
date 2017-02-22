@@ -68,7 +68,9 @@ export default class UserEdit extends React.Component {
       return (
         <main className='edit-profile-main'>
           <h3 className='edit-profile-header'>EDIT PROFILE</h3>
-          {/*TODO: add prof pic*/}
+          <img src={user.profile_picture}
+                alt='Profile picture'></img>
+
           <form onSubmit={this.handleSubmit}>
             <div className='errors-list'>
               {this.errors()}
@@ -91,6 +93,8 @@ export default class UserEdit extends React.Component {
 
             <input type='submit' value='EDIT PROFILE'/>
           </form>
+          <br/>
+          <Link to={`/users/${user.id}`}>Back to Profile</Link>
         </main>);
     }
   }

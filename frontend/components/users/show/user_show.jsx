@@ -67,7 +67,6 @@ export default class UserShow extends React.Component {
     if (!user) {
       return <LoadingIcon />;
     } else {
-
       const memberDate = this.parseMembershipDate(user.created_at);
       let editButton;
       if (this.props.currentUser.id === this.props.user.id) {
