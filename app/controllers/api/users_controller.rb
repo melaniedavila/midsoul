@@ -1,7 +1,6 @@
 class Api::UsersController < ApplicationController
   def index
     all_users = User.all
-    # binding.pry
     if params[:searchString]
       search_string = params[:searchString].downcase
 
@@ -10,6 +9,7 @@ class Api::UsersController < ApplicationController
       users += all_users.where('lower(email) LIKE ?', "#{search_string}%")
 
       users.uniq!
+      users.reject! { |u| u == current_user }
     end
 
     @users = users || []
