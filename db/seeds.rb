@@ -170,7 +170,7 @@ route4 = Route.create!(
   creator_id: u4.id,
   title: "The Derek Zoolander Route for Kids Who Can't Run Good",
   description: '...and wanna learn to do other stuff good too',
-  polyline: "ml_rFvj|jMl|@e`AdOiElJlbAhe@hmBt|@fdF`jC`_Df~AztBteDlfBbeC~z@~sCj}BhaChsCf`B{\fqAtkAn`B|~Alm@dZeg@yXea@o[dlAceGlzByaBhtAaqBzp@{jArmAegFx`Cu_GjrFyuHfyAgtB`~@e[zyByfDppBgvFlpEsgAtmAs@pu@t|CvDpkHg_@~_D`a@vbAfvAbYetBe_At_@uoJccAehHlhAeyMx]whEy^}gBdfEuhLjlCocB`}CihBfMm^qQymCzsByvC`oCiqBbuCmkAxwAsEbfCnJedC}XlUoy@rGmcCfp@yzDjTwwAjLax@z~@eRxgEp\vdJef@fgEloB~iEdpDtbFtvEvsBfsB~vBvl@zf@|FgIhi@zQ|e@jf@fP|Jw~@wUwK}[uMeaBq`@{vAmg@uiCceCsiEehEaqEslDedCuoAqjBuLqzHb]{rEa]cRfD_MvDs\st@wc@igBeO{d@e_Bw_Awq@qo@mcAst@uoHyv@ge@yJqcAz_@_{@x}@cz@zUueA_d@ccBew@_{AnJifC}PghAwcAqdDoK_w@yf@ojAeKupA}cAwlCcxByaGo}HwfHonJsr@cI_qAuvFef@aGgkBeq@vCofG{l@ewAeHexEjM{rBxP{zAsI_qBc{DkpI|Y{j@rOs|A~R{pA_}@ejBawCwnCo}Au`BfoFq{MpDa`@{kB}vA}wCcqBwdDywAk{Aom@}^kRyz@_Q{_@ro@}If[vNod@xSe\ld@aItnAzn@xmBnt@f{C|wAt{CnxBxrAbcAeRrm@_}AxrEi~AjjAalC`xCctAep@auB}gAkiAym@wsDsiBqmAkpA{g@~FehAdMwsBbKi}AiVa`Bng@ej@_l@kaBkj@ubAhp@cv@lw@obA`F_~AeD_fBspAiq@lW{m@ys@i{@}c@ywBik@q}AoqCkiA_t@s|EqS__Bmz@wrDwdGe{@uvA{s@sb@gv@ohB_eCeiAofBsv@u^isAcu@o\}wAy[cl@wEyfB_f@owHuoAciHmz@myDib@bq@`R`@zZbZj_Af`@_DvBjrAkFbkAwWfqARvx@c]t[e^~a@d@ze@wJfsArEpbEbd@lhCwM`{Ac|@n`E}MjdCz\dhEhq@n{DkFxhAoa@ng@uo@~mA{a@tcCqtB~Kw{EcCeyG{o@gpB_Dif@cUoAvQgk@tBokCjUghCoKwkCqo@aRvDjJeWuQgcA{uByi@ehCyNcsAhLwn@mR}q@cu@udBcjBi~AghBuw@gy@chCcaAybCsmAyEaC",
+  polyline: "ownmFrmpgMw`gFq~qCo}k@rzw@_azAgbjAi_z@zkiC",
   distance: 318,
   elevation_gain: 30
 )
@@ -179,7 +179,7 @@ route5 = Route.create!(
   creator_id: u5.id,
   title: "It's a walk off!",
   description: 'Ultra Secret Walk Off Training Grounds',
-  polyline: "{wntGuaaw@a@v@E@CAmAiBa@o@}@vAcApAMTCN?DMDIFs@lAaIfLECGGX}B@OOwBr@Uz@}@l@c@AK}@cFb@Mq@{D]qAMIOKLu@Ja@fBgFFSp@t@VJHL|A|CNR`@rG`A[@HHXDHT\TL`@m@JPxA~BNHDC|@mB",
+  polyline: "o{mtGke`w@?um@rXvn@Gal@",
   distance: 1,
   elevation_gain: 1
 )
