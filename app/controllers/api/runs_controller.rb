@@ -19,7 +19,7 @@ class Api::RunsController < ApplicationController
 
   def show
     @run = Run.includes(:runner).find(params[:id])
-    if current_user.id == @run.runner_id # or we are a friend of runner:
+    if current_user.id == @run.runner_id || current_user.friends.include?(@run.runner)
       render :show
     else
       # ???? below ok? remove base ????
