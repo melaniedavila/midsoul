@@ -3,7 +3,7 @@ import configureStore from '../store/store';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
 import App from './app';
-import AllActivityFeedContainer from './feed/all_activity_feed_container';
+import MultiUserFeedContainer from './feed/multi_user_feed_container';
 import HomeContainer from './home/home_container';
 import LogInFormContainer from './login/login_form_container';
 import SignUpFormContainer from './signup/signup_form_container';
@@ -61,7 +61,7 @@ export default function Root() {
           <IndexRoute component={ HomeContainer } onEnter={redirectIfLoggedIn}/>
           <Route
             path='/feed'
-            component={ AllActivityFeedContainer }
+            component={ MultiUserFeedContainer }
             onEnter={ requireLogIn }/>
           <Route
             path='/signup'

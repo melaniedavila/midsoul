@@ -10,7 +10,7 @@ import Root from './components/root';
 
 // import { receiveAllRuns, receiveSingleRun, receiveNewRun, removeRun, receiveRunErrors, requestAllRuns } from './actions/runs_actions';
 // import { fetchAllRuns, fetchSingleRun, createRun, updateRun, deleteRun } from './util/runs_api_util';
-import { selectAllRoutes, selectAllRuns, selectAllFriendRequests, selectAllFriends } from './reducers/selectors';
+import { selectAllRoutes, selectAllRuns, selectAllFriendRequests, selectAllFriends, selectAllFeedItems } from './reducers/selectors';
 
 // import { receiveAllUsers, receiveSingleUser, receiveNewUser, removeUser, receiveUserErrors, requestAllUsers } from './actions/users_actions';
 // import { fetchAllUsers, fetchSingleUser, createUser, updateUser, deleteUser } from './util/users_api_util';
@@ -19,8 +19,14 @@ import { selectAllRoutes, selectAllRuns, selectAllFriendRequests, selectAllFrien
 // import { receiveCurrentUserReceivedFriendRequests, receiveSingleFriendRequest, receiveNewFriendRequest, receiveFriendRequestErrors, requestCurrentUserReceivedFriendRequests } from './actions/friend_requests_actions';
 // import { fetchCurrentUserReceivedFriendRequests, createFriendRequest, updateFriendRequest } from './util/friend_requests_api_util';
 
-import { receiveCurrentUserFriends, removeFriendship, receiveFriendshipErrors, requestCurrentUserFriends } from './actions/friendships_actions';
-import { fetchCurrentUserFriends, deleteFriendship } from './util/friendships_api_util';
+// import { receiveCurrentUserFriends, removeFriendship, receiveFriendshipErrors, requestCurrentUserFriends } from './actions/friendships_actions';
+// import { fetchCurrentUserFriends, deleteFriendship } from './util/friendships_api_util';
+
+
+import { requestMultiUserFeedItems, requestSingleUserFeedItems, receiveMultiUserFeedItems, receiveSingleUserFeedItems } from './actions/feeds_actions';
+import { fetchMultiUserFeedItems, fetchSingleUserFeedItems } from './util/feeds_api_util';
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -31,18 +37,26 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       store = configureStore();
     }
-    window.store = store;
+    // window.store = store;
     ReactDOM.render(<Root store={store}/>, root);
 });
 
 
-window.receiveCurrentUserFriends = receiveCurrentUserFriends;
-window.removeFriendship = removeFriendship;
-window.receiveFriendshipErrors = receiveFriendshipErrors;
-window.requestCurrentUserFriends = requestCurrentUserFriends;
-window.fetchCurrentUserFriends = fetchCurrentUserFriends;
-window.deleteFriendship = deleteFriendship;
-window.selectAllFriends = selectAllFriends;
+window.requestMultiUserFeedItems = requestMultiUserFeedItems;
+window.requestSingleUserFeedItems = requestSingleUserFeedItems;
+window.receiveMultiUserFeedItems = receiveMultiUserFeedItems;
+window.receiveSingleUserFeedItems = receiveSingleUserFeedItems;
+window.fetchMultiUserFeedItems = fetchMultiUserFeedItems;
+window.fetchSingleUserFeedItems = fetchSingleUserFeedItems;
+
+
+// window.receiveCurrentUserFriends = receiveCurrentUserFriends;
+// window.removeFriendship = removeFriendship;
+// window.receiveFriendshipErrors = receiveFriendshipErrors;
+// window.requestCurrentUserFriends = requestCurrentUserFriends;
+// window.fetchCurrentUserFriends = fetchCurrentUserFriends;
+// window.deleteFriendship = deleteFriendship;
+// window.selectAllFriends = selectAllFriends;
 
 // window.receiveCurrentUserReceivedFriendRequests = receiveCurrentUserReceivedFriendRequests;
 // window.receiveSingleFriendRequest = receiveSingleFriendRequest;
