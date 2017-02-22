@@ -28,6 +28,10 @@
       font-size: 16px;
     }
 
+    a:hover {
+      background: $lightest-gray;
+    }
+
     .active {
       background: $light-gray;
       border-top: 2px solid $tab-blue;

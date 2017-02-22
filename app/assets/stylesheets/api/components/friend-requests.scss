@@ -1,0 +1,64 @@
+@import '../base/fonts.scss';
+@import '../base/colors.scss';
+
+.friend-requests-index {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .friend-request-index-item {
+    display: flex;
+    justify-content: space-between;
+    width: 520px;
+    background: $lightest-gray;
+    border-radius: 2px;
+    margin: 20px;
+    padding: 10px;
+
+    .friend-request-flex-container {
+      display: flex;
+      justify-content: space-between;
+
+      .friend-request-user-img-and-name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+          text-decoration: none;
+          color: black;
+        }
+
+        .friend-request-img {
+          width: 100px;
+          height:100px;
+        }
+
+        p {
+          margin-left: 15px;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+
+      .friend-request-buttons {
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+          background: $light-gray;
+          color: $darker-gray;
+          height: 50%;
+          margin: 20px;
+          border-radius: 2px;
+        }
+
+        button:hover {
+          background: $medium-gray;
+        }
+
+      }
+    }
+  }
+}
