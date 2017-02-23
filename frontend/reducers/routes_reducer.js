@@ -7,8 +7,8 @@ export default function routesReducer(state = {}, action) {
   // debugger
   switch (action.type) {
     case RECEIVE_ALL_ROUTES:
-      console.log('state in reducer', state);
-      console.log('action', action);
+      // console.log('state in reducer', state);
+      // console.log('action', action);
       // return merge({}, state, { routes: action.routes });
       return merge({}, action.routes);
     case RECEIVE_SINGLE_ROUTE:
