@@ -29,6 +29,13 @@ class Run < ActiveRecord::Base
     foreign_key: :route_id,
     class_name: 'Route')
 
+  has_many(
+    :comments,
+    primary_key: :id,
+    foreign_key: :commentable_id,
+    class_name: 'Comment'
+  )
+
   after_create :create_feed_item
 
   private

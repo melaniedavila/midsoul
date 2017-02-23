@@ -67,6 +67,12 @@ class User < ActiveRecord::Base
     source: :friend
   )
 
+  has_many(
+    :comments,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: 'Comment')
+
   has_attached_file(
     :profile_picture,
     default_url: '/assets/profile_pic/default-prof-pic.png',
