@@ -395,13 +395,12 @@ comment1 = Comment.create!(
   author_id: u5.id,
   commentable_id: route4.id,
   commentable_type: 'Route',
-  body: 'What is this? A route for ants? How can we be expected to teach ' \
-  'children to learn how to run if they can\'t even fit inside the route.'
+  body: 'What is this? A route for ants?'
 )
 
 comment2 = Comment.create!(
   author_id: u4.id,
-  commentable_id: rout4.id,
+  commentable_id: route4.id,
   commentable_type: 'Route',
   body: 'What?'
 )
