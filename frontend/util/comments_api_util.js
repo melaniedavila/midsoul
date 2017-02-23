@@ -14,19 +14,27 @@ export const createRouteComment = (routeId, routeComment) => {
   });
 };
 
-export const deleteRunComment = (runId, commentId) => {
+export const deleteComment = (commentId) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/runs/${runId}/comments/${commentId}`
+    url: `/api/comments/${commentId}`
   });
 };
 
-export const deleteRouteComment = (routeId, commentId) => {
-  return $.ajax({
-    method: 'DELETE',
-    url: `/api/routes/${routeId}/comments/${commentId}`
-  });
-};
+
+// export const deleteRunComment = (runId, commentId) => {
+//   return $.ajax({
+//     method: 'DELETE',
+//     url: `/api/runs/${runId}/comments/${commentId}`
+//   });
+// };
+//
+// export const deleteRouteComment = (routeId, commentId) => {
+//   return $.ajax({
+//     method: 'DELETE',
+//     url: `/api/routes/${routeId}/comments/${commentId}`
+//   });
+// };
 
 
 // export const createComment = (type, id, comment) => {
