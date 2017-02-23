@@ -10,12 +10,21 @@ export const RECEIVE_NEW_RUN_COMMENT    = 'RECEIVE_NEW_RUN_COMMENT';
 export const RECEIVE_NEW_ROUTE_COMMENT    = 'RECEIVE_NEW_ROUTE_COMMENT';
 export const REMOVE_ROUTE_COMMENT = 'REMOVE_ROUTE_COMMENT';
 export const REMOVE_RUN_COMMENT = 'REMOVE_RUN_COMMENT';
+export const RECEIVE_NEW_COMMENT = 'RECEIVE_NEW_COMMENT';
 import * as APIUtil from '../util/comments_api_util';
 
-export const receiveNewRunComment = (runComment) => ({
-  type: RECEIVE_NEW_RUN_COMMENT,
-  runComment
+
+export const receiveNewComment = (comment) => ({
+  type: RECEIVE_NEW_COMMENT,
+  comment
 });
+
+export const receiveNewRunComment = (runComment) => {
+  return ({
+    type: RECEIVE_NEW_RUN_COMMENT,
+    runComment
+  });
+};
 
 export const receiveNewRouteComment = (routeComment) => ({
   type: RECEIVE_NEW_ROUTE_COMMENT,
@@ -39,14 +48,14 @@ export const receiveCommentErrors = (errors) => ({
 
 export const createRunComment = (runId, runComment) => (dispatch) => {
 	APIUtil.createRunComment(runId, runComment).then(runComment => {
-		dispatch(receiveNewRunComment(runComment));
+		dispatch(receiveNewComment(runComment));
 		return runComment;
   }).fail(error => dispatch(receiveCommentErrors(error.responseJSON)));
 };
 
 export const createRouteComment = (routeId, routeComment) => (dispatch) => {
 	APIUtil.createRouteComment(routeId, routeComment).then(routeComment => {
-		dispatch(receiveNewRouteComment(routeComment));
+		dispatch(receiveNewComment(routeComment));
 		return routeComment;
   }).fail(error => dispatch(receiveCommentErrors(error.responseJSON)))
 };

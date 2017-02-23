@@ -38,10 +38,17 @@ export const requestMultiUserFeedItems = () => (dispatch) => {
 		.then(feedItems => dispatch(receiveMultiUserFeedItems(feedItems)));
 };
 
+
 export const requestSingleUserFeedItems = (id) => (dispatch) => {
 	dispatch(loadSingleUserFeedItems());
-	return APIUtil.fetchSingleUserFeedItems(id).then(feedItems => {
-		dispatch(receiveSingleUserFeedItems(feedItems));
-		return feedItems;
-	}).fail(error => dispatch(receiveMultiUserFeedItems(error.responseJSON)));
+	return APIUtil.fetchSingleUserFeedItems(id)
+		.then(feedItems => dispatch(receiveSingleUserFeedItems(feedItems)));
 };
+
+// export const requestSingleUserFeedItems = (id) => (dispatch) => {
+// 	dispatch(loadSingleUserFeedItems());
+// 	return APIUtil.fetchSingleUserFeedItems(id).then(feedItems => {
+// 		dispatch(receiveSingleUserFeedItems(feedItems));
+// 		return feedItems;
+// 	}).fail(error => dispatch(receiveMultiUserFeedItems(error.responseJSON)));
+// };
