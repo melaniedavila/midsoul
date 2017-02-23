@@ -1,6 +1,7 @@
 
 ///////////
-bugs: when i click 'EDIT PROFILE button' on own show page need to refresh before i'm redirected
+bugs:
+when i click 'EDIT PROFILE button' on own show page need to refresh before i'm redirected
 when i accept friend request, tab doesn't auto update
 when i click user on user in find friends, need to refresh to see profile
 

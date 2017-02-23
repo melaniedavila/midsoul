@@ -25,9 +25,9 @@ import Root from './components/root';
 
 // import { requestMultiUserFeedItems, requestSingleUserFeedItems, receiveMultiUserFeedItems, receiveSingleUserFeedItems } from './actions/feeds_actions';
 // import { fetchMultiUserFeedItems, fetchSingleUserFeedItems } from './util/feeds_api_util';
-
-import { receiveNewRunComment, receiveNewRouteComment, removeRunComment, removeRouteComment } from './actions/comments_actions';
-import { createRunComment, createRouteComment, deleteComment } from './util/comments_api_util';
+//
+// import { receiveNewRunComment, receiveNewRouteComment, removeRunComment, removeRouteComment } from './actions/comments_actions';
+// import { createRunComment, createRouteComment, deleteComment } from './util/comments_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -39,18 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       store = configureStore();
     }
-    window.store = store;
+    // window.store = store;
     ReactDOM.render(<Root store={store}/>, root);
 });
 
-
-window.receiveNewRunComment = receiveNewRunComment;
-window.receiveNewRouteComment = receiveNewRouteComment;
-window.removeRunComment = removeRunComment;
-window.removeRouteComment = removeRouteComment;
-window.createRunComment = createRunComment;
-window.createRouteComment = createRouteComment;
-window.deleteComment = deleteComment;
+//
+// window.receiveNewRunComment = receiveNewRunComment;
+// window.receiveNewRouteComment = receiveNewRouteComment;
+// window.removeRunComment = removeRunComment;
+// window.removeRouteComment = removeRouteComment;
+// window.createRunComment = createRunComment;
+// window.createRouteComment = createRouteComment;
+// window.deleteComment = deleteComment;
 
 
 //
