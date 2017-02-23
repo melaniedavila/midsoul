@@ -10,3 +10,7 @@ json.extract! route, \
 json.set! :creator do
   json.partial! 'api/users/user', user: route.creator
 end
+
+json.comments do
+  json.array! route.comments, partial: 'api/comments/comment', as: :comment
+end
