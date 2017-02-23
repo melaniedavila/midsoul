@@ -18,6 +18,8 @@ export default function routesReducer(state = {}, action) {
       let newState = merge({}, state);
       delete newState[action.route.id];
       return newState;
+    // case RECEIVE_NEW_ROUTE_COMMENT:
+    // case REMOVE_ROUTE_COMMENT:
     default:
       return state;
   }

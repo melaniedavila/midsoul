@@ -26,12 +26,12 @@ const FeedIndexItem = ({ feedItem }) => {
           </div>
           <div className='activity-comments'>
             Enter Comments Here
+            {/*}<p>{feedItem.feedable.comments}</p>*/}
           </div>
         </main>
       </div>
     );
   } else {
-    debugger
     feedIndexItemDetails = (
       <div className='feed-index-item-container'>
         <aside className='feed-index-item-map'>
@@ -51,13 +51,13 @@ const FeedIndexItem = ({ feedItem }) => {
           </div>
           <div className='activity-comments'>
             Enter Comments Here
+            {/*}<p>{feedItem.feedable.comments}</p>*/}
           </div>
         </main>
       </div>
     );
   }
 
-  // debugger
   return (
   <li className="feed-index-item">
     {feedIndexItemDetails}

@@ -14,6 +14,8 @@ export default function runsReducer(state = {}, action) {
       let newState = merge({}, state);
       delete newState[action.run.id];
       return newState;
+    // case RECEIVE_NEW_RUN_COMMENT:
+    // case REMOVE_RUN_COMMENT:
     default:
       return state;
   }
