@@ -9,7 +9,6 @@ import { selectAllRoutes, selectAllRuns, selectAllFeedItems } from '../../../red
 const mapStateToProps = (state, ownProps) => {
   // if we are at users show page,
   // state has feed items but no routes or runs
-  // debugger
   return {
     errors: state.errors,
     currentUser: state.session.currentUser,

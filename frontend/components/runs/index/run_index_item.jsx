@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const RunIndexItem = ({ run }) => {
-  // debugger
   return (
   <li className="run-index-item">
     <span className='run-date'>{run.date}</span>

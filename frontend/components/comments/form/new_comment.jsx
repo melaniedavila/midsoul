@@ -35,7 +35,6 @@ export default class NewComment extends React.Component {
     } else {
       this.props.createRunComment(id, comment);
     }
-
   }
 
   render() {

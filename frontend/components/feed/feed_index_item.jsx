@@ -11,7 +11,6 @@ const FeedIndexItem = ({ feedItem }) => {
   const dateTimeString = `${activityDate} ${activityTime}`
 
 
-  debugger
   if (feedItem.feedable_type === 'Route') {
 
     feedIndexItemDetails = (
@@ -46,7 +45,6 @@ const FeedIndexItem = ({ feedItem }) => {
       </div>
     );
   } else {
-    debugger
     feedIndexItemDetails = (
       <div className='feed-index-item-container'>
         <aside className='feed-index-item-map'>

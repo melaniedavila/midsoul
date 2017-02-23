@@ -6,7 +6,6 @@ import { selectAllFeedItems } from '../../reducers/selectors';
 
 
 const mapStateToProps = function (state, ownProps) {
-  debugger
   return {
     loading: state.loading.indexLoading,
     feedItems: selectAllFeedItems(state),

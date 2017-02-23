@@ -9,7 +9,6 @@ export default class SingleUserFeedIndex extends React.Component {
   }
 
   render() {
-    // debugger
     const { feedItems, loading } = this.props;
     if (loading) {
       return <LoadingIcon />;

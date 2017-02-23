@@ -5,7 +5,6 @@ import LoadingIcon from '../../loading/loading_icon';
 export default class CommentIndex extends React.Component {
   render() {
     const { comments } = this.props;
-    // debugger
     return (
     <section className="comments-index">
       <h2 className='comments-header'>Comments</h2>

@@ -1,4 +1,3 @@
-# debugger
 @feed_items.each do |feed_item|
   json.set! feed_item.id do
     type = feed_item.feedable_type.downcase
@@ -11,7 +10,7 @@
         type.to_sym => feed_item.feedable
       )
     end
-    # 
+    #
     # if type == 'route'
     #   json.set! :user do
     #     json.partial! 'api/users/user', user: feed_item.user
