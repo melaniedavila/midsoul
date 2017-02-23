@@ -34,9 +34,7 @@ class Route < ActiveRecord::Base
 
   has_many(
     :comments,
-    primary_key: :id,
-    foreign_key: :commentable_id,
-    class_name: 'Comment'
+    as: :commentable
   )
 
   after_create :create_feed_item
