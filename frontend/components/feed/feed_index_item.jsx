@@ -5,7 +5,13 @@ import NewCommentContainer from '../comments/form/new_comment_container';
 
 const FeedIndexItem = ({ feedItem }) => {
   let feedIndexItemDetails;
+  const activityDateTime = new Date(feedItem.feedable.created_at)
+  const activityDate = activityDateTime.toDateString();
+  const activityTime = activityDateTime.toLocaleTimeString();
+  const dateTimeString = `${activityDate} ${activityTime}`
 
+
+  debugger
   if (feedItem.feedable_type === 'Route') {
 
     feedIndexItemDetails = (
@@ -16,21 +22,26 @@ const FeedIndexItem = ({ feedItem }) => {
                   alt='Map'></img>
           </Link>
         </aside>
-        <main className='activity-details-flex-container'>
+        <div className='activity-details-flex-container'>
           <div className='mini-activity-description-flex-container'>
             <div className='user-thumb-container'>
               <Link to={`/users/${feedItem.feedable.creator.id}`}>
                 <img src={feedItem.feedable.creator.profile_picture} alt='Profile picture'></img>
               </Link>
             </div>
-            <h3>{feedItem.feedable.creator.f_name} created the route {feedItem.feedable.title}</h3>
+            <div className='activity-date-and-description-container'>
+              <h4 className='activity-date'>{dateTimeString}</h4>
+              <h3>{feedItem.feedable.creator.f_name} created the route {feedItem.feedable.title}</h3>
+            </div>
           </div>
+
           <div className='activity-comments'>
             <CommentIndex comments={feedItem.feedable.comments}/>
           </div>
-        </main>
-        <div className='new-comment-container'>
-          <NewCommentContainer activityType={feedItem.feedable_type} activityId={feedItem.feedable.id}/>
+
+          <div className='new-comment-container'>
+            <NewCommentContainer activityType={feedItem.feedable_type} activityId={feedItem.feedable.id}/>
+          </div>
         </div>
       </div>
     );
@@ -44,14 +55,17 @@ const FeedIndexItem = ({ feedItem }) => {
                     alt='Map'></img>
             </Link>
         </aside>
-        <main className='activity-details-flex-container'>
+        <div className='activity-details-flex-container'>
           <div className='mini-activity-description-flex-container'>
             <div className='user-thumb-container'>
               <Link to={`/users/${feedItem.feedable.runner.id}`}>
                 <img src={feedItem.feedable.runner.profile_picture} alt='Profile picture'></img>
               </Link>
             </div>
-            <h3>{feedItem.feedable.runner.f_name} ran {feedItem.feedable.route.distance} miles at a pace of {((feedItem.feedable.duration / 60) / feedItem.feedable.route.distance).toFixed(2)} mins/mi</h3>
+            <div className='activity-date-and-description-container'>
+              <h4 className='activity-date'>{dateTimeString}</h4>
+              <h3>{feedItem.feedable.runner.f_name} ran {feedItem.feedable.route.distance} miles at a pace of {((feedItem.feedable.duration / 60) / feedItem.feedable.route.distance).toFixed(2)} mins/mi on {activityDate} at {activityTime}</h3>
+            </div>
           </div>
 
           <div className='activity-comments'>
@@ -61,7 +75,7 @@ const FeedIndexItem = ({ feedItem }) => {
           <div className='new-comment-container'>
             <NewCommentContainer activityType={feedItem.feedable_type} activityId={feedItem.feedable.id}/>
           </div>
-        </main>
+        </div>
       </div>
     );
   }

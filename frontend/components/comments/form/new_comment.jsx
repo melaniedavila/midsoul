@@ -27,11 +27,15 @@ export default class NewComment extends React.Component {
     // commentable_type
     e.preventDefault();
     const id = this.props.activityId;
+    const comment = this.state;
+    this.setState({body: ''});
+
     if (this.props.activityType === 'Route') {
-      this.props.createRouteComment(id, this.state);
+      this.props.createRouteComment(id, comment);
     } else {
-      this.props.createRunComment(id, this.state);
+      this.props.createRunComment(id, comment);
     }
+
   }
 
   render() {
@@ -42,12 +46,13 @@ export default class NewComment extends React.Component {
             {this.errors()}
           </div>
 
-          <input
-            type="text"
-            value={this.state.body}
-            onChange={this.update('body')} />
+          <div className='new-comment-textarea-and-submit'>
+            <textarea
+              value={this.state.body}
+              onChange={this.update('body')} />
 
-          <input type="submit" value='ADD COMMENT' />
+            <input type="submit" value='ADD COMMENT' />
+          </div>
         </form>
       </div>
     );
