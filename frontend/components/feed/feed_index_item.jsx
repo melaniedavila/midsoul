@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 import CommentIndex from '../comments/index/comment_index';
+import NewCommentContainer from '../comments/form/new_comment_container';
 
 const FeedIndexItem = ({ feedItem }) => {
   let feedIndexItemDetails;
-  debugger
 
   if (feedItem.feedable_type === 'Route') {
 
@@ -29,9 +29,13 @@ const FeedIndexItem = ({ feedItem }) => {
             <CommentIndex comments={feedItem.feedable.comments}/>
           </div>
         </main>
+        <div className='new-comment-container'>
+          <NewCommentContainer activityType={feedItem.feedable_type} activityId={feedItem.feedable.id}/>
+        </div>
       </div>
     );
   } else {
+    debugger
     feedIndexItemDetails = (
       <div className='feed-index-item-container'>
         <aside className='feed-index-item-map'>
@@ -49,8 +53,13 @@ const FeedIndexItem = ({ feedItem }) => {
             </div>
             <h3>{feedItem.feedable.runner.f_name} ran {feedItem.feedable.route.distance} miles at a pace of {((feedItem.feedable.duration / 60) / feedItem.feedable.route.distance).toFixed(2)} mins/mi</h3>
           </div>
+
           <div className='activity-comments'>
             <CommentIndex comments={feedItem.feedable.comments}/>
+          </div>
+
+          <div className='new-comment-container'>
+            <NewCommentContainer activityType={feedItem.feedable_type} activityId={feedItem.feedable.id}/>
           </div>
         </main>
       </div>
