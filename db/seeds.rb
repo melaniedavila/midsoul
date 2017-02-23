@@ -386,7 +386,59 @@ friendship13 = Friendship.create!(
   friend_id: u11.id
 )
 
-friendship13 = Friendship.create!(
+friendship14 = Friendship.create!(
   user_id: u11.id,
   friend_id: u3.id
+)
+
+comment1 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: route4.id,
+  commentable_type: 'Route',
+  body: 'What is this? A route for ants? How can we be expected to teach ' \
+  'children to learn how to run if they can\'t even fit inside the route.'
+)
+
+comment2 = Comment.create!(
+  author_id: u4.id,
+  commentable_id: rout4.id,
+  commentable_type: 'Route',
+  body: 'What?'
+)
+
+comment3 = Comment.create!(
+author_id: u5.id,
+commentable_id: route4.id,
+commentable_type: 'Route',
+body: 'How can we be expected to teach children to learn how to run if ' \
+  "they can't even fit inside the route?"
+)
+
+comment4 = Comment.create!(
+  author_id: u4.id,
+  commentable_id: route4.id,
+  commentable_type: 'Route',
+  body: 'Derek, this is just a small-'
+)
+
+comment5 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: route4.id,
+  commentable_type: 'Route',
+  body: 'I don\'t wanna hear your excuses! The route has to be at least...' \
+  'three times bigger than this!'
+)
+
+comment6 = Comment.create!(
+  author_id: u4.id,
+  commentable_id: route4.id,
+  commentable_type: 'Route',
+  body: 'He\'s absolutely right.'
+)
+
+comment7 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: route4.id,
+  commentable_type: 'Route',
+  body: 'Thank you.'
 )
