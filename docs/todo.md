@@ -1,21 +1,11 @@
-friend request
-- styling
-
-friends
-- styling
-
-search
-- styling
-
-user show-
-- styling
-
 
 ///////////
 bugs: when i click 'EDIT PROFILE button' on own show page need to refresh before i'm redirected
-
+when i accept friend request, tab doesn't auto update
+when i click user on user in find friends, need to refresh to see profile
 
 /////////////////////////////////////////////////////////////////////////////
+- add activity date to feed items
 - fix friend requests styling
 - on friends search page- change 'add' text after clicked
 - require logged in in controllers (all controllers :( )
