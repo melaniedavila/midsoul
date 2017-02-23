@@ -7,5 +7,5 @@ json.set! :route do
 end
 
 json.comments do
-  json.array! route.comments, partial: 'api/comments/comment', as: :comment
+  json.array! run.comments, partial: 'api/comments/comment', as: :comment
 end

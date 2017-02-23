@@ -1,4 +1,6 @@
-json.extract! @route, :id, :creator_id, :title, :description, :distance, :elevation_gain, :polyline
+# json.extract! @route, :id, :creator_id, :title, :description, :distance, :elevation_gain, :polyline
+# above works and was original
+json.partial! 'api/routes/route', route: @route
 
 
 
