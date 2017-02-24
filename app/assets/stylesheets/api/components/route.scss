@@ -83,7 +83,8 @@
   img {
     height: 125px;
     width: 250px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    border: 1px solid $medium-gray;
   }
 }
 
@@ -191,13 +192,17 @@
 }
 
 .route-show-flex-container {
+  display: flex;
   flex-direction: column;
+  width:100%;
 }
 
 .interactive-route-show-map {
   height: 300px;
   width: 600px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 
   .map {
     position: absolute;
@@ -230,15 +235,36 @@
 
 .route-index-item {
   padding: 20px;
+  max-width: 250px;
+
   .route-title {
     // align-items: center;
     // text-align: center;
     font-size: 14px;
     font-weight: 600;
+    word-wrap: break-word;
   }
 
   .route-distance {
     font-size: 12px;
     font-weight: 400;
+  }
+
+  .route-title-and-distance {
+    display: flex;
+    flex-direction: column;
+
+    .route-title {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.route-show-comments {
+  margin-bottom: 20px;
+
+  .comments-index {
+    width: 97%;
+    margin: 0px;
   }
 }

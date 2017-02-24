@@ -223,9 +223,10 @@
   display: flex;
   align-items: center;
   align-content: center;
-  margin: 0 auto;
-  width: 70%;
-  margin-top: 50px;
+  // margin: 10px;
+  // margin: 0 auto;
+  width: 60%;
+  margin-top: 15px;
 }
 
 .run-show-user-thumb-container {
@@ -239,5 +240,19 @@
 
   h4 {
     padding: 25px;
+  }
+}
+
+.run-show-comments {
+  padding-top: 30px;
+  // margin: 13px;
+}
+
+.run-show-comments {
+  margin-bottom: 20px;
+
+  .comments-index {
+    width: 59%;
+    margin: 0px;
   }
 }
