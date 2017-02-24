@@ -13,7 +13,6 @@ export default class Community extends React.Component {
   }
 
   render() {
-    // TODO: confirm location and children
     return (
       <main className='community-container'>
         <h2>COMMUNITY</h2>

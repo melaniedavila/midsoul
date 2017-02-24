@@ -15,8 +15,6 @@ export const fetchSingleRoute = (id) => {
 };
 
 export const createRoute = (route) => {
-  // TODO: uncomment below when comments impemented
-  // route.comments = Object.keys(route.comments).map(idx => route.comments[idx]);
   return $.ajax({
     method: 'POST',
     url: 'api/routes/',

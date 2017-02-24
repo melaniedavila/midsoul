@@ -5,11 +5,10 @@ when i click user on user in find friends, need to refresh to see profile
 
 /////////////////////////////////////////////////////////////////////////////
 BACKEND
-- require logged in in controllers (all controllers :( )
 - optimize userscontroller index query with .or
 FRIEND REQUESTS
 - fix friend requests styling
-- dont allow users to friend themselves, current friends or people who have sent them requests
+- don't allow users to friend themselves, current friends or people who have sent them requests
 FRIEND SEARCH
 - on friends search page- change 'add' text after clicked
 - fix bad naming in friendships. for example friendships index action returns friends

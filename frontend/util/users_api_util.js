@@ -16,8 +16,6 @@ export const fetchSingleUser = (id) => {
 };
 
 export const createUser = (user) => {
-  // TODO: uncomment below when comments impemented
-  // user.comments = Object.keys(user.comments).map(idx => user.comments[idx]);
   return $.ajax({
     method: 'POST',
     url: 'api/users/',

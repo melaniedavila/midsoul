@@ -4,9 +4,6 @@ import { selectAllRuns } from '../../../reducers/selectors';
 import { requestAllRuns } from '../../../actions/runs_actions';
 
 function mapStateToProps(state) {
-  // TODO: do we need currentUser??
-  currentUser: state.session.currentUser
-
   return {
     runs: selectAllRuns(state),
     loading: state.loading.indexLoading
