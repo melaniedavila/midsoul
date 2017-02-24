@@ -1,4 +1,7 @@
 class Api::FriendRequestsController < ApplicationController
+  before_action :require_log_in!
+  
+
 
   def index
     # pending requests only

@@ -1,4 +1,7 @@
 class Api::FeedItemsController < ApplicationController
+  before_action :require_log_in!
+  
+
   def index
     user_ids = single_user_id || many_user_ids
 

@@ -1,4 +1,6 @@
 class Api::CommentsController < ApplicationController
+  before_action :require_log_in!
+  
   def index
     @comments = Comment.
       order(created_at: 'DESC').

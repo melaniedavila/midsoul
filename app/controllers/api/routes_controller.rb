@@ -1,4 +1,7 @@
 class Api::RoutesController < ApplicationController
+  before_action :require_log_in!
+  
+
   MILES_PER_METER = 0.000621371
 
   def create

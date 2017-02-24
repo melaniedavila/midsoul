@@ -1,4 +1,7 @@
 class Api::UsersController < ApplicationController
+  before_action :require_log_in!
+  
+
   def index
     all_users = User.all
     if params[:searchString]

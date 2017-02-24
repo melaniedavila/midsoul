@@ -1,4 +1,7 @@
 class Api::RunsController < ApplicationController
+  before_action :require_log_in!
+  
+
   def create
     @run = Run.new(run_params)
     @run.runner_id = current_user.id

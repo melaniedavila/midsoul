@@ -1,4 +1,7 @@
 class Api::FeedsController < ApplicationController
+  before_action :require_log_in!
+  
+
   def show
     @feed = feed_for(user_id: params[:user_id])
     render :show
