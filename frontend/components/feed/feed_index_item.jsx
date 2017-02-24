@@ -60,7 +60,7 @@ const FeedIndexItem = ({ feedItem }) => {
             </div>
             <div className='activity-date-and-description-container'>
               <h4 className='activity-date'>{dateTimeString}</h4>
-              <h3>{feedItem.feedable.runner.f_name} ran {feedItem.feedable.route.distance} miles at a pace of {((feedItem.feedable.duration / 60) / feedItem.feedable.route.distance).toFixed(2)} mins/mi on {activityDate} at {activityTime}</h3>
+              <h3>{feedItem.feedable.runner.f_name} ran {feedItem.feedable.route.distance} miles at a pace of {((feedItem.feedable.duration / 60) / feedItem.feedable.route.distance).toFixed(2)} mins/mi</h3>
             </div>
           </div>
 
