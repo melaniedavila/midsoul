@@ -26,3 +26,5 @@ MAP
 - render map details in chart
 LOADING
 - give loading actions corresponding reducers. currently only using loading reducer for routes
+-FEED
+-styling, hard pixels
