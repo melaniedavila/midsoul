@@ -23,6 +23,7 @@ AUTH
 - fix sign up blank first and last name errors
 - fix logout button (current jumping)
 - errors_list styling in login/signup forms
+- when i click log out, im not always redirected to login page
 MAP
 - render map details in chart
 LOADING
