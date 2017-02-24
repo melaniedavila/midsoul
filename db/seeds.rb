@@ -78,7 +78,7 @@ u10 = User.create!(
   l_name: 'DJ',
   email: 'relax@dontdoit.com',
   password: 'password',
-  profile_picture: File.open("./app/assets/images/seed_profile_pictures/jp.jpg")
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/evil-dj.jpg")
 )
 
 u11 = User.create!(

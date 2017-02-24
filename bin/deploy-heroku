@@ -3,6 +3,5 @@
 set -ex
 
 git push heroku master
-heroku run bundle exec rake db:migrate
 heroku run bundle install
-heroku run rake db:seed
+heroku run bundle exec rake db:reset
