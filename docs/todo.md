@@ -1,5 +1,4 @@
-
-///////////
+ß///////////
 bugs:
 when i click 'EDIT PROFILE button' on own show page need to refresh before i'm redirected
 when i accept friend request, tab doesn't auto update
