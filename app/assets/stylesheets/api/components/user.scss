@@ -20,23 +20,21 @@
     text-align: center;
   }
 
-  a {
-      padding: 50px 50px 0px 180px;
-  }
-
   form {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     width: 50%;
-    max-width: 350px;
+    max-width: 290px;
     padding: 20px;
     border: 1px solid $medium-gray;
-    background: $light-gray;
+    background: rgba(183, 178, 178, 0.14);
     border-radius: 5px;
     margin-top: 50px;
 
-
+    a {
+      margin-top: 20px;
+    }
     .errors-list {
       width: 90%;
       text-align: left;
@@ -89,6 +87,7 @@
     }
   }
 }
+
 
 
 .user-show-details {

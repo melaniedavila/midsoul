@@ -1,5 +1,4 @@
 BUGS:
-when i click 'EDIT PROFILE button' on own show page need to refresh before i'm redirected
 when i accept friend request, tab doesn't auto update
 when i click user on user in find friends, need to refresh to see profile
 
@@ -19,8 +18,6 @@ USER SHOW
 - fix default prof pic. img not found
 - add/delete friend button on user show page
 - ensure only self and friends can see profile activity feed
-USER EDIT
-- styling, remove centering
 AUTH
 - fix sign up blank first and last name errors
 - fix logout button (current jumping)

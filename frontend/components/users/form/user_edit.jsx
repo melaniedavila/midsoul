@@ -8,6 +8,7 @@ export default class UserEdit extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.state = this.props.user;
   }
 
   componentDidMount() {
@@ -71,30 +72,31 @@ export default class UserEdit extends React.Component {
           <img src={user.profile_picture}
                 alt='Profile picture'></img>
 
-          <form onSubmit={this.handleSubmit}>
-            <div className='errors-list'>
-              {this.errors()}
-            </div>
+          <div className='edit-form-and-link'>
+            <form onSubmit={this.handleSubmit}>
+              <div className='errors-list'>
+                {this.errors()}
+              </div>
 
-            <label>First Name:</label>
-            <input type='text'
-              value={this.state.f_name}
-              onChange={this.update('f_name')}/>
+              <label>First Name:</label>
+              <input type='text'
+                value={this.state.f_name}
+                onChange={this.update('f_name')}/>
 
-            <label>Last Name:</label>
-            <input type='text'
-              value={this.state.l_name}
-              onChange={this.update('l_name')}/>
+              <label>Last Name:</label>
+              <input type='text'
+                value={this.state.l_name}
+                onChange={this.update('l_name')}/>
 
-            <label>Profile Picture:</label>
-            <input
-              type='file'
-              onChange={this.update('profile_picture')}/>
+              <label>Profile Picture:</label>
+              <input
+                type='file'
+                onChange={this.update('profile_picture')}/>
 
-            <input type='submit' value='EDIT PROFILE'/>
-          </form>
-          <br/>
-          <Link to={`/users/${user.id}`}>Back to Profile</Link>
+              <input type='submit' value='EDIT PROFILE'/>
+              <Link to={`/users/${user.id}`}>Back to Profile</Link>
+            </form>
+          </div>
         </main>);
     }
   }
