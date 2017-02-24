@@ -100,7 +100,7 @@
 
   p {
     font-size: 14px;
-    color: $midSoul-blue;
+    color: black;
     font-family: $sans-serif;
     font-weight: 600;
   }
@@ -143,6 +143,22 @@
   display: flex;
   flex-direction: column;
 
+  .route-distance-flex-container {
+    display: flex;
+    justify-content: flex-start;
+    .distance-tag {
+      font-weight: 700;
+    }
+  }
+
+  .route-elevation-gain-flex-container {
+    display: flex;
+    justify-content: flex-start;
+    .elevation-gain-tag {
+      font-weight: 700;
+    }
+  }
+
   h3 {
     display: flex;
     justify-content: center;
@@ -155,9 +171,10 @@
 
   p {
     font-size: 16px;
-    color: $midSoul-blue;
+    color: black;
     font-family: $sans-serif;
     font-weight: 500;
+    margin: 5px;
   }
 
   .route-show-links {
@@ -260,11 +277,76 @@
   }
 }
 
+// .route-show-comments {
+//   margin-bottom: 20px;
+//
+//   .comments-index {
+//     width: 97%;
+//     margin: 0px;
+//   }
+// }
+
+
+.route-show-comments {
+  padding-top: 20px;
+  // margin: 13px;
+}
+
 .route-show-comments {
   margin-bottom: 20px;
 
-  .comments-index {
-    width: 97%;
+  .comments-index{
+    width: 59%;
     margin: 0px;
   }
+
 }
+
+.route-show-comments .comments-index {
+  margin-top: 239px;
+}
+
+
+
+.route-show-comments, .route-show-new-comment-form {
+  width: 90%;
+  margin: 0px;
+
+  .comments-list {
+    max-height: 1000px;
+    overflow-y: scroll;
+  }
+  .new-comment-textarea-and-submit {
+    width: 70%;
+    textarea {
+      width: 60%;
+    }
+  }
+
+  .new-comment-form-container {
+    width:90%;
+  }
+}
+
+.route-show-comments .new-comment-textarea-and-submit textarea,
+.route-show-new-comment-form .new-comment-textarea-and-submit textarea {
+  width: 80%;
+}
+
+
+.route-show-details {
+  .route-show-comments .comments-index {
+    width: 100%;
+  }
+  .route-show-comments .new-comment-form-container, .route-show-new-comment-form .new-comment-form-container {
+    width: 159%;
+  }
+}
+
+// .route-show-comments .new-comment-textarea-and-submit, .route-show-new-comment-form .new-comment-textarea-and-submit {
+//   width: 79%;
+// }
+//
+// .route-show-details .route-show-comments .comments-index {
+//   width: 100%;
+// }

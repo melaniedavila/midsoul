@@ -108,15 +108,22 @@ export default class RouteShow extends React.Component {
       return (
         <div className='route-show-details'>
           <h3>{route.title}</h3>
-          <p>Distance: {(route.distance).toFixed(2)} miles</p>
-          <p>Elevation Gain: {route.elevation_gain.toFixed(2)} meters</p>
+          <div className='route-distance-flex-container'>
+            <p className='distance-tag'>Distance: </p>
+            <p>{(route.distance).toFixed(2)} miles</p>
+          </div>
+
+          <div className='route-elevation-gain-flex-container'>
+            <p className='elevation-gain-tag'>Elevation Gain</p>
+            <p>{route.elevation_gain.toFixed(2)} meters</p>
+          </div>
+
 
           <p>{route.description}</p>
           <div className='route-show-links'>
             <Link to='/routes'>Back to Routes</Link>
             {deleteButton}
           </div>
-          {routeComments}
 
           <div className='route-show-flex-container'>
             <div className='interactive-route-show-map'>
