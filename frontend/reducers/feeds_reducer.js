@@ -10,7 +10,6 @@ export default function feedsReducer(state = {}, action) {
     case RECEIVE_SINGLE_USER_FEED_ITEMS:
       return merge({}, action.feedItems);
     case RECEIVE_NEW_COMMENT:
-    debugger
       let newState = merge({}, state);
       const feedItem = values(newState).find((feedItem) => {
         return ((feedItem.feedable.id === action.comment.commentable_id) &&
