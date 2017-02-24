@@ -123,6 +123,7 @@ li.dropdown-item {
   transition: color 0.05s;
   letter-spacing: 0.8px;
   padding: 0 12px;
+
 }
 
 // Re-comment below when replacing user f_name with image
@@ -137,7 +138,24 @@ li.dropdown-item {
   float: left;
   padding: 0 12px;
   font-size: 15px;
+
 }
+
+.nav-user-img {
+  height: 50px;
+  width: 50px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+}
+
 
 .dropdown > button {
   padding: 0, 5px;
