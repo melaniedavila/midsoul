@@ -43,6 +43,10 @@ export default class RunShow extends React.Component {
         );
       }
 
+      const runDate = run.date;
+      const fullDate = new Date(runDate);
+      const dateString = fullDate.toDateString();
+
       return (
         <div className='run-show-details'>
           <h3>{run.title}</h3>
@@ -53,8 +57,11 @@ export default class RunShow extends React.Component {
                     <img src={run.runner.profile_picture} alt='Profile picture'></img>
                   </Link>
                 </div>
-              <h4>{run.runner.f_name} ran {run.route.distance} miles on {run.date}&nbsp;
-              at a pace of {((run.duration / 60) / run.route.distance).toFixed(2)} mins/mi</h4>
+                <div className='run-date-and-description-container'>
+                  <h4 className='run-date'>{dateString}</h4>
+                  <h3>{run.runner.f_name} ran {run.route.distance} miles
+                    at a pace of {((run.duration / 60) / run.route.distance).toFixed(2)} mins/mi</h3>
+                </div>
             </div>
           <p>{run.description}</p>
 
