@@ -16,7 +16,8 @@ export default function routesReducer(state = {}, action) {
       delete newState[action.route.id];
       return newState;
     case RECEIVE_NEW_COMMENT:
-      if (action.comment.commentable_type === 'Route') {
+      debugger
+      if (action.comment.commentable_type === 'Route' && state[action.comment.commentable_id]) {
         const newCommentState = merge({}, state);
         const comment = action.comment;
         const route = newCommentState[action.comment.commentable_id];

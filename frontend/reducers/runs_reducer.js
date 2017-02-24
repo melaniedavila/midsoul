@@ -17,7 +17,7 @@ export default function runsReducer(state = {}, action) {
       return newState;
     case RECEIVE_NEW_COMMENT:
     debugger
-    if (action.comment.commentable_type === 'Run') {
+    if (action.comment.commentable_type === 'Run' && state[action.comment.commentable_id]) {
       const newCommentState = merge({}, state);
       const comment = action.comment;
       const run = newCommentState[action.comment.commentable_id];

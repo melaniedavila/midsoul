@@ -6,7 +6,6 @@ when i accept friend request, tab doesn't auto update
 when i click user on user in find friends, need to refresh to see profile
 
 /////////////////////////////////////////////////////////////////////////////
-- add activity date to feed items
 - fix friend requests styling
 - on friends search page- change 'add' text after clicked
 - require logged in in controllers (all controllers :( )
@@ -18,7 +17,6 @@ when i click user on user in find friends, need to refresh to see profile
 - errors_list styling in login/signup forms
 - render errors when trying to access run not authorized to see
 - render map details in chart
-- update route JSON views
 - give loading actions corresponding reducers. currently only using loading reducer for routes
 - fix bad naming in friendships. for example friendships index action returns friends
 - add/delete friend button on user show page
