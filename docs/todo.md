@@ -5,6 +5,7 @@ when i click user on user in find friends, need to refresh to see profile
 /////////////////////////////////////////////////////////////////////////////
 BACKEND
 - optimize userscontroller index query with .or
+- add before_action to feed controller after adding guest login button to log in page
 FRIEND REQUESTS
 - fix friend requests styling
 - don't allow users to friend themselves, current friends or people who have sent them requests
