@@ -1,7 +1,7 @@
 import { merge, assign } from 'lodash';
 import {  RECEIVE_ALL_RUNS, RECEIVE_SINGLE_RUN, REMOVE_RUN,
           RECEIVE_NEW_RUN, RECEIVE_RUN_ERRORS } from '../actions/runs_actions';
-import { RECEIVE_NEW_RUN_COMMENT, REMOVE_RUN_COMMENT } from '../actions/comments_actions';
+import { RECEIVE_NEW_RUN_COMMENT, RECEIVE_NEW_COMMENT, REMOVE_RUN_COMMENT } from '../actions/comments_actions';
 
 export default function runsReducer(state = {}, action) {
   Object.freeze(state);
@@ -15,6 +15,30 @@ export default function runsReducer(state = {}, action) {
       let newState = merge({}, state);
       delete newState[action.run.id];
       return newState;
+    case RECEIVE_NEW_COMMENT:
+    debugger
+    if (action.comment.commentable_type === 'Run') {
+      const newCommentState = merge({}, state);
+      const comment = action.comment;
+      const run = newCommentState[action.comment.commentable_id];
+      run.comments.push(action.comment);
+      return newCommentState;
+    } else {
+      return state;
+    }
+      //
+      //
+      //
+      // const feedItem = values(newCommentState).find((feedItem) => {
+      //   return ((feedItem.feedable.id === action.comment.commentable_id) &&
+      //   (feedItem.feedable_type === action.comment.commentable_type));
+      // });
+      // if (feedItem) {
+      //   feedItem.feedable.comments.push(action.comment);
+      //   return newCommentState;
+      // } else {
+      //   return state;
+      // }
     // case RECEIVE_NEW_RUN_COMMENT:
     // // goal: look at commentable_id to find run from the state. concat new comment
     // // into comments arr
