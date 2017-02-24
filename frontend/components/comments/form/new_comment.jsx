@@ -22,9 +22,6 @@ export default class NewComment extends React.Component {
   }
 
   handleSubmit(e) {
-    // check if we have feedable type available to us here
-    // goal: use proper api util so rails controller gets commentable_id and
-    // commentable_type
     e.preventDefault();
     const id = this.props.activityId;
     const comment = this.state;

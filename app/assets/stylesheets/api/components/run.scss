@@ -251,8 +251,45 @@
 .run-show-comments {
   margin-bottom: 20px;
 
-  .comments-index {
+  .comments-index{
     width: 59%;
     margin: 0px;
   }
+
 }
+
+
+.run-show-comments, .run-show-new-comment-form {
+  width: 90%;
+  margin: 0px;
+
+  .comments-list {
+    max-height: 1000px;
+    overflow-y: scroll;
+  }
+  .new-comment-textarea-and-submit {
+    width: 70%;
+    textarea {
+      width: 60%;
+    }
+  }
+
+  .new-comment-form-container {
+    width:90%;
+  }
+}
+
+.run-show-comments .new-comment-textarea-and-submit textarea,
+.run-show-new-comment-form .new-comment-textarea-and-submit textarea {
+  width: 80%;
+}
+
+// .run-show-new-comment-form {
+//   .new-comment-form-container {
+//     .new-comment-textarea-and-submit {
+//       width: 70%;
+//       margin: 0px;
+//
+//     }
+//   }
+// }

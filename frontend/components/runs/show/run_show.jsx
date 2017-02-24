@@ -3,6 +3,7 @@ import { Link, hashHistory } from 'react-router';
 import LoadingIcon from '../../loading/loading_icon';
 import ErrorsList from '../../errors/errors_list';
 import CommentIndex from '../../comments/index/comment_index';
+import NewCommentContainer from '../../comments/form/new_comment_container';
 
 
 export default class RunShow extends React.Component {
@@ -67,16 +68,20 @@ export default class RunShow extends React.Component {
               alt={run.route.title}></img>
           </div>
 
-          <div className='run-show-comments'>
-            <CommentIndex comments={run.comments}/>
+
+          <div className='run-comment-index-and-form'>
+            <div className='run-show-comments'>
+              <CommentIndex comments={run.comments}/>
+            </div>
+            <div className='run-show-new-comment-form'>
+              <NewCommentContainer activityType={'Run'} activityId={run.id}/>
+            </div>
           </div>
         </div>
       );
     }
   }
 }
-
-
 
 
 // let deleteButton;

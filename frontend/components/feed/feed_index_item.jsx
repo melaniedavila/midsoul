@@ -10,9 +10,7 @@ const FeedIndexItem = ({ feedItem }) => {
   const activityTime = activityDateTime.toLocaleTimeString();
   const dateTimeString = `${activityDate} ${activityTime}`
 
-
   if (feedItem.feedable_type === 'Route') {
-
     feedIndexItemDetails = (
       <div className='feed-index-item-container'>
         <aside className='feed-index-item-map'>

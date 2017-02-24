@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import LoadingIcon from '../../loading/loading_icon';
 import CommentIndex from '../../comments/index/comment_index';
+import NewCommentContainer from '../../comments/form/new_comment_container';
+
 
 const _mapOptions = {
   center: { lat: 0, lng: 0 },
@@ -89,9 +91,17 @@ export default class RouteShow extends React.Component {
 
       let routeComments;
       if (route.comments) {
-        routeComments = (<div className='route-show-comments'>
-                            <CommentIndex comments={route.comments}/>
-                        </div>);
+        routeComments = (
+                        <div className='route-comment-index-and-form'>
+                          <div className='route-show-comments'>
+                              <CommentIndex comments={route.comments}/>
+                          </div>
+                          <div className='route-show-new-comment-form'>
+                            <NewCommentContainer activityType={'Route'} activityId={route.id}/>
+                          </div>
+                        </div>
+                      );
+
       }
 
 
