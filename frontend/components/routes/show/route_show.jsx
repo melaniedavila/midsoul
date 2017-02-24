@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import LoadingIcon from '../../loading/loading_icon';
+import CommentIndex from '../../comments/index/comment_index';
 
 const _mapOptions = {
   center: { lat: 0, lng: 0 },
@@ -86,6 +87,14 @@ export default class RouteShow extends React.Component {
                       </button>);
       }
 
+      let routeComments;
+      if (route.comments) {
+        routeComments = (<div className='route-show-comments'>
+                            <CommentIndex comments={route.comments}/>
+                        </div>);
+      }
+
+
       return (
         <div className='route-show-details'>
           <h3>{route.title}</h3>
@@ -97,11 +106,15 @@ export default class RouteShow extends React.Component {
             <Link to='/routes'>Back to Routes</Link>
             {deleteButton}
           </div>
+          {routeComments}
+
           <div className='route-show-flex-container'>
             <div className='interactive-route-show-map'>
               <div className="map" ref="map">Map</div>
             </div>
+            {routeComments}
           </div>
+
         </div>
       );
     }

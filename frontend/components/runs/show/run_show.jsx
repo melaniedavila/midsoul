@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import LoadingIcon from '../../loading/loading_icon';
 import ErrorsList from '../../errors/errors_list';
+import CommentIndex from '../../comments/index/comment_index';
+
 
 export default class RunShow extends React.Component {
   componentDidMount() {
@@ -61,8 +63,12 @@ export default class RunShow extends React.Component {
           </div>
 
           <div className='run-show-map'>
-            <img src={`https://maps.googleapis.com/maps/api/staticmap?size=500x250&path=color:0x0c5d94%7Cenc:${run.route.polyline}&key=${window.googleMapsApiKey}`}
+            <img src={`https://maps.googleapis.com/maps/api/staticmap?size=700x350&path=color:0x0c5d94%7Cenc:${run.route.polyline}&key=${window.googleMapsApiKey}`}
               alt={run.route.title}></img>
+          </div>
+
+          <div className='run-show-comments'>
+            <CommentIndex comments={run.comments}/>
           </div>
         </div>
       );
