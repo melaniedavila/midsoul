@@ -139,13 +139,13 @@ u17 = User.create!(
 )
 
 
-route1 = Route.create!(
-  creator_id: u1.id,
-  title: 'Reservoir Loop',
-  description: 'A short jog in Central Park',
-  polyline: "eq}wFfzkbMQVQt@?b@F^^pAJf@Hn@B~@EzAStASz@Gp@A|@BZDNTn@Zd@TRR\\N\\FZDr@EhABnAFbBGrAE`AFfAXlAL\\X`@VZZVh@ThATjIhAp@D\\Gf@c@v@mAn@{AV}@d@eCXmAVy@`@s@b@i@j@e@h@WrA[ZORQTc@d@aBHc@Bs@Cw@SaAIUYe@_@a@oWwP_@Qc@Gk@BgCE_Ba@a@OWEg@@SF_@Z",
-  distance: 1.58,
-  elevation_gain: 1
+route4 = Route.create!(
+  creator_id: u4.id,
+  title: "The Derek Zoolander Route for Kids Who Can't Run Good",
+  description: '...and wanna learn to do other stuff good too',
+  polyline: "ownmFrmpgMw`gFq~qCo}k@rzw@_azAgbjAi_z@zkiC",
+  distance: 318,
+  elevation_gain: 30
 )
 
 route2 = Route.create!(
@@ -157,22 +157,13 @@ route2 = Route.create!(
   elevation_gain: 2
 )
 
-route3 = Route.create!(
-  creator_id: u3.id,
-  title: 'Rio!',
-  description: 'A pleasant jog along the beach.',
-  polyline: "`hvjCtrrfGH_@j@yB`@JdBn@Pm@nCkK|AoG^yAd@iCzAkHtBoIt@aFVqALqBHmFPwAZu@f@o@|@m@l@QnBM|A[~B]dAQbCm@tCeAvAq@pCiBnCqB|AeAnAi@dCaBfCaBx@c@r@WpA_@xDcAfCo@rCw@dBe@rBg@tCs@FCFQ?EA[QoAEaB@wAJe@PYd@a@`Ag@d@Uf@URMFOHY@WIYOSSIW?YHWXCR@ZHZBT_@c@g@e@]Uo@]{@Sq@GM?HETMNWH]?w@?_@BYHONI|GSZFxBCrBEh@?F@HLDZHNTPt@d@f@d@{@pBEFf@DDBDFBVAtBAt@@|@HjAZdB\\dAVn@Zl@l@x@\\`@MJr@j@d@\\~Av@`Cj@zANdBDd@BHAJ?ZC`@I|Ac@h@@^NNBPCb@OXWtAwAT_@DQBYFg@JM|@m@Yi@AYIYM[CAGAYo@k@gB[@GCUa@[c@q@e@e@Wy@Ue@Ei@Ae@De@H_DnAIJOFM?KCIIAC@BDDHFJ@NCJK`CeAb@Od@Id@Eh@@d@D^Hf@RvAeBPGpCe@V?RF?EJQJMLERAR?lBp@jA^BWFONAtl@pQjBd@|@PvC\\hCRlCBjCC|CUrAQr@QlAo@p@m@j@u@\\u@Pk@Fq@Fq@XOVYpDkE^OTCB?j@l@HGPJD@TODALJ@Ad@o@DCp@DbALRF\\d@MRATf@Ah@FZPJTBRCTMXVD\\VxALV?ZCN@~@p@fAn@FBHAb@l@Db@zBbCbCzCfBfCrBdDd@dAPn@PjA@t@IlAQbAk@tAqClFeAvBQ~@Ez@Bz@Jj@Tt@b@x@bArAz@~@nAbAbBbAvAf@xA^bALdBHhB?bBMfAQp@S|A{@fAs@x@i@d@g@\\m@Vy@Hm@DmAAgBF{@Hc@n@mB`BeEbBeD~@aBNm@xCgGBE[Uz@iB_Ag@AKl@eBHM\\Bt@Nn@Tb@sAx@iDR}@g@Y_DaEuDkFoBoCWc@_EmEaBcBmAyAw@_Bg@sBKgAEeADi@b@g@JORWDKPwAAWEWYg@aFiCk@_@k@i@g@a@q@o@q@q@UQYC[GYWISUW]IWOUWOISASHk@J]A[IYQOMIWKa@GMq@YSG_@_Ap@gAn@OJIN_@@a@Ak@ASYDM?KEe@m@Ye@_@{@mB\\Q@kIqCKKKWiAyCcAgC]q@UaAMqAOO_@U}Am@OMEGAMCc@Ww@_@w@BKJIH[@MFELAFBZd@TRL@PGLMNc@NOf@W",
-  distance: 4.7,
-  elevation_gain: 3
-)
-
-route4 = Route.create!(
-  creator_id: u4.id,
-  title: "The Derek Zoolander Route for Kids Who Can't Run Good",
-  description: '...and wanna learn to do other stuff good too',
-  polyline: "ownmFrmpgMw`gFq~qCo}k@rzw@_azAgbjAi_z@zkiC",
-  distance: 318,
-  elevation_gain: 30
+run6 = Run.create!(
+  title: 'Runway',
+  runner_id: u6.id,
+  route_id: route2.id,
+  date: Date.today,
+  description: 'Are you challenging me to a walk off, Boo-Lander?',
+  duration: 1500
 )
 
 route5 = Route.create!(
@@ -182,6 +173,93 @@ route5 = Route.create!(
   polyline: "o{mtGke`w@?um@rXvn@Gal@",
   distance: 1,
   elevation_gain: 1
+)
+
+run7 = Run.create!(
+  title: 'Jersey Coal Mines',
+  runner_id: u11.id,
+  route_id: route5.id,
+  date: Date.today,
+  description: "Damnit Derek, I'm a coal miner, not a professional film or television actor.",
+  duration: 7000
+)
+
+route1 = Route.create!(
+  creator_id: u1.id,
+  title: 'Reservoir Loop',
+  description: 'A short jog in Central Park',
+  polyline: "eq}wFfzkbMQVQt@?b@F^^pAJf@Hn@B~@EzAStASz@Gp@A|@BZDNTn@Zd@TRR\\N\\FZDr@EhABnAFbBGrAE`AFfAXlAL\\X`@VZZVh@ThATjIhAp@D\\Gf@c@v@mAn@{AV}@d@eCXmAVy@`@s@b@i@j@e@h@WrA[ZORQTc@d@aBHc@Bs@Cw@SaAIUYe@_@a@oWwP_@Qc@Gk@BgCE_Ba@a@OWEg@@SF_@Z",
+  distance: 1.58,
+  elevation_gain: 1
+)
+
+
+
+route3 = Route.create!(
+  creator_id: u3.id,
+  title: 'Rio!',
+  description: 'A pleasant jog along the beach.',
+  polyline: "`hvjCtrrfGH_@j@yB`@JdBn@Pm@nCkK|AoG^yAd@iCzAkHtBoIt@aFVqALqBHmFPwAZu@f@o@|@m@l@QnBM|A[~B]dAQbCm@tCeAvAq@pCiBnCqB|AeAnAi@dCaBfCaBx@c@r@WpA_@xDcAfCo@rCw@dBe@rBg@tCs@FCFQ?EA[QoAEaB@wAJe@PYd@a@`Ag@d@Uf@URMFOHY@WIYOSSIW?YHWXCR@ZHZBT_@c@g@e@]Uo@]{@Sq@GM?HETMNWH]?w@?_@BYHONI|GSZFxBCrBEh@?F@HLDZHNTPt@d@f@d@{@pBEFf@DDBDFBVAtBAt@@|@HjAZdB\\dAVn@Zl@l@x@\\`@MJr@j@d@\\~Av@`Cj@zANdBDd@BHAJ?ZC`@I|Ac@h@@^NNBPCb@OXWtAwAT_@DQBYFg@JM|@m@Yi@AYIYM[CAGAYo@k@gB[@GCUa@[c@q@e@e@Wy@Ue@Ei@Ae@De@H_DnAIJOFM?KCIIAC@BDDHFJ@NCJK`CeAb@Od@Id@Eh@@d@D^Hf@RvAeBPGpCe@V?RF?EJQJMLERAR?lBp@jA^BWFONAtl@pQjBd@|@PvC\\hCRlCBjCC|CUrAQr@QlAo@p@m@j@u@\\u@Pk@Fq@Fq@XOVYpDkE^OTCB?j@l@HGPJD@TODALJ@Ad@o@DCp@DbALRF\\d@MRATf@Ah@FZPJTBRCTMXVD\\VxALV?ZCN@~@p@fAn@FBHAb@l@Db@zBbCbCzCfBfCrBdDd@dAPn@PjA@t@IlAQbAk@tAqClFeAvBQ~@Ez@Bz@Jj@Tt@b@x@bArAz@~@nAbAbBbAvAf@xA^bALdBHhB?bBMfAQp@S|A{@fAs@x@i@d@g@\\m@Vy@Hm@DmAAgBF{@Hc@n@mB`BeEbBeD~@aBNm@xCgGBE[Uz@iB_Ag@AKl@eBHM\\Bt@Nn@Tb@sAx@iDR}@g@Y_DaEuDkFoBoCWc@_EmEaBcBmAyAw@_Bg@sBKgAEeADi@b@g@JORWDKPwAAWEWYg@aFiCk@_@k@i@g@a@q@o@q@q@UQYC[GYWISUW]IWOUWOISASHk@J]A[IYQOMIWKa@GMq@YSG_@_Ap@gAn@OJIN_@@a@Ak@ASYDM?KEe@m@Ye@_@{@mB\\Q@kIqCKKKWiAyCcAgC]q@UaAMqAOO_@U}Am@OMEGAMCc@Ww@_@w@BKJIH[@MFELAFBZd@TRL@PGLMNc@NOf@W",
+  distance: 4.7,
+  elevation_gain: 3
+)
+
+
+
+# ####################
+
+route6 = Route.create!(
+  creator_id: u1.id,
+  title: "Point Reyes National Sea Shore",
+  description: 'Great in the summer',
+  polyline: "ctggFx_olV|Aw@z@o@nAcBlB_DvCmGl@iA\\c@~@c@tBu@vAk@zEcCdCqAbAa@`AOlEUr@Or@e@lAaBlC{B|EyDt@_AlAiBh@g@f@Ur@KfCF`AAfAQdE{AtAs@Xa@bEeMv@}Bn@cAv@y@j@]r@Q`ACpCo@`FqAhE}AjJyDnIgDp@YvDsBtLsGvEmCh@c@^g@hAqDd@aAj@c@hCiAb@W\\g@TcARwAXg@f@YfBS|@WvDqBlGiDpDgClCqBbAk@hDeAjA{@~EyE~@o@rAq@r@e@pAeBxAuBnBsBx@w@~@e@j@Kz@A`CXbAFr@Md@Uj@q@dBsCf@eAf@kBf@kAl@o@hDkBpC_Br@q@zAuBnCaE~@aAzAeAbHkE`E{B`CcAvBw@l@IvCM`AUf@Wr@i@t@_AlFeJz@}@`@Mt@?n@EhBkAhC{AlBm@lDg@vASzAm@`L_HhAkAtF{Gx@{AdCiGdAwBjFuGzAqBd@w@fAuDj@iAbBcBfDeEhBuCf@e@jAk@vAkAn@wA^i@XSdCq@dBq@vJiHnAyAtHkKz@kBrAcEVe@`BiBlDkD|AeApEgCbEoCtHyFdAw@J\\@T?LDDG?A@ADUv@gB~Bo@fFe@xCQ^KVEb@Np@l@JZT^t@Cb@Yb@O^WTc@t@CXAPDVBn@Yz@[b@MLP@ZP@j@Dt@HNNEZc@jAqApAw@v@Up@O\\YTCr@Kn@e@^i@^y@jA{A`@]f@m@V]VMX_@Nc@j@s@h@{AfA{@b@Q\\_@|@}@PqATu@LSRMp@g@d@k@b@[d@g@NWRKV@j@QtAy@dBsAh@YVY`A_Af@y@x@}@bAcADUNQv@a@BMVKh@i@hA{@z@{@X@@WFWVYj@gAFq@VSp@K`AKp@?d@JRGP_@r@cCPy@h@kAxBgDjB_BjAo@l@a@Zs@|DeGbCcDfAeAl@Y|Au@PORWFa@Hs@VCNQFe@DQLAVLJC`@k@b@s@Zg@Re@b@Un@?j@LVF`@EZ?RQRk@xAuBP]Z[z@_@n@WhAw@bA}@fA]|@o@p@iAXc@ZEz@Bp@a@Jo@BWOYc@q@EULYX[f@_@rAgAp@m@`Ay@~A_A`@s@PSLIVCRWP[p@gAt@oBXsARyBA}@Um@N_@fBkCf@aA^{APeBNi@VSzEsA|Ds@~CcAvAc@tD}@jAGfAh@dA^zACrA[^g@lA{B|AqCb@}AXg@d@c@tBcBzAaBbDgElA{Bj@CnFwC~@Mp@U|C{ArAc@`FyBhBiBvImFrGyAdIiA|@]",
+  distance: 12,
+  elevation_gain: 85
+)
+
+route7 = Route.create!(
+  creator_id: u2.id,
+  title: "Buenos Aires",
+  description: 'Stop by Recoleta',
+  polyline: "hq`rEdzjcJEdBDNHDHABAb@w@l@sATc@bB{Dt@qAJKPi@nBoEl@gAZi@Vi@d@yA~@qCrA_DzBeGXs@Ps@`@cACa@QY{AwAnK}Tt@yAv@aBjCgF~@kC@YCQAGnBa@fCk@hCi@nDy@rBw@lD{@dAQd@l@x@v@|@v@t@l@LJt@h@`FcBtDoAhZcJn@OVDt@@dBQbEWdAIp@G",
+  distance: 2,
+  elevation_gain: 20
+)
+
+route8 = Route.create!(
+  creator_id: u4.id,
+  title: "Rocky Mountains",
+  description: 'Bring snacks',
+  polyline: "uqruFjjfdS{@vAuE`F{AhAiClAoInDyA`AiAnB]vAIz@CtAPjJIx@Wv@oAjAuB~Ag@l@k@xAc@jCIxDR|CvBpIV`BBbA@xB|@jGAp@kA|Ek@tAoAlAm@h@m@j@O]EIAAC?y@Fc@}BE[Fe@XsAPsAHmA?cAc@uCWqAQiAkBwGw@{Do@yDa@}@c@kAOqAEu@FaALa@M`@G`AN~APbAl@rAz@rEv@zDjBvG\\zB^hBP|A?d@MhA?r@YtAWfA@Xd@hC`ACDHN\\l@k@l@i@t@q@p@aAlAsETqAw@{FMgFWaB}AyFg@gDEiDPaCj@oCbA_BpDqCj@qAHy@EyDKkFXcCt@kBdAkAfEqBjIqDzAiA|BcCpBaCrAaD`AmFdAeHXiAd@}@`AaApA[`C[|C[`AAfAN~Bh@dIvAxPpB|ABv@[~B{CnCqE~@aDPcCEmCeCySk@sFGiGi@wBYyBIwBDo@zDyPVuC@_AbG[`CkBdGsBfKmJzGyGzB}CxJiHrDoJlB}DhBgF`IkK`EiF~BsDtBuMd@wDhAsD|AeCj@sCfCmGnCiD`DwBv@wCVwFAiG`@aFdBwGlEeHpDgHvGgNAwDz@}GvF_QvE}KhFoGjD_CjGoGv@e@xAaAlEwCj@k@f@uCnFmTh@iA~DiG~CmFvDsGfCwEPqCIoCaAeFeKg[oB}FkF{MoAuDe@wB_@gDMU}D_D_@k@c@]U]YwAcBcKcAyAgBQqFMc@GKwAMkDQoAu@_E{@s@c@s@I_@eA_@_DkAlAuAt@y@Xo@E[a@Qg@SI]Lw@b@_A@oCOsAc@iA_AeCEkBaAsCU{A@iDOwB_AcEa@wA@w@z@aGUiRWiERyCDiCVmA@aA^eA^}AH_FPoBb@cB^gBPM\\ILS{DgBSeAIeBYuCMqDWqECoADyALu@PQUaAT_Br@wD^oCvAwKTaBdAgE^iClA}GZsBT}C\\gBDeBu@aL[}MGqDSyDSmEQu@eBaCCu@Lg@F]Ka@kAiAa@o@q@e@w@s@iAwB{AqBQg@RcB`CcHx@wDl@_DpBuGbB_HzB_LnF}VdA_Ed@aDnAeKdA}Ff@{HdAuZ^cKVaAyAuPg@kBkE_MeDiJ_D{Fq@aB}CgK}B}HcBwEwBmDqD}D_AoBqBsH_@oDAkDGeCYm@m@e@g@MeO?_B@K?q@}Dw@yEk@yDeCsPDe@k@oGCSKYCuBDcDVgD`@iCzAyFlDoG`@eA\\aCbB}WtKa`B\\iC`AcE|DsHjUu_@lDgGv@oBp@}CZkCLgE",
+  distance: 19,
+  elevation_gain: 1300
+)
+
+route9 = Route.create!(
+  creator_id: u5.id,
+  title: "Nepal",
+  description: "I'm pretty sure there's a lot more to life than being really, really, ridiculously good looking. And I plan on finding out what that is.",
+  polyline: "qtpgDsuhiOuHcH}BlChEhLt@pD|ClGI`MbEzMq@`JuAtG`ChIFxFqCzBkDlGKjCaDjHi@lEaCxBqD^mBjDsFq@mC?gDjDaDfCuEpMaEpFg@pJDpLqFJq@jDvHxGLbGsFvD_CbHqHdGlD`Ns@tG{Kdw@C@GD?TyE~]mGb|@zD|TmDbQnCr]RfOkJrQuIzIaDpPqFpLyKxK}Ore@oF~Gy@dJrApEq@jFmBdIr@xAtEe@iBxFCxHuCfCBzEkNuA}G|A{GdLoFjDoG|AwKjNo@pKcDbGcJvCsIlHcHtO}EnW{FdMeFdGaNhXqB|F_AjOPfUzEbOkAfXgCvi@uBdIcZvq@cPxv@iBrPt@bUdBnWzArm@wJlwDaBlL{J|EiF^cAlHGhDJxFr@xG}@nLs@hSc@xGp@fAJxBTdAk@nHz@tIyAzGgWfOcL~DcBbCuErQsAtMgEnMeC}@iHbLsBlGkMhM_@n@uXv`AgCfUdKvg@nEfGRvOhK`p@?~SmBjCClFt@~HoBfLsBnLO`I`BvE?lK|C`_@kHbVR`QgC|JJhHmB`J}BrA`@tCkDhRcB~GUfJcBrIx@nJaA`Ik@hJfA~IkAbG_E~DqDjHD|E~A~FUfEaCdGn@jJCpLu@fBmFeAaHdCeBvBgChNcAjQ^~JyHvGiAhJ[hBpAVZzHoDjFsIdDcEsBoB|AoHs@{DjBq@hB|@lD}DbFWtEhA|A_BpAoDfEuEbAq@hAjA~@rCKsD~@sA|Bw@M`AbA{B?]m@WvC_@rAsB~E`AvBuAdE_ClBd@l@xBx@_EvAyDnAwAD@rC}@xCr@rD}ChDyAzF{@dJaDjELiBaD|CqEl@sI`C_EpFqGbFwBsBsAt@VjHs@rDNmCwBgLx@uIoDnBmBkAa@HyAYDbBaCo@aJe@`DrHfBvI_E|Sw@rEiE`@d@xCdEvBeExH~@pLy@tDgDn@pHvC{@tFgBnCm@tHrCn@VbB{ATl@zAjCfCFtNqAvGlAdKOvJuDhG}F]{Cr@~C|Dk@lBsDWiA~EbCbE{AlDsCbBdErAlBvAy@pCvCtGk@|CfCnCmBpDTl@nC_@`DxAdA`KsBtNr@jBhGyBtCThEGK|@_InCkQ|a@yBl^cGvT}GtImF|NsOhMMzJw@`N|C|LDrNwBpNyBdOKbMa@tO}ExL}CvJ}BnOx@tI`KpAj@bEgAxFRpFmBtD}HpFp@|K_@hNeGrI}ElIDfMwBlG_FK_D`DtBnFmA~NqDjHiAlEdD{@zAh@nJgDfI{AhA~CnBhIrDxB",
+  distance: 41,
+  elevation_gain: 943
+)
+
+route10 = Route.create!(
+  creator_id: u6.id,
+  title: "Mount Vesuvius",
+  description: "So I'm rappelling down Mount Vesuvius when suddenly I slip, and I start to fall. Just falling, ahh ahh, I'll never forget the terror.",
+  polyline: "qvcxFgixvAb@r@?DANI`@@RJf@@ABAHAFDBH?LEFIBGAEIAKBIKq@AOJa@?Ss@kAMKGCaAAi@Wu@_@U?aAV[Nc@ZG@GAYUi@Y[UWYIOCU@MH{AEYS{@g@kAUUm@g@aA]OU@]HSLETBZCJELQb@u@NQHAL@PNNVv@|@N@FC@KCKqB_DyA}AQYe@eAkAkA?SJKD@rAv@hAx@f@f@D@DBDADE?KCI[Qe@a@mBaC?QFIH@FD^X^HL?HEFMBKDa@Ji@Na@r@i@BG?IGKsAY_@MOMc@uAmAiCGMICMAOD_@ZWHc@?OIw@y@Uu@Q[[_@s@e@COFKXEDGBG@i@BWHYJg@?UIKI?IB]`@M@UGyAe@e@QIM@GNWRg@A_@OoAWkAGEKAKDGDINCLAVA|AGZONeB~@e@J_@@OEIIE]QcA_@_AIIQAKHm@p@[Hg@Ca@GSKKKCODQTk@r@uCTsADs@Cq@I]cDkFUg@[cBkBcKE_@B_@JYVYZMfBq@~@c@`@KbACv@@|@NzAh@j@LL@LETUL[D[E[KUYSa@Qq@]m@UQKKS[_AYaAMWOOm@W_@Ws@eAk@w@e@m@_@w@g@qAa@g@WOQSASHMHCH@jAbAr@h@`@f@NPPHNBN?XCXCd@Hn@v@NEFK?KIO_@e@c@Wu@[QKIM[{@_@o@k@w@i@u@_@YiAKOGEQFMHCl@Df@HlCz@^L\\ZPRh@Hx@JPIBMCIIGQCy@GUQg@iAc@s@iEeDeA_Ak@qAWg@a@c@MSI[Ea@Be@JoBCs@E_@A_@BWNk@Bg@By@DQNYPYJm@VyAVi@dA}A|@uAJITGt@KZOd@]ZOl@WnAu@PMNc@ReAF_ACeCYkDW}Be@cAeAaCwD{HIa@Fo@h@yA@MA]EQw@}A[c@YUc@c@UWOSq@}AIa@Co@EaAK}@SiAGaACq@@q@PyBJiALk@Tc@XYt@IPQBQBwBFc@HQ~@g@NUDO?]Gi@Cc@DWfAeEHIDAXHFB@F@f@CbB?b@BZ",
+  distance: 5,
+  elevation_gain: 612
+)
+
+route11 = Route.create!(
+  creator_id: u11.id,
+  title: "Prospect Park",
+  description: "Damnit Derek, I'm a coal miner, not a professional film or television actor.",
+  polyline: "}yewF|~mbMPKZa@d@eARq@^_Ar@kAtAmBXdAFlAN~@_@f@ITC`@D^Hp@Dr@@Z]^U^S^U~@w@Le@d@W\\_@hA_@|AO|@CfAD?L@\\D`@@VEb@STKNCdAHr@XDf@AV[`BTRbAtA`@d@d@ZjB|@v@h@bA|@hArAj@|@h@u@LLf@b@X^V`@Vj@Tl@Ld@j@hBTd@V\\N?^@|@Dl@?RGROn@eAXy@H_@DY\\Bj@RLo@Pi@Xo@nA{ANWZu@n@aB`@o@x@w@NgBCc@K[e@oASYe@a@u@g@mBgA]][a@GO]y@g@s@WQQG}@IgAI{@YOIi@]c@c@IK_@_Ac@wAKu@CiAJsBAm@SkASwAEo@Be@Ha@r@{Bo@PgCF_ALgHlCcCbAWPWZeBbC[j@",
+  distance: 2,
+  elevation_gain: 18
 )
 
 run1 = Run.create!(
@@ -230,30 +308,61 @@ run5 = Run.create!(
 )
 
 
-run6 = Run.create!(
-  title: 'Runway',
-  runner_id: u6.id,
-  route_id: route2.id,
+
+
+
+
+run8 = Run.create!(
+  title: 'Half Marathon Training',
+  runner_id: u1.id,
+  route_id: route6.id,
   date: Date.today,
-  description: 'Are you challenging me to a walk off, Boo-Lander?',
-  duration: 1500
+  description: "What? Hey, guys, that show is in three hours. Derek is dead unless we get that evidence. Do you guys... ",
+  duration: 64800
 )
 
-run6 = Run.create!(
-  title: 'Jersey Coal Mines',
-  runner_id: u11.id,
-  route_id: route5.id,
+run9 = Run.create!(
+  title: 'Brisk Jog',
+  runner_id: u2.id,
+  route_id: route7.id,
   date: Date.today,
-  description: "Damnit Derek, I'm a coal miner, not a professional film or television actor.",
-  duration: 700000
+  description: "I suggest you and your Kmart Jaclyn Smith Collection outfit... stay the hell away from Derek Zoolander!",
+  duration: 960
 )
+
+run10 = Run.create!(
+  title: 'Scoping out Derelicte Grounds',
+  runner_id: u4.id,
+  route_id: route10.id,
+  date: Date.today,
+  description: "As a caterpillar becomes a butterfly, so must you become Derelicte! ",
+  duration: 4000
+)
+
+run11 = Run.create!(
+  title: 'Who Am I?',
+  runner_id: u5.id,
+  route_id: route10.id,
+  date: Date.today,
+  description: "[phone rings] God?",
+  duration: 100000
+)
+
+run12 = Run.create!(
+  title: "What's the dealio, yo?",
+  runner_id: u6.id,
+  route_id: route11.id,
+  date: Date.today,
+  description: "I felt like, \"This guy's really hurting me.\" And it hurt",
+  duration: 1000
+)
+
 
 friend_request1 = FriendRequest.create!(
   requestor_id: u1.id,
   requestee_id: u2.id,
   status: 0
 )
-
 
 friend_request2 = FriendRequest.create!(
   requestor_id: u2.id,
@@ -440,4 +549,203 @@ comment7 = Comment.create!(
   commentable_id: route4.id,
   commentable_type: 'Route',
   body: 'Thank you.'
+)
+
+comment8 = Comment.create!(
+  author_id: u6.id,
+  commentable_id: run12.id,
+  commentable_type: 'Run',
+  body: "Who are you tryin' to get crazy with, ese? Don't you know I'm loco? "
+)
+
+comment9 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run8.id,
+  commentable_type: 'Run',
+  body: "Why do you hate models, Matilda?"
+)
+
+comment10 = Comment.create!(
+  author_id: u1.id,
+  commentable_id: run8.id,
+  commentable_type: 'Run',
+  body: "Honestly?"
+)
+
+comment11 = Comment.create!(
+  author_id: u6.id,
+  commentable_id: run8.id,
+  commentable_type: 'Run',
+  body: "Yes"
+)
+
+comment12 = Comment.create!(
+  author_id: u1.id,
+  commentable_id: run8.id,
+  commentable_type: "Run",
+  body: "I think they're vain, stupid, and incredibly self-centered."
+)
+
+comment13 = Comment.create!(
+  author_id: u6.id,
+  commentable_id: run8.id,
+  commentable_type: 'Run',
+  body: "I totally agree with you. But how do you feel about male models?"
+)
+
+comment14 = Comment.create!(
+  author_id: u4.id,
+  commentable_id: run6.id,
+  commentable_type: 'Run',
+  body: "It's that damn Hansel! He's so hot right now!"
+)
+
+comment15 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: route5.id,
+  commentable_type: 'Route',
+  body: "Moisture is the essence of wetness, and wetness is the essence of beauty."
+)
+
+comment16 = Comment.create!(
+  author_id: u1.id,
+  commentable_id: route9.id,
+  commentable_type: 'Route',
+  body: "I've been trying to reach you for a week."
+)
+
+comment17 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: route9.id,
+  commentable_type: 'Route',
+  body: "A week? What, are you having a whack attack? I saw you this afternoon, dum-dum."
+)
+
+comment18 = Comment.create!(
+  author_id: u1.id,
+  commentable_id: route9.id,
+  commentable_type: 'Route',
+  body: "That was last Friday."
+)
+
+comment19 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: route9.id,
+  commentable_type: 'Route',
+  body: "Uhh Earth to Matilda, I was at a day spa. Day, D-A-I-Y-E. Okay?"
+)
+
+
+comment20 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run11.id,
+  commentable_type: 'Run',
+  body: "Or are you here to tell me what a bad eugoogoolizer I am?"
+)
+
+comment21 = Comment.create!(
+  author_id: u1.id,
+  commentable_id: run11.id,
+  commentable_type: 'Run',
+  body: "A what?"
+)
+
+comment22 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run11.id,
+  commentable_type: 'Run',
+  body: "A eugoogoolizer... one who speaks at funerals."
+)
+
+comment23 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run11.id,
+  commentable_type: 'Run',
+  body: "Or did you think I was too stupid to know what a eugoogooly was?"
+)
+
+comment24 = Comment.create!(
+  author_id: u6.id,
+  commentable_id: run11.id,
+  commentable_type: 'Run',
+  body: "Excuse me, bra."
+)
+
+comment25 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run11.id,
+  commentable_type: 'Run',
+  body: "You're excused, and I'm not your bra!"
+)
+
+
+comment31 = Comment.create!(
+  author_id: u4.id,
+  commentable_id: route8.id,
+  commentable_type: 'Route',
+  body: "Todd, are you not aware that I get farty and bloated with a foamy latte?"
+)
+
+comment32 = Comment.create!(
+  author_id: u13.id,
+  commentable_id: route8.id,
+  commentable_type: 'Route',
+  body: "My mistake, Jacobim!"
+)
+
+
+comment33 = Comment.create!(
+  author_id: u8.id,
+  commentable_id: run11.id,
+  commentable_type: 'Run',
+  body: "What do we do when we fall off the horse?"
+)
+
+comment34 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run11.id,
+  commentable_type: 'Run',
+  body: "... fall off the horse..."
+)
+
+comment35 = Comment.create!(
+  author_id: u8.id,
+  commentable_id: run11.id,
+  commentable_type: 'Run',
+  body: "... we... get back on!"
+)
+
+comment36 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run11.id,
+  commentable_type: 'Run',
+  body: "Sorry, Maury. I'm not a gymnast."
+)
+
+comment37 = Comment.create!(
+  author_id: u10.id,
+  commentable_id: run11.id,
+  commentable_type: 'Run',
+  body: "Relax, don't do it. When you wanna come to it."
+)
+
+comment37 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run11.id,
+  commentable_type: 'Run',
+  body: "Look, I gotta go pee, but I'd really like to continue talking about this conversation when I come back."
+)
+
+comment37 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run7.id,
+  commentable_type: 'Run',
+  body: "... I think I'm getting the Black Lung, Pop. It's not very well ventilated down there. "
+)
+
+comment40 = Comment.create!(
+  author_id: u11.id,
+  commentable_id: run7.id,
+  commentable_type: 'Run',
+  body: "For Christ's sake, Derek, you've been down there one day. Talk to me in thirty years. "
 )
