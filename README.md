@@ -24,4 +24,4 @@ Prior to saving the route's path to the database, the series of latitude and lon
 ### Friends
 
 
-[route_creation]: docs/screenshots/route_creation
+[route_creation]: docs/screenshots/route_creation.png
