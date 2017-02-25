@@ -12,7 +12,6 @@ export default class RouteIndex extends React.Component {
     if (loading) {
       return <LoadingIcon />;
     } else {
-      console.log('routes', routes);
       return (
         <section className="routes-index">
           <h2>Routes</h2>

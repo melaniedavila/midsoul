@@ -1,7 +1,7 @@
 # Midsoul
 - [ ] [Heroku](https://midsoul.herokuapp.com/)
 - [ ] [Trello](https://trello.com/b/Dqb447z7/midsoul)
-- [ ] [Live](http://midsoul.run) (will be added during job search curriculum)
+- [ ] [Live](http://midsoul.run)
 
 ## Minimum Viable Product
 
