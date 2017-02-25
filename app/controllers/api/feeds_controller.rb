@@ -1,6 +1,5 @@
 class Api::FeedsController < ApplicationController
-  # before_action :require_log_in!
-
+  before_action :require_log_in!
 
   def show
     @feed = feed_for(user_id: params[:user_id])
@@ -14,7 +13,6 @@ class Api::FeedsController < ApplicationController
 
       runs = Run.find_by(runner_id: opts[:user_id])
       routes = Route.find_by(creator_id: opts[:user_id])
-
 
     elsif opts[:friend_ids]
       # get many users' activities

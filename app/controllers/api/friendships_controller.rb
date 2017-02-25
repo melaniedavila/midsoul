@@ -1,6 +1,5 @@
 class Api::FriendshipsController < ApplicationController
   before_action :require_log_in!
-  
 
   def index
     @friends = current_user.friends
