@@ -24,7 +24,6 @@ export default class NewRun extends React.Component {
     this.props.requestAllRoutes();
   }
 
- // how to account for date and integer types????
   update(field) {
     return function (e) {
       const fieldVal = this.numericField(field) ? parseInt(e.currentTarget.value) : e.currentTarget.value;
@@ -70,7 +69,7 @@ export default class NewRun extends React.Component {
 
   maxRunDate() {
     const today = new Date();
-  // Set month and day to string to add leading 0
+    // Set month and day to string to add leading 0
     let day = new String(today.getDate());
     let month = new String(today.getMonth()+1); //January is 0!
     const yr = today.getFullYear();

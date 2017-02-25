@@ -3,7 +3,6 @@ class CreateFriendRequests < ActiveRecord::Migration
     create_table :friend_requests do |t|
       t.integer :requestor_id, null: false
       t.integer :requestee_id, null: false
-      # 1- accepted, 2- rejected, 3-pending
       t.integer :status, null: false
       t.timestamps null: false
     end

@@ -2,7 +2,7 @@ class Api::FriendRequestsController < ApplicationController
   before_action :require_log_in!
 
   def index
-    # pending requests only
+    # includes pending requests only
     @friend_requests = FriendRequest.where(requestee_id: current_user.id).where(status: 0)
     render :index
   end

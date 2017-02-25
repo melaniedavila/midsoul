@@ -44,11 +44,3 @@ export const requestSingleUserFeedItems = (id) => (dispatch) => {
 	return APIUtil.fetchSingleUserFeedItems(id)
 		.then(feedItems => dispatch(receiveSingleUserFeedItems(feedItems)));
 };
-
-// export const requestSingleUserFeedItems = (id) => (dispatch) => {
-// 	dispatch(loadSingleUserFeedItems());
-// 	return APIUtil.fetchSingleUserFeedItems(id).then(feedItems => {
-// 		dispatch(receiveSingleUserFeedItems(feedItems));
-// 		return feedItems;
-// 	}).fail(error => dispatch(receiveMultiUserFeedItems(error.responseJSON)));
-// };

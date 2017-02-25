@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-// need router below????
-const RouteIndexItem = ({ route, router }) => {
+const RouteIndexItem = ({ route }) => {
   return (
     <li className="route-index-item">
           <div className='route-map-img'>

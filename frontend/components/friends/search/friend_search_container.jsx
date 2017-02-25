@@ -10,7 +10,6 @@ const mapStateToProps = (state) => {
   debugger
   return {
     foundUsers: selectAllUsers(state),
-    // foundUsers: selectAllFriends(state),
     currentUser: state.session.currentUser,
     searchString: state.friendsSearch.searchString
   };

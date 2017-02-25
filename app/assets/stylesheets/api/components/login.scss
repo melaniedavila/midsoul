@@ -65,19 +65,13 @@
 
     .errors-list {
       width: 80%;
-      // border: 1px $darkest-gray solid;
-      // border-radius: 5px;
-      // padding: 4px;
       text-align: left;
-      // background-color: white;
 
       ul {
         background-color: white;
         border: 1px white solid;
         border-radius: 5px;
-        // list-style: circle;
         li {
-          // background-color: white;
           list-style: circle;
           margin: 10px 0px;
           font-size: 14px;

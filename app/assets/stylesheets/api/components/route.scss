@@ -255,8 +255,6 @@
   max-width: 250px;
 
   .route-title {
-    // align-items: center;
-    // text-align: center;
     font-size: 14px;
     font-weight: 600;
     word-wrap: break-word;
@@ -277,19 +275,8 @@
   }
 }
 
-// .route-show-comments {
-//   margin-bottom: 20px;
-//
-//   .comments-index {
-//     width: 97%;
-//     margin: 0px;
-//   }
-// }
-
-
 .route-show-comments {
   padding-top: 20px;
-  // margin: 13px;
 }
 
 .route-show-comments {
@@ -299,14 +286,11 @@
     width: 59%;
     margin: 0px;
   }
-
 }
 
 .route-show-comments .comments-index {
   margin-top: 239px;
 }
-
-
 
 .route-show-comments, .route-show-new-comment-form {
   width: 90%;
@@ -333,7 +317,6 @@
   width: 80%;
 }
 
-
 .route-show-details {
   .route-show-comments .comments-index {
     width: 100%;
@@ -342,11 +325,3 @@
     width: 159%;
   }
 }
-
-// .route-show-comments .new-comment-textarea-and-submit, .route-show-new-comment-form .new-comment-textarea-and-submit {
-//   width: 79%;
-// }
-//
-// .route-show-details .route-show-comments .comments-index {
-//   width: 100%;
-// }

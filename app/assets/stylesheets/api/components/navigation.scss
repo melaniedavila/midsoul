@@ -12,7 +12,6 @@
 .right-nav > ul {
   display: flex;
   justify-content: flex-start;
-  // align-items: center;
 }
 
 .right-nav > ul > li {
@@ -20,39 +19,20 @@
   cursor: pointer;
 }
 
-// .left-nav {
-//   margin-left: 15px;
-//   margin-right: 15px;
-// }
-
 .left-nav > ul > li > a {
   text-decoration: none;
 	margin-left: 20px;
 	cursor: pointer;
   color: $dark-gray;
-	// text-transform: uppercase;
 	font-family: $sans-serif;
 	font-weight: 400;
 	font-size: 15px;
-	// padding: 7px 9px;
-	// transition: background-color 0.3s;
 }
 
-// .nav-links {
-//   display: flex;
-//   justify-content: space-between;
-//   // flex-direction: row;
-//   align-items: center;
-//
-//   li {
-//     padding: 0px 5px;
-//   }
-// }
 
 .nav-links-dropdowns {
   display: flex;
   justify-content: space-between;
-  // flex-direction: row;
   align-items: center;
 }
 
@@ -73,7 +53,7 @@ button {
 .dropdown-menu {
   display: none
 }
-//
+
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -84,14 +64,7 @@ button {
 .dropdown:hover .dropdown-menu {
   /** Show dropdown menu */
   display: block;
-  // width: 100%;
 }
-
-
-// ul.dropdown-menu {
-//   padding-left: 20px;
-//   border: 1px solid $darkest-gray;
-// }
 
 li.dropdown-item {
   padding-left: 2px;
@@ -107,11 +80,8 @@ li.dropdown-item {
     color: $dark-gray;
     text-align: left;
     font-weight: 600;
-    // float: left;
-    // align-items: left;
   }
 }
-
 
 .right-nav > ul > li > button, .button-log-out {
   font-family: Helvetica, Arial, $sans-serif;
@@ -126,19 +96,10 @@ li.dropdown-item {
 
 }
 
-// Re-comment below when replacing user f_name with image
-// .nav-user-img, .nav-log-out {
-//   float: left;
-//   padding: 0 12px;
-// }
-
-// Remove below when replacing user f_name with image
-// .nav-log-out, .nav-user-img {
 .nav-log-out, .nav-user-img {
   float: left;
   padding: 0 12px;
   font-size: 15px;
-
 }
 
 .nav-user-img {

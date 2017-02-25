@@ -54,7 +54,6 @@ export const requestSingleRun = (id) => (dispatch) => {
 	dispatch(loadSingleRun());
 	return APIUtil.fetchSingleRun(id).then(run => {
 		dispatch(receiveSingleRun(run));
-    // why return run below????
 		return run;
 	}).fail(error => dispatch(receiveRunErrors(error.responseJSON)));
 };

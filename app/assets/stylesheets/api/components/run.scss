@@ -2,8 +2,6 @@
 @import '../base/colors.scss';
 
 .log-run-main {
-  // display: flex;
-  // justify-content: center;
   h3 {
     display: block;
     margin: 0 auto;
@@ -19,9 +17,7 @@
 .new-run-flex-container {
   display: flex;
   justify-content: flex-start;
-
 }
-
 
 .new-run-flex-left {
   form {
@@ -31,10 +27,8 @@
     border-right: 1px solid $medium-gray;
     border-bottom: 1px solid $medium-gray;
     border-top: 1px solid $medium-gray;
-
     border-radius: 5px;
     margin-top: 50px;
-
 
     .errors-list {
       width: 90%;
@@ -46,14 +40,12 @@
         border: 1px solid $darker-gray;
         background: $light-gray;
         li {
-          // list-style: circle;
           font-size: 14px;
           color: $dark-gray;
           margin-left: 7px;
         }
       }
     }
-
 
     label {
       font-size: 18px;
@@ -126,7 +118,6 @@
     color: $darker-gray;
   }
 
-
   .mini-runs {
     display: flex;
     flex-direction: row;
@@ -147,8 +138,6 @@
     }
   }
 }
-
-// //////////////////////////////////////////
 
 .run-show-details {
   padding: 15px;
@@ -223,8 +212,6 @@
   display: flex;
   align-items: center;
   align-content: center;
-  // margin: 10px;
-  // margin: 0 auto;
   width: 60%;
   margin-top: 15px;
 }
@@ -245,7 +232,6 @@
 
 .run-show-comments {
   padding-top: 30px;
-  // margin: 13px;
 }
 
 .run-show-comments {
@@ -255,7 +241,6 @@
     width: 59%;
     margin: 0px;
   }
-
 }
 
 .run-date-and-description-container {
@@ -294,13 +279,3 @@
 .run-show-new-comment-form .new-comment-textarea-and-submit textarea {
   width: 80%;
 }
-
-// .run-show-new-comment-form {
-//   .new-comment-form-container {
-//     .new-comment-textarea-and-submit {
-//       width: 70%;
-//       margin: 0px;
-//
-//     }
-//   }
-// }

@@ -25,7 +25,6 @@ export default function routesReducer(state = {}, action) {
       } else {
         return state;
       }
-    // case REMOVE_ROUTE_COMMENT:
     default:
       return state;
   }

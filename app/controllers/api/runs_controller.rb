@@ -1,18 +1,11 @@
 class Api::RunsController < ApplicationController
   before_action :require_log_in!
-  
 
   def create
     @run = Run.new(run_params)
     @run.runner_id = current_user.id
     @running_route = Route.find_by(id: @run.route_id)
-    # @run.distance = @running_route.distance
 
-    ##### below for testing only
-    # @run.runner_id = 1
-    # @run.route_id = 1
-    # @run.date = Date.today
-    ##### above for testing only
     if @run.save
       render :show
     else
@@ -25,8 +18,6 @@ class Api::RunsController < ApplicationController
     if current_user.id == @run.runner_id || current_user.friends.include?(@run.runner)
       render :show
     else
-      # ???? below ok? remove base ????
-      # render json: { base: ['You are not authorized to see this run.'] }, status: 422
       render json: ['You are not authorized to see this page.'], status: 422
     end
   end

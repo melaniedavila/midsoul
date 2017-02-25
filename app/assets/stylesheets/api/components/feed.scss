@@ -17,24 +17,16 @@
 .feed-index-item-container {
   display: flex;
   align-content: flex-start;
-  // margin: 0 auto;
-
   margin: 20px;
-  // margin-bottom: 20px;
   border: 1px solid black;
   width: 95%;
-  // background-color: $light-gray;
 
   .feed-index-item-map {
     .img {
       width: 400px;
       height: 400px;
     }
-    // width: 100%;
-    // height: 100%;
   }
-
-
 
   .activity-details-flex-container {
     display:flex;
@@ -48,7 +40,6 @@
       align-content: flex-start;
       margin: 10px;
       background-color: white;
-      // width: 100%;
 
       .activity-date {
         font-weight: 500px;
@@ -63,180 +54,15 @@
         padding-left: 10px;
         font-weight: 500;
       }
-      // .img {
-      //   width: 75px;
-      //   height: 75px;
-      // }
 
       .user-thumb-container {
         width: 100px;
         height:100px;
-
       }
     }
-
 
     .activity-comments {
       padding-top: 10px;
     }
   }
-
-
 }
-
-
-
-// @import '../base/fonts.scss';
-// @import '../base/colors.scss';
-//
-// .feed-index {
-//   h2 {
-//     padding: 15px;
-//     display: block;
-//     font-size: 32px;
-//     font-weight: bold;
-//   }
-// }
-//
-// .feed-index-item {
-//   margin: 0 auto;
-// }
-//
-// .feed-index-item-container {
-//   display: flex;
-//   align-content: flex-start;
-//   // margin: 0 auto;
-//
-//   margin: 20px;
-//   // margin-bottom: 20px;
-//   border: 1px solid black;
-//   width: 95%;
-//   // background-color: $light-gray;
-//
-//   .feed-index-item-map {
-//     .img {
-//       width: 400px;
-//       height: 400px;
-//     }
-//     // width: 100%;
-//     // height: 100%;
-//   }
-//
-//
-//
-//   .activity-details-flex-container {
-//     display:flex;
-//     flex-direction: column;
-//     padding-left: 10px;
-//     // width: 100%;
-//
-//     .mini-activity-description-flex-container {
-//       display: flex;
-//       align-content: flex-start;
-//       margin: 10px;
-//       background-color: white;
-//       // width: 100%;
-//
-//       h3 {
-//         padding-left: 10px;
-//         color: $midSoul-blue;
-//         align-items: center;
-//       }
-//       // .img {
-//       //   width: 75px;
-//       //   height: 75px;
-//       // }
-//
-//       .user-thumb-container {
-//         width: 100px;
-//         height:100px;
-//
-//       }
-//     }
-//
-//
-//     .activity-comments {
-//       padding-top: 10px;
-//     }
-//   }
-//
-//
-// }
-
-// @import '../base/fonts.scss';
-// @import '../base/colors.scss';
-//
-// .feed-index {
-//   h2 {
-//     padding: 15px;
-//     display: block;
-//     font-size: 32px;
-//     font-weight: bold;
-//   }
-// }
-//
-// .feed-index-item {
-//   margin: 0 auto;
-// }
-//
-// .feed-index-item-container {
-//   display: flex;
-//   align-content: flex-start;
-//   // margin: 0 auto;
-//
-//   margin: 20px;
-//   // margin-bottom: 20px;
-//   border: 1px solid black;
-//   width: 95%;
-//   // background-color: $light-gray;
-//
-//   .feed-index-item-map {
-//     .img {
-//       width: 400px;
-//       height: 400px;
-//     }
-//     width: 100%;
-//     // height: 100%;
-//   }
-//
-//
-//
-//   .activity-details-flex-container {
-//     display:flex;
-//     flex-direction: column;
-//     padding-left: 10px;
-//     height: 600px;
-//     // width: 100%;
-//
-//     .mini-activity-description-flex-container {
-//       display: flex;
-//       align-content: flex-start;
-//       margin: 10px;
-//       background-color: white;
-//       // width: 100%;
-//
-//       h3 {
-//         padding-left: 10px;
-//         color: $midSoul-blue;
-//         align-items: center;
-//       }
-//       // .img {
-//       //   width: 75px;
-//       //   height: 75px;
-//       // }
-//
-//       .user-thumb-container {
-//         width: 100px;
-//         height:100px;
-//
-//       }
-//     }
-//
-//
-//     .activity-comments {
-//       padding-top: 10px;
-//     }
-//   }
-//
-//
-// }

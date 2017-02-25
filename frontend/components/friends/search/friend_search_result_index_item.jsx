@@ -13,7 +13,6 @@ const FriendSearchResultIndexItem = ({ foundUser, createFriendRequest, currentUs
     }
   }
 
-  // after button clicked, remove user from state
   return (
   <li className="friend-search-result-index-item">
     <div className='friend-search-img-and-name'>

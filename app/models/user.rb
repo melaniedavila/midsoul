@@ -77,12 +77,9 @@ class User < ActiveRecord::Base
     :profile_picture,
     default_url: '/assets/profile_pic/default-prof-pic.png',
     styles: {
-      # extralarge: "300x300#",
-      # large: "250x250#",
       medium: "200x200#",
       small: "100x100#",
-      thumb: '75x75#',
-      # extrasmall: "50x50#"
+      thumb: '75x75#'
     },
   )
 
@@ -110,20 +107,6 @@ class User < ActiveRecord::Base
     self.save!
     self.session_token
   end
-
-  # test below
-  # def friends
-  #   query = <<-SQL
-  #     SELECT friend_id
-  #     FROM friendships
-  #     WHERE user_id = #{current_user.id}
-  #   SQL
-  #
-  #   friend_ids = ActiveRecord::Base.connection.execute(query)
-  #
-  #   # User.where(id IN friend_ids)
-  #   User.where('id IN (?)', friend_ids)
-  # end
 
   private
   def ensure_session_token

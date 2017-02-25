@@ -4,7 +4,6 @@ import {  RECEIVE_ALL_USERS, RECEIVE_SINGLE_USER, REMOVE_USER,
 
 export default function usersReducer(state = {}, action) {
   Object.freeze(state);
-  // debugger
   switch (action.type) {
     case RECEIVE_ALL_USERS:
       return merge({}, action.users);

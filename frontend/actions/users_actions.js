@@ -1,4 +1,3 @@
-// prune as necessary
 export const RECEIVE_ALL_USERS    = 'RECEIVE_ALL_USERS';
 export const RECEIVE_SINGLE_USER = 'RECEIVE_SINGLE_USER';
 export const RECEIVE_NEW_USER    = 'RECEIVE_NEW_USER';
@@ -57,7 +56,6 @@ export const requestSingleUser = (id) => (dispatch) => {
 	dispatch(loadSingleUser());
 	return APIUtil.fetchSingleUser(id).then(user => {
 		dispatch(receiveSingleUser(user));
-    // why return user below????
 		return user;
 	}).fail(error => dispatch(receiveUserErrors(error.responseJSON)));
 };

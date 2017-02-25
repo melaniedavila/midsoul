@@ -1,6 +1,5 @@
 class Api::RoutesController < ApplicationController
   before_action :require_log_in!
-  
 
   MILES_PER_METER = 0.000621371
 
@@ -8,13 +7,6 @@ class Api::RoutesController < ApplicationController
     @route = Route.new(route_params)
     @route.creator_id = current_user.id
     @route.distance = convert_meters_to_miles(@route.distance)
-
-    ##### below for testing only
-    # @route.creator_id = 8
-    # @route.distance = 1
-    # @route.elevation_gain = 1
-    # @route.polyline ||= 'foo'
-    ##### above for testing only
 
     if @route.save
       render :show

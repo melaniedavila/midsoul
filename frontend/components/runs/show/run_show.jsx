@@ -89,14 +89,3 @@ export default class RunShow extends React.Component {
     }
   }
 }
-
-
-// let deleteButton;
-// debugger
-// if (this.props.currentUser.id === run.runner_id) {
-//   deleteButton = (<button
-//                   onClick={this.handleDeleteRunClick()}>
-//                   DELETE RUN
-//                 </button>);
-// }
-// {deleteButton}

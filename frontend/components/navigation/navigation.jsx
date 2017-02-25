@@ -21,7 +21,6 @@ const Navigation = function (props) {
 
   if (props.currentUser) {
     const img_url = props.currentUser.image_url || window.midSoulAssets.defaultProfPic;
-    // debugger
     return(
       <header>
         <nav className='main-nav'>
@@ -45,7 +44,6 @@ const Navigation = function (props) {
                 <button>Routes</button>
                 <ul className='dropdown-menu'>
                   <li className='dropdown-item'><Link to='/routes/create-route'>Create Route</Link></li>
-                  {/*<li className='dropdown-item'><Link to='#'>My Routes</Link></li>*/}
                   <li className='dropdown-item'><Link to='/routes'>All Routes</Link></li>
                 </ul>
               </div>
@@ -65,7 +63,6 @@ const Navigation = function (props) {
                 <img src={props.currentUser.profile_picture} alt='Profile picture'></img>
               </Link>
             </div>
-            { /* add below as drop down upon hover on image */}
             <div className='nav-log-out'>
               <button
                 className='button-log-out'

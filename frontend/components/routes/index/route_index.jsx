@@ -8,9 +8,6 @@ export default class RouteIndex extends React.Component {
   }
 
   render() {
-    // need children below???? only need it if we want
-    // both RouteIndexContainer and RouteShowContainer to
-    // be rendred at same time
     const { routes, loading } = this.props;
     if (loading) {
       return <LoadingIcon />;

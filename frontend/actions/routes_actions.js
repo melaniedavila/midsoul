@@ -54,7 +54,6 @@ export const requestSingleRoute = (id) => (dispatch) => {
 	dispatch(loadSingleRoute());
 	return APIUtil.fetchSingleRoute(id).then(route => {
 		dispatch(receiveSingleRoute(route));
-    // why return route below????
 		return route;
 	}).fail(error => dispatch(receiveRouteErrors(error.responseJSON)));
 };
