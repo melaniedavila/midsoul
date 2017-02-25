@@ -68,12 +68,14 @@ export default class UserShow extends React.Component {
       requestor_id,
       requestee_id
     });
-  }
 
+    $('.friend-button').text('PENDING')
+  }
 
   render () {
     const user = this.props.user;
     const errors = this.props.errors;
+    debugger
     if (!user) {
       return <LoadingIcon />;
     } else {
@@ -93,7 +95,7 @@ export default class UserShow extends React.Component {
             <div className='user-show-details-flex-container'>
               <div className='user-show-details-flex-left'>
                 <img src={user.profile_picture} alt='Profile picture'></img>
-                <button onClick={this.submitFriendRequest.bind(this)}>ADD FRIEND</button>
+                <button className='friend-button' onClick={this.submitFriendRequest.bind(this)}>ADD FRIEND</button>
               </div>
               <div className='user-show-details-flex-right'>
                 <p>Member since: {memberDate}</p>

@@ -9,6 +9,16 @@ const Navigation = function (props) {
     };
   }
 
+  const guest = { email: 'scott-jurek@example.com',
+                          password: 'password' };
+
+  const loginGuest = function (guest) {
+    return function (e) {
+      e.preventDefault();
+      props.login(guest).then(() => (hashHistory.push('/feed')));
+    };
+  };
+
   if (props.currentUser) {
     const img_url = props.currentUser.image_url || window.midSoulAssets.defaultProfPic;
     // debugger
@@ -81,6 +91,12 @@ const Navigation = function (props) {
                 className='button-log-in'
                 onClick={redirectTo('/login')}>
                 LOG IN</button>
+            </li>
+            <li>
+              <button className='button-guest-log-in'
+                onClick={loginGuest(guest)}>
+                GUEST
+              </button>
             </li>
             <li>
               <button
