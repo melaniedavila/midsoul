@@ -12,11 +12,9 @@
 
 class FeedItem < ActiveRecord::Base
   belongs_to :feedable, polymorphic: true
-  belongs_to :user
-
-  before_validation :ensure_user
-
   validates :feedable, :user, presence: true
+  belongs_to :user
+  before_validation :ensure_user
 
   private
 
