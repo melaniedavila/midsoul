@@ -2,12 +2,15 @@ import { connect } from 'react-redux';
 import { updateFriendSearchFilter } from '../../../actions/friends_search_actions';
 import { createFriendRequest } from '../../../actions/friend_requests_actions';
 import { selectAllUsers } from '../../../reducers/selectors';
+import { selectAllFriends } from '../../../reducers/selectors';
 
 import FriendSearch from './friend_search';
 
 const mapStateToProps = (state) => {
+  debugger
   return {
     foundUsers: selectAllUsers(state),
+    // foundUsers: selectAllFriends(state),
     currentUser: state.session.currentUser,
     searchString: state.friendsSearch.searchString
   };

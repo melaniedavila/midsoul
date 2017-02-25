@@ -3,9 +3,7 @@ import FriendIndex from './friend_index';
 import { requestCurrentUserFriends } from '../../../actions/friendships_actions';
 import { selectAllFriends } from '../../../reducers/selectors';
 
-
 const mapStateToProps = (state) => {
-
   return(
     {
       errors: state.errors,

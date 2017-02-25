@@ -5,8 +5,8 @@ import LoadingIcon from '../../loading/loading_icon';
 
 const FriendSearchResultIndex = ({ foundUsers, createFriendRequest, currentUser }) => (
   <ul className='friend-search-results'>
-    {foundUsers.map((foundUser) => <FriendSearchResultIndexItem
-                                        key={foundUser.id}
+    {foundUsers.map((foundUser, idx) => <FriendSearchResultIndexItem
+                                        key={idx}
                                         foundUser={foundUser}
                                         createFriendRequest={createFriendRequest}
                                         currentUser={currentUser}/>)}
