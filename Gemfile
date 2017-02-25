@@ -14,6 +14,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'paperclip'
 gem 'validates_email_format_of'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'annotate'

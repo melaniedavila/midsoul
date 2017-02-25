@@ -26,6 +26,7 @@
       border-radius: 2px;
       color: $tab-blue;
       font-size: 16px;
+      background: $light-gray;
     }
 
     a:hover {
@@ -33,7 +34,7 @@
     }
 
     .active {
-      background: $light-gray;
+      background: white;
       border-top: 2px solid $tab-blue;
     }
   }

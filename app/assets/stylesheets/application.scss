@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
  // CSS Reset
  @import "api/base/reset.scss";
@@ -26,3 +27,6 @@
 
  // Components
  @import "api/components/*";
+
+// Font Awesome
+ @import "font-awesome";
