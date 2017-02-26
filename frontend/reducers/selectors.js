@@ -11,3 +11,5 @@ export const selectAllFriends = ({ friendships }) => values(friendships);
 
 // reducer supplies key of feed
 export const selectAllFeedItems = ({ feeds }) => values(feeds);
+
+export const selectFriendSearchResults = ({ friendsSearch }) => values(friendsSearch.friendSearchResults);
