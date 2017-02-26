@@ -7,6 +7,7 @@ export const LOAD_SINGLE_USER = 'LOAD_SINGLE_USER';
 export const RECEIVE_USER_ERRORS = 'RECEIVE_USER_ERRORS';
 
 import * as APIUtil from '../util/users_api_util';
+import { receiveFriendSearchResults } from './friends_search_actions';
 
 export const loadAllUsers = () => ({
   type: LOAD_ALL_USERS
@@ -46,9 +47,18 @@ export const receiveUserErrors = (errors) => ({
 
 export const requestAllUsers = (filters) => {
   return (dispatch) => {
-  	dispatch(loadAllUsers());
+    var action;
+
+    if (filters) {
+      action = receiveFriendSearchResults;
+    } else {
+      action = receiveAllUsers;
+    }
+
+    dispatch(loadAllUsers());
+
   	return APIUtil.fetchAllUsers(filters)
-  		.then(users => dispatch(receiveAllUsers(users)));
+  		.then(users => dispatch(action(users)));
   };
 };
 
