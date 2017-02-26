@@ -1,15 +1,8 @@
-BUGS:
-when i accept friend request, tab doesn't auto update
-when i click user on user in find friends, need to refresh to see profile
-
 /////////////////////////////////////////////////////////////////////////////
-BACKEND
-- optimize userscontroller index query with .or
 FRIEND REQUESTS
 - fix friend requests styling
 - don't allow users to friend themselves, current friends or people who have sent them requests
 FRIEND SEARCH
-- on friends search page- change 'add' text after clicked
 - fix bad naming in friendships. for example friendships index action returns friends
 RUNS
 - order my runs in reverse chronological order
@@ -29,3 +22,5 @@ LOADING
 - give loading actions corresponding reducers. currently only using loading reducer for routes
 FEED
 - styling, hard pixels
+- refactor comments styling
+- add comment delete button for comments by author

@@ -76,5 +76,18 @@
     button:hover {
       background: $medium-gray;
     }
+
+    .friend-request-status {
+      background: $light-gray;
+      color: $darker-gray;
+      height: 50%;
+      border-radius: 2px;
+      text-transform: uppercase;
+      margin-right: 20px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      padding: 2px 13px 2px 13px;
+    }
   }
 }

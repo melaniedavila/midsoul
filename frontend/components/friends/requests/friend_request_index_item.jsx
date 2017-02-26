@@ -8,16 +8,16 @@ const FriendRequestIndexItem = ({ friendRequest, updateFriendRequest }) => {
     updateFriendRequest({
       id: friendRequest.id,
       status: 'accepted'
-    })
-  }
+    });
+  };
 
   const rejectFriendRequest = function (e) {
     e.preventDefault();
     updateFriendRequest({
       id: friendRequest.id,
       status: 'rejected'
-    })
-  }
+    });
+  };
 
   return (
   <li className="friend-request-index-item">
@@ -38,6 +38,6 @@ const FriendRequestIndexItem = ({ friendRequest, updateFriendRequest }) => {
       </div>
     </div>
   </li>
-)};
+);};
 
 export default FriendRequestIndexItem;
