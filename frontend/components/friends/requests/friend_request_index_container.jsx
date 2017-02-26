@@ -3,9 +3,7 @@ import FriendRequestIndex from './friend_request_index';
 import { requestCurrentUserReceivedFriendRequests, updateFriendRequest } from '../../../actions/friend_requests_actions';
 import { selectAllFriendRequests } from '../../../reducers/selectors';
 
-
 const mapStateToProps = (state) => {
-
   return(
     {
       errors: state.errors,

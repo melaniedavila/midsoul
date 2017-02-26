@@ -19,7 +19,6 @@ const FriendRequestIndexItem = ({ friendRequest, updateFriendRequest }) => {
     })
   }
 
-
   return (
   <li className="friend-request-index-item">
     <div className='friend-request-flex-container'>

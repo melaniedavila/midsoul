@@ -7,9 +7,9 @@ export default class FriendRequestIndex extends React.Component {
     this.props.requestCurrentUserReceivedFriendRequests();
   }
 
-
   render() {
     const { friendRequests, loading, updateFriendRequest } = this.props;
+
     if (loading) {
       return <LoadingIcon />;
     } else {
