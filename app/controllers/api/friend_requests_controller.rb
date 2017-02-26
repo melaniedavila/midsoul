@@ -11,7 +11,7 @@ class Api::FriendRequestsController < ApplicationController
     @friend_request = FriendRequest.new(friend_request_params)
 
     if @friend_request.save
-      render json: @friend_request
+      render :show
     else
       render json: @friend_request.errors, status: 422
     end

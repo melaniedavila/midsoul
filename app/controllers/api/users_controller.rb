@@ -2,19 +2,25 @@ class Api::UsersController < ApplicationController
   before_action :require_log_in!
 
   def index
-    all_users = User.all
-    if params[:searchString]
-      search_string = params[:searchString].downcase
+    @users =
+      if params[:searchString]
+        search_string = params[:searchString].downcase
+        friend_ids = current_user.friends.pluck(:id)
 
-      users = all_users.where('lower(f_name) LIKE ?', "#{search_string}%")
-      users += all_users.where('lower(l_name) LIKE ?', "#{search_string}%")
-      users += all_users.where('lower(email) LIKE ?', "#{search_string}%")
+        User.
+          where(
+            'lower(f_name) LIKE ? OR lower(l_name) LIKE ? OR lower(email) LIKE ?',
+            "#{search_string}%",
+            "#{search_string}%",
+            "#{search_string}%"
+          ).
+          where.not(id: friend_ids.concat([current_user.id])).
+          uniq
 
-      users.uniq!
-      users.reject! { |u| u == current_user }
-    end
+      else
+        User.all
+      end
 
-    @users = users || []
     render :index
   end
 
