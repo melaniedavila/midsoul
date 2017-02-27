@@ -5,7 +5,6 @@ import ErrorsList from '../../errors/errors_list';
 import SingleUserFeedIndex from '../../feed/single_user_feed_index';
 import SingleUserFeedIndexContainer from '../../feed/single_user_feed_container';
 
-
 export default class UserShow extends React.Component {
   componentDidMount() {
     this.props.requestSingleUser(this.props.params.userId);
@@ -112,7 +111,6 @@ export default class UserShow extends React.Component {
             <h2>{user.f_name} {user.l_name}</h2>
             {editButton}
           </div>
-
           <div className='user-show-and-activity-feed-flex-container'>
             <div className='user-show-details-flex-container'>
               <div className='user-show-details-flex-left'>

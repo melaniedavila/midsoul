@@ -1,12 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const CommentIndexItem = ({ comment }) => {
-  const commentDateTime = new Date(comment.created_at)
+const CommentIndexItem = ({ comment, currentUser, deleteComment }) => {
+  const commentDateTime = new Date(comment.created_at);
   const commentDate = commentDateTime.toDateString();
   const commentTime = commentDateTime.toLocaleTimeString();
+  const dateTimeString = `${commentDate} ${commentTime}`;
 
-  const dateTimeString = `${commentDate} ${commentTime}`
+  const deleteFeedItemComment = function (commentId) {
+    return (e) => {
+      e.preventDefault();
+      deleteComment(commentId);
+    };
+  };
+
+
+
+  let deleteButton;
+  if (currentUser.id === comment.author_id) {
+    deleteButton = (<button onClick={deleteFeedItemComment(comment.id)}>Delete</button>);
+  }
+
   return (
   <li className="comment-index-item">
     <div className='comment-author-img'>
@@ -23,6 +37,9 @@ const CommentIndexItem = ({ comment }) => {
           <p className='comment-body'>{comment.body}</p>
         </div>
       </div>
+    </div>
+    <div className='delete-comment'>
+      {deleteButton}
     </div>
   </li>
 )};
