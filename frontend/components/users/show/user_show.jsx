@@ -75,15 +75,37 @@ export default class UserShow extends React.Component {
   render () {
     const user = this.props.user;
     const errors = this.props.errors;
+    debugger
 
     if (!user) {
       return <LoadingIcon />;
     } else {
       const memberDate = this.parseMembershipDate(user.created_at);
       let editButton;
-      if (this.props.currentUser.id === this.props.user.id) {
+      if (this.props.currentUser.id === user.id) {
         editButton = <button onClick={this.redirectToEdit.bind(this)}>EDIT PROFILE</button>;
       }
+
+      let friendshipButtonOrStatus;
+      debugger
+      if (user.currentUserFriendRequest) {
+        if (user.currentUserFriendRequest.status === 'accepted') {
+          friendshipButtonOrStatus = (<p className="user-show-friend-request-status">
+            FRIENDS
+          </p>);
+        } else {
+        friendshipButtonOrStatus = (<p className="user-show-friend-request-status">
+          { user.currentUserFriendRequest.status }
+        </p>);
+        }
+      } else if (this.props.currentUser.id === user.id) {
+        friendshipButtonOrStatus = (<p></p>);
+      } else {
+        friendshipButtonOrStatus = (<button className='friend-button'
+                                    onClick={this.submitFriendRequest.bind(this)}>
+                                    ADD FRIEND</button>);
+      }
+
       return (
         <div className='user-show-details'>
           <div className='user-name-and-edit-button-flex-container'>
@@ -95,7 +117,7 @@ export default class UserShow extends React.Component {
             <div className='user-show-details-flex-container'>
               <div className='user-show-details-flex-left'>
                 <img src={user.profile_picture} alt='Profile picture'></img>
-                <button className='friend-button' onClick={this.submitFriendRequest.bind(this)}>ADD FRIEND</button>
+                {friendshipButtonOrStatus}
               </div>
               <div className='user-show-details-flex-right'>
                 <p>Member since: {memberDate}</p>
