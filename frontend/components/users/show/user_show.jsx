@@ -74,7 +74,6 @@ export default class UserShow extends React.Component {
   render () {
     const user = this.props.user;
     const errors = this.props.errors;
-    debugger
 
     if (!user) {
       return <LoadingIcon />;
@@ -86,7 +85,6 @@ export default class UserShow extends React.Component {
       }
 
       let friendshipButtonOrStatus;
-      debugger
       if (user.currentUserFriendRequest) {
         if (user.currentUserFriendRequest.status === 'accepted') {
           friendshipButtonOrStatus = (<p className="user-show-friend-request-status">
