@@ -6,6 +6,14 @@ class Api::UsersController < ApplicationController
       if params[:searchString]
         search_string = params[:searchString].downcase
         friend_ids = current_user.friends.pluck(:id)
+        received_friend_request_user_ids = current_user.
+          received_friend_requests.
+          pluck(:requestor_id)
+
+        users_to_filter_out = received_friend_request_user_ids.
+          concat(
+            friend_ids.concat([current_user.id])
+          )
 
         User.
           where(
@@ -14,7 +22,7 @@ class Api::UsersController < ApplicationController
             "#{search_string}%",
             "#{search_string}%"
           ).
-          where.not(id: friend_ids.concat([current_user.id])).
+          where.not(id: users_to_filter_out).
           uniq
 
       else
