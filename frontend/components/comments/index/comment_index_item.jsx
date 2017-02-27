@@ -14,8 +14,6 @@ const CommentIndexItem = ({ comment, currentUser, deleteComment }) => {
     };
   };
 
-
-
   let deleteButton;
   if (currentUser.id === comment.author_id) {
     deleteButton = (<button onClick={deleteFeedItemComment(comment.id)}>Delete</button>);
@@ -37,9 +35,9 @@ const CommentIndexItem = ({ comment, currentUser, deleteComment }) => {
           <p className='comment-body'>{comment.body}</p>
         </div>
       </div>
-    </div>
-    <div className='delete-comment'>
-      {deleteButton}
+      <div className='delete-comment'>
+        {deleteButton}
+      </div>
     </div>
   </li>
 )};
