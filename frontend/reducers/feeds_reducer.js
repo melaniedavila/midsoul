@@ -1,7 +1,6 @@
 import { merge, assign, values } from 'lodash';
-import {  RECEIVE_MULTI_USER_FEED_ITEMS, RECEIVE_SINGLE_USER_FEED_ITEMS } from '../actions/feeds_actions';
-import { RECEIVE_NEW_COMMENT, REMOVE_RUN_COMMENT } from '../actions/comments_actions';
-
+import { RECEIVE_MULTI_USER_FEED_ITEMS, RECEIVE_SINGLE_USER_FEED_ITEMS } from '../actions/feeds_actions';
+import { RECEIVE_NEW_COMMENT, REMOVE_COMMENT } from '../actions/comments_actions';
 
 export default function feedsReducer(state = {}, action) {
   Object.freeze(state);
@@ -18,6 +17,24 @@ export default function feedsReducer(state = {}, action) {
       if (feedItem) {
         feedItem.feedable.comments.push(action.comment);
         return newState;
+      } else {
+        return state;
+      }
+    case REMOVE_COMMENT:
+      let removedCommentState = merge({}, state);
+      const selectedFeedItem = values(removedCommentState).find((feedItem) => {
+        return ((feedItem.feedable.id === action.comment.commentable_id) &&
+        (feedItem.feedable_type === action.comment.commentable_type));
+      });
+      if (selectedFeedItem) {
+        let feedItemComments = selectedFeedItem.feedable.comments;
+        for (let i = 0; i < feedItemComments.length; i++) {
+          if (feedItemComments[i].id === action.comment.id) {
+            selectedFeedItem.feedable.comments.splice(i, 1);
+            break;
+          }
+        }
+        return removedCommentState;
       } else {
         return state;
       }

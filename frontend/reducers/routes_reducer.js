@@ -1,7 +1,7 @@
 import { merge, assign } from 'lodash';
 import {  RECEIVE_ALL_ROUTES, RECEIVE_SINGLE_ROUTE, REMOVE_ROUTE,
           RECEIVE_NEW_ROUTE, RECEIVE_ROUTE_ERRORS } from '../actions/routes_actions';
-import { RECEIVE_NEW_COMMENT } from '../actions/comments_actions';
+import { RECEIVE_NEW_COMMENT, REMOVE_COMMENT } from '../actions/comments_actions';
 
 export default function routesReducer(state = {}, action) {
   Object.freeze(state);
@@ -24,6 +24,21 @@ export default function routesReducer(state = {}, action) {
         return newCommentState;
       } else {
         return state;
+      }
+    case REMOVE_COMMENT:
+      if (action.comment.commentable_type === 'Route' && state[action.comment.commentable_id]) {
+        const newRemovedCommentState = merge({}, state);
+        const commentToRemove = action.comment;
+        const routeToRemoveCommentFrom = newRemovedCommentState[action.comment.commentable_id];
+        const comments = routeToRemoveCommentFrom.comments
+        for (let i = 0; i < comments.length; i++) {
+          if (comments[i].id === action.comment.id) {
+            comments.splice(i, 1);
+            break;
+          }
+        }
+
+        return newRemovedCommentState;
       }
     default:
       return state;
