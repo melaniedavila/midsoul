@@ -7,7 +7,7 @@ midSoul is a full-stack web application inspired by the web application version 
 ## Features and Implementation
 
 ### Running Routes
-The heart of midSoul is the interactive map that allows users to create running routes and receive distance and elevation gain statistics in real-time. This feature relies heavily upon the Google Maps API.
+The heart of midSoul is the interactive map that allows users to create running routes and receive distance and elevation gain statistics in real-time. This feature integrates with the Google Maps API.
 
 ![route_creation_img][route_creation]
 
