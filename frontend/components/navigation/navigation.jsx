@@ -33,7 +33,7 @@ const Navigation = function (props) {
               </div>
 
               <div className='dropdown'>
-                <button>Training</button>
+                <button>TRAINING</button>
                 <ul className='dropdown-menu'>
                   <li className='dropdown-item'><Link to='/log-run'>Log Run</Link></li>
                   <li className='dropdown-item'><Link to='/my-runs'>My Runs</Link></li>
@@ -41,7 +41,7 @@ const Navigation = function (props) {
               </div>
 
               <div className='dropdown'>
-                <button>Routes</button>
+                <button>ROUTES</button>
                 <ul className='dropdown-menu'>
                   <li className='dropdown-item'><Link to='/routes/create-route'>Create Route</Link></li>
                   <li className='dropdown-item'><Link to='/routes'>All Routes</Link></li>
@@ -49,11 +49,11 @@ const Navigation = function (props) {
               </div>
 
               <div className='dropdown'>
-                <button onClick={redirectTo('/community')}>Community</button>
+                <button onClick={redirectTo('/community')}>COMMUNITY</button>
               </div>
 
               <div className='dropdown'>
-                <button onClick={redirectTo('/feed')}>Feed</button>
+                <button onClick={redirectTo('/feed')}>FEED</button>
               </div>
             </div>
           </nav>

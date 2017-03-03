@@ -36,11 +36,7 @@
   align-items: center;
 }
 
-button {
-  padding: 0 30px;
-  font-size: 15px;
-  color: $medium-gray;
-}
+
 
 
 .dropdown {
@@ -48,6 +44,16 @@ button {
   position: relative;
   display: inline-block;
   padding: 0, 5px;
+
+  button {
+    padding: 0 30px;
+    font-size: 13px;
+    color: $medium-gray;
+  }
+
+  button:hover {
+    color: black;
+  }
 }
 
 .dropdown-menu {
@@ -69,18 +75,27 @@ button {
 li.dropdown-item {
   padding-left: 2px;
   border: 1px solid $medium-gray;
-  border-radius: 2px;
   list-style: none;
-  background-color: $lightest-gray;
-  width: 90px;
+  background-color: white;
+  width: 110px;
+  padding: 5px;
 
   a {
     text-decoration: none;
     font-size: 13px;
-    color: $dark-gray;
+    color: $medium-gray;;
     text-align: left;
     font-weight: 600;
+    margin: 8px;
   }
+
+  a:hover {
+    color: black;
+  }
+}
+
+li.dropdown-item:first-child {
+  margin-top: 22px;
 }
 
 .right-nav > ul > li > button, .button-log-out {
