@@ -131,10 +131,10 @@ li.dropdown-item {
 }
 
 .button-sign-up, .button-log-out {
-  background-color: $dark-gray;
+  background-color: $form-green;
   color: white;
 }
 
 .button-sign-up:hover, .button-log-out:hover {
-  background-color: $darkest-gray;
+  background-color: $hover-green;
 }

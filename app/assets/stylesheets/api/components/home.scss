@@ -65,7 +65,7 @@
 }
 
 .button-guest-log-in {
-  background-color: $dark-gray;
+  background-color: $form-orange;
   color: white;
   font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
   font-weight: 500px;
@@ -80,5 +80,5 @@
 }
 
 .button-guest-log-in:hover {
-  background-color: $darker-gray;
+  background-color: $hover-orange;
 }
