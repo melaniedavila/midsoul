@@ -24,7 +24,7 @@
 	margin-left: 20px;
 	cursor: pointer;
   color: $dark-gray;
-	font-family: $sans-serif;
+	font-family: 'Open Sans', Helvetica, Arial, $sans-serif;;
 	font-weight: 400;
 	font-size: 15px;
 }
@@ -84,7 +84,7 @@ li.dropdown-item {
 }
 
 .right-nav > ul > li > button, .button-log-out {
-  font-family: Helvetica, Arial, $sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
   font-weight: 500px;
   font-size: 14px;
   line-height: 36px;

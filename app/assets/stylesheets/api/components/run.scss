@@ -6,7 +6,7 @@
     display: block;
     margin: 0 auto;
     font-size: 22px;
-    font-family: Helvetica, Arial, $sans-serif;
+    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
     font-weight: 500px;
     padding: 20px 0px 20px 0px;
     border-bottom: 1px solid $medium-gray;
@@ -49,7 +49,7 @@
 
     label {
       font-size: 18px;
-      font-family: Helvetica, Arial, $sans-serif;
+      font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
       font-weight: 500px;
       color: $darker-gray;
     }
@@ -72,7 +72,7 @@
     input[type=submit] {
       background-color: $darker-gray;
       color: white;
-      font-family: Helvetica, Arial, $sans-serif;
+      font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
       font-weight: 500px;
       font-size: 14px;
       line-height: 36px;
@@ -109,7 +109,7 @@
     justify-content: center;
     text-align: center;
     font-size: 22px;
-    font-family: Helvetica, Arial, $sans-serif;
+    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
     font-weight: 700;
     padding-bottom: 20px;
     margin-top: 15px;
@@ -149,7 +149,7 @@
     display: flex;
     justify-content: center;
     font-size: 22px;
-    font-family: Helvetica, Arial, $sans-serif;
+    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
     font-weight: 700;
     padding-bottom: 35px;
     border-bottom: 1px solid $medium-gray;
@@ -158,14 +158,14 @@
 
   h4 {
     font-size: 20px;
-    font-family: Helvetica, Arial, $sans-serif;
+    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
     font-weight: 700;
     color: black;
   }
 
   h5 {
     font-size: 18px;
-    font-family: Helvetica, Arial, $sans-serif;
+    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
     font-weight: 700;
     color: black;
   }
@@ -173,7 +173,7 @@
   p {
     font-size: 16px;
     color: black;
-    font-family: $sans-serif;
+    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
     font-weight: 500;
   }
 
@@ -192,7 +192,7 @@
       z-index: 100;
       background-color: $dark-gray;
       color: white;
-      font-family: Helvetica, Arial, $sans-serif;
+      font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
       font-weight: 500px;
       font-size: 14px;
       line-height: 36px;
