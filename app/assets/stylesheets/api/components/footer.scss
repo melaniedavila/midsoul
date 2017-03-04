@@ -51,3 +51,44 @@ footer {
     clear:both;
   }
 }
+
+
+.feature-footer-component-container {
+  background: $lightest-gray;
+  .feature-footer {
+    .feature-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .feature-list-item {
+        width: 250px;
+        display: flex;
+        justify-content: flex-start;;
+        text-align: center;
+        margin-top: 10px;
+        padding: 15px;
+        i {
+          font-size: 80px;
+          color: $midSoul-blue;
+          padding: 5px;
+        }
+
+        .feature-header-and-description {
+          display: flex;
+          flex-direction: column;
+          margin-left: 2px;
+          h2 {
+            font-size: 15px;
+            font-weight: 600;
+            color:$darker-gray;
+          }
+          p {
+            color: $darker-gray;
+            font-weight: 300;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
