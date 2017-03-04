@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import ErrorsList from '../errors/errors_list';
 import SplashVideo from '../splash/splashVideo';
+import FeatureFooter from '../footer/feature_footer';
 
 export default class SignUpForm extends React.Component {
   constructor(props){
@@ -75,6 +76,9 @@ export default class SignUpForm extends React.Component {
         </div>
         <div className='splash-video'>
           <SplashVideo />
+        </div>
+        <div className='feature-footer-component-container'>
+          <FeatureFooter />
         </div>
       </section>
     );

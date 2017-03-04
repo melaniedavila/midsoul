@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import SplashVideo from '../splash/splashVideo';
+import FeatureFooter from '../footer/feature_footer';
 
 const Home = function (props) {
     const guest = { email: 'scott-jurek@example.com',
@@ -31,6 +32,9 @@ const Home = function (props) {
         </div>
         <div className='splash-video'>
           <SplashVideo />
+        </div>
+        <div className='feature-footer-component-container'>
+          <FeatureFooter />
         </div>
       </main>
     );
