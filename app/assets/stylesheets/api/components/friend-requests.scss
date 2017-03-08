@@ -21,6 +21,8 @@
     .friend-request-flex-container {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      width: 550px;
 
       .friend-request-user-img-and-name {
         display: flex;
@@ -49,18 +51,35 @@
         justify-content: flex-end;
 
         button {
+          text-align: center;
+          padding: 15px;
+        }
+
+        .deny-button {
           background: $light-gray;
           color: $darker-gray;
           height: 50%;
-          margin: 20px;
+          margin-right: 10px;
           border-radius: 2px;
-          padding: 0 25px 0 25px;
         }
 
-        button:hover {
+        .deny-button:hover {
           background: $medium-gray;
+          transition: all .2s ease-out;
         }
 
+        .accept-button {
+          background: $form-orange;
+          color: white;
+          height: 50%;
+          width: 50px;
+          border-radius: 2px;
+        }
+
+        .accept-button:hover {
+          background: $hover-orange;
+          transition: all .2s ease-out;
+        }
       }
     }
   }
