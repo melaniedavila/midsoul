@@ -10,6 +10,7 @@
     color: $dark-gray;
     text-transform: uppercase;
     margin-bottom: 20px;
+    margin-left: 61px;
   }
 
 
@@ -17,20 +18,24 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    width: 628px;
-    margin: 0 0 60px 15px;
+    margin: 0 0 60px 75px;
 
     .user-thumb-container {
-      width: 55px;
-      height:55px;
+      width: 75px;
+      height:75px;
       margin-right: 13px;
 
       img {
+        width: 75px;
+        height: 75px;
         border: 1px solid $medium-gray;
       }
     }
 
     .activity-details-flex-container {
+      width: 683px;
+      box-shadow: $medium-light-gray 2px 2px 0;
+
       .activity-date-and-description-container {
         border: 1px solid $medium-gray;
         display: flex;
@@ -42,7 +47,7 @@
         }
 
         .user-name-and-activity-description {
-          width: 430px;
+          width: 550px;
           display: flex;
           flex-wrap: wrap;
         }
@@ -50,15 +55,16 @@
         i {
           font-size: 30px;
           color: $dark-gray;
-          margin-right: 15px;
+          margin-right: 25px;
         }
 
         img {
           height: 30px;
           width: 30px;
-          margin: 15px 15px 0 0;
+          margin: 15px 20px 0 0;
         }
       }
+
       .fa-map-marker {
         display: flex;
         align-items: center;
@@ -70,8 +76,8 @@
         flex-direction: row;
 
         .mini-activity-map {
-          width: 280px;
-          height: 160px;
+          width: 100%;
+          height: auto;
           border-left: 1px solid $medium-gray;
           border-right: 1px solid $medium-gray;
           border-bottom: 1px solid $medium-gray;
@@ -82,11 +88,12 @@
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          width: 280px;
-          height: 160px;
+          width: 100%;
+          height: auto;
           border-left: 1px solid $medium-gray;
           border-right: 1px solid $medium-gray;
           border-bottom: 1px solid $medium-gray;
+          background: $feeditem-background;
 
           .distance-icon-and-label {
             display: flex;
@@ -110,6 +117,38 @@
             font-size: 35px;
             color: $dark-gray;
             margin: 0;
+          }
+        }
+      }
+
+      .activity-comments-container {
+        height: 50px;
+        background: $feeditem-background;
+        border-left: 1px solid $medium-gray;
+        border-right: 1px solid $medium-gray;
+        border-bottom: 1px solid $medium-gray;
+
+        .comment-icon-and-count {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-left: 55px;
+
+          i {
+            font-size: 25px;
+            color: $medium-gray;
+            margin-right: 10px;
+          }
+
+          i:hover {
+            color: $midSoul-blue;
+            cursor: pointer;
+          }
+
+          p {
+            font-size: 15px;
+            font-weight: bold;
+            color: $medium-gray;
           }
         }
       }

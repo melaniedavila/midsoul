@@ -113,6 +113,11 @@
 
     .user-show-details-flex-left {
       padding: 20px;
+
+      img {
+        border: 1px solid $medium-gray;
+      }
+
       button, .user-show-friend-request-status {
         text-transform: uppercase;
         z-index: 100;
