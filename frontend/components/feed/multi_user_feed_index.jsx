@@ -16,7 +16,9 @@ export default class MultiUserFeedIndex extends React.Component {
       <section className="feed-index">
         <h2>Activity Feed</h2>
         <ul className='feed-items-list'>
-          {feedItems.map((feedItem, idx) => <FeedIndexItem key={idx} feedItem={feedItem} />)}
+          {feedItems.map((feedItem, idx) => {
+            return <FeedIndexItem key={idx} feedItem={feedItem} />
+          })}
         </ul>
       </section> );
     }
