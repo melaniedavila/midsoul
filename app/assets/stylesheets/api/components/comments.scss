@@ -56,6 +56,11 @@
                   text-decoration: none;
                   color: $midSoul-blue;
                   margin-right: 3px;
+
+                  p {
+                    -webkit-font-smoothing: antialiased;
+                    font-weight: bold;
+                  }
                 }
 
                 a:hover {

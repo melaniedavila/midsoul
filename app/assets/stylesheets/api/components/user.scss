@@ -112,7 +112,7 @@
 
 
     .user-show-details-flex-left {
-      padding: 20px;
+      padding: 0 20px 20px 20px;
 
       img {
         border: 1px solid $medium-gray;
@@ -163,11 +163,47 @@
     }
 
     .user-show-details-flex-right {
-      p {
-        font-size: 14px;
-        font-weight: bold;
+      display: flex;
+      flex-direction: row;
+
+      .user-stat-tags {
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        margin-right: 15px;
+
+        p {
+          -webkit-font-smoothing: antialiased;
+          margin: 0 0 10px 0;
+          font-weight: bold;
+          font-size: 15px;
+        }
+      }
+
+      .user-stat-counts {
+        display: flex;
+        flex-direction: column;
+
+        p {
+          margin: 0 0 10px 0;
+          font-size: 15px;
+        }
       }
     }
+  }
+
+  .feed-index {
+    h2 {
+      padding: 0;
+      margin: 0 0 60px 0;
+    }
+  }
+
+  .feed-index-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0 0 60px 0;
   }
 }
 
