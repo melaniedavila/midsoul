@@ -15,7 +15,7 @@ export default class SingleUserFeedIndex extends React.Component {
     } else {
       return (
       <section className="feed-index">
-        <h2>Feed</h2>
+        <h2>Activity Feed</h2>
         <ul className='feed-items-list'>
           {feedItems.map((feedItem, idx) => <FeedIndexItem key={idx} feedItem={feedItem} />)}
         </ul>

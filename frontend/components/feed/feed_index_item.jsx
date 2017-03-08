@@ -56,7 +56,7 @@ export default class FeedIndexItem extends React.Component {
               <div className='date-and-description'>
                 <h4 className='activity-date'>{this.dateTimeString()}</h4>
                 <div className='user-name-and-activity-description'>
-                  <h3>{feedItem.feedable.creator.f_name} created the route {feedItem.feedable.title}</h3>
+                  <p>{feedItem.feedable.creator.f_name} created the route {feedItem.feedable.title}</p>
                 </div>
               </div>
               <i className="fa fa-map-marker" aria-hidden="true"></i>
@@ -103,7 +103,7 @@ export default class FeedIndexItem extends React.Component {
               <div className='date-and-description'>
                 <h4 className='activity-date'>{this.dateTimeString()}</h4>
                 <div className='user-name-and-activity-description'>
-                  <h3>{feedItem.feedable.runner.f_name} ran {feedItem.feedable.route.distance} miles at a pace of {((feedItem.feedable.duration / 60) / feedItem.feedable.route.distance).toFixed(2)} mins/mi</h3>
+                  <p>{feedItem.feedable.runner.f_name} ran {feedItem.feedable.route.distance} miles at a pace of {((feedItem.feedable.duration / 60) / feedItem.feedable.route.distance).toFixed(2)} mins/mi</p>
                 </div>
               </div>
               <img src={window.midSoulAssets.runIcon} alt='Running Silhouette'></img>
