@@ -254,7 +254,6 @@
     display: flex;
     justify-content: space-between;
 
-
     a {
       padding-bottom: 15px;
       font-size: 13px;
@@ -277,6 +276,11 @@
       margin-bottom: 10px;
       cursor: pointer;
       text-align: center;
+    }
+
+    button:hover {
+      background-color: $darker-gray;
+      transition: all .2s ease-out;
     }
   }
 }

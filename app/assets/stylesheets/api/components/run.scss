@@ -264,6 +264,11 @@
       cursor: pointer;
       text-align: center;
     }
+
+    button:hover {
+      background-color: $darker-gray;
+      transition: all .2s ease-out;
+    }
   }
 
   .run-show-map {
