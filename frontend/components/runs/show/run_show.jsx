@@ -49,21 +49,41 @@ export default class RunShow extends React.Component {
 
       return (
         <div className='run-show-details'>
-          <h3>{run.title}</h3>
+          <div className='run-icon-and-title'>
+            <img src={window.midSoulAssets.runIcon} alt='Running Silhouette'></img>
+            <h3>{run.title}</h3>
+          </div>
           <ErrorsList errors={ errors } />
-            <div className='run-show-base-details-flex-container'>
-                <div className='run-show-user-thumb-container'>
-                  <Link to={`/users/${run.runner.id}`}>
-                    <img src={run.runner.profile_picture} alt='Profile picture'></img>
-                  </Link>
-                </div>
-                <div className='run-date-and-description-container'>
-                  <h4 className='run-date'>{dateString}</h4>
-                  <h3>{run.runner.f_name} ran {run.route.distance} miles
-                    at a pace of {((run.duration / 60) / run.route.distance).toFixed(2)} mins/mi</h3>
-                </div>
+          <div className='run-show-base-details-flex-container'>
+              <div className='run-show-user-thumb-container'>
+                <Link to={`/users/${run.runner.id}`}>
+                  <img src={run.runner.profile_picture} alt='Profile picture'></img>
+                </Link>
+              </div>
+              <div className='run-date-and-description-container'>
+                <h4 className='run-date'>{dateString}</h4>
+                <h3>{run.description}</h3>
+              </div>
+          </div>
+          <div className='run-show-stats-container'>
+            <div className='run-distance-flex-container'>
+              <p className='tag'>Distance:</p>
+              <p className='measurement'>{(run.route.distance).toFixed(2)}</p>
+              <p className='unit'>miles</p>
             </div>
-          <p>{run.description}</p>
+
+            <div className='run-duration-flex-container'>
+              <p className='tag'>Duration:</p>
+              <p className='measurement'>{(run.duration / 60).toFixed(2)}</p>
+              <p className='unit'>mins</p>
+            </div>
+
+            <div className='run-pace-flex-container'>
+              <p className='tag'>Pace:</p>
+              <p className='measurement'>{((run.duration / 60) / run.route.distance).toFixed(2)}</p>
+              <p className='unit'>mins/mi</p>
+            </div>
+          </div>
 
           <div className='run-show-links'>
             <Link to="/my-runs">Back to My Runs</Link>
@@ -75,8 +95,8 @@ export default class RunShow extends React.Component {
               alt={run.route.title}></img>
           </div>
 
-
           <div className='run-comment-index-and-form'>
+            <h2>Comments</h2>
             <div className='run-show-comments'>
               <CommentIndex comments={run.comments}/>
             </div>
