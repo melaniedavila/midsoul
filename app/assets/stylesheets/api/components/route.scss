@@ -143,30 +143,103 @@
   display: flex;
   flex-direction: column;
 
-  .route-distance-flex-container {
+  .route-show-stats-and-description-container {
     display: flex;
-    justify-content: flex-start;
-    .distance-tag {
-      font-weight: 700;
+    flex-direction: row;
+    margin-bottom: 25px;
+    margin-top: 25px;
+
+    .route-show-stats-container {
+      display: flex;
+      flex-direction: column;
+      background: $stats-neutral;
+      margin-right: 30px;
+      width: 140px;
+
+      .route-distance-flex-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid $medium-gray;
+
+        .distance-tag{
+          text-transform: uppercase;
+          color: $medium-gray;
+          font-size: 14px;
+          margin: 8px 0 4px 0;
+        }
+
+        .distance-measurement {
+          font-size: 20px;
+          margin: 0;
+        }
+
+        .distance-unit {
+          font-size: 12px;
+          color: $medium-gray;
+          margin: 4px 0 8px 0;
+        }
+      }
+
+      .route-elevation-gain-flex-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-left: 1px solid $medium-gray;
+        border-right: 1px solid $medium-gray;
+        border-bottom: 1px solid $medium-gray;
+
+        .elevation-gain-tag{
+          text-transform: uppercase;
+          color: $medium-gray;
+          font-size: 14px;
+          margin: 8px 0 4px 0;
+        }
+
+        .elevation-gain-measurement {
+          font-size: 20px;
+          margin: 0;
+        }
+
+        .elevation-gain-unit {
+          font-size: 12px;
+          color: $medium-gray;
+          margin: 4px 0 8px 0;
+        }
+      }
+    }
+    .route-show-description {
+      .description-tag {
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      .description-content {
+        color: $dark-gray;
+        font-size: 14px;
+      }
     }
   }
 
-  .route-elevation-gain-flex-container {
+  .route-icon-and-title {
     display: flex;
-    justify-content: flex-start;
-    .elevation-gain-tag {
-      font-weight: 700;
-    }
-  }
-
-  h3 {
-    display: flex;
-    justify-content: center;
-    font-size: 22px;
-    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
-    font-weight: 700;
-    padding-bottom: 20px;
+    flex-direction: row;
+    align-items: center;
     border-bottom: 1px solid $medium-gray;
+
+    i {
+      font-size: 22px;
+      margin-right: 10px;
+      color: $dark-gray;
+    }
+
+    h3 {
+      text-transform: uppercase;
+      font-size: 22px;
+      font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
+      font-weight: 700;
+      color: $dark-gray;
+    }
   }
 
   p {
@@ -212,22 +285,183 @@
   display: flex;
   flex-direction: column;
   width:100%;
-}
+  .interactive-route-show-map {
+    height: 300px;
+    width: 600px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 
-.interactive-route-show-map {
-  height: 300px;
-  width: 600px;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
+    .map {
+      position: absolute;
+      width: 94%;
+      height: 60%;
+      flex-shrink: 0;
+    }
+  }
 
-  .map {
-    position: absolute;
-    width: 94%;
-    height: 60%;
-    flex-shrink: 0;
+
+  .route-comment-index-and-form {
+    margin-top: 180px;
+
+    h2 {
+      font-size: 20px;
+      text-transform: uppercase;
+      border-bottom: 1px solid $medium-gray;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    .route-show-comments {
+      .comments-index {
+        .comments-list {
+          .comment-index-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin: 5px 0 0 0;
+            border-bottom: 1px solid $medium-gray;
+            margin-top: 15px;
+            padding-bottom: 15px;
+
+            .comment-author-img {
+              width: 58px;
+              height: 58px;
+              margin-left: 5px;
+            }
+
+            .comment-details {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              margin-left: 5px;
+
+              .comment-vertical-flex-container {
+                display: flex;
+                flex-flow: column;
+
+                .comment-date {
+                  margin: 3px;
+                  font-size: 12px;
+                  padding-left: 4px;
+                }
+
+                .comment-author-name-and-comment-body {
+                  margin-left: 3px;
+                  display: flex;
+                  flex-direction: row;
+
+                  .comment-author-name, .comment-body {
+                    margin-top: 3px;
+                    font-size: 13px;
+                  }
+
+                  .comment-author-name {
+                    font-weight: bold;
+                  }
+
+                  .comment-body {
+                    margin-left: 1px;
+                  }
+
+                  a {
+                    text-decoration: none;
+                    margin-right: 1px;
+
+                    p {
+                      color: $midSoul-blue;
+                    }
+                  }
+
+                  a:hover {
+                    p {
+                      color: $hover-blue;
+                    }
+                  }
+                }
+              }
+            }
+
+            .delete-comment {
+              margin-right: 15px;
+              color: $medium-gray;
+
+              button {
+                font-size: 13px;
+              }
+
+              button:hover {
+                color: $dark-gray;
+                transition: all .2s ease-out;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .route-show-new-comment-form {
+      .new-comment-form-container {
+        margin: 0;
+        padding-top: 3px;
+        margin-left: -1px;
+
+        .new-comment-textarea-and-submit-and-user-img {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          a {
+            margin-left: 5px;
+
+            img {
+              width: 52.66px;
+              height: 52.66px;
+              margin-right: 15px;
+              margin-bottom: 3px;
+            }
+          }
+
+          input[type=text] {
+            border: 1px solid $medium-gray;
+            border-radius: 3px;
+            margin-right: 15px;
+            height: 31px;
+            width: 560px;
+          }
+
+          input[type=text]:focus {
+            border: 1px solid $teal;
+            transition: all .3s ease-out;
+          }
+
+          input[type=submit] {
+            border: 1px solid $teal;
+            border-radius: 3px;
+            width: 76px;
+            height: 34px;
+            text-align: center;
+            color: $teal;
+            font-weight: bold;
+            font-size: 15px;
+          }
+
+          input[type=submit]:hover {
+            border: 1px solid $hover-teal;
+            border-radius: 3px;
+            height: 34px;
+            text-align: center;
+            color: $hover-teal;
+            font-weight: bold;
+            font-size: 15px;
+            transition: all .3s ease-out;
+          }
+        }
+      }
+    }
   }
 }
+
 
 .mini-routes {
   display: flex;
@@ -275,53 +509,52 @@
   }
 }
 
-.route-show-comments {
-  padding-top: 20px;
-}
-
-.route-show-comments {
-  margin-bottom: 20px;
-
-  .comments-index{
-    width: 59%;
-    margin: 0px;
-  }
-}
-
-.route-show-comments .comments-index {
-  margin-top: 239px;
-}
-
-.route-show-comments, .route-show-new-comment-form {
-  width: 90%;
-  margin: 0px;
-
-  .comments-list {
-    max-height: 1000px;
-    overflow-y: scroll;
-  }
-  .new-comment-textarea-and-submit {
-    width: 70%;
-    textarea {
-      width: 60%;
-    }
-  }
-
-  .new-comment-form-container {
-    width:90%;
-  }
-}
-
-.route-show-comments .new-comment-textarea-and-submit textarea,
-.route-show-new-comment-form .new-comment-textarea-and-submit textarea {
-  width: 80%;
-}
-
-.route-show-details {
-  .route-show-comments .comments-index {
-    width: 100%;
-  }
-  .route-show-comments .new-comment-form-container, .route-show-new-comment-form .new-comment-form-container {
-    width: 159%;
-  }
-}
+// .route-show-comments {
+//   padding-top: 20px;
+// }
+//
+// .route-show-comments {
+//   margin-bottom: 20px;
+//
+//   .comments-index{
+//     width: 59%;
+//     margin: 0px;
+//   }
+// }
+//
+// .route-show-comments .comments-index {
+//   margin-top: 239px;
+// }
+//
+// .route-show-comments, .route-show-new-comment-form {
+//   width: 90%;
+//   margin: 0px;
+//
+//   .comments-list {
+//     max-height: 1000px;
+//     overflow-y: scroll;
+//   }
+//   .new-comment-textarea-and-submit {
+//     width: 70%;
+//     textarea {
+//       width: 60%;
+//     }
+//   }
+//
+//   .new-comment-form-container {
+//     width:90%;
+//   }
+// }
+//
+// .route-show-comments .new-comment-textarea-and-submit textarea,
+// .route-show-new-comment-form .new-comment-textarea-and-submit textarea {
+//   width: 80%;
+// }
+//
+// .route-show-details {
+//   .route-show-comments .comments-index {
+//     width: 100%;
+//   }
+//   .route-show-comments .new-comment-form-container, .route-show-new-comment-form .new-comment-form-container {
+//     width: 159%;
+//   }
