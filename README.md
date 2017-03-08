@@ -25,6 +25,10 @@ Upon logging in, the user is brought to a feed of their friends' activities. Act
 
 ![activity_feed_img][activity_feed]
 
+Upon clicking the comment icon, the activity feed item's comments are revealed:
+![comments_img][comments]
+
+
 On the back end, the FeedItem model represents the polymorphic nature of feed. Upon creation of a route of logging of a run, a feed item record is created in the database. This allows for straightforward fetching of feed items from the database and will also allow for effortless integration of other feed activities in the future.
 
 ```ruby
@@ -51,3 +55,4 @@ In order to give users a way to keep track of runs without needing to fill out a
 [route_creation]: docs/screenshots/route_creation.png
 [friend_search]: docs/screenshots/friend_search.png
 [activity_feed]: docs/screenshots/activity_feed.png
+[comments]: docs/screenshots/comments.png

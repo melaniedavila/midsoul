@@ -1,3 +1,6 @@
+// BUGS
+- when i click log out, im not always redirected to login page
+
 /////////////////////////////////////////////////////////////////////////////
 FRIEND REQUESTS
 - fix friend requests styling
