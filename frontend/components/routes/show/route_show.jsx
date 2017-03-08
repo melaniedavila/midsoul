@@ -92,34 +92,40 @@ export default class RouteShow extends React.Component {
       let routeComments;
       if (route.comments) {
         routeComments = (
-                        <div className='route-comment-index-and-form'>
                           <div className='route-show-comments'>
                               <CommentIndex comments={route.comments}/>
                           </div>
-                          <div className='route-show-new-comment-form'>
-                            <NewCommentContainer activityType={'Route'} activityId={route.id}/>
-                          </div>
-                        </div>
                       );
 
       }
 
-
       return (
         <div className='route-show-details'>
-          <h3>{route.title}</h3>
-          <div className='route-distance-flex-container'>
-            <p className='distance-tag'>Distance: </p>
-            <p>{(route.distance).toFixed(2)} miles</p>
+          <div className='route-icon-and-title'>
+            <i className="fa fa-map-marker" aria-hidden="true"></i>
+            <h3>{route.title}</h3>
+          </div>
+          <div className='route-show-stats-and-description-container'>
+            <div className='route-show-stats-container'>
+              <div className='route-distance-flex-container'>
+                <p className='distance-tag'>Distance:</p>
+                <p className='distance-measurement'>{(route.distance).toFixed(2)}</p>
+                <p className='distance-unit'>miles</p>
+              </div>
+
+              <div className='route-elevation-gain-flex-container'>
+                <p className='elevation-gain-tag'>Elevation Gain:</p>
+                <p className='elevation-gain-measurement'>{route.elevation_gain.toFixed(2)}</p>
+                <p className='elevation-gain-unit'>meters</p>
+              </div>
+            </div>
+
+            <div className='route-show-description'>
+              <p className='description-tag'>Description:</p>
+              <p className='description-content'>{route.description}</p>
+            </div>
           </div>
 
-          <div className='route-elevation-gain-flex-container'>
-            <p className='elevation-gain-tag'>Elevation Gain</p>
-            <p>{route.elevation_gain.toFixed(2)} meters</p>
-          </div>
-
-
-          <p>{route.description}</p>
           <div className='route-show-links'>
             <Link to='/routes'>Back to Routes</Link>
             {deleteButton}
@@ -129,9 +135,14 @@ export default class RouteShow extends React.Component {
             <div className='interactive-route-show-map'>
               <div className="map" ref="map">Map</div>
             </div>
-            {routeComments}
+            <div className='route-comment-index-and-form'>
+              <h2>Comments</h2>
+              {routeComments}
+              <div className='route-show-new-comment-form'>
+                <NewCommentContainer activityType={'Route'} activityId={route.id}/>
+              </div>
+            </div>
           </div>
-
         </div>
       );
     }
