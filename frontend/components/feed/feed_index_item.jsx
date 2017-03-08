@@ -6,7 +6,6 @@ import NewCommentContainer from '../comments/form/new_comment_container';
 export default class FeedIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    console.log('constructing FeedIndexItem');
     this.state = { isCommentsShown: false };
     this.feedItem = props.feedItem;
     this.dateTimeString = this.dateTimeString.bind(this);
@@ -31,7 +30,6 @@ export default class FeedIndexItem extends React.Component {
   }
 
   render() {
-    console.log('rendering FeedIndexItem');
     const feedItem = this.feedItem;
     let feedIndexItemDetails;
     let comments;
