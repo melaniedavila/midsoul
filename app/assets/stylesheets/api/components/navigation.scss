@@ -54,7 +54,7 @@
 }
 
 .dropdown-menu {
-  display: none
+  display: none;
 }
 
 .dropdown-menu {
@@ -76,6 +76,7 @@ li.dropdown-item {
   background-color: white;
   width: 110px;
   padding: 5px;
+  box-shadow: $medium-light-gray 2px 2px 0;
 
   a {
     text-decoration: none;
