@@ -25,6 +25,8 @@ Upon logging in, the user is brought to a feed of their friends' activities. Act
 
 ![activity_feed_img][activity_feed]
 
+
+
 Upon clicking the comment icon, the activity feed item's comments are revealed:
 ![comments_img][comments]
 
