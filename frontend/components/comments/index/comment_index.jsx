@@ -7,7 +7,6 @@ export default class CommentIndex extends React.Component {
     const { comments } = this.props;
     return (
     <section className="comments-index">
-      <h2 className='comments-header'>Comments</h2>
       <ul className='comments-list'>
         {comments.sort((x, y) => x.created_at > y.created_at).map(comment => <CommentIndexItemContainer key={comment.id} comment={comment} />)}
       </ul>

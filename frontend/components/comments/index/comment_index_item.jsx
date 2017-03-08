@@ -31,7 +31,9 @@ const CommentIndexItem = ({ comment, currentUser, deleteComment }) => {
       <div className='comment-vertical-flex-container'>
         <p className='comment-date'>{dateTimeString}</p>
         <div className='comment-author-name-and-comment-body'>
-          <p className='comment-author-name'>{comment.author.f_name}:</p>
+          <Link to={`/users/${comment.author.id}`}>
+            <p className='comment-author-name'>{comment.author.f_name}:</p>
+          </Link>
           <p className='comment-body'>{comment.body}</p>
         </div>
       </div>
