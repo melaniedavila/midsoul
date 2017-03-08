@@ -75,13 +75,14 @@
     button {
       background: $light-gray;
       color: $darker-gray;
-      height: 50%;
+      height: 40%;
       margin: 20px;
       border-radius: 2px;
     }
 
     button:hover {
       background: $medium-gray;
+      transition: all .2s ease-out;
     }
 
     .friend-request-status {
