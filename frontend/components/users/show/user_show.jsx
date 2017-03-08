@@ -88,7 +88,7 @@ export default class UserShow extends React.Component {
       if (user.currentUserFriendRequest) {
         if (user.currentUserFriendRequest.status === 'accepted') {
           friendshipButtonOrStatus = (<p className="user-show-friend-request-status">
-            FRIENDS
+            FRIENDS<i className="fa fa-check" aria-hidden="true"></i>
           </p>);
         } else {
         friendshipButtonOrStatus = (<p className="user-show-friend-request-status">
