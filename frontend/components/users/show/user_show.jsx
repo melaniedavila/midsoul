@@ -117,7 +117,7 @@ export default class UserShow extends React.Component {
               </div>
               <div className='user-show-details-flex-right'>
                 <p>Member since: {memberDate}</p>
-                <p>Routes: {user.routes.length}</p>
+                <p>Routes{user.routes.length}</p>
                 <p>Runs: {user.runs.length}</p>
               </div>
             </div>
