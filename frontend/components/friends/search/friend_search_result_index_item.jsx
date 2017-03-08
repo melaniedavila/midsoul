@@ -25,7 +25,6 @@ const FriendSearchResultIndexItem = ({ foundUser, createFriendRequest, currentUs
       onClick={requestFriendShip(foundUser.id)}>ADD</button>);
   }
 
-
   return (
     <li className="friend-search-result-index-item">
       <div className='friend-search-img-and-name'>

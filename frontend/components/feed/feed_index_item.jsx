@@ -94,7 +94,7 @@ export default class FeedIndexItem extends React.Component {
       feedIndexItemDetails = (
         <section className='feed-index-item-container'>
           <div className='user-thumb-container'>
-            <Link to={`/users/${feedItem.feedable.runner.id}}`}>
+            <Link to={`/users/${feedItem.feedable.runner.id}`}>
               <img src={feedItem.feedable.runner.profile_picture} alt='Profile picture'></img>
             </Link>
           </div>
