@@ -116,9 +116,17 @@ export default class UserShow extends React.Component {
                 {friendshipButtonOrStatus}
               </div>
               <div className='user-show-details-flex-right'>
-                <p>Member since: {memberDate}</p>
-                <p>Routes{user.routes.length}</p>
-                <p>Runs: {user.runs.length}</p>
+                <div className='user-stat-tags'>
+                  <p>Member Since: </p>
+                  <p>Routes: </p>
+                  <p>Runs: </p>
+                </div>
+                <div className='user-stat-counts'>
+                  <p>{memberDate}</p>
+                  <p>{user.routes.length}</p>
+                  <p>{user.runs.length}</p>
+                </div>
+
               </div>
             </div>
             <div className='user-activity-details'>
