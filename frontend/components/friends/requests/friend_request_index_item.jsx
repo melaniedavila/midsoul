@@ -33,8 +33,8 @@ const FriendRequestIndexItem = ({ friendRequest, updateFriendRequest }) => {
         </Link>
       </div>
       <div className='friend-request-buttons'>
-        <button onClick={acceptFriendRequest}>ACCEPT</button>
-        <button onClick={rejectFriendRequest}>DENY</button>
+        <button className='deny-button' onClick={rejectFriendRequest}>DENY</button>
+        <button className='accept-button' onClick={acceptFriendRequest}>ACCEPT</button>
       </div>
     </div>
   </li>

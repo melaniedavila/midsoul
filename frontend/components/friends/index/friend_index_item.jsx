@@ -5,10 +5,12 @@ const FriendIndexItem = ({ friend }) => {
 
   return (
   <li className="friend-index-item">
-    <Link to={`/users/${friend.id}`}>
+    <Link className='friend-photo-link' to={`/users/${friend.id}`}>
       <img src={friend.profile_picture} alt='Profile picture'></img>
     </Link>
-    <p>{friend.f_name} {friend.l_name}</p>
+    <Link className='friend-name-link' to={`/users/${friend.id}`}>
+      <p className='friend-name'>{friend.f_name}&nbsp;{friend.l_name}</p>
+    </Link>
   </li>
 )};
 
