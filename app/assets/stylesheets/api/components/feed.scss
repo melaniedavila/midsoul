@@ -13,7 +13,6 @@
     margin-left: 61px;
   }
 
-
   .feed-index-item-container {
     display: flex;
     flex-direction: row;
@@ -62,7 +61,7 @@
         img {
           height: 30px;
           width: 30px;
-          margin: 15px 20px 0 0;
+          margin: 20px 20px 0 0;
         }
       }
 
@@ -128,6 +127,7 @@
         border-left: 1px solid $medium-gray;
         border-right: 1px solid $medium-gray;
         border-bottom: 1px solid $medium-gray;
+        cursor: pointer;
 
         .comment-icon-and-count {
           display: flex;
@@ -141,11 +141,6 @@
             margin-right: 10px;
           }
 
-          i:hover {
-            color: $midSoul-blue;
-            cursor: pointer;
-          }
-
           p {
             font-size: 15px;
             font-weight: bold;
@@ -153,73 +148,17 @@
           }
         }
       }
+
+      .activity-comments-container:hover {
+        background: $hover-gray;
+
+        .comment-icon-and-count {
+          i {
+            color: $midSoul-blue;
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-// .feed-index-item {
-//   margin: 0 auto;
-// }
-
-// .feed-index-item-container {
-//   display: flex;
-//   align-content: flex-start;
-//   margin: 20px;
-//   border: 1px solid black;
-//   width: 95%;
-//
-//   .feed-index-item-map {
-//     .img {
-//       width: 400px;
-//       height: 400px;
-//     }
-//   }
-//
-//   .activity-details-flex-container {
-//     display:flex;
-//     flex-direction: column;
-//     padding-left: 10px;
-//     max-width: 50%;
-//     max-height: 400px;
-//
-//     .mini-activity-description-flex-container {
-//       display: flex;
-//       align-content: flex-start;
-//       margin: 10px;
-//       background-color: white;
-//
-//       .activity-date {
-//         font-weight: 500px;
-//       }
-//
-//       h3 {
-//         padding-left: 10px;
-//         align-items: center;
-//       }
-//
-//       h4 {
-//         padding-left: 10px;
-//         font-weight: 500;
-//       }
-//
-//       .user-thumb-container {
-//         width: 100px;
-//         height:100px;
-//       }
-//     }
-//
-//     .activity-comments {
-//       padding-top: 10px;
-//     }
-//   }
-// }
