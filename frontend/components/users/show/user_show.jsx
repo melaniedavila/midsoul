@@ -80,7 +80,8 @@ export default class UserShow extends React.Component {
     } else {
       const memberDate = this.parseMembershipDate(user.created_at);
       let editButton;
-      if (this.props.currentUser.id === user.id) {
+      const currentUser = this.props.currentUser;
+      if ( currentUser && currentUser.id === user.id) {
         editButton = <button onClick={this.redirectToEdit.bind(this)}>EDIT PROFILE</button>;
       }
 
@@ -95,7 +96,7 @@ export default class UserShow extends React.Component {
           { user.currentUserFriendRequest.status }
         </p>);
         }
-      } else if (this.props.currentUser.id === user.id) {
+      } else if (currentUser && currentUser.id === user.id) {
         friendshipButtonOrStatus = (<p></p>);
       } else {
         friendshipButtonOrStatus = (<button className='friend-button'

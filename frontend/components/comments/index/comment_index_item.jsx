@@ -15,7 +15,7 @@ const CommentIndexItem = ({ comment, currentUser, deleteComment }) => {
   };
 
   let deleteButton;
-  if (currentUser.id === comment.author_id) {
+  if (currentUser && currentUser.id === comment.author_id) {
     deleteButton = (<button onClick={deleteFeedItemComment(comment.id)}>Delete</button>);
   }
 

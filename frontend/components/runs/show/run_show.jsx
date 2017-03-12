@@ -33,8 +33,8 @@ export default class RunShow extends React.Component {
       return <LoadingIcon />;
     } else {
       let deleteButton;
-
-      if (this.props.currentUser.id === run.runner_id) {
+      const currentUser = this.props.currentUser;
+      if (currentUser && currentUser.id === run.runner_id) {
         deleteButton = (
           <button
             onClick={this.handleDeleteRunClick()}>
