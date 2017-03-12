@@ -19,10 +19,10 @@
     position: relative;
     bottom: 0%;
     left: 0%;
-    height: 70vh;
+    height: 74vh;
     width: 100vw;
     overflow: hidden;
-    background: #000;
+    background: $lightest-gray;
 }
 .video-container .poster img {
     width: 100%;
@@ -43,22 +43,24 @@
 }
 
 .splash-text {
-    position: absolute;
-    z-index: 100;
-    text-align: left;
-    align-items: center;
-    justify-content: center;
-    top: 25%;
-    left: 45%;
+  position: absolute;
+  z-index: 100;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+  top: 25%;
+  left: 45%;
+  max-width: 519px;
+
+  .splash-header {
+    font-size: 41px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
 }
 
-.splash-header {
-  font-size: 43px;
-}
-
-.splash-text > h4 {
-  font-size: 16px;
-}
 
 .splash-guest {
   font-size: 15px;
