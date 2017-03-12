@@ -127,13 +127,13 @@
         border-left: 1px solid $medium-gray;
         border-right: 1px solid $medium-gray;
         border-bottom: 1px solid $medium-gray;
-        cursor: pointer;
 
         .comment-icon-and-count {
           display: flex;
           flex-direction: row;
           align-items: center;
-          margin-left: 55px;
+          padding-left: 55px;
+          cursor: pointer;
 
           i {
             font-size: 25px;
@@ -147,12 +147,9 @@
             color: $medium-gray;
           }
         }
-      }
 
-      .activity-comments-container:hover {
-        background: $hover-gray;
-
-        .comment-icon-and-count {
+        .comment-icon-and-count:hover {
+          background: $hover-gray;
           i {
             color: $midSoul-blue;
             cursor: pointer;

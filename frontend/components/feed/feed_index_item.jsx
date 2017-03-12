@@ -74,9 +74,9 @@ export default class FeedIndexItem extends React.Component {
                 <p>{feedItem.feedable.distance} mi</p>
               </div>
             </div>
-            <div className='activity-comments-container'
-              onClick={this.toggleCommentsSection}>
-              <div className='comment-icon-and-count'>
+            <div className='activity-comments-container'>
+              <div className='comment-icon-and-count'
+                onClick={this.toggleCommentsSection}>
                 <i className="fa fa-comment-o" aria-hidden="true"></i>
                 <p>{feedItem.feedable.comments.length}</p>
               </div>
@@ -121,9 +121,9 @@ export default class FeedIndexItem extends React.Component {
                 </Link>
               </div>
             </div>
-            <div className='activity-comments-container'
-              onClick={this.toggleCommentsSection}>
-              <div className='comment-icon-and-count'>
+            <div className='activity-comments-container'>
+              <div className='comment-icon-and-count'
+                onClick={this.toggleCommentsSection}>
                 <i className="fa fa-comment-o" aria-hidden="true"></i>
                 <p>{feedItem.feedable.comments.length}</p>
               </div>
