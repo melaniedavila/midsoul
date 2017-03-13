@@ -151,4 +151,5 @@ li.dropdown-item:first-child {
 
 .button-sign-up:hover, .button-log-out:hover {
   background-color: $hover-green;
+  transition: all .2s ease-out;
 }
