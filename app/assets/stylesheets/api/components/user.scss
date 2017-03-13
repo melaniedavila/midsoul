@@ -108,6 +108,14 @@
       font-weight: bold;
     }
 
+    button {
+      color: $medium-gray;
+    }
+
+    button:hover{
+      color: $dark-gray;
+      transition: all .2s ease-out;
+    }
   }
 
 
