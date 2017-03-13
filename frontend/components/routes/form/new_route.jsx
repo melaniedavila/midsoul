@@ -18,7 +18,7 @@ const _directionsRendererOptions = {
     strokeWeight: 5,
     strokeColor: "#0c5d94"
   }
-}
+};
 
 const milesPerMeter = 0.000621371;
 
@@ -225,8 +225,17 @@ export default class NewRoute extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <div className='route-details'>
                 <h3>ROUTE DETAILS </h3>
-                <h5>Distance: {`${this.state.distanceInMiles.toFixed(2)} miles`}</h5>
-                <h5>Elevation Gain: {`${this.state.elevation_gain.toFixed(2)} meters`}</h5>
+                  <div className='route-distance-flex-container'>
+                    <p className='distance-tag'>Distance:</p>
+                    <p className='distance-measurement'>{(this.state.distanceInMiles).toFixed(2)}</p>
+                    <p className='distance-unit'>miles</p>
+                  </div>
+
+                  <div className='route-elevation-gain-flex-container'>
+                    <p className='elevation-gain-tag'>Elevation Gain:</p>
+                    <p className='elevation-gain-measurement'>{this.state.elevation_gain.toFixed(2)}</p>
+                    <p className='elevation-gain-unit'>meters</p>
+                  </div>
               </div>
 
               <div className='map-form-fields'>
