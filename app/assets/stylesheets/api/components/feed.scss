@@ -29,6 +29,10 @@
         height: 75px;
         border: 1px solid $medium-gray;
       }
+
+      img:hover{
+        border: 1px solid $tab-blue;
+      }
     }
 
     .activity-details-flex-container {
