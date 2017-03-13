@@ -7,6 +7,8 @@ class Footer extends React.Component {
       <footer className='footer-container'>
           <ul>
             <li>
+              <i  className="fa fa-folder fa-lg" 
+                  aria-hidden="true"></i>
               <a  target="_blank"
                   href="http://www.melaniedavila.com"
                   className='footer-link'>
