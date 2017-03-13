@@ -37,12 +37,22 @@
         .friend-request-img {
           width: 100px;
           height:100px;
+          border: 1px solid $medium-gray;
+        }
+
+        .friend-request-img:hover {
+          border: 1px solid $tab-blue;
         }
 
         p {
           margin-left: 15px;
           font-size: 14px;
           font-weight: bold;
+          color: $friend-name-blue;
+        }
+
+        p:hover {
+          color: $midSoul-blue;
         }
       }
 
