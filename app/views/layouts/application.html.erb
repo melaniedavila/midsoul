@@ -8,6 +8,7 @@
   <%= stylesheet_link_tag 'application',
       'https://fonts.googleapis.com/css?family=Open+Sans',
        media: 'all', 'data-turbolinks-track' => true %>
+   <%= render 'application/favicon' %>
   <script>
     window.googleMapsApiKey = "<%= ENV['GOOGLE_STATIC_MAPS_API_KEY'] %>"
   </script>
