@@ -38,16 +38,3 @@ export const deleteComment = (commentId) => (dispatch) => (
 		return comment;
 	}).fail(error => dispatch(receiveCommentErrors(error.responseJSON)))
 );
-// export const deleteRunComment = (commentId) => (dispatch) => (
-// 	APIUtil.deleteComment(commentId).then(runComment => {
-// 		dispatch(removeRunComment(runComment));
-// 		return runComment;
-// 	}).fail(error => dispatch(receiveCommentErrors(error.responseJSON)))
-// );
-//
-// export const deleteRouteComment = (commentId) => (dispatch) => (
-// 	APIUtil.deleteComment(commentId).then(routeComment => {
-// 		dispatch(removeRouteComment(routeComment));
-// 		return routeComment;
-// 	}).fail(error => dispatch(receiveCommentErrors(error.responseJSON)))
-// );
