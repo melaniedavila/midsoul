@@ -43,7 +43,6 @@ export const receiveRouteErrors = (errors) => ({
   errors
 });
 
-
 export const requestAllRoutes = () => (dispatch) => {
 	dispatch(loadAllRoutes());
 	return APIUtil.fetchAllRoutes()

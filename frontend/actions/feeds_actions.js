@@ -31,7 +31,6 @@ export const receiveFeedErrors = (errors) => ({
   errors
 });
 
-
 export const requestMultiUserFeedItems = () => (dispatch) => {
 	dispatch(loadMultiUserFeedItems());
 	return APIUtil.fetchMultiUserFeedItems()

@@ -43,7 +43,6 @@ export const receiveRunErrors = (errors) => ({
   errors
 });
 
-
 export const requestAllRuns = () => (dispatch) => {
 	dispatch(loadAllRuns());
 	return APIUtil.fetchAllRuns()
