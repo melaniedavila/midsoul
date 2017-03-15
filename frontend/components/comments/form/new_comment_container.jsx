@@ -7,13 +7,9 @@ import { requestMultiUserFeedItems, requestSingleUserFeedItems } from '../../../
 import { selectAllRoutes, selectAllRuns, selectAllFeedItems } from '../../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  // if we are at users show page,
-  // state has feed items but no routes or runs
   return {
     errors: state.errors,
     currentUser: state.session.currentUser,
-    // routes: selectAllRoutes(state),
-    // runs: selectAllRuns(state),
     feedItems: selectAllFeedItems(state)
   };
 };
