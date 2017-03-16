@@ -138,6 +138,37 @@ u17 = User.create!(
   profile_picture: File.open("./app/assets/images/seed_profile_pictures/natalie.jpg")
 )
 
+u18 = User.create!(
+  f_name: 'Billy',
+  l_name: 'Zane',
+  email: 'billy@zane.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/billy.jpg")
+)
+
+u19 = User.create!(
+  f_name: 'Cuba',
+  l_name: 'Gooding',
+  email: 'that@bluesteellook.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/cuba.jpg")
+)
+
+u20 = User.create!(
+  f_name: 'Lenny',
+  l_name: 'Kravitz',
+  email: 'lenny@kravitz.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/lenny.jpg")
+)
+
+u21 = User.create!(
+  f_name: 'Gwen',
+  l_name: 'Stefani',
+  email: 'gwen@stefani.com',
+  password: 'password',
+  profile_picture: File.open("./app/assets/images/seed_profile_pictures/gwen.jpg")
+)
 
 route4 = Route.create!(
   creator_id: u4.id,
