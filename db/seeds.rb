@@ -12,7 +12,6 @@ u2 = User.create!(
   email: 'katinka@example.com',
   password: 'password',
   profile_picture: File.open("./app/assets/images/seed_profile_pictures/katinka.png")
-
 )
 
 # For Guest Log In:
@@ -149,7 +148,7 @@ u18 = User.create!(
 u19 = User.create!(
   f_name: 'Cuba',
   l_name: 'Gooding',
-  email: 'that@bluesteellook.com',
+  email: 'cuba@goodingjr.com',
   password: 'password',
   profile_picture: File.open("./app/assets/images/seed_profile_pictures/cuba.jpg")
 )
@@ -452,6 +451,12 @@ friend_request13 = FriendRequest.create!(
   requestor_id: u1.id,
   requestee_id: u3.id,
   status: 1
+)
+
+friend_request14 = FriendRequest.create!(
+  requestor_id: u15.id,
+  requestee_id: u3.id,
+  status: 0
 )
 
 friendship1 = Friendship.create!(
