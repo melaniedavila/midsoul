@@ -7,11 +7,11 @@ class Api::FeedsController < ApplicationController
   end
 
   private
-
-  def feed_for(opts)
-    if opts[:user_id]
-      runs = Run.find_by(runner_id: opts[:user_id])
-      routes = Route.find_by(creator_id: opts[:user_id])
+  
+    def feed_for(opts)
+      if opts[:user_id]
+        runs = Run.find_by(runner_id: opts[:user_id])
+        routes = Route.find_by(creator_id: opts[:user_id])
+      end
     end
-  end
 end

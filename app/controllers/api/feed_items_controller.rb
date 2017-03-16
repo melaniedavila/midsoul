@@ -11,7 +11,7 @@ class Api::FeedItemsController < ApplicationController
   end
 
   private
-
+    
     def single_user_id
       params[:user_id]
     end
