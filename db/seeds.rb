@@ -181,7 +181,7 @@ run7 = Run.create!(
   route_id: route5.id,
   date: Date.today,
   description: "Damnit Derek, I'm a coal miner, not a professional film or television actor.",
-  duration: 7000
+  duration: 700
 )
 
 route1 = Route.create!(
@@ -192,8 +192,6 @@ route1 = Route.create!(
   distance: 1.58,
   elevation_gain: 1
 )
-
-
 
 route3 = Route.create!(
   creator_id: u3.id,
@@ -307,18 +305,13 @@ run5 = Run.create!(
   duration: 2256
 )
 
-
-
-
-
-
 run8 = Run.create!(
   title: 'Half Marathon Training',
   runner_id: u1.id,
   route_id: route6.id,
   date: Date.today,
   description: "What? Hey, guys, that show is in three hours. Derek is dead unless we get that evidence. Do you guys... ",
-  duration: 64800
+  duration: 7200
 )
 
 run9 = Run.create!(
@@ -640,7 +633,7 @@ comment20 = Comment.create!(
   author_id: u5.id,
   commentable_id: run11.id,
   commentable_type: 'Run',
-  body: "Or are you here to tell me what a bad eugoogoolizer I am?"
+  body: "Are you here to tell me what a bad eugoogoolizer I am?"
 )
 
 comment21 = Comment.create!(
@@ -666,15 +659,15 @@ comment23 = Comment.create!(
 
 comment24 = Comment.create!(
   author_id: u6.id,
-  commentable_id: run11.id,
-  commentable_type: 'Run',
+  commentable_id: route6.id,
+  commentable_type: 'Route',
   body: "Excuse me, bra."
 )
 
 comment25 = Comment.create!(
   author_id: u5.id,
-  commentable_id: run11.id,
-  commentable_type: 'Run',
+  commentable_id: route6.id,
+  commentable_type: 'Route',
   body: "You're excused, and I'm not your bra!"
 )
 
@@ -696,43 +689,43 @@ comment32 = Comment.create!(
 
 comment33 = Comment.create!(
   author_id: u8.id,
-  commentable_id: run11.id,
-  commentable_type: 'Run',
+  commentable_id: route2.id,
+  commentable_type: 'Route',
   body: "What do we do when we fall off the horse?"
 )
 
 comment34 = Comment.create!(
   author_id: u5.id,
-  commentable_id: run11.id,
-  commentable_type: 'Run',
-  body: "... fall off the horse..."
+  commentable_id: route2.id,
+  commentable_type: 'Route',
+  body: "...fall off the horse..."
 )
 
 comment35 = Comment.create!(
   author_id: u8.id,
-  commentable_id: run11.id,
-  commentable_type: 'Run',
+  commentable_id: route2.id,
+  commentable_type: 'Route',
   body: "... we... get back on!"
 )
 
 comment36 = Comment.create!(
   author_id: u5.id,
-  commentable_id: run11.id,
-  commentable_type: 'Run',
+  commentable_id: route2.id,
+  commentable_type: 'Route',
   body: "Sorry, Maury. I'm not a gymnast."
 )
 
 comment37 = Comment.create!(
   author_id: u10.id,
-  commentable_id: run11.id,
-  commentable_type: 'Run',
+  commentable_id: route1.id,
+  commentable_type: 'Route',
   body: "Relax, don't do it. When you wanna come to it."
 )
 
 comment37 = Comment.create!(
   author_id: u5.id,
-  commentable_id: run11.id,
-  commentable_type: 'Run',
+  commentable_id: route7.id,
+  commentable_type: 'Route',
   body: "Look, I gotta go pee, but I'd really like to continue talking about this conversation when I come back."
 )
 
@@ -740,12 +733,181 @@ comment37 = Comment.create!(
   author_id: u5.id,
   commentable_id: run7.id,
   commentable_type: 'Run',
-  body: "... I think I'm getting the Black Lung, Pop. It's not very well ventilated down there. "
+  body: "... I think I'm getting the Black Lung, Pop. It's not very well ventilated down there."
 )
 
 comment40 = Comment.create!(
   author_id: u11.id,
   commentable_id: run7.id,
   commentable_type: 'Run',
-  body: "For Christ's sake, Derek, you've been down there one day. Talk to me in thirty years. "
+  body: "For Christ's sake, Derek, you've been down there one day. Talk to me in thirty years."
+)
+
+comment41 = Comment.create!(
+  author_id: u6.id,
+  commentable_id: route10.id,
+  commentable_type: 'Route',
+  body: "I care desperately about what I do. "
+)
+
+comment42 = Comment.create!(
+  author_id: u6.id,
+  commentable_id: route10.id,
+  commentable_type: 'Route',
+  body: "Do I know what product I'm selling? No."
+)
+
+comment43 = Comment.create!(
+  author_id: u6.id,
+  commentable_id: route10.id,
+  commentable_type: 'Route',
+  body: "Do I know what I'm doing today? No. But I'm here, and I'm gonna give it my best shot. "
+)
+
+comment44 = Comment.create!(
+  author_id: u9.id,
+  commentable_id: route11.id,
+  commentable_type: 'Route',
+  body: "Male models don't think for themselves."
+)
+
+comment45 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: route11.id,
+  commentable_type: 'Route',
+  body: "That's not true!"
+)
+
+comment46 = Comment.create!(
+  author_id: u9.id,
+  commentable_id: route11.id,
+  commentable_type: 'Route',
+  body: "Yes it is, Derek."
+)
+
+comment47 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: route11.id,
+  commentable_type: 'Route',
+  body: "Okay."
+)
+
+comment48 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run1.id,
+  commentable_type: 'Run',
+  body: "Wait a minute. I might just have an idea. They'll be looking for us at Maury's right?"
+)
+
+comment49 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run1.id,
+  commentable_type: 'Run',
+  body: "But they won't be looking for... not us."
+)
+
+
+comment50 = Comment.create!(
+  author_id: u14.id,
+  commentable_id: run2.id,
+  commentable_type: 'Run',
+  body: "Or the way Hansel combs his hair?"
+)
+
+comment51 = Comment.create!(
+  author_id: u7.id,
+  commentable_id: run2.id,
+  commentable_type: 'Run',
+  body: "Or like, doesn't, it's like, ex-squeeze me, but have you ever heard of styling gel?"
+)
+
+comment52 = Comment.create!(
+  author_id: u14.id,
+  commentable_id: run2.id,
+  commentable_type: 'Run',
+  body: "I'm sure Hansel's heard of styling gel, he's a male model."
+)
+
+comment53 = Comment.create!(
+  author_id: u7.id,
+  commentable_id: run2.id,
+  commentable_type: 'Run',
+  body: "Uh, earth to Brint, I was making a joke."
+)
+
+comment54 = Comment.create!(
+  author_id: u14.id,
+  commentable_id: run2.id,
+  commentable_type: 'Run',
+  body: "Uh, Earth to Meekus, duh, okay I knew that!"
+)
+
+comment55 = Comment.create!(
+  author_id: u7.id,
+  commentable_id: run2.id,
+  commentable_type: 'Run',
+  body: "Uh earth to Brint, I'm not so sure you did cuz you were all 'well I'm sure he's heard of styling gel'..."
+)
+
+comment56 = Comment.create!(
+  author_id: u7.id,
+  commentable_id: run2.id,
+  commentable_type: 'Run',
+  body: "like you *didn't* know it was a joke!"
+)
+
+comment57 = Comment.create!(
+  author_id: u14.id,
+  commentable_id: run2.id,
+  commentable_type: 'Run',
+  body: "I knew it was a joke Meekus, I just didn't get it right away!"
+)
+
+comment58 = Comment.create!(
+  author_id: u7.id,
+  commentable_id: run2.id,
+  commentable_type: 'Run',
+  body: "Earth to Brint..."
+)
+
+comment59 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run2.id,
+  commentable_type: 'Run',
+  body: "Would you guys stop it already?"
+)
+
+comment60 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run9.id,
+  commentable_type: 'Run',
+  body: "Well I guess it all started the first time I went through the second grade."
+)
+
+comment61 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run9.id,
+  commentable_type: 'Run',
+  body: "I caught my reflection in a spoon while I was eating my cereal. And I remember thinking..."
+)
+
+comment62 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run9.id,
+  commentable_type: 'Run',
+  body: "\"wow, you're ridiculously good looking, maybe you could do that for a career.\""
+)
+
+comment63 = Comment.create!(
+  author_id: u1.id,
+  commentable_id: run9.id,
+  commentable_type: 'Run',
+  body: "Do what for a career?"
+)
+
+comment64 = Comment.create!(
+  author_id: u5.id,
+  commentable_id: run9.id,
+  commentable_type: 'Run',
+  body: "Be professionally good looking."
 )
