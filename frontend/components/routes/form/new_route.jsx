@@ -46,6 +46,8 @@ export default class NewRoute extends React.Component {
     this.directionsService = new google.maps.DirectionsService();
     this.directionsRenderer =
       new google.maps.DirectionsRenderer(_directionsRendererOptions);
+
+    // The below binds the renderer to the map passed in as an argument
     this.directionsRenderer.setMap(this.map);
     this.elevationService = new google.maps.ElevationService();
     this.registerListeners();
@@ -53,13 +55,6 @@ export default class NewRoute extends React.Component {
 
   initializeMap () {
     return this.initializeDefaultMap();
-
-    // TODO: make it work this way
-    // if (navigator.geolocation) {
-    //   return this.initializeCustomMap();
-    // } else {
-    //   return this.initializeDefaultMap();
-    // }
   }
 
   initializeCustomMap() {
@@ -80,7 +75,7 @@ export default class NewRoute extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // update path based on markers
+    // Update path based on markers
     this.props.createRoute(this.newRouteParams());
   }
 
@@ -89,7 +84,7 @@ export default class NewRoute extends React.Component {
     var polyline, distance;
     if (directions) {
       polyline = directions.routes[0].overview_polyline;
-      // in meters:
+      // In meters:
       distance = directions.routes[0].legs[0].distance.value;
     }
 
@@ -114,6 +109,10 @@ export default class NewRoute extends React.Component {
 
   registerListeners() {
     this.map.addListener('click', this.handleClickOnMap.bind(this));
+
+    // Draggable directions are modified and rendered client-side. The
+    // event listener below allows us to execute a callback when the user
+    // has modified the displayed directions.
     this.directionsRenderer.addListener(
       'directions_changed',
       this.handleDisplayRendererDirectionsChange.bind(this)
@@ -127,11 +126,11 @@ export default class NewRoute extends React.Component {
     const marker = new google.maps.Marker({position});
 
     if (this.originMarker === null) {
-      // add marker to map if it's the first point, i.e. the origin
+      // Add marker to map if it's the first point, i.e. the origin
       this.originMarker = marker;
       this.originMarker.setMap(this.map);
     } else if (this.state.routePath.length === 1) {
-      // clears extra marker near start
+      // Clears extra marker near start
       this.originMarker.setMap(null);
     }
 
@@ -148,6 +147,10 @@ export default class NewRoute extends React.Component {
     const routePath = this.state.routePath;
     const origin = this.originMarker.position;
     const destination = routePath[routePath.length - 1];
+
+    // The origin must be included in the waypoints. Otherwise, the
+    // rendered route path's destination marker changes with every click
+    // and we are unable to curate custom paths with multiple waypoints.
     const waypoints = routePath
       .slice(0, routePath.length - 1)
       .map(routePathPoint => {
@@ -206,6 +209,13 @@ export default class NewRoute extends React.Component {
   }
 
   displayDirections(response) {
+    // The directionsRenderer is an MVCObject (base class implementing
+    // KVO). Therefore, it will detect any changes to its properties and
+    // automatically update the map if any of its properties are changed.
+    // We registered a 'directions_changed' listener in order to update
+    // route details (distance and elevation gain) in real time (and not
+    // necessarily to re-render the map with the new path since that is
+    // automatically done for us).
     this.directionsRenderer.setDirections(response);
   }
 
