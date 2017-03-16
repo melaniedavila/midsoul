@@ -5,6 +5,13 @@ const _defaultMapOptions = {
   zoom: 12
 };
 
+const _resetMapOptions = function (pos) {
+  return ({
+      center: { lat: pos.lat(), lng: pos.lng() },
+      zoom: 14
+    });
+};
+
 const _customMapOptions = function (pos) {
   return ({
     center: { lat: pos.coords.latitude, lng: pos.coords.longitude },
@@ -39,8 +46,26 @@ export default class NewRoute extends React.Component {
     };
   }
 
+  resetMap() {
+    const oldOriginPos = this.originMarker.position;
+    this.originMarker = null;
+    this.map = this.initializeResetMap(oldOriginPos);
+    this.directionsRenderer =
+      new google.maps.DirectionsRenderer(_directionsRendererOptions);
+    this.directionsRenderer.setMap(this.map);
+    this.registerListeners();
+    this.setState({
+      title: '',
+      description: '',
+      routePath: [],
+      distanceInMiles: 0,
+      elevation_gain: 0
+    });
+  }
+
   componentDidMount() {
     this.props.clearErrors();
+    // React's ref attribute allows us to integrate with Google Maps
     this.mapNode = this.refs.map;
     this.map = this.initializeMap();
     this.directionsService = new google.maps.DirectionsService();
@@ -65,6 +90,10 @@ export default class NewRoute extends React.Component {
 
   initializeDefaultMap() {
     return new google.maps.Map(this.mapNode, _defaultMapOptions);
+  }
+
+  initializeResetMap(pos) {
+    return new google.maps.Map(this.mapNode, _resetMapOptions(pos));
   }
 
   update(field) {
@@ -222,9 +251,15 @@ export default class NewRoute extends React.Component {
   removeLastRoutePathPoint(e) {
     e.preventDefault();
 
-    this.setState({
-      routePath: this.state.routePath.slice(0, -1)
-    }, this.requestDirections.bind(this));
+    if (this.state.routePath.length > 1) {
+      this.setState({
+        routePath: this.state.routePath.slice(0, -1)
+      }, this.requestDirections.bind(this));
+    } else {
+      this.setState({
+        routePath: []
+      }, this.resetMap.bind(this));
+    }
   }
 
   render() {
