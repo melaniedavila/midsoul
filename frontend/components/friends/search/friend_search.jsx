@@ -7,6 +7,10 @@ const FriendSearch = ({ foundUsers, searchString, updateFriendSearchFilter, crea
   let friendSearchResultIndex;
   if (searchString === '') {
     friendSearchResultIndex = (<FriendSearchResultIndex foundUsers={[]}/>);
+  }
+  // Below prevents rendering of bogus results.
+  else if (foundUsers.length > 6) {
+    friendSearchResultIndex = (<FriendSearchResultIndex foundUsers={[]}/>);
   } else {
     friendSearchResultIndex = (<FriendSearchResultIndex foundUsers={foundUsers}
                                     createFriendRequest={createFriendRequest}
