@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import NewRun from './new_run';
 import { createRun, receiveRunErrors } from '../../../actions/runs_actions';
 import { requestAllRoutes } from '../../../actions/routes_actions';
 import { selectAllRoutes } from '../../../reducers/selectors';
+import NewRun from './new_run';
 
 const mapStateToProps = (state) => {
   return {

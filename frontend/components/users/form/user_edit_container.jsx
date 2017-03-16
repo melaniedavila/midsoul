@@ -3,15 +3,12 @@ import UserEdit from './user_edit';
 import { requestSingleUser, updateUser } from '../../../actions/users_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
-  return(
-    {
+  return ({
       errors: state.errors,
       currentUser: state.session.currentUser,
       user: state.users[ownProps.params.userId],
       loading: state.loading.singleItemLoading
-    }
-  );
+    });
 };
 
 const mapDispatchToProps = dispatch => ({

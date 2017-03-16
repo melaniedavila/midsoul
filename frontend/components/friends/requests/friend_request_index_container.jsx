@@ -4,13 +4,11 @@ import { requestCurrentUserReceivedFriendRequests, updateFriendRequest } from '.
 import { selectAllFriendRequests } from '../../../reducers/selectors';
 
 const mapStateToProps = (state) => {
-  return(
-    {
+  return ({
       errors: state.errors,
       friendRequests: selectAllFriendRequests(state),
       loading: state.loading.indexLoading
-    }
-  );
+    });
 };
 
 const mapDispatchToProps = dispatch => ({

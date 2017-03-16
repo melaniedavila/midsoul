@@ -1,7 +1,7 @@
-import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import LoadingIcon from '../../loading/loading_icon';
 import ErrorsList from '../../errors/errors_list';
+import LoadingIcon from '../../loading/loading_icon';
+import React from 'react';
 
 export default class UserEdit extends React.Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import UserShow from './user_show';
-import { requestSingleUser } from '../../../actions/users_actions';
 import { createFriendRequest } from '../../../actions/friend_requests_actions';
+import { requestSingleUser } from '../../../actions/users_actions';
+import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
   return(

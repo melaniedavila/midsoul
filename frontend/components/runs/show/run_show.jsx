@@ -1,10 +1,9 @@
-import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import LoadingIcon from '../../loading/loading_icon';
-import ErrorsList from '../../errors/errors_list';
 import CommentIndex from '../../comments/index/comment_index';
+import ErrorsList from '../../errors/errors_list';
+import LoadingIcon from '../../loading/loading_icon';
 import NewCommentContainer from '../../comments/form/new_comment_container';
-
+import React from 'react';
 
 export default class RunShow extends React.Component {
   componentDidMount() {

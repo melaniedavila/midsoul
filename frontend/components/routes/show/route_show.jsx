@@ -1,9 +1,8 @@
-import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import LoadingIcon from '../../loading/loading_icon';
 import CommentIndex from '../../comments/index/comment_index';
+import LoadingIcon from '../../loading/loading_icon';
 import NewCommentContainer from '../../comments/form/new_comment_container';
-
+import React from 'react';
 
 const _mapOptions = {
   center: { lat: 0, lng: 0 },
@@ -38,7 +37,8 @@ export default class RouteShow extends React.Component {
     const bounds = this.generateMapBoundsFromRoutePath(routePath);
 
     // Bounds will ensure map actually orients itself over path stored
-    // in the route's encoded polyline
+    // in the route's encoded polyline. The fitBounds function sets the
+    // map window to contain the given bounds.
     this.map.fitBounds(bounds);
     routePath.setMap(this.map);
   }
@@ -57,7 +57,7 @@ export default class RouteShow extends React.Component {
 
   generateMapBoundsFromRoutePath(routePath) {
     let bounds = new google.maps.LatLngBounds();
-    // contains array of LatLng positions
+    // routePath contains array of LatLng positions
     const path = routePath.getPath();
     for (let i = 0; i < path.length; i++) {
       // b is a property of path that is the actual array of LatLng positions
@@ -78,9 +78,10 @@ export default class RouteShow extends React.Component {
 
   render () {
     const route = this.props.route;
+
     if (!route) {
       return <LoadingIcon />;
-    } else{
+    } else {
       const currentUser = this.props.currentUser;
       let deleteButton;
       if (currentUser && currentUser.id === route.creator_id) {

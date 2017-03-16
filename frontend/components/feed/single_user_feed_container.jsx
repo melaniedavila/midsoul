@@ -4,7 +4,6 @@ import SingleUserFeedIndex from './single_user_feed_index';
 import { requestSingleUserFeedItems } from '../../actions/feeds_actions';
 import { selectAllFeedItems } from '../../reducers/selectors';
 
-
 const mapStateToProps = function (state, ownProps) {
   return {
     loading: state.loading.indexLoading,

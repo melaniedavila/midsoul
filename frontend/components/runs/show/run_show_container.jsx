@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import RunShow from './run_show';
 import { requestSingleRun, deleteRun } from '../../../actions/runs_actions';
 import { requestSingleUser } from '../../../actions/users_actions';
+import RunShow from './run_show';
 
 const mapStateToProps = function (state, ownProps) {
   let errors;

@@ -1,7 +1,7 @@
-import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import LoadingIcon from '../../loading/loading_icon';
 import ErrorsList from '../../errors/errors_list';
+import LoadingIcon from '../../loading/loading_icon';
+import React from 'react';
 import SingleUserFeedIndex from '../../feed/single_user_feed_index';
 import SingleUserFeedIndexContainer from '../../feed/single_user_feed_container';
 
@@ -127,7 +127,6 @@ export default class UserShow extends React.Component {
                   <p>{user.routes.length}</p>
                   <p>{user.runs.length}</p>
                 </div>
-
               </div>
             </div>
             <div className='user-activity-details'>
