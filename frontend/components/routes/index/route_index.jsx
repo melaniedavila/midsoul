@@ -9,6 +9,8 @@ export default class RouteIndex extends React.Component {
 
   render() {
     const { routes, loading } = this.props;
+    routes.sort((routeA, routeB) => new Date(routeB.created_at) - new Date(routeA.created_at))
+
     if (loading) {
       return <LoadingIcon />;
     } else {
