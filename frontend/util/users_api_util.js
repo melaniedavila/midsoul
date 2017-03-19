@@ -26,7 +26,6 @@ export const createUser = (user) => {
   });
 };
 
-
 export const updateUser = (user) => {
   var formData = new FormData();
 
