@@ -22,8 +22,6 @@ class Route < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :creator_id,
     class_name: 'User')
-  # calculate distance and elevation_gain before save
-  # generate image url before save
 
   has_many(
     :runs,
