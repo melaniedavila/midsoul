@@ -13,7 +13,7 @@ const RunIndexItem = ({ run }) => {
       <img src={`https://maps.googleapis.com/maps/api/staticmap?size=300x150&path=color:0x0c5d94%7Cenc:${run.route.polyline}&key=${window.googleMapsApiKey}`}
             alt={run.route.title}></img>
     </Link>
-    <span className='run-distance'>Distance: {run.route.distance} miles</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span className='run-distance'>Distance: {run.route.distance.toFixed(2)} miles</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <span className='run-pace'>Pace: {((run.duration / 60) / run.route.distance).toFixed(2)} mins/mi</span>
   </li>
 )};
