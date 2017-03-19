@@ -71,7 +71,7 @@ export default class FeedIndexItem extends React.Component {
                   <i className="fa fa-road" aria-hidden="true"></i>
                   <p>Distance</p>
                 </div>
-                <p>{feedItem.feedable.distance} mi</p>
+                <p>{feedItem.feedable.distance.toFixed(2)} mi</p>
               </div>
             </div>
             <div className='activity-comments-container'>
@@ -101,7 +101,7 @@ export default class FeedIndexItem extends React.Component {
               <div className='date-and-description'>
                 <h4 className='activity-date'>{this.dateTimeString()}</h4>
                 <div className='user-name-and-activity-description'>
-                  <p>{feedItem.feedable.runner.f_name} ran {feedItem.feedable.route.distance} miles at a pace of {((feedItem.feedable.duration / 60) / feedItem.feedable.route.distance).toFixed(2)} mins/mi</p>
+                  <p>{feedItem.feedable.runner.f_name} ran {feedItem.feedable.route.distance.toFixed(2)} miles at a pace of {((feedItem.feedable.duration / 60) / feedItem.feedable.route.distance).toFixed(2)} mins/mi</p>
                 </div>
               </div>
               <img src={window.midSoulAssets.runIcon} alt='Running Silhouette'></img>
@@ -112,7 +112,7 @@ export default class FeedIndexItem extends React.Component {
                   <i  className="fa fa-road" aria-hidden="true"></i>
                   <p>Distance</p>
                 </div>
-                <p>{feedItem.feedable.route.distance} mi</p>
+                <p>{feedItem.feedable.route.distance.toFixed(2)} mi</p>
               </div>
               <div className='mini-activity-map'>
                 <Link to={`/runs/${feedItem.feedable.id}`}>
