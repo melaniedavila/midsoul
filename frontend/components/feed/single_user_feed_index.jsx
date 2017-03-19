@@ -14,7 +14,6 @@ export default class SingleUserFeedIndex extends React.Component {
     if (this.props.userId !== nextProps.userId) {
       nextProps.requestSingleUserFeedItems(nextProps.userId)
     }
-    // this.feedItem = nextProps.feedItem;
   }
 
   render() {
