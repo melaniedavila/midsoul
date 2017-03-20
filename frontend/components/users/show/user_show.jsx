@@ -7,12 +7,17 @@ import SingleUserFeedIndexContainer from '../../feed/single_user_feed_container'
 
 export default class UserShow extends React.Component {
   componentDidMount() {
+
     this.props.requestSingleUser(this.props.params.userId);
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.params.userId !== nextProps.params.userId) {
       this.props.requestSingleUser(nextProps.params.userId);
+    }
+
+    if (this.props.user && ((this.props.user.routes.length !== nextProps.user.routes.length) || (this.props.user.runs.length !== nextProps.user.runs.length))) {
+        this.props.requestSingleUser(nextProps.params.userId);
     }
   }
 
@@ -80,9 +85,12 @@ export default class UserShow extends React.Component {
     } else {
       const memberDate = this.parseMembershipDate(user.created_at);
       let editButton;
+      let profilePictureClass;
       const currentUser = this.props.currentUser;
       if ( currentUser && currentUser.id === user.id) {
         editButton = <button onClick={this.redirectToEdit.bind(this)}>EDIT PROFILE</button>;
+      } else if (currentUser && currentUser.id !== user.id) {
+        profilePictureClass = 'other-user-profile-pic'
       }
 
       let friendshipButtonOrStatus;
@@ -106,26 +114,26 @@ export default class UserShow extends React.Component {
 
       return (
         <div className='user-show-details'>
-          <div className='user-name-and-edit-button-flex-container'>
-            <h2>{user.f_name} {user.l_name}</h2>
-            {editButton}
-          </div>
           <div className='user-show-and-activity-feed-flex-container'>
             <div className='user-show-details-flex-container'>
               <div className='user-show-details-flex-left'>
-                <img src={user.profile_picture} alt='Profile picture'></img>
-                {friendshipButtonOrStatus}
-              </div>
-              <div className='user-show-details-flex-right'>
-                <div className='user-stat-tags'>
-                  <p>Member Since: </p>
-                  <p>Routes: </p>
-                  <p>Runs: </p>
+                <div className='user-name-and-edit-button-flex-container'>
+                  <h2>{user.f_name} {user.l_name}</h2>
+                  <div>{editButton}</div>
                 </div>
-                <div className='user-stat-counts'>
-                  <p>{memberDate}</p>
-                  <p>{user.routes.length}</p>
-                  <p>{user.runs.length}</p>
+                <img className={profilePictureClass} src={user.profile_picture} alt='Profile picture'></img>
+                {friendshipButtonOrStatus}
+                <div className='user-show-details-flex-user-stats'>
+                  <div className='user-stat-tags'>
+                    <p>Member Since: </p>
+                    <p>Routes: </p>
+                    <p>Runs: </p>
+                  </div>
+                  <div className='user-stat-counts'>
+                    <p>{memberDate}</p>
+                    <p>{user.routes.length}</p>
+                    <p>{user.runs.length}</p>
+                  </div>
                 </div>
               </div>
             </div>
