@@ -2,22 +2,35 @@
 @import '../base/colors.scss';
 
 .feed-index {
-  h2 {
-    padding: 15px;
-    display: block;
-    font-size: 32px;
-    font-weight: bold;
-    color: $dark-gray;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    margin-left: 61px;
+  min-width: 825px;
+
+    h2 {
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      font-size: 32px;
+      font-weight: bold;
+      color: $dark-gray;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      margin-top: 15px;
+    }
+
+  .feed-items-list {
+    display: flex;
+    flex-direction: column;
+
+    .feed-index-item {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   .feed-index-item-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin: 0 0 60px 75px;
+    margin: 0 0 60px 0;
 
     .user-thumb-container {
       width: 75px;
