@@ -15,6 +15,11 @@ class FeedItem < ActiveRecord::Base
   validates :feedable, :user, presence: true
   belongs_to :user
   before_validation :ensure_user
+  after_create :debug
+
+  def debug
+    binding.pry if feedable.nil?
+  end
 
   private
 

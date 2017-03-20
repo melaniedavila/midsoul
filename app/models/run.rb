@@ -11,7 +11,6 @@
 #  updated_at  :datetime         not null
 #  duration    :integer          not null
 #  title       :string           not null
-#
 
 class Run < ActiveRecord::Base
   validates :runner_id, :route_id, :date, :duration, :title,
@@ -31,7 +30,14 @@ class Run < ActiveRecord::Base
 
   has_many(
     :comments,
-    as: :commentable
+    as: :commentable,
+    dependent: :destroy
+  )
+
+  has_many(
+    :feed_items,
+    as: :feedable,
+    dependent: :destroy
   )
 
   after_create :create_feed_item

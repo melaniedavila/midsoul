@@ -27,15 +27,28 @@ class Route < ActiveRecord::Base
     :runs,
     primary_key: :id,
     foreign_key: :route_id,
-    class_name: 'Run'
+    class_name: 'Run',
+    dependent: :destroy
   )
 
   has_many(
     :comments,
-    as: :commentable
+    as: :commentable,
+    dependent: :destroy
+  )
+
+  has_many(
+    :feed_items,
+    as: :feedable,
+    dependent: :destroy
   )
 
   after_create :create_feed_item
+  after_destroy :debug
+
+  def debug
+    binding.pry
+  end
 
   private
 
