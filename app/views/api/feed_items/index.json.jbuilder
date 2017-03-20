@@ -1,7 +1,6 @@
 @feed_items.each do |feed_item|
   json.set! feed_item.id do
     type = feed_item.feedable_type.downcase
-
     json.extract! feed_item, :feedable_type
 
     json.set! :feedable do
