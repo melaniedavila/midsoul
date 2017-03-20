@@ -97,27 +97,16 @@
 
 .user-show-details {
 
-  .user-name-and-edit-button-flex-container {
+
+  .user-show-and-activity-feed-flex-container {
     display: flex;
-    align-content: flex-start;
+    justify-content: space-around;
 
-    h2 {
-      padding: 20px;
-      display: block;
-      font-size: 32px;
-      font-weight: bold;
-    }
 
-    button {
-      color: $medium-gray;
-    }
-
-    button:hover{
-      color: $dark-gray;
-      transition: all .2s ease-out;
+    .user-activity-details {
+      margin: 98px 20px 0 0;
     }
   }
-
 
   .user-show-details-flex-container {
     display: flex;
@@ -126,9 +115,42 @@
 
     .user-show-details-flex-left {
       padding: 0 20px 20px 20px;
+      min-width: 205px;
+
+      .user-name-and-edit-button-flex-container {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+          padding: 20px 20px 0 0;
+          display: block;
+          font-size: 32px;
+          font-weight: bold;
+        }
+
+        button {
+          color: $medium-gray;
+          background: white;
+          margin: 0;
+          padding: 0;
+          font-size: 13px;
+        }
+
+        button:hover{
+          color: $dark-gray;
+          transition: all .2s ease-out;
+        }
+      }
+
 
       img {
         border: 1px solid $medium-gray;
+        width: 204px;
+        margin: 0;
+      }
+
+      .other-user-profile-pic {
+        margin-top: 33px;
       }
 
       button, .user-show-friend-request-status {
@@ -140,7 +162,7 @@
         font-weight: 500px;
         font-size: 14px;
         line-height: 36px;
-        border-radius: 5px;
+        border-radius: 3px;
         transition: background-color 0.2s;
         transition: color 0.05s;
         letter-spacing: 0.8px;
@@ -159,50 +181,52 @@
         font-weight: 500px;
         font-size: 14px;
         line-height: 36px;
-        border-radius: 5px;
         transition: background-color 0.2s;
         transition: color 0.05s;
         letter-spacing: 0.8px;
         padding: 0;
         margin-bottom: 10px;
+        margin-left: 0px;
         text-align: center;
-        margin: 15px;
+        width: 205px;
 
         i {
           margin-left: 5px;
         }
 
       }
-    }
-
-    .user-show-details-flex-right {
-      display: flex;
-      flex-direction: row;
-
-      .user-stat-tags {
+      .user-show-details-flex-user-stats {
         display: flex;
-        flex-direction: column;
-        text-transform: uppercase;
-        margin-right: 15px;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 20px;
 
-        p {
-          -webkit-font-smoothing: antialiased;
-          margin: 0 0 10px 0;
-          font-weight: bold;
-          font-size: 15px;
+        .user-stat-tags {
+          display: flex;
+          flex-direction: column;
+          text-transform: uppercase;
+          margin-right: 15px;
+
+          p {
+            -webkit-font-smoothing: antialiased;
+            margin: 0 0 10px 0;
+            font-weight: bold;
+            font-size: 15px;
+          }
+        }
+
+        .user-stat-counts {
+          display: flex;
+          flex-direction: column;
+
+          p {
+            margin: 0 0 10px 0;
+            font-size: 15px;
+          }
         }
       }
-
-      .user-stat-counts {
-        display: flex;
-        flex-direction: column;
-
-        p {
-          margin: 0 0 10px 0;
-          font-size: 15px;
-        }
-      }
     }
+
   }
 
   .feed-index {
@@ -218,9 +242,4 @@
     justify-content: flex-start;
     margin: 0 0 60px 0;
   }
-}
-
-
-.user-activity-details {
-  padding: 20px;
 }
