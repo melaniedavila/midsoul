@@ -16,17 +16,19 @@ export default function routesReducer(state = {}, action) {
       delete newState[action.route.id];
       return newState;
     case RECEIVE_NEW_COMMENT:
-      if (action.comment.commentable_type === 'Route' && state[action.comment.commentable_id]) {
+      const oldRoute = state[action.comment.commentable_id];
+      if (action.comment.commentable_type === 'Route' && oldRoute && oldRoute.comments) {
         const newCommentState = merge({}, state);
         const comment = action.comment;
         const route = newCommentState[action.comment.commentable_id];
         route.comments.push(action.comment);
         return newCommentState;
       } else {
-        return state;
+      return state;
       }
     case REMOVE_COMMENT:
-      if (action.comment.commentable_type === 'Route' && state[action.comment.commentable_id]) {
+      const oldRouteToRemoveCommentsFrom = state[action.comment.commentable_id];
+      if (action.comment.commentable_type === 'Route' && oldRouteToRemoveCommentsFrom && oldRouteToRemoveCommentsFrom.comments) {
         const newRemovedCommentState = merge({}, state);
         const commentToRemove = action.comment;
         const routeToRemoveCommentFrom = newRemovedCommentState[action.comment.commentable_id];
@@ -37,7 +39,6 @@ export default function routesReducer(state = {}, action) {
             break;
           }
         }
-
         return newRemovedCommentState;
       }
     default:
