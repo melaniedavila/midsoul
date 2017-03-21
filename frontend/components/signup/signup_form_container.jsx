@@ -8,7 +8,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return ({
-    signup: (user) => dispatch(signUp(user)),
+    signUp: (user) => dispatch(signUp(user)),
     clearErrors: () => dispatch(receiveErrors({}))
   });
 }
