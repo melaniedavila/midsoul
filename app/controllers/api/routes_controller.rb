@@ -32,7 +32,7 @@ class Api::RoutesController < ApplicationController
     if @route.update(route_params)
       render :show
     else
-      render json: @route.errors.full_messages, status: 422
+      render json: { base: @route.errors.full_messages }, status: 422
     end
   end
 
