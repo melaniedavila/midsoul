@@ -14,8 +14,11 @@
 #
 
 class Route < ActiveRecord::Base
-  validates :creator_id, :title, :description, :polyline, :distance,
+  validates :creator_id, :title, :description, :distance,
             :elevation_gain, presence: true
+
+  validates :polyline,
+            presence: { message: "Please create a path on the map" }
 
   belongs_to(
     :creator,
