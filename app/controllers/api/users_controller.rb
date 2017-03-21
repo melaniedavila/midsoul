@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action :require_log_in!
+  before_action :require_log_in!, :except => :create
 
   def index
     @users =
