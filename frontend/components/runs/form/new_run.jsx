@@ -21,6 +21,7 @@ export default class NewRun extends React.Component {
   }
 
   componentDidMount(){
+    this.props.clearErrors();
     this.props.requestAllRoutes();
   }
 

@@ -35,10 +35,6 @@ export default class LogInForm extends React.Component {
 
             <div className='errors-list'>
               <ErrorsList  errors={ errors.base } />
-              <ErrorsList className='errors-list' errors={ errors.f_name } />
-              <ErrorsList className='errors-list' errors={ errors.l_name } />
-              <ErrorsList className='errors-list' errors={ errors.email } />
-              <ErrorsList className='errors-list' errors={ errors.password } />
             </div>
 
             <br/>

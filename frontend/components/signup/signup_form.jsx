@@ -20,11 +20,17 @@ export default class SignUpForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.signup(this.state).then(() => this.props.router.push('/'));
+    this.props.signUp(this.state).then(() => this.props.router.push('/'));
   }
 
   render(){
     const errors = this.props.errors;
+    let errorsList;
+    if (errors) {
+      errorsList = <div className='errors-list'>
+                    <ErrorsList errors={ errors.base } />
+                  </div>
+    }
 
     return(
       <section>
@@ -33,18 +39,8 @@ export default class SignUpForm extends React.Component {
             <br />
             <h4>Create a midSoul account</h4>
             <br />
-
-            <div className='errors-list'>
-              <ErrorsList errors={ errors.base } />
-              <ErrorsList errors={ errors.f_name } />
-              <ErrorsList errors={ errors.l_name } />
-              <ErrorsList errors={ errors.email } />
-              <ErrorsList errors={ errors.profile_picture } />
-              <ErrorsList errors={ errors.password } />
-            </div>
-
+            {errorsList}
             <br />
-
             <input type='text'
               value={this.state.f_name}
               placeholder={'First Name'}

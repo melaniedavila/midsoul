@@ -129,6 +129,9 @@ export default class NewRoute extends React.Component {
   errors() {
     if (this.props.errors.length > 0) {
       const errorListItems = this.props.errors.map((error, idx) => {
+          if (error.includes('Polyline')) {
+            return (<li className="error" key={idx}>{error.substr(9)}</li>);
+          }
           return (<li className="error" key={idx}>{error}</li>);
         });
 
