@@ -1,4 +1,4 @@
-export function signup(user) {
+export function signUp(user) {
   return $.ajax({
     method: 'POST',
     url: '/api/users',
