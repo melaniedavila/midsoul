@@ -79,8 +79,9 @@ export default class UserShow extends React.Component {
   render () {
     const user = this.props.user;
     const errors = this.props.errors;
+    const loading = this.props.loading;
 
-    if (!user) {
+    if (loading || !user) {
       return <LoadingIcon />;
     } else {
       const memberDate = this.parseMembershipDate(user.created_at);
