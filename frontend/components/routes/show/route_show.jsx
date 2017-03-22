@@ -84,7 +84,7 @@ export default class RouteShow extends React.Component {
     } else {
       const currentUser = this.props.currentUser;
       let deleteButton;
-      if (currentUser && currentUser.id === route.creator_id) {
+      if (currentUser && currentUser.id === route.creator_id && route.run_count === 0) {
         deleteButton = (<button
                         onClick={this.handleDeleteRouteClick()}>
                         DELETE ROUTE
