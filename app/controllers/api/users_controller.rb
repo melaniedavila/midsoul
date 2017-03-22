@@ -75,7 +75,6 @@ class Api::UsersController < ApplicationController
           :f_name,
           :l_name,
           :password,
-          :image_url,
           :profile_picture
         )
     end
