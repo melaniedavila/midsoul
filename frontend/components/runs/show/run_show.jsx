@@ -90,8 +90,10 @@ export default class RunShow extends React.Component {
           </div>
 
           <div className='run-show-map'>
-            <img src={`https://maps.googleapis.com/maps/api/staticmap?size=700x350&path=color:0x0c5d94%7Cenc:${run.route.polyline}&key=${window.googleMapsApiKey}`}
-              alt={run.route.title}></img>
+            <Link to={`/routes/${run.route.id}`}>
+              <img src={`https://maps.googleapis.com/maps/api/staticmap?size=700x350&path=color:0x0c5d94%7Cenc:${run.route.polyline}&key=${window.googleMapsApiKey}`}
+                alt={run.route.title}></img>
+            </Link>
           </div>
 
           <div className='run-comment-index-and-form'>
