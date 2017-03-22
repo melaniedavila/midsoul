@@ -30,8 +30,7 @@ class Route < ActiveRecord::Base
     :runs,
     primary_key: :id,
     foreign_key: :route_id,
-    class_name: 'Run',
-    dependent: :destroy
+    class_name: 'Run'
   )
 
   has_many(
