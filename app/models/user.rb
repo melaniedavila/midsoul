@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
-  
+
   attr_reader :password
 
   has_many(
@@ -75,7 +75,7 @@ class User < ActiveRecord::Base
 
   has_attached_file(
     :profile_picture,
-    default_url: '/assets/profile_pic/default-prof-pic.png',
+    default_url: '/assets/profile_pic/default-prof-pic.jpg',
     styles: {
       medium: "200x200#",
       small: "100x100#",
