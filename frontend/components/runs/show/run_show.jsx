@@ -6,17 +6,22 @@ import NewCommentContainer from '../../comments/form/new_comment_container';
 import React from 'react';
 
 export default class RunShow extends React.Component {
-  componentDidMount() {
+  componentDidMount () {
     this.props.requestSingleRun(this.props.params.runId);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps (nextProps) {
     if (this.props.params.runId !== nextProps.params.runId) {
       this.props.requestSingleRun(nextProps.params.runId);
     }
   }
 
-  handleDeleteRunClick(e) {
+  formatRunDate () {
+    const runDate = this.props.run.date;
+    return [runDate.slice(5, 7), runDate.slice(8,10), runDate.slice(2,4)].join('-');
+  }
+
+  handleDeleteRunClick (e) {
     return (e) => {
       e.preventDefault();
       this.props.deleteRun(this.props.run.id)
@@ -42,10 +47,7 @@ export default class RunShow extends React.Component {
         );
       }
 
-      const runDate = run.date;
-      const fullDate = new Date(runDate);
-      const dateString = fullDate.toDateString();
-
+      const dateString = this.formatRunDate();
       return (
         <div className='run-show-details'>
           <div className='run-icon-and-title'>
