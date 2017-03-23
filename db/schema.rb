@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170223004348) do
+ActiveRecord::Schema.define(version: 20170323155321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170223004348) do
     t.integer  "user_id",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "sortby_date",   null: false
   end
 
   add_index "feed_items", ["feedable_type", "feedable_id"], name: "index_feed_items_on_feedable_type_and_feedable_id", using: :btree
