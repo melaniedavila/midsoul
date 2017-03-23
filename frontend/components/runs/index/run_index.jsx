@@ -10,6 +10,7 @@ export default class RunIndex extends React.Component {
   render() {
     const { runs, loading } = this.props;
     runs.sort((runA, runB) => runA.date < runB.date);
+    
     if (loading) {
       return <LoadingIcon />;
     } else {

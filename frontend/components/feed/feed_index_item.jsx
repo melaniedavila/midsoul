@@ -8,19 +8,24 @@ export default class FeedIndexItem extends React.Component {
     super(props);
     this.state = { isCommentsShown: false };
     this.feedItem = props.feedItem;
-    this.dateTimeString = this.dateTimeString.bind(this);
+    this.routeDateTimeString = this.routeDateTimeString.bind(this);
+    this.runDateTimeString = this.runDateTimeString.bind(this);
     this.toggleCommentsSection = this.toggleCommentsSection.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps (nextProps) {
     this.feedItem = nextProps.feedItem;
   }
 
-  dateTimeString() {
+  routeDateTimeString () {
     const activityDateTime = new Date(this.feedItem.feedable.created_at)
-    const activityDate = activityDateTime.toDateString();
-    const activityTime = activityDateTime.toLocaleTimeString();
-    return `${activityDate} ${activityTime}`;
+    return activityDateTime.toDateString();
+  }
+
+  runDateTimeString () {
+    const runDate = this.feedItem.feedable.date;
+    const orderedRunDate = [runDate.slice(5, 7), runDate.slice(8,10), runDate.slice(2,4)].join('-');
+    return new Date(orderedRunDate).toDateString();
   }
 
   toggleCommentsSection(e) {
@@ -52,7 +57,7 @@ export default class FeedIndexItem extends React.Component {
           <div className='activity-details-flex-container'>
             <div className='activity-date-and-description-container'>
               <div className='date-and-description'>
-                <h4 className='activity-date'>{this.dateTimeString()}</h4>
+                <h4 className='activity-date'>{this.routeDateTimeString()}</h4>
                 <div className='user-name-and-activity-description'>
                   <p>{feedItem.feedable.creator.f_name} created the route {feedItem.feedable.title}</p>
                 </div>
@@ -99,7 +104,7 @@ export default class FeedIndexItem extends React.Component {
           <div className='activity-details-flex-container'>
             <div className='activity-date-and-description-container'>
               <div className='date-and-description'>
-                <h4 className='activity-date'>{this.dateTimeString()}</h4>
+                <h4 className='activity-date'>{this.runDateTimeString()}</h4>
                 <div className='user-name-and-activity-description'>
                   <p>{feedItem.feedable.runner.f_name} ran {feedItem.feedable.route.distance.toFixed(2)} miles at a pace of {((feedItem.feedable.duration / 60) / feedItem.feedable.route.distance).toFixed(2)} mins/mi</p>
                 </div>
