@@ -16,7 +16,7 @@ class Run < ActiveRecord::Base
   validates :runner, :route, :date, :duration, :title,
             :description, presence: true
 
-  # validates :route_id, numericality: { greater_than: 0 }
+  validates :duration, numericality: { greater_than: 0 }
 
   belongs_to(
     :runner,

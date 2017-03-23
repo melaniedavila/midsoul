@@ -4,7 +4,6 @@ class Api::RunsController < ApplicationController
   def create
     @run = Run.new(run_params)
     @run.runner_id = current_user.id
-    @running_route = Route.find_by(id: @run.route_id)
 
     if @run.save
       render :show
