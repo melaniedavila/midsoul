@@ -16,13 +16,16 @@ export default class SingleUserFeedIndex extends React.Component {
 
   render() {
     const { feedItems, loading } = this.props;
+    
+    feedItems.sort((feedItemA, feedItemB) => feedItemA.feedable.sortby_date > feedItemB.feedable.sortby_date);
+
     if (loading) {
       return <LoadingIcon />;
     } else {
       return (
       <section className="feed-index">
         <ul className='feed-items-list'>
-          {feedItems.reverse().map((feedItem, idx) => <FeedIndexItem key={idx} feedItem={feedItem} />)}
+          {feedItems.map((feedItem, idx) => <FeedIndexItem key={idx} feedItem={feedItem} />)}
         </ul>
       </section> );
     }
