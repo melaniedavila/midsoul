@@ -11,7 +11,7 @@
 #
 
 class FriendRequest < ActiveRecord::Base
-  validates :requestee_id, :requestor_id, :status, presence: true
+  validates :requestee, :requestor, :status, presence: true
   validates_uniqueness_of :requestor_id, :scope => [:requestee_id]
   enum status: {
     pending: 0,

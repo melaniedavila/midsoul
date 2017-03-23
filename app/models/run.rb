@@ -13,8 +13,10 @@
 #  title       :string           not null
 
 class Run < ActiveRecord::Base
-  validates :runner_id, :route_id, :date, :duration, :title,
+  validates :runner, :route, :date, :duration, :title,
             :description, presence: true
+
+  # validates :route_id, numericality: { greater_than: 0 }
 
   belongs_to(
     :runner,

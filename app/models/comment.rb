@@ -12,8 +12,7 @@
 #
 
 class Comment < ActiveRecord::Base
-  validates :author_id, :commentable_id, :commentable_type,
-            :body, presence: true
+  validates :author, :commentable, :body, presence: true
 
   belongs_to(
     :author,

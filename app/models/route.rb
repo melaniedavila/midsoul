@@ -14,7 +14,7 @@
 #
 
 class Route < ActiveRecord::Base
-  validates :creator_id, :title, :description, :distance,
+  validates :creator, :title, :description, :distance,
             :elevation_gain, presence: true
 
   validates :polyline,
