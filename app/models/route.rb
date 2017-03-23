@@ -46,11 +46,6 @@ class Route < ActiveRecord::Base
   )
 
   after_create :create_feed_item
-  after_destroy :debug
-
-  def debug
-    binding.pry
-  end
 
   private
 
