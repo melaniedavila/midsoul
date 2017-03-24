@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { requestSingleRun, deleteRun } from '../../../actions/runs_actions';
 import { requestSingleUser } from '../../../actions/users_actions';
 import RunShow from './run_show';
+import { receiveRunErrors } from '../../../actions/runs_actions';
 
 const mapStateToProps = function (state, ownProps) {
   let errors;
@@ -19,6 +20,7 @@ const mapStateToProps = function (state, ownProps) {
 
 const mapDispatchToProps = dispatch => ({
   requestSingleRun: id => dispatch(requestSingleRun(id)),
+  clearErrors: () => dispatch(receiveRunErrors({})),
   deleteRun: id => dispatch(deleteRun(id))
 });
 
