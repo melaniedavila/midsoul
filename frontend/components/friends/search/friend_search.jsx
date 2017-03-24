@@ -19,7 +19,7 @@ const FriendSearch = ({ foundUsers, searchString, updateFriendSearchFilter, crea
 
   return(
   <div className='friends-search-index'>
-      <h3>FIND FRIENDS BY FIRST NAME, LAST NAME, OR EMAIL:</h3>
+      <h3>Find friends by first name, last name, or email:</h3>
       <FriendSearchFilterForm
         searchString={searchString}
         updateFriendSearchFilter={updateFriendSearchFilter} />

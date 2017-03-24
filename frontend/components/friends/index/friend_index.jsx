@@ -11,6 +11,10 @@ export default class FriendIndex extends React.Component {
     const { friends, loading } = this.props;
     if (loading) {
       return <LoadingIcon />;
+    } else if (friends.length === 0) {
+      return (<div className='empty-friends'>
+                <h4>You don't have any friends yet. Click the 'Find Friends' tab to search for fellow runners.</h4>
+              </div>)
     } else {
       return (
       <section className="friends-index">

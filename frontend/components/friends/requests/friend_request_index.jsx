@@ -12,6 +12,11 @@ export default class FriendRequestIndex extends React.Component {
 
     if (loading) {
       return <LoadingIcon />;
+    }
+    else if (friendRequests.length === 0) {
+      return (<div className='empty-friend-requests'>
+                <h4>You have no pending friend requests.</h4>
+              </div>)
     } else {
       return (
         <ul className="friend-requests-index">

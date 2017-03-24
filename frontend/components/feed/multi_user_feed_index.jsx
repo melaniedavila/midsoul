@@ -14,6 +14,11 @@ export default class MultiUserFeedIndex extends React.Component {
 
     if (loading) {
       return <LoadingIcon />;
+    } else if (feedItems.length === 0) {
+      return (<div className='empty-feed'>
+                <h2>Activity Feed</h2>
+                <h4>There are no activities to display.</h4>
+              </div>)
     } else {
       return (
       <section className="feed-index">
