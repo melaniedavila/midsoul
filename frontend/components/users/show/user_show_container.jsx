@@ -4,11 +4,11 @@ import { requestSingleUser } from '../../../actions/users_actions';
 import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
-  return(
-    {currentUser: state.session.currentUser,
+  return({
+    currentUser: state.session.currentUser,
     user: state.users[ownProps.params.userId],
-    loading: state.loading.singleItemLoading}
-  );
+    loading: state.loading.singleItemLoading
+  });
 };
 
 const mapDispatchToProps = dispatch => ({

@@ -7,17 +7,12 @@ import SingleUserFeedIndexContainer from '../../feed/single_user_feed_container'
 
 export default class UserShow extends React.Component {
   componentDidMount() {
-
     this.props.requestSingleUser(this.props.params.userId);
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.params.userId !== nextProps.params.userId) {
       this.props.requestSingleUser(nextProps.params.userId);
-    }
-
-    if (this.props.user && ((this.props.user.routes.length !== nextProps.user.routes.length) || (this.props.user.runs.length !== nextProps.user.runs.length))) {
-        this.props.requestSingleUser(nextProps.params.userId);
     }
   }
 
