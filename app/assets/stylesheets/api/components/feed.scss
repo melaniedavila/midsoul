@@ -1,20 +1,35 @@
 @import '../base/fonts.scss';
 @import '../base/colors.scss';
 
+
+.empty-feed, .feed-index {
+  h2 {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    color: $dark-gray;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+}
+
+.empty-feed {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  h4 {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+  }
+}
+
 .feed-index {
   min-width: 825px;
-
-    h2 {
-      display: flex;
-      justify-content: center;
-      padding: 15px;
-      font-size: 32px;
-      font-weight: bold;
-      color: $dark-gray;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      margin-top: 15px;
-    }
 
   .feed-items-list {
     display: flex;

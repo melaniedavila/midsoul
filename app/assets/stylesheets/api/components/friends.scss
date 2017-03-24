@@ -1,6 +1,17 @@
 @import '../base/fonts.scss';
 @import '../base/colors.scss';
 
+.empty-friends, .empty-friend-requests {
+  h4 {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 15px;
+    margin-top: 35px;
+    margin-left: 16px;
+    color: $medium-gray;
+  }
+}
+
 .friends-index {
   padding: 35px 15px 35px 15px;
 

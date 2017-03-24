@@ -1,6 +1,7 @@
 @import '../base/fonts.scss';
 @import '../base/colors.scss';
 
+// NEW RUN
 .log-run-main {
   h3 {
     display: block;
@@ -125,18 +126,32 @@
 }
 
 
-.runs-index {
+// RUNS INDEX
+
+.empty-runs, .runs-index {
   h2 {
+    display: flex;
     justify-content: center;
-    text-align: center;
-    font-size: 27px;
-    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
-    font-weight: 700;
-    padding-bottom: 20px;
-    margin-top: 15px;
+    padding: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    color: $dark-gray;
     text-transform: uppercase;
-    color: $darker-gray;
+    margin-bottom: 20px;
+    margin-top: 15px;
   }
+}
+
+.empty-runs {
+  h4 {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    margin-top: 15px;
+  }
+}
+
+.runs-index {
 
   .mini-runs {
     display: flex;
@@ -171,6 +186,8 @@
   }
 }
 
+
+// RUN SHOW
 .run-show-details {
   padding: 15px;
   margin: 25px;
