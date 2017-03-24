@@ -141,8 +141,9 @@ export default class NewRun extends React.Component {
 
               <label>Route:</label>
                 <select
-                  onChange={this.update('route_id')}>
-                  <option disabled selected>Select Route</option>
+                  onChange={this.update('route_id')}
+                  defaultValue='Select Route'>
+                  <option disabled>Select Route</option>
                   {this.props.routes.map((route) => {
                     return (
                       <option
