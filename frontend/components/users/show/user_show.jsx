@@ -84,7 +84,7 @@ export default class UserShow extends React.Component {
       let profilePictureClass;
       const currentUser = this.props.currentUser;
       if ( currentUser && currentUser.id === user.id) {
-        editButton = <button onClick={this.redirectToEdit.bind(this)}>EDIT PROFILE</button>;
+        editButton = <button onClick={this.redirectToEdit.bind(this)}>EDIT PROFILE <i className="fa fa-pencil" aria-hidden="true"></i></button>;
       } else if (currentUser && currentUser.id !== user.id) {
         profilePictureClass = 'other-user-profile-pic'
       }
