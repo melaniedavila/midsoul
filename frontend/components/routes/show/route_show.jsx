@@ -11,6 +11,7 @@ const _mapOptions = {
 
 export default class RouteShow extends React.Component {
   componentDidMount() {
+    this.props.clearErrors();
     this.props.requestSingleRoute(this.props.params.routeId).then(() => {
       this.generateMapFromPolyline();
     });

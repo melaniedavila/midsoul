@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import RouteShow from './route_show';
 import { requestSingleRoute, deleteRoute } from '../../../actions/routes_actions';
+import { receiveRouteErrors } from '../../../actions/routes_actions';
 
 const mapStateToProps = (state, ownProps) => {
 return(
@@ -12,6 +13,7 @@ return(
 
 const mapDispatchToProps = dispatch => ({
   requestSingleRoute: id => dispatch(requestSingleRoute(id)),
+  clearErrors: () => dispatch(receiveRouteErrors({})),
   deleteRoute: id => dispatch(deleteRoute(id))
 });
 
