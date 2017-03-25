@@ -82,12 +82,18 @@ footer {
           font-size: 80px;
           color: $midSoul-blue;
           padding: 5px;
+          min-width: 71px;
+        }
+
+        .fa-users {
+          margin-right: 15px;
         }
 
         .feature-header-and-description {
           display: flex;
           flex-direction: column;
           margin-left: 2px;
+          min-width: 170px;
           h2 {
             font-size: 15px;
             font-weight: 600;
