@@ -176,12 +176,15 @@
 
 .map-flex-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 50px;
+  .map-flex-left {
+    margin-top: 47px;
+  }
 }
 
 .map-flex-right {
-  width: 100%;
+  width: 90%;
   margin: 25px;
 
   p {
