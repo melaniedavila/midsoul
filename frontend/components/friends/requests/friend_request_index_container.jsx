@@ -5,7 +5,6 @@ import { selectAllFriendRequests } from '../../../reducers/selectors';
 
 const mapStateToProps = (state) => {
   return ({
-      errors: state.errors,
       friendRequests: selectAllFriendRequests(state),
       loading: state.loading.indexLoading
     });

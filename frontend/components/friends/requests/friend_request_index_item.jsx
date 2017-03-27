@@ -25,16 +25,20 @@ const FriendRequestIndexItem = ({ friendRequest, updateFriendRequest }) => {
       <div className='friend-request-user-img-and-name'>
         <div className='friend-request-img'>
           <Link to={`/users/${friendRequest.requestor.id}`}>
-            <img src={friendRequest.requestor.profile_picture} alt='Profile picture'></img>
+            <img  src={ friendRequest.requestor.profile_picture }
+                  alt='Profile picture'></img>
           </Link>
         </div>
         <Link to={`/users/${friendRequest.requestor.id}`}>
-          <p>{friendRequest.requestor.f_name} {friendRequest.requestor.l_name}</p>
+          <p> { friendRequest.requestor.f_name }
+              &nbsp;{ friendRequest.requestor.l_name }</p>
         </Link>
       </div>
       <div className='friend-request-buttons'>
-        <button className='deny-button' onClick={rejectFriendRequest}>Deny</button>
-        <button className='accept-button' onClick={acceptFriendRequest}>Accept</button>
+        <button className='deny-button'
+                onClick={rejectFriendRequest}>Deny</button>
+        <button className='accept-button'
+                onClick={acceptFriendRequest}>Accept</button>
       </div>
     </div>
   </li>

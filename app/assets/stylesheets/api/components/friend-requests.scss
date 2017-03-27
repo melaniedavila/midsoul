@@ -2,96 +2,95 @@
 @import '../base/colors.scss';
 
 .friend-requests-index {
-  padding: 15px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 15px;
 
   .friend-request-index-item {
-    display: flex;
-    justify-content: space-between;
-    width: 520px;
     background: $lightest-gray;
     border-radius: 2px;
+    box-shadow: $light-gray 2px 2px 0;
+    display: flex;
+    justify-content: space-between;
     margin: 20px;
     padding: 10px;
-    box-shadow: $light-gray 2px 2px 0;
+    width: 520px;
+  }
+}
 
+.friend-request-flex-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 550px;
 
-    .friend-request-flex-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 550px;
+  .friend-request-user-img-and-name {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 
-      .friend-request-user-img-and-name {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    a {
+      color: black;
+      text-decoration: none;
+    }
 
-        a {
-          text-decoration: none;
-          color: black;
-        }
+    .friend-request-img {
+      border: 1px solid $medium-gray;
+      height:100px;
+      width: 100px;
+    }
 
-        .friend-request-img {
-          width: 100px;
-          height:100px;
-          border: 1px solid $medium-gray;
-        }
+    .friend-request-img:hover {
+      border: 1px solid $tab-blue;
+    }
 
-        .friend-request-img:hover {
-          border: 1px solid $tab-blue;
-        }
+    p {
+      color: $friend-name-blue;
+      font-size: 14px;
+      font-weight: bold;
+      margin-left: 15px;
+    }
 
-        p {
-          margin-left: 15px;
-          font-size: 14px;
-          font-weight: bold;
-          color: $friend-name-blue;
-        }
+    p:hover {
+      color: $midSoul-blue;
+    }
+  }
 
-        p:hover {
-          color: $midSoul-blue;
-        }
-      }
+  .friend-request-buttons {
+    display: flex;
+    justify-content: flex-end;
 
-      .friend-request-buttons {
-        display: flex;
-        justify-content: flex-end;
+    button {
+      padding: 15px;
+      text-align: center;
+      text-transform: uppercase;
+    }
 
-        button {
-          text-align: center;
-          padding: 15px;
-          text-transform: uppercase;
-        }
+    .deny-button {
+      background: $light-gray;
+      border-radius: 2px;
+      color: $darker-gray;
+      height: 50%;
+      margin-right: 10px;
+    }
 
-        .deny-button {
-          background: $light-gray;
-          color: $darker-gray;
-          height: 50%;
-          margin-right: 10px;
-          border-radius: 2px;
-        }
+    .deny-button:hover {
+      background: $medium-gray;
+      transition: all .2s ease-out;
+    }
 
-        .deny-button:hover {
-          background: $medium-gray;
-          transition: all .2s ease-out;
-        }
+    .accept-button {
+      background: $form-orange;
+      border-radius: 2px;
+      color: white;
+      height: 50%;
+      width: 50px;
+    }
 
-        .accept-button {
-          background: $form-orange;
-          color: white;
-          height: 50%;
-          width: 50px;
-          border-radius: 2px;
-        }
-
-        .accept-button:hover {
-          background: $hover-orange;
-          transition: all .2s ease-out;
-        }
-      }
+    .accept-button:hover {
+      background: $hover-orange;
+      transition: all .2s ease-out;
     }
   }
 }
