@@ -12,7 +12,7 @@ export default function ErrorsList({ errors }) {
       error = "Last name can't be blank";
     }
 
-    return <li key={error}>{error}</li>;
+    return <li key={error}>{ error }</li>;
   });
   return (
     <ul>

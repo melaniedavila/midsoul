@@ -6,25 +6,28 @@ import NewCommentContainer from '../comments/form/new_comment_container';
 export default class FeedIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isCommentsShown: false };
-    this.feedItem = props.feedItem;
+    this.state = { isCommentsShown: false, feedItem: props.feedItem };
     this.routeDateTimeString = this.routeDateTimeString.bind(this);
     this.runDateTimeString = this.runDateTimeString.bind(this);
     this.toggleCommentsSection = this.toggleCommentsSection.bind(this);
   }
 
   componentWillReceiveProps (nextProps) {
-    this.feedItem = nextProps.feedItem;
+    if (nextProps.feedItem !== this.state.feedItem) {
+      this.setState({ feedItem: nextProps.feedItem });
+    }
   }
 
   routeDateTimeString () {
-    const activityDateTime = new Date(this.feedItem.feedable.created_at)
+    const activityDateTime = new Date(this.state.feedItem.feedable.created_at)
     return activityDateTime.toDateString();
   }
 
   runDateTimeString () {
-    const runDate = this.feedItem.feedable.date;
-    const orderedRunDate = [runDate.slice(5, 7), runDate.slice(8,10), runDate.slice(2,4)].join('-');
+    const runDate = this.state.feedItem.feedable.date;
+    const orderedRunDate = [runDate.slice(5, 7),
+                            runDate.slice(8,10),
+                            runDate.slice(2,4)].join('-');
     return new Date(orderedRunDate).toDateString();
   }
 
@@ -35,14 +38,16 @@ export default class FeedIndexItem extends React.Component {
   }
 
   render() {
-    const feedItem = this.feedItem;
+    const feedItem = this.state.feedItem;
     let feedIndexItemDetails;
     let comments;
     let commentForm;
     if (this.state.isCommentsShown) {
-      comments = (<CommentIndex comments={feedItem.feedable.comments}/>);
+      comments = (<CommentIndex comments={feedItem.feedable.comments} />);
       commentForm = (<div className='new-comment-container'>
-                      <NewCommentContainer activityType={feedItem.feedable_type} activityId={feedItem.feedable.id}/>
+                      <NewCommentContainer
+                                  activityType={feedItem.feedable_type}
+                                  activityId={feedItem.feedable.id} />
                     </div>);
     }
 
@@ -51,15 +56,18 @@ export default class FeedIndexItem extends React.Component {
         <section className='feed-index-item-container'>
           <div className='user-thumb-container'>
             <Link to={`/users/${feedItem.feedable.creator.id}`}>
-              <img src={feedItem.feedable.creator.profile_picture} alt='Profile picture'></img>
+              <img  src={feedItem.feedable.creator.profile_picture}
+                    alt='Profile picture'></img>
             </Link>
           </div>
           <div className='activity-details-flex-container'>
             <div className='activity-date-and-description-container'>
               <div className='date-and-description'>
-                <h4 className='activity-date'>{this.routeDateTimeString()}</h4>
+                <h4 className='activity-date'>
+                                    { this.routeDateTimeString() }</h4>
                 <div className='user-name-and-activity-description'>
-                  <p>{feedItem.feedable.creator.f_name} created the route {feedItem.feedable.title}</p>
+                  <p>{  feedItem.feedable.creator.f_name } created the
+                        route { feedItem.feedable.title }</p>
                 </div>
               </div>
               <i className="fa fa-map-marker" aria-hidden="true"></i>
@@ -76,18 +84,18 @@ export default class FeedIndexItem extends React.Component {
                   <i className="fa fa-road" aria-hidden="true"></i>
                   <p>Distance</p>
                 </div>
-                <p>{feedItem.feedable.distance.toFixed(2)} mi</p>
+                <p>{ feedItem.feedable.distance.toFixed(2) } mi</p>
               </div>
             </div>
             <div className='activity-comments-container'>
               <div className='comment-icon-and-count'
                 onClick={this.toggleCommentsSection}>
                 <i className="fa fa-comment-o" aria-hidden="true"></i>
-                <p>{feedItem.feedable.comments.length}</p>
+                <p>{ feedItem.feedable.comments.length }</p>
               </div>
               <div className='activity-comments'>
-                {comments}
-                {commentForm}
+                { comments }
+                { commentForm }
               </div>
             </div>
           </div>
@@ -98,18 +106,26 @@ export default class FeedIndexItem extends React.Component {
         <section className='feed-index-item-container'>
           <div className='user-thumb-container'>
             <Link to={`/users/${feedItem.feedable.runner.id}`}>
-              <img src={feedItem.feedable.runner.profile_picture} alt='Profile picture'></img>
+              <img  src={feedItem.feedable.runner.profile_picture}
+                    alt='Profile picture'></img>
             </Link>
           </div>
           <div className='activity-details-flex-container'>
             <div className='activity-date-and-description-container'>
               <div className='date-and-description'>
-                <h4 className='activity-date'>{this.runDateTimeString()}</h4>
+                <h4 className='activity-date'>
+                    { this.runDateTimeString() }</h4>
                 <div className='user-name-and-activity-description'>
-                  <p>{feedItem.feedable.runner.f_name} ran {feedItem.feedable.route.distance.toFixed(2)} miles at a pace of {((feedItem.feedable.duration / 60) / feedItem.feedable.route.distance).toFixed(2)} mins/mi</p>
+                  <p>{ feedItem.feedable.runner.f_name } ran&nbsp;
+                    { feedItem.feedable.route.distance.toFixed(2)} miles
+                    at a pace of&nbsp;
+                    {((feedItem.feedable.duration / 60) /
+                      feedItem.feedable.route.distance).toFixed(2) }
+                    &nbsp;mins/mi</p>
                 </div>
               </div>
-              <img src={window.midSoulAssets.runIcon} alt='Running Silhouette'></img>
+              <img  src={ window.midSoulAssets.runIcon } 
+                    alt='Running Silhouette'></img>
             </div>
             <div className='activity-map-and-distance-container'>
               <div className='activity-distance-container'>
@@ -117,7 +133,7 @@ export default class FeedIndexItem extends React.Component {
                   <i  className="fa fa-road" aria-hidden="true"></i>
                   <p>Distance</p>
                 </div>
-                <p>{feedItem.feedable.route.distance.toFixed(2)} mi</p>
+                <p>{ feedItem.feedable.route.distance.toFixed(2) } mi</p>
               </div>
               <div className='mini-activity-map'>
                 <Link to={`/runs/${feedItem.feedable.id}`}>
@@ -130,11 +146,11 @@ export default class FeedIndexItem extends React.Component {
               <div className='comment-icon-and-count'
                 onClick={this.toggleCommentsSection}>
                 <i className="fa fa-comment-o" aria-hidden="true"></i>
-                <p>{feedItem.feedable.comments.length}</p>
+                <p>{ feedItem.feedable.comments.length }</p>
               </div>
               <div className='activity-comments'>
-                {comments}
-                {commentForm}
+                { comments }
+                { commentForm }
               </div>
             </div>
           </div>
@@ -144,7 +160,7 @@ export default class FeedIndexItem extends React.Component {
 
     return (
     <li className="feed-index-item">
-      {feedIndexItemDetails}
+      { feedIndexItemDetails }
     </li>
-  )}
+  );}
 }
