@@ -22,7 +22,7 @@ const FriendSearchResultIndexItem = ({ foundUser, createFriendRequest, currentUs
     buttonOrStatus = (<button
       className='friend-button'
       data-found-user-id={foundUser.id}
-      onClick={requestFriendShip(foundUser.id)}>ADD</button>);
+      onClick={requestFriendShip(foundUser.id)}>Add</button>);
   }
 
   return (
