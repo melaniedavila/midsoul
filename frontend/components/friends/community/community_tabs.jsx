@@ -48,19 +48,19 @@ export default class CommunityTabs extends React.Component {
           <Link
             className='friends'
             to='/community/friends'
-            >MY FRIENDS</Link>
+            >My Friends</Link>
         </div>
         <div className="community-tabs-find-friends">
           <Link
             className='find-friends'
             to='/community/find-friends'
-            >FIND FRIENDS</Link>
+            >Find Friends</Link>
         </div>
         <div className='community-tabs-friend-requests'>
           <Link
             className='friend-requests'
             to='/community/friend-requests'
-            >FRIEND REQUESTS</Link>
+            >Friend Requests</Link>
         </div>
       </div>
     );
