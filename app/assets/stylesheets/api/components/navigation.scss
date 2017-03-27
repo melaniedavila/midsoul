@@ -47,6 +47,7 @@
     padding: 0 30px;
     font-size: 13px;
     color: $medium-gray;
+    text-transform: uppercase;
   }
 
   button:hover {
@@ -107,6 +108,7 @@ li.dropdown-item:first-child {
   transition: color 0.05s;
   letter-spacing: 0.8px;
   padding: 0 12px;
+  text-transform: uppercase;
 
 }
 

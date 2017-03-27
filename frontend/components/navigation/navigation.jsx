@@ -20,7 +20,6 @@ const Navigation = function (props) {
   };
 
   if (props.currentUser) {
-    const img_url = props.currentUser.image_url || window.midSoulAssets.defaultProfPic;
     return(
       <header>
         <nav className='main-nav'>
@@ -33,7 +32,7 @@ const Navigation = function (props) {
               </div>
 
               <div className='dropdown'>
-                <button>TRAINING</button>
+                <button>Training</button>
                 <ul className='dropdown-menu'>
                   <li className='dropdown-item'><Link to='/log-run'>Log Run</Link></li>
                   <li className='dropdown-item'><Link to='/my-runs'>My Runs</Link></li>
@@ -41,7 +40,7 @@ const Navigation = function (props) {
               </div>
 
               <div className='dropdown'>
-                <button>ROUTES</button>
+                <button>Routes</button>
                 <ul className='dropdown-menu'>
                   <li className='dropdown-item'><Link to='/routes/create-route'>Create Route</Link></li>
                   <li className='dropdown-item'><Link to='/routes'>All Routes</Link></li>
@@ -49,25 +48,25 @@ const Navigation = function (props) {
               </div>
 
               <div className='dropdown'>
-                <button onClick={redirectTo('/community')}>COMMUNITY</button>
+                <button onClick={redirectTo('/community')}>Community</button>
               </div>
 
               <div className='dropdown'>
-                <button onClick={redirectTo('/feed')}>FEED</button>
+                <button onClick={redirectTo('/feed')}>Feed</button>
               </div>
             </div>
           </nav>
           <nav className='right-nav'>
             <div className='nav-user-img'>
               <Link to={`/users/${props.currentUser.id}`}>
-                <img src={props.currentUser.profile_picture} alt='Profile picture'></img>
+                <img src={window.midSoulAssets.runIcon} alt='Profile picture'></img>
               </Link>
             </div>
             <div className='nav-log-out'>
               <button
                 className='button-log-out'
                 onClick={props.logout}>
-                LOG OUT
+                Log Out
               </button>
             </div>
           </nav>
@@ -87,19 +86,19 @@ const Navigation = function (props) {
               <button
                 className='button-log-in'
                 onClick={redirectTo('/login')}>
-                LOG IN</button>
+                Log In</button>
             </li>
             <li>
               <button className='button-guest-log-in'
                 onClick={loginGuest(guest)}>
-                GUEST
+                Guest
               </button>
             </li>
             <li>
               <button
                 className='button-sign-up'
                 onClick={redirectTo('/signup')}>
-                SIGN UP</button>
+                Sign Up</button>
             </li>
           </ul>
         </nav>
