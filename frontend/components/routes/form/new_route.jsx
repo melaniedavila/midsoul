@@ -272,7 +272,7 @@ export default class NewRoute extends React.Component {
           <div className='map-flex-left'>
             <form onSubmit={this.handleSubmit}>
               <div className='route-details'>
-                <h3>ROUTE DETAILS </h3>
+                <h3>Route Details</h3>
                   <div className='route-distance-flex-container'>
                     <p className='distance-tag'>Distance:</p>
                     <p className='distance-measurement'>{(this.state.distanceInMiles).toFixed(2)}</p>
@@ -290,7 +290,7 @@ export default class NewRoute extends React.Component {
                 <div className='errors-list'>
                   {this.errors()}
                 </div>
-                <h3>CREATE A ROUTE</h3>
+                <h3>Create a Route</h3>
 
                 <label>Title:</label>
                   <input
@@ -301,7 +301,7 @@ export default class NewRoute extends React.Component {
                   <textarea
                     value={this.state.description}
                     onChange={this.update('description')} />
-                <input type="submit" value='SAVE ROUTE' />
+                  <input type="submit" value='Save Route' />
               </div>
             </form>
           </div>
