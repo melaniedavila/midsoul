@@ -27,23 +27,34 @@ const Navigation = function (props) {
             <div className='nav-links-dropdowns'>
               <div className='logo'>
                 <ul>
-                  <li><Link to='/'><img src={window.midSoulAssets.localLogo}/></Link></li>
+                  <li><Link to='/'>
+                        <img src={window.midSoulAssets.localLogo}/>
+                      </Link>
+                  </li>
                 </ul>
               </div>
 
               <div className='dropdown'>
                 <button>Training</button>
                 <ul className='dropdown-menu'>
-                  <li className='dropdown-item'><Link to='/log-run'>Log Run</Link></li>
-                  <li className='dropdown-item'><Link to='/my-runs'>My Runs</Link></li>
+                  <li className='dropdown-item'>
+                    <Link to='/log-run'>Log Run</Link>
+                  </li>
+                  <li className='dropdown-item'>
+                    <Link to='/my-runs'>My Runs</Link>
+                  </li>
                 </ul>
               </div>
 
               <div className='dropdown'>
                 <button>Routes</button>
                 <ul className='dropdown-menu'>
-                  <li className='dropdown-item'><Link to='/routes/create-route'>Create Route</Link></li>
-                  <li className='dropdown-item'><Link to='/routes'>All Routes</Link></li>
+                  <li className='dropdown-item'>
+                    <Link to='/routes/create-route'>Create Route</Link>
+                  </li>
+                  <li className='dropdown-item'>
+                    <Link to='/routes'>All Routes</Link>
+                  </li>
                 </ul>
               </div>
 
@@ -59,7 +70,8 @@ const Navigation = function (props) {
           <nav className='right-nav'>
             <div className='nav-user-img'>
               <Link to={`/users/${props.currentUser.id}`}>
-                <img src={window.midSoulAssets.runIcon} alt='Profile picture'></img>
+                <img  src={window.midSoulAssets.runIcon} 
+                      alt='Profile picture'></img>
               </Link>
             </div>
             <div className='nav-log-out'>

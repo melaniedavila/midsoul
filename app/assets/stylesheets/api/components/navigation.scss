@@ -2,10 +2,10 @@
 @import '../base/colors.scss';
 
 .main-nav {
-  display: flex;
-  justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid $light-gray;
+  display: flex;
+  justify-content: space-around;
   min-width: 825px;
 }
 
@@ -16,37 +16,36 @@
 }
 
 .right-nav > ul > li {
-  margin-right: 15px;
   cursor: pointer;
+  margin-right: 15px;
 }
 
 .left-nav > ul > li > a {
-  text-decoration: none;
-	margin-left: 20px;
-	cursor: pointer;
   color: $dark-gray;
+  cursor: pointer;
 	font-family: 'Open Sans', Helvetica, Arial, $sans-serif;;
-	font-weight: 400;
 	font-size: 15px;
+  font-weight: 400;
+  margin-left: 20px;
+  text-decoration: none;
 }
 
-
 .nav-links-dropdowns {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .dropdown {
-  top: 5%;
-  position: relative;
   display: inline-block;
   padding: 0, 5px;
+  position: relative;
+  top: 5%;
 
   button {
-    padding: 0 30px;
-    font-size: 13px;
     color: $medium-gray;
+    font-size: 13px;
+    padding: 0 30px;
     text-transform: uppercase;
   }
 
@@ -60,10 +59,10 @@
 }
 
 .dropdown-menu {
-  position: absolute;
-  top: 100%;
   left: 2px;
   margin-left: 20px;
+  position: absolute;
+  top: 100%;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -72,21 +71,21 @@
 }
 
 li.dropdown-item {
-  padding-left: 2px;
-  border: 1px solid $medium-gray;
-  list-style: none;
   background-color: white;
-  width: 110px;
-  padding: 5px;
+  border: 1px solid $medium-gray;
   box-shadow: $medium-light-gray 2px 2px 0;
+  list-style: none;
+  padding: 5px;
+  padding-left: 2px;
+  width: 110px;
 
   a {
-    text-decoration: none;
-    font-size: 13px;
     color: $medium-gray;;
-    text-align: left;
+    font-size: 13px;
     font-weight: 600;
     margin: 8px;
+    text-align: left;
+    text-decoration: none;
   }
 
   a:hover {
@@ -99,23 +98,22 @@ li.dropdown-item:first-child {
 }
 
 .right-nav > ul > li > button, .button-log-out {
-  font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
-  font-weight: 500px;
-  font-size: 14px;
-  line-height: 36px;
   border-radius: 3px;
-  transition: background-color 0.2s;
-  transition: color 0.05s;
+  font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
+  font-size: 14px;
+  font-weight: 500px;
   letter-spacing: 0.8px;
+  line-height: 36px;
   padding: 0 12px;
   text-transform: uppercase;
-
+  transition: background-color 0.2s;
+  transition: color 0.05s;
 }
 
 .nav-log-out, .nav-user-img {
   float: left;
-  padding: 0 12px;
   font-size: 15px;
+  padding: 0 12px;
 }
 
 .nav-user-img {
@@ -123,9 +121,9 @@ li.dropdown-item:first-child {
   width: 50px;
 
   img {
-    width: 100%;
-    height: 100%;
     border: 1px solid $medium-gray;
+    height: 100%;
+    width: 100%;
   }
 
   img:hover {
@@ -135,10 +133,9 @@ li.dropdown-item:first-child {
 }
 
 .right-nav {
-  display: flex;
   align-items: center;
+  display: flex;
 }
-
 
 .dropdown > button {
   padding: 0, 5px;
