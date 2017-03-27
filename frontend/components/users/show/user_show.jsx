@@ -68,7 +68,7 @@ export default class UserShow extends React.Component {
       requestee_id
     });
 
-    $('.friend-button').text('PENDING')
+    $('.friend-button').text('Pending')
   }
 
   render () {
@@ -84,7 +84,7 @@ export default class UserShow extends React.Component {
       let profilePictureClass;
       const currentUser = this.props.currentUser;
       if ( currentUser && currentUser.id === user.id) {
-        editButton = <button onClick={this.redirectToEdit.bind(this)}>EDIT PROFILE <i className="fa fa-pencil" aria-hidden="true"></i></button>;
+        editButton = <button onClick={this.redirectToEdit.bind(this)}>Edit Profile <i className="fa fa-pencil" aria-hidden="true"></i></button>;
       } else if (currentUser && currentUser.id !== user.id) {
         profilePictureClass = 'other-user-profile-pic'
       }
@@ -93,7 +93,7 @@ export default class UserShow extends React.Component {
       if (user.currentUserFriendRequest) {
         if (user.currentUserFriendRequest.status === 'accepted') {
           friendshipButtonOrStatus = (<p className="user-show-friend-request-status">
-            FRIENDS<i className="fa fa-check" aria-hidden="true"></i>
+            Friends<i className="fa fa-check" aria-hidden="true"></i>
           </p>);
         } else {
         friendshipButtonOrStatus = (<p className="user-show-friend-request-status">
@@ -105,7 +105,7 @@ export default class UserShow extends React.Component {
       } else {
         friendshipButtonOrStatus = (<button className='friend-button'
                                     onClick={this.submitFriendRequest.bind(this)}>
-                                    ADD FRIEND</button>);
+                                    Add Friend</button>);
       }
 
       return (

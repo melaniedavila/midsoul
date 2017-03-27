@@ -68,7 +68,7 @@ export default class UserEdit extends React.Component {
     } else {
       return (
         <main className='edit-profile-main'>
-          <h3 className='edit-profile-header'>EDIT PROFILE</h3>
+          <h3 className='edit-profile-header'>Edit Profile</h3>
           <img src={user.profile_picture}
                 alt='Profile picture'></img>
 
@@ -93,7 +93,7 @@ export default class UserEdit extends React.Component {
                 type='file'
                 onChange={this.update('profile_picture')}/>
 
-              <input type='submit' value='EDIT PROFILE'/>
+              <input type='submit' value='Edit Profile'/>
               <Link to={`/users/${user.id}`}>Back to Profile</Link>
             </form>
           </div>
