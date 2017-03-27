@@ -16,7 +16,7 @@ const FriendSearchResultIndexItem = ({ foundUser, createFriendRequest, currentUs
 
   if (foundUser.currentUserFriendRequest) {
     buttonOrStatus = (<p className="friend-request-status">
-      {foundUser.currentUserFriendRequest && foundUser.currentUserFriendRequest.status}
+      { foundUser.currentUserFriendRequest.status }
     </p>);
   } else {
     buttonOrStatus = (<button
@@ -30,14 +30,15 @@ const FriendSearchResultIndexItem = ({ foundUser, createFriendRequest, currentUs
       <div className='friend-search-img-and-name'>
         <div className='friend-search-img'>
           <Link to={`/users/${foundUser.id}`}>
-            <img src={foundUser.profile_picture} alt='Profile picture'></img>
+            <img  src={foundUser.profile_picture}
+                  alt='Profile picture'></img>
           </Link>
         </div>
         <Link to={`/users/${foundUser.id}`}>
-          <p>{foundUser.f_name} {foundUser.l_name}</p>
+          <p>{ foundUser.f_name } { foundUser.l_name }</p>
         </Link>
       </div>
-      {buttonOrStatus}
+      { buttonOrStatus }
     </li>
   );
 };

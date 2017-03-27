@@ -12,7 +12,7 @@ export default function FriendSearchFilterForm(props) {
       <input
         type="text"
         value={searchString}
-        onChange={handleQueryChange('searchString', updateFriendSearchFilter)}/>
+        onChange={handleQueryChange('searchString', updateFriendSearchFilter)} />
     </div>
   );
 }

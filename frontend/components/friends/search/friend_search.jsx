@@ -1,20 +1,26 @@
 import React from 'react';
 import FriendSearchFilterForm from './friend_search_filter_form';
 import FriendSearchResultIndex from './friend_search_result_index';
-import FriendSearchResultIndexItem from './friend_search_result_index_item';
 
-const FriendSearch = ({ foundUsers, searchString, updateFriendSearchFilter, createFriendRequest, currentUser }) => {
+const FriendSearch = ({ foundUsers,
+                        searchString,
+                        updateFriendSearchFilter,
+                        createFriendRequest,
+                        currentUser }) => {
   let friendSearchResultIndex;
   if (searchString === '') {
-    friendSearchResultIndex = (<FriendSearchResultIndex foundUsers={[]}/>);
+    friendSearchResultIndex = (<FriendSearchResultIndex
+                                    foundUsers={[]} />);
   }
   // Below prevents rendering of bogus results.
   else if (foundUsers.length > 6) {
-    friendSearchResultIndex = (<FriendSearchResultIndex foundUsers={[]}/>);
+    friendSearchResultIndex = (<FriendSearchResultIndex
+                                    foundUsers={[]} />);
   } else {
-    friendSearchResultIndex = (<FriendSearchResultIndex foundUsers={foundUsers}
+    friendSearchResultIndex = (<FriendSearchResultIndex
+                                    foundUsers={foundUsers}
                                     createFriendRequest={createFriendRequest}
-                                    currentUser={currentUser}/>);
+                                    currentUser={currentUser} />);
   }
 
   return(
@@ -23,7 +29,7 @@ const FriendSearch = ({ foundUsers, searchString, updateFriendSearchFilter, crea
       <FriendSearchFilterForm
         searchString={searchString}
         updateFriendSearchFilter={updateFriendSearchFilter} />
-      {friendSearchResultIndex}
+      { friendSearchResultIndex }
   </div>);
 };
 
