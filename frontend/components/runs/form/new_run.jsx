@@ -91,7 +91,7 @@ export default class NewRun extends React.Component {
 
     return (
       <main className='log-run-main'>
-        <h3 className='log-run-header'>LOG A RUN</h3>
+        <h3 className='log-run-header'>Log A Run</h3>
         <div className='new-run-flex-container'>
           <div className='new-run-flex-left'>
             <form onSubmit={this.handleSubmit}>
@@ -153,7 +153,7 @@ export default class NewRun extends React.Component {
                     );
                   })}
                 </select>
-              <input type="submit" value='SAVE RUN' />
+              <input type="submit" value='Save Run' />
             </form>
           </div>
 
