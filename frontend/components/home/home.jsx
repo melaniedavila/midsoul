@@ -17,7 +17,7 @@ const Home = function (props) {
     return(
       <main className='splash-page'>
         <div className='splash-text'>
-          <h1 className='splash-header'>MAKE EVERY MILE COUNT</h1>
+          <h1 className='splash-header'>Make Every Mile Count</h1>
           <br/>
           <h4>
             You pound the pavement, we provide the motivation.
@@ -28,7 +28,7 @@ const Home = function (props) {
           <p className='splash-guest'>Need convincing?</p>
             <button
             className='button-guest-log-in'
-            onClick={loginGuest(guest)}>GUEST LOG IN</button>
+            onClick={loginGuest(guest)}>Guest Log In</button>
         </div>
         <div className='splash-video'>
           <SplashVideo />
