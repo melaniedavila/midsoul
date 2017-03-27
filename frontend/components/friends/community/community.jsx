@@ -8,8 +8,10 @@ export default class Community extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestCurrentUserFriends();
-    this.props.requestCurrentUserReceivedFriendRequests();
+    const { requestCurrentUserFriends,
+            requestCurrentUserReceivedFriendRequests } = this.props;
+    requestCurrentUserFriends();
+    requestCurrentUserReceivedFriendRequests();
   }
 
   render() {
