@@ -1,16 +1,23 @@
 @import '../base/fonts.scss';
 @import '../base/colors.scss';
 
+
+// EMPTY FRIENDS
+
 .empty-friends, .empty-friend-requests {
+
   h4 {
+    color: $medium-gray;
     display: flex;
-    justify-content: flex-start;
     font-size: 15px;
+    justify-content: flex-start;
     margin-top: 35px;
     margin-left: 16px;
-    color: $medium-gray;
   }
 }
+
+
+// FRIENDS INDEX
 
 .friends-index {
   padding: 35px 15px 35px 15px;
@@ -19,55 +26,54 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+}
 
-    .friend-index-item {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      background: $lightest-gray;
-      border: 1px solid $light-gray;
-      box-shadow: $light-gray 2px 2px 0;
-      width: 384px;
-      margin: 0 20px 20px 0;
 
-      .friend-photo-link {
-        padding: 10px;
-        display: flex;
-        align-items: center;
+// FRIENDS INDEX ITEM
 
-        img {
-          border: 1px solid $medium-gray;
-        }
+.friend-index-item {
+  background: $lightest-gray;
+  border: 1px solid $light-gray;
+  box-shadow: $light-gray 2px 2px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 20px 20px 0;
+  width: 384px;
 
-        img:hover {
-          border: 1px solid $midSoul-blue;
-        }
-      }
+  .friend-photo-link {
+    align-items: center;
+    display: flex;
+    padding: 10px;
 
-      .friend-name-link {
-        padding: 10px;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        cursor: default;
+    img {
+      border: 1px solid $medium-gray;
+    }
 
-        .friend-name {
-          font-size: 13px;
-          color: $friend-name-blue;
-          padding: 15px;
-          margin: 0;
-        }
+    img:hover {
+      border: 1px solid $midSoul-blue;
+    }
+  }
 
-        .friend-name:hover {
-          font-size: 13px;
-          color: $midSoul-blue;
-          cursor: pointer;
-        }
-      }
+  .friend-name-link {
+    align-items: center;
+    cursor: default;
+    display: flex;
+    padding: 10px;
+    text-decoration: none;
 
-      .user-name-link {
-        height: 79%;
-      }
+    .friend-name {
+      color: $friend-name-blue;
+      font-size: 13px;
+      margin: 0;
+      padding: 15px;
+    }
+
+    .friend-name:hover {
+      color: $midSoul-blue;
+      cursor: pointer;
+      font-size: 13px;
     }
   }
 }

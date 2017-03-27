@@ -9,13 +9,13 @@ export default class CommunityTabs extends React.Component {
   componentDidMount() {
     switch (this.props.desiredURL) {
       case '/community/friends':
-        $("a.friends").addClass("active");
+        $('a.friends').addClass('active');
         break;
       case '/community/find-friends':
-        $("a.find-friends").addClass("active");
+        $('a.find-friends').addClass('active');
         break;
       case '/community/friend-requests':
-        $("a.friend-requests").addClass("active");
+        $('a.friend-requests').addClass('active');
         break;
     }
   }
@@ -24,19 +24,19 @@ export default class CommunityTabs extends React.Component {
     if (this.props.desiredURL !== nextProps.desiredURL) {
       switch (nextProps.desiredURL) {
         case '/community/friends':
-          $("a.friends").addClass("active");
-          $("a.find-friends").removeClass("active");
-          $("a.friend-requests").removeClass("active");
+          $('a.friends').addClass('active');
+          $('a.find-friends').removeClass('active');
+          $('a.friend-requests').removeClass('active');
           break;
         case '/community/find-friends':
-          $("a.find-friends").addClass("active");
-          $("a.friends").removeClass("active");
-          $("a.friend-requests").removeClass("active");
+          $('a.find-friends').addClass('active');
+          $('a.friends').removeClass('active');
+          $('a.friend-requests').removeClass('active');
           break;
         case '/community/friend-requests':
-          $("a.friend-requests").addClass("active");
-          $("a.friends").removeClass("active");
-          $("a.find-friends").removeClass("active");
+          $('a.friend-requests').addClass('active');
+          $('a.friends').removeClass('active');
+          $('a.find-friends').removeClass('active');
           break;
       }
     }
@@ -44,20 +44,20 @@ export default class CommunityTabs extends React.Component {
 
   render() {
     return (
-      <div className="community-tabs-flex-container">
-        <div className="community-tabs-friends">
+      <div className='community-tabs-flex-container'>
+        <div>
           <Link
             className='friends'
             to='/community/friends'
             >My Friends</Link>
         </div>
-        <div className="community-tabs-find-friends">
+        <div>
           <Link
             className='find-friends'
             to='/community/find-friends'
             >Find Friends</Link>
         </div>
-        <div className='community-tabs-friend-requests'>
+        <div>
           <Link
             className='friend-requests'
             to='/community/friend-requests'

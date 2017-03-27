@@ -13,15 +13,16 @@ export default class FriendIndex extends React.Component {
       return <LoadingIcon />;
     } else if (friends.length === 0) {
       return (<div className='empty-friends'>
-                <h4>You don't have any friends yet. Click the 'Find Friends' tab to search for fellow runners.</h4>
-              </div>)
+                <h4>You don't have any friends yet. Click the
+                  "Find Friends" tab to search for fellow runners.</h4>
+              </div>);
     } else {
       return (
-      <section className="friends-index">
+      <section className='friends-index'>
         <ul className='mini-friend-details'>
-          {friends.map(friend => <FriendIndexItem
+          { friends.map(friend => <FriendIndexItem
                                     key={friend.id}
-                                    friend={friend} />)}
+                                    friend={friend} />) }
         </ul>
       </section> );
     }
