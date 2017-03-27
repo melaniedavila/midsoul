@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import ErrorsList from '../errors/errors_list';
-import SplashVideo from '../splash/splashVideo';
 import FeatureFooter from '../footer/feature_footer';
+import SplashVideo from '../splash/splashVideo';
 
 export default class LogInForm extends React.Component {
   constructor(props){
@@ -29,26 +29,20 @@ export default class LogInForm extends React.Component {
       <section>
         <div className='login-form-container'>
           <form onSubmit={this.handleSubmit.bind(this)}>
-            <br/>
-            <h4>LOG IN</h4>
-            <br/>
+            <h4>Log In</h4>
 
             <div className='errors-list'>
               <ErrorsList  errors={ errors.base } />
             </div>
 
-            <br/>
-
             <input type='text'
               value={this.state.email}
               placeholder={'Email'}
               onChange={this.update('email')}/>
-            <br />
 
             <input  type='password'
               placeholder={'Password'}
               onChange={this.update('password')}/>
-            <br />
 
             <input type='submit' value='LOG IN'/>
             <h6>New to midSoul?  <Link to='/signup'>Join Now</Link></h6>
