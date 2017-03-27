@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import CommentIndexItem from './comment_index_item';
-import { deleteComment, receiveCommentErrors } from '../../../actions/comments_actions';
+import {  deleteComment, 
+          receiveCommentErrors } from '../../../actions/comments_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {

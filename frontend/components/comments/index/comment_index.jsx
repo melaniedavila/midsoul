@@ -8,7 +8,10 @@ export default class CommentIndex extends React.Component {
     return (
     <section className="comments-index">
       <ul className='comments-list'>
-        { comments.sort((x, y) => x.created_at > y.created_at).map(comment => <CommentIndexItemContainer key={ comment.id } comment={ comment } />) }
+        { comments.sort((x, y) => x.created_at > y.created_at)
+          .map(comment => <CommentIndexItemContainer
+                                              key={ comment.id } 
+                                              comment={ comment } />) }
       </ul>
     </section> );
   }
