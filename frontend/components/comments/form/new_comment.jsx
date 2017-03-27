@@ -54,7 +54,7 @@ export default class NewComment extends React.Component {
                 value={this.state.body}
                 onChange={this.update('body')} />
 
-              <input type="submit" value='POST' />
+              <input type="submit" value='Post' />
             </div>
           </form>
         </div>
