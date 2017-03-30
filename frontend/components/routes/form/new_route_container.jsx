@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import NewRoute from './new_route';
-import { createRoute, receiveRouteErrors } from '../../../actions/routes_actions';
+import {  createRoute, 
+          receiveRouteErrors } from '../../../actions/routes_actions';
 
 const mapStateToProps = (state) => {
   return {

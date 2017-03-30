@@ -1,7 +1,7 @@
 import React from 'react';
 
 const _defaultMapOptions = {
-  center: {lat: 40.7128, lng: -74.0059 },
+  center: { lat: 40.7128, lng: -74.0059 },
   zoom: 12
 };
 
@@ -32,10 +32,16 @@ const milesPerMeter = 0.000621371;
 export default class NewRoute extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClickOnMap = this.handleClickOnMap.bind(this);
+    this.handleDirectionsServiceResponse = this.handleDirectionsServiceResponse.bind(this);
+    this.handleDisplayRendererDirectionsChange = this.handleDisplayRendererDirectionsChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.initializeMap = this.initializeMap.bind(this);
     this.initializeCustomMap = this.initializeCustomMap.bind(this);
     this.initializeDefaultMap = this.initializeDefaultMap.bind(this);
+    this.removeLastRoutePathPoint = this.removeLastRoutePathPoint.bind(this);
+    this.requestDirections = this.requestDirections.bind(this);
+    this.resetMap = this.resetMap.bind(this);
     this.originMarker = null;
     this.state = {
       title: '',
@@ -98,7 +104,7 @@ export default class NewRoute extends React.Component {
 
   update(field) {
     return (e) => {
-      this.setState({[field]: e.currentTarget.value});
+      this.setState({ [field]: e.currentTarget.value });
     };
   }
 
@@ -130,9 +136,10 @@ export default class NewRoute extends React.Component {
     if (this.props.errors.length > 0) {
       const errorListItems = this.props.errors.map((error, idx) => {
           if (error.includes('Polyline')) {
-            return (<li className="error" key={idx}>{error.substr(9)}</li>);
+            return (<li className="error"
+                        key={idx}>{ error.substr(9) }</li>);
           }
-          return (<li className="error" key={idx}>{error}</li>);
+          return (<li className="error" key={idx}>{ error }</li>);
         });
 
       return (<ul>{ errorListItems }</ul>);
@@ -140,22 +147,22 @@ export default class NewRoute extends React.Component {
   }
 
   registerListeners() {
-    this.map.addListener('click', this.handleClickOnMap.bind(this));
+    this.map.addListener('click', this.handleClickOnMap);
 
     // Draggable directions are modified and rendered client-side. The
     // event listener below allows us to execute a callback when the user
     // has modified the displayed directions.
     this.directionsRenderer.addListener(
       'directions_changed',
-      this.handleDisplayRendererDirectionsChange.bind(this)
+      this.handleDisplayRendererDirectionsChange
     );
   }
 
   handleClickOnMap(e) {
     const lat = e.latLng.lat();
     const lng = e.latLng.lng();
-    const position = {lat, lng};
-    const marker = new google.maps.Marker({position});
+    const position = { lat, lng };
+    const marker = new google.maps.Marker({ position });
 
     if (this.originMarker === null) {
       // Add marker to map if it's the first point, i.e. the origin
@@ -201,7 +208,7 @@ export default class NewRoute extends React.Component {
 
     this.directionsService.route(
       requestDetails,
-      this.handleDirectionsServiceResponse.bind(this)
+      this.handleDirectionsServiceResponse
     );
   }
 
@@ -257,11 +264,11 @@ export default class NewRoute extends React.Component {
     if (this.state.routePath.length > 1) {
       this.setState({
         routePath: this.state.routePath.slice(0, -1)
-      }, this.requestDirections.bind(this));
+      }, this.requestDirections);
     } else {
       this.setState({
         routePath: []
-      }, this.resetMap.bind(this));
+      }, this.resetMap);
     }
   }
 
@@ -275,20 +282,22 @@ export default class NewRoute extends React.Component {
                 <h3>Route Details</h3>
                   <div className='route-distance-flex-container'>
                     <p className='distance-tag'>Distance:</p>
-                    <p className='distance-measurement'>{(this.state.distanceInMiles).toFixed(2)}</p>
+                    <p className='distance-measurement'>
+                      { (this.state.distanceInMiles).toFixed(2) }</p>
                     <p className='distance-unit'>miles</p>
                   </div>
 
                   <div className='route-elevation-gain-flex-container'>
                     <p className='elevation-gain-tag'>Elevation Gain:</p>
-                    <p className='elevation-gain-measurement'>{this.state.elevation_gain.toFixed(2)}</p>
+                    <p className='elevation-gain-measurement'>
+                      {this.state.elevation_gain.toFixed(2)}</p>
                     <p className='elevation-gain-unit'>meters</p>
                   </div>
               </div>
 
               <div className='map-form-fields'>
                 <div className='errors-list'>
-                  {this.errors()}
+                  { this.errors() }
                 </div>
                 <h3>Create a Route</h3>
 
@@ -308,11 +317,11 @@ export default class NewRoute extends React.Component {
 
           <div className='map-flex-right'>
             <p>
-              Click on the map to create a route. You may also drag the route path
-              to modify your route.
+              Click on the map to create a route. You may also drag the
+              route path to modify your route.
             </p>
             <div className='interactive-map'>
-              <button onClick={this.removeLastRoutePathPoint.bind(this)}>Undo Last Click</button>
+              <button onClick={this.removeLastRoutePathPoint}>Undo Last Click</button>
               <div className="map" ref="map">Map</div>
             </div>
           </div>
