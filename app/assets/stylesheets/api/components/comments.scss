@@ -1,170 +1,211 @@
 @import '../base/fonts.scss';
 @import '../base/colors.scss';
 
+// FEED ITEM COMMENTS INDEX
+
 .activity-comments-container {
 
-  .activity-comments {
+  .comments-index {
+    float: left;
 
-    .comments-index {
-      float: left;
-
-      .comments-list {
-        display: block;
-        border-left: 1px solid $medium-gray;
-        border-top: 1px solid $medium-gray;
-        border-right: 1px solid $medium-gray;
-        width: 681px;
-        margin-left: -1px;
-
-        .comment-index-item {
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
-          margin: 5px 0 0 0;
-
-          .comment-author-img {
-            width: 58px;
-            height: 58px;
-            margin-left: 5px;
-
-            img {
-              border: 1px solid $medium-gray;
-            }
-
-            img:hover {
-              border: 1px solid $tab-blue;
-              transition: all .2s ease-out;
-            }
-          }
-
-          .comment-details {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            margin-left: 5px;
-
-            .comment-vertical-flex-container {
-              display: flex;
-              flex-flow: column;
-
-              .comment-date {
-                margin: 3px;
-              }
-
-              .comment-author-name-and-comment-body {
-                margin-left: 3px;
-                display: flex;
-                flex-direction: row;
-                font-size: 12.1px;
-
-                p {
-                  margin-top: 3px;
-                }
-
-                a {
-                  text-decoration: none;
-                  color: $midSoul-blue;
-                  margin-right: 3px;
-
-                  p {
-                    -webkit-font-smoothing: antialiased;
-                    font-weight: bold;
-                  }
-                }
-
-                a:hover {
-                  color: $hover-blue;
-                }
-              }
-            }
-          }
-
-          .delete-comment {
-            margin-right: 15px;
-            color: $medium-gray;
-
-            button:hover {
-              color: $dark-gray;
-              transition: all .2s ease-out;
-            }
-          }
-        }
-      }
-    }
-
-    .new-comment-container {
-      float: left;
-    }
-
-    .new-comment-form-container {
-      width: 681px;
-      border-bottom: 1px solid $medium-gray;
+    .comments-list {
       border-left: 1px solid $medium-gray;
       border-right: 1px solid $medium-gray;
-      margin: 0;
-      padding-top: 3px;
+      border-top: 1px solid $medium-gray;
+      display: block;
       margin-left: -1px;
+      width: 681px;
 
-      .new-comment-textarea-and-submit-and-user-img {
+      .comment-index-item {
         display: flex;
         flex-direction: row;
-        align-items: center;
+        justify-content: flex-start;
+        margin: 5px 0 0 0;
 
-        a {
-          margin-left: 5px;
-
-          img {
-            width: 52.66px;
-            height: 52.66px;
-            margin-right: 15px;
-            margin-bottom: 3px;
-            border: 1px solid $medium-gray;
-          }
-
-          img:hover {
-            border: 1px solid $tab-blue;
-            transition: all .2s ease-out;
-          }
-        }
-
-        input[type=text] {
-          border: 1px solid $medium-gray;
-          border-radius: 3px;
-          margin-right: 15px;
-          padding-left: 5px;
-          height: 31px;
-          width: 482px;
-        }
-
-        input[type=text]:focus {
-          border: 1px solid $teal;
-          transition: all .3s ease-out;
-        }
-
-        input[type=submit] {
-          border: 1px solid $teal;
-          border-radius: 3px;
-          width: 76px;
-          height: 34px;
-          text-align: center;
-          color: $teal;
-          font-weight: bold;
-          font-size: 15px;
-          text-transform: uppercase;
-        }
-
-        input[type=submit]:hover {
-          border: 1px solid $hover-teal;
-          border-radius: 3px;
-          width: 76px;
-          height: 34px;
-          text-align: center;
-          color: $hover-teal;
-          font-weight: bold;
-          font-size: 15px;
-          transition: all .3s ease-out;
+        .comment-date {
+          margin: 3px;
         }
       }
     }
+  }
+}
+
+// FEED ITEM, ROUTE, AND RUN COMMENTS
+
+.comment-author-img {
+  height: 58px;
+  margin-left: 5px;
+  width: 58px;
+
+  img {
+    border: 1px solid $medium-gray;
+  }
+
+  img:hover {
+    border: 1px solid $tab-blue;
+    transition: all .2s ease-out;
+  }
+}
+
+.delete-comment {
+  color: $medium-gray;
+  margin-right: 15px;
+
+  button:hover {
+    color: $dark-gray;
+    transition: all .2s ease-out;
+  }
+}
+
+.comment-details {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+  width: 100%;
+
+  .comment-vertical-flex-container {
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+.comment-author-name-and-comment-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 3px;
+
+  p {
+    font-size: 13px;
+    margin-top: 3px;
+  }
+
+  a {
+    margin-right: 3px;
+    text-decoration: none;
+
+    p {
+      -webkit-font-smoothing: antialiased;
+      color: $midSoul-blue;
+      font-weight: bold;
+    }
+
+    p:hover {
+      color: $hover-blue;
+    }
+  }
+}
+
+
+// ROUTE AND RUN COMMENTS
+
+.route-show-comments, .run-show-comments {
+
+  .comment-author-name-and-comment-body {
+    a {
+      margin-left: 5px;
+    }
+  }
+
+  .comment-index-item {
+    border-bottom: 1px solid $medium-gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 5px 0 0 0;
+    margin-top: 15px;
+    padding-bottom: 15px;
+
+    .comment-date {
+      font-size: 12px;
+      margin: 3px;
+      padding-left: 4px;
+    }
+  }
+}
+
+
+
+// FEED ITEM COMMENT FORM
+
+.activity-comments-container {
+
+  .new-comment-container {
+    float: left;
+  }
+
+  .new-comment-form-container {
+    border-bottom: 1px solid $medium-gray;
+    border-left: 1px solid $medium-gray;
+    border-right: 1px solid $medium-gray;
+    margin: 0;
+    margin-left: -1px;
+    padding-top: 3px;
+    width: 681px;
+  }
+}
+
+
+
+// FEED ITEM, RUN, AND ROUTE COMMENT FORM
+
+.new-comment-textarea-and-submit-and-user-img {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+
+  a {
+    margin-left: 5px;
+
+    img {
+      border: 1px solid $medium-gray;
+      height: 52.66px;
+      margin-bottom: 3px;
+      margin-right: 15px;
+      width: 52.66px;
+    }
+
+    img:hover {
+      border: 1px solid $tab-blue;
+      transition: all .2s ease-out;
+    }
+  }
+
+  input[type=text] {
+    border: 1px solid $medium-gray;
+    border-radius: 3px;
+    height: 31px;
+    margin-right: 15px;
+    padding-left: 5px;
+    width: 482px;
+  }
+
+  input[type=text]:focus {
+    border: 1px solid $teal;
+    transition: all .3s ease-out;
+  }
+
+  input[type=submit] {
+    border: 1px solid $teal;
+    border-radius: 3px;
+    color: $teal;
+    font-size: 15px;
+    font-weight: bold;
+    height: 34px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 76px;
+  }
+
+  input[type=submit]:hover {
+    border: 1px solid $hover-teal;
+    border-radius: 3px;
+    color: $hover-teal;
+    height: 34px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    transition: all .3s ease-out;
+    width: 76px;
   }
 }
