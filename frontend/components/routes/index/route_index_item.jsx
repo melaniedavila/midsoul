@@ -11,8 +11,9 @@ const RouteIndexItem = ({ route }) => {
             </Link>
           </div>
         <div className='route-title-and-distance'>
-          <span className='route-title'>{route.title}</span>
-          <span className='route-distance'>Distance: {route.distance.toFixed(2)} miles</span>
+          <span className='route-title'>{ route.title }</span>
+          <span className='route-distance'>
+                Distance: { route.distance.toFixed(2) } miles</span>
         </div>
     </li>
   );
