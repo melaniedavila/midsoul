@@ -117,7 +117,7 @@
       .duration-with-margin {
         margin-left: 7px;
       }
-      
+
       input {
         width: 10%;
       }
@@ -187,6 +187,7 @@
 
     img {
       border: 1px solid $midSoul-blue;
+      transition: all .2s ease-out;
     }
   }
 
@@ -198,6 +199,7 @@
   .run-distance, .run-pace {
     font-size: 14px;
     font-weight: 600;
+    margin-right: 25px;
   }
 }
 
