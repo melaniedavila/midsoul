@@ -1,11 +1,18 @@
+import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import ErrorsList from '../../errors/errors_list';
 import LoadingIcon from '../../loading/loading_icon';
-import React from 'react';
 import SingleUserFeedIndex from '../../feed/single_user_feed_index';
 import SingleUserFeedIndexContainer from '../../feed/single_user_feed_container';
 
 export default class UserShow extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.redirectToEdit = this.redirectToEdit.bind(this);
+    this.submitFriendRequest = this.submitFriendRequest.bind(this);
+  }
+
   componentDidMount() {
     this.props.requestSingleUser(this.props.params.userId);
   }
@@ -72,9 +79,7 @@ export default class UserShow extends React.Component {
   }
 
   render () {
-    const user = this.props.user;
-    const errors = this.props.errors;
-    const loading = this.props.loading;
+    const { currentUser, errors, loading, user } = this.props;
 
     if (loading || !user) {
       return <LoadingIcon />;
@@ -82,9 +87,10 @@ export default class UserShow extends React.Component {
       const memberDate = this.parseMembershipDate(user.created_at);
       let editButton;
       let profilePictureClass;
-      const currentUser = this.props.currentUser;
       if ( currentUser && currentUser.id === user.id) {
-        editButton = <button onClick={this.redirectToEdit.bind(this)}>Edit Profile <i className="fa fa-pencil" aria-hidden="true"></i></button>;
+        editButton = <button onClick={this.redirectToEdit}>
+                      Edit Profile <i className="fa fa-pencil"
+                      aria-hidden="true"></i></button>;
       } else if (currentUser && currentUser.id !== user.id) {
         profilePictureClass = 'other-user-profile-pic'
       }
@@ -104,21 +110,23 @@ export default class UserShow extends React.Component {
         friendshipButtonOrStatus = (<p></p>);
       } else {
         friendshipButtonOrStatus = (<button className='friend-button'
-                                    onClick={this.submitFriendRequest.bind(this)}>
+                                    onClick={this.submitFriendRequest}>
                                     Add Friend</button>);
       }
 
       return (
-        <div className='user-show-details'>
+        <div>
           <div className='user-show-and-activity-feed-flex-container'>
             <div className='user-show-details-flex-container'>
               <div className='user-show-details-flex-left'>
                 <div className='user-name-and-edit-button-flex-container'>
-                  <h2>{user.f_name} {user.l_name}</h2>
-                  <div>{editButton}</div>
+                  <h2>{ user.f_name } { user.l_name }</h2>
+                  <div>{ editButton }</div>
                 </div>
-                <img className={profilePictureClass} src={user.profile_picture} alt='Profile picture'></img>
-                {friendshipButtonOrStatus}
+                <img  className={profilePictureClass}
+                      src={user.profile_picture} alt='Profile picture'>
+                </img>
+                { friendshipButtonOrStatus }
                 <div className='user-show-details-flex-user-stats'>
                   <div className='user-stat-tags'>
                     <p>Member Since: </p>
@@ -126,15 +134,15 @@ export default class UserShow extends React.Component {
                     <p>Runs: </p>
                   </div>
                   <div className='user-stat-counts'>
-                    <p>{memberDate}</p>
-                    <p>{user.routes.length}</p>
-                    <p>{user.runs.length}</p>
+                    <p>{ memberDate }</p>
+                    <p>{ user.routes.length }</p>
+                    <p>{ user.runs.length }</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className='user-activity-details'>
-              <SingleUserFeedIndexContainer userId={this.props.user.id}/>
+              <SingleUserFeedIndexContainer userId={user.id} />
             </div>
           </div>
         </div>
