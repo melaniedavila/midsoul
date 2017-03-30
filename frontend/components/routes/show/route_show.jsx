@@ -1,8 +1,8 @@
 import { Link, hashHistory } from 'react-router';
+import React from 'react';
 import CommentIndex from '../../comments/index/comment_index';
 import LoadingIcon from '../../loading/loading_icon';
 import NewCommentContainer from '../../comments/form/new_comment_container';
-import React from 'react';
 
 const _mapOptions = {
   center: { lat: 0, lng: 0 },
@@ -61,8 +61,8 @@ export default class RouteShow extends React.Component {
     // routePath contains array of LatLng positions
     const path = routePath.getPath();
     for (let i = 0; i < path.length; i++) {
-      // b is a property of path that is the actual array of LatLng positions
-      // mentionded above
+      // b is a property of path that is the actual array of LatLng
+      // positions mentionded above
        bounds.extend(path.b[i]);
     }
 
@@ -112,26 +112,29 @@ export default class RouteShow extends React.Component {
             <div className='route-show-stats-container'>
               <div className='route-distance-flex-container'>
                 <p className='distance-tag'>Distance:</p>
-                <p className='distance-measurement'>{(route.distance).toFixed(2)}</p>
+                <p className='distance-measurement'>
+                              { (route.distance).toFixed(2) }</p>
                 <p className='distance-unit'>miles</p>
               </div>
 
               <div className='route-elevation-gain-flex-container'>
                 <p className='elevation-gain-tag'>Elevation Gain:</p>
-                <p className='elevation-gain-measurement'>{route.elevation_gain.toFixed(2)}</p>
+                <p className='elevation-gain-measurement'>
+                              { route.elevation_gain.toFixed(2) }</p>
                 <p className='elevation-gain-unit'>meters</p>
               </div>
             </div>
 
             <div className='route-show-description'>
               <p className='description-tag'>Description:</p>
-              <p className='description-content'>{route.description}</p>
+              <p className='description-content'>
+                            { route.description }</p>
             </div>
           </div>
 
           <div className='route-show-links'>
             <Link to='/routes'>Back to Routes</Link>
-            {deleteButton}
+            { deleteButton }
           </div>
 
           <div className='route-show-flex-container'>
@@ -140,9 +143,10 @@ export default class RouteShow extends React.Component {
             </div>
             <div className='route-comment-index-and-form'>
               <h2>Comments</h2>
-              {routeComments}
+              { routeComments }
               <div className='route-show-new-comment-form'>
-                <NewCommentContainer activityType={'Route'} activityId={route.id}/>
+                <NewCommentContainer
+                  activityType={'Route'} activityId={route.id}/>
               </div>
             </div>
           </div>
