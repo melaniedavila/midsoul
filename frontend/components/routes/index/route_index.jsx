@@ -9,7 +9,9 @@ export default class RouteIndex extends React.Component {
 
   render() {
     const { routes, loading } = this.props;
-    routes.sort((routeA, routeB) => new Date(routeB.created_at) - new Date(routeA.created_at))
+    routes.sort((routeA, routeB) => {
+      return new Date(routeB.created_at) - new Date(routeA.created_at);
+    });
 
     if (loading) {
       return <LoadingIcon />;
@@ -18,7 +20,8 @@ export default class RouteIndex extends React.Component {
         <section className="routes-index">
           <h2>Routes</h2>
           <ul className='mini-routes'>
-            {routes.map(route => <RouteIndexItem key={route.id} route={route} />)}
+            {routes.map(route => <RouteIndexItem  key={route.id}
+                                                  route={route} />)}
           </ul>
         </section>
       );
