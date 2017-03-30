@@ -35,55 +35,54 @@
     padding-bottom: 4px;
     text-transform: uppercase;
   }
+}
 
+.route-distance-flex-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 
-  .route-distance-flex-container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-
-    .distance-tag{
-      color: $medium-gray;
-      font-size: 14px;
-      margin: 8px 0 4px 0;
-      text-transform: uppercase;
-    }
-
-    .distance-measurement {
-      font-size: 20px;
-      margin: 0;
-    }
-
-    .distance-unit {
-      color: $medium-gray;
-      font-size: 12px;
-      margin: 4px 0 8px 0;
-    }
+  .distance-tag{
+    color: $medium-gray;
+    font-size: 14px;
+    margin: 8px 0 4px 0;
+    text-transform: uppercase;
   }
 
-  .route-elevation-gain-flex-container {
-    align-items: center;
-    border-top: 1px solid $medium-gray;
-    display: flex;
-    flex-direction: column;
+  .distance-measurement {
+    font-size: 20px;
+    margin: 0;
+  }
 
-    .elevation-gain-tag{
-      color: $medium-gray;
-      font-size: 14px;
-      margin: 8px 0 4px 0;
-      text-transform: uppercase;
-    }
+  .distance-unit {
+    color: $medium-gray;
+    font-size: 12px;
+    margin: 4px 0 8px 0;
+  }
+}
 
-    .elevation-gain-measurement {
-      font-size: 20px;
-      margin: 0;
-    }
+.route-elevation-gain-flex-container {
+  align-items: center;
+  border-top: 1px solid $medium-gray;
+  display: flex;
+  flex-direction: column;
 
-    .elevation-gain-unit {
-      color: $medium-gray;
-      font-size: 12px;
-      margin: 4px 0 8px 0;
-    }
+  .elevation-gain-tag{
+    color: $medium-gray;
+    font-size: 14px;
+    margin: 8px 0 4px 0;
+    text-transform: uppercase;
+  }
+
+  .elevation-gain-measurement {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .elevation-gain-unit {
+    color: $medium-gray;
+    font-size: 12px;
+    margin: 4px 0 8px 0;
   }
 }
 
@@ -253,78 +252,20 @@
     flex-direction: row;
     margin-bottom: 25px;
     margin-top: 25px;
+  }
 
-    .route-show-stats-container {
-      background: $stats-neutral;
-      display: flex;
-      flex-direction: column;
-      margin-right: 30px;
-      width: 140px;
+  .route-show-description {
 
-      .route-distance-flex-container {
-        align-items: center;
-        border: 1px solid $medium-gray;
-        display: flex;
-        flex-direction: column;
-
-        .distance-tag{
-          color: $medium-gray;
-          font-size: 14px;
-          margin: 8px 0 4px 0;
-          text-transform: uppercase;
-        }
-
-        .distance-measurement {
-          font-size: 20px;
-          margin: 0;
-        }
-
-        .distance-unit {
-          color: $medium-gray;
-          font-size: 12px;
-          margin: 4px 0 8px 0;
-        }
-      }
-
-      .route-elevation-gain-flex-container {
-        align-items: center;
-        border-left: 1px solid $medium-gray;
-        border-right: 1px solid $medium-gray;
-        border-bottom: 1px solid $medium-gray;
-        display: flex;
-        flex-direction: column;
-
-        .elevation-gain-tag{
-          color: $medium-gray;
-          font-size: 14px;
-          margin: 8px 0 4px 0;
-          text-transform: uppercase;
-        }
-
-        .elevation-gain-measurement {
-          font-size: 20px;
-          margin: 0;
-        }
-
-        .elevation-gain-unit {
-          color: $medium-gray;
-          font-size: 12px;
-          margin: 4px 0 8px 0;
-        }
-      }
+    .description-tag {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+      text-transform: uppercase;
     }
 
-    .route-show-description {
-
-      .description-tag {
-        text-transform: uppercase;
-        font-weight: bold;
-      }
-
-      .description-content {
-        color: $dark-gray;
-        font-size: 14px;
-      }
+    .description-content {
+      color: $dark-gray;
+      font-size: 14px;
     }
   }
 
@@ -354,38 +295,98 @@
     font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
     font-weight: 500;
   }
+}
 
-  .route-show-links {
+.route-show-links {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    font-size: 13px;
+    padding-bottom: 15px;
+  }
+
+  button {
+    background-color: $dark-gray;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
+    font-size: 14px;
+    font-weight: 500px;
+    letter-spacing: 0.8px;
+    line-height: 36px;
+    margin-bottom: 10px;
+    padding: 0 12px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+    transition: color 0.05s;
+    z-index: 100;
+  }
+
+  button:hover {
+    background-color: $darker-gray;
+    transition: all .2s ease-out;
+  }
+}
+
+.route-show-stats-container {
+  background: $stats-neutral;
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  width: 140px;
+
+  .route-distance-flex-container {
+    align-items: center;
+    border: 1px solid $medium-gray;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 
-    a {
-      font-size: 13px;
-      padding-bottom: 15px;
-    }
-
-    button {
-      background-color: $dark-gray;
-      border-radius: 5px;
-      color: white;
-      cursor: pointer;
-      font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
+    .distance-tag{
+      color: $medium-gray;
       font-size: 14px;
-      font-weight: 500px;
-      letter-spacing: 0.8px;
-      line-height: 36px;
-      margin-bottom: 10px;
-      padding: 0 12px;
-      text-align: center;
+      margin: 8px 0 4px 0;
       text-transform: uppercase;
-      transition: background-color 0.2s;
-      transition: color 0.05s;
-      z-index: 100;
     }
 
-    button:hover {
-      background-color: $darker-gray;
-      transition: all .2s ease-out;
+    .distance-measurement {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .distance-unit {
+      color: $medium-gray;
+      font-size: 12px;
+      margin: 4px 0 8px 0;
+    }
+  }
+
+  .route-elevation-gain-flex-container {
+    align-items: center;
+    border-left: 1px solid $medium-gray;
+    border-right: 1px solid $medium-gray;
+    border-bottom: 1px solid $medium-gray;
+    display: flex;
+    flex-direction: column;
+
+    .elevation-gain-tag{
+      color: $medium-gray;
+      font-size: 14px;
+      margin: 8px 0 4px 0;
+      text-transform: uppercase;
+    }
+
+    .elevation-gain-measurement {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .elevation-gain-unit {
+      color: $medium-gray;
+      font-size: 12px;
+      margin: 4px 0 8px 0;
     }
   }
 }
@@ -393,7 +394,7 @@
 .route-show-flex-container {
   display: flex;
   flex-direction: column;
-  width:100%;
+  width: 100%;
 
   .interactive-route-show-map {
     display: flex;
@@ -409,27 +410,26 @@
       width: 94%;
     }
   }
+}
 
+.route-comment-index-and-form {
+  margin-top: 90px;
 
-  .route-comment-index-and-form {
-    margin-top: 90px;
+  h2 {
+    border-bottom: 1px solid $medium-gray;
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    padding-bottom: 12px;
+    text-transform: uppercase;
+  }
 
-    h2 {
-      border-bottom: 1px solid $medium-gray;
-      font-size: 22px;
-      margin-bottom: 20px;
-      margin-top: 50px;
-      padding-bottom: 12px;
-      text-transform: uppercase;
-    }
+  .route-show-new-comment-form {
 
-    .route-show-new-comment-form {
-
-      .new-comment-form-container {
-        margin: 0;
-        margin-left: -1px;
-        padding-top: 3px;
-      }
+    .new-comment-form-container {
+      margin: 0;
+      margin-left: -1px;
+      padding-top: 3px;
     }
   }
 }
