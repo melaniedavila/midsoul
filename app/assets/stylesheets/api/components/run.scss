@@ -339,6 +339,19 @@
   width: 60%;
 }
 
+
+.run-show-user-thumb-container, .run-show-map {
+
+  img {
+    border: 1px solid $light-gray;
+  }
+
+  img:hover {
+    border: 1px solid $midSoul-blue;
+    transition: all .2s ease-out;
+  }
+}
+
 .run-comment-index-and-form {
   margin-top: 30px;
 
