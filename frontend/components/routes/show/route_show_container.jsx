@@ -5,9 +5,9 @@ import { receiveRouteErrors } from '../../../actions/routes_actions';
 
 const mapStateToProps = (state, ownProps) => {
 return(
-    {currentUser: state.session.currentUser,
+    { currentUser: state.session.currentUser,
     route: state.routes[ownProps.params.routeId],
-    loading: state.loading.singleItemLoading}
+    loading: state.loading.singleItemLoading }
   );
 };
 
