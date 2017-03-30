@@ -1,4 +1,5 @@
-import { UPDATE_FRIEND_SEARCH_FILTER, RECEIVE_FRIEND_SEARCH_RESULTS } from '../actions/friends_search_actions';
+import {  UPDATE_FRIEND_SEARCH_FILTER,
+          RECEIVE_FRIEND_SEARCH_RESULTS } from '../actions/friends_search_actions';
 import { UPDATE_FRIEND_SEARCH_WITH_CREATED_FRIEND_REQUEST } from '../actions/friend_requests_actions';
 import { merge, assign } from 'lodash';
 

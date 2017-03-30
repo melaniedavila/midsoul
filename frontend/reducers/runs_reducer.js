@@ -1,7 +1,9 @@
 import { merge, assign } from 'lodash';
 import {  RECEIVE_ALL_RUNS, RECEIVE_SINGLE_RUN, REMOVE_RUN,
-          RECEIVE_NEW_RUN, RECEIVE_RUN_ERRORS } from '../actions/runs_actions';
-import { RECEIVE_NEW_COMMENT, REMOVE_COMMENT } from '../actions/comments_actions';
+          RECEIVE_NEW_RUN,
+          RECEIVE_RUN_ERRORS } from '../actions/runs_actions';
+import {  RECEIVE_NEW_COMMENT, 
+          REMOVE_COMMENT } from '../actions/comments_actions';
 
 export default function runsReducer(state = {}, action) {
   Object.freeze(state);

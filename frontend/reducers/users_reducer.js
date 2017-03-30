@@ -1,6 +1,7 @@
 import { merge, assign } from 'lodash';
 import {  RECEIVE_ALL_USERS, RECEIVE_SINGLE_USER, REMOVE_USER,
-          RECEIVE_NEW_USER, RECEIVE_USER_ERRORS } from '../actions/users_actions';
+          RECEIVE_NEW_USER,
+          RECEIVE_USER_ERRORS } from '../actions/users_actions';
 import { REMOVE_RUN } from '../actions/runs_actions';
 import { REMOVE_ROUTE } from '../actions/routes_actions';
 

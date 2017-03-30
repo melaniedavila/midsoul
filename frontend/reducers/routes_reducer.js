@@ -1,7 +1,9 @@
 import { merge, assign } from 'lodash';
 import {  RECEIVE_ALL_ROUTES, RECEIVE_SINGLE_ROUTE, REMOVE_ROUTE,
-          RECEIVE_NEW_ROUTE, RECEIVE_ROUTE_ERRORS } from '../actions/routes_actions';
-import { RECEIVE_NEW_COMMENT, REMOVE_COMMENT } from '../actions/comments_actions';
+          RECEIVE_NEW_ROUTE,
+          RECEIVE_ROUTE_ERRORS } from '../actions/routes_actions';
+import {  RECEIVE_NEW_COMMENT,
+          REMOVE_COMMENT } from '../actions/comments_actions';
 
 export default function routesReducer(state = {}, action) {
   Object.freeze(state);
