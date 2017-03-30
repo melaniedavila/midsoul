@@ -78,12 +78,11 @@ export default class RouteShow extends React.Component {
   }
 
   render () {
-    const route = this.props.route;
+    const { route, currentUser } = this.props;
 
     if (!route) {
       return <LoadingIcon />;
     } else {
-      const currentUser = this.props.currentUser;
       let deleteButton;
       if (currentUser && currentUser.id === route.creator_id && route.run_count === 0) {
         deleteButton = (<button
