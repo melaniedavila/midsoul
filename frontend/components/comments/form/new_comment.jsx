@@ -13,9 +13,11 @@ export default class NewComment extends React.Component {
   }
 
   errors() {
-    if (this.props.errors.length > 0) {
-      const errorListItems = this.props.errors.map((error, idx) => {
-          return (<li className="error" key={ idx }>{ error }</li>);
+    const { errors } = this.props;
+
+    if (errors.length > 0) {
+      const errorListItems = errors.map((error, idx) => {
+          return (<li className='error' key={ idx }>{ error }</li>);
         });
 
       return (<ul>{ errorListItems }</ul>);
@@ -24,23 +26,30 @@ export default class NewComment extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const id = this.props.activityId;
+
     const comment = this.state;
+    const { activityId,
+      activityType,
+      createRouteComment,
+      createRunComment } = this.props;
+
     this.setState({ body: '' });
 
-    if (this.props.activityType === 'Route') {
-      this.props.createRouteComment(id, comment);
+    if (activityType === 'Route') {
+      createRouteComment(activityId, comment);
     } else {
-      this.props.createRunComment(id, comment);
+      createRunComment(activityId, comment);
     }
   }
 
   render() {
-    const currentUser = this.props.currentUser;
+    const { currentUser } = this.props;
+
     if (currentUser) {
       return (
         <div className='new-comment-form-container'>
           <form onSubmit={ this.handleSubmit.bind(this) }>
+            
             <div className='errors-list'>
               { this.errors() }
             </div>
@@ -54,9 +63,9 @@ export default class NewComment extends React.Component {
                 type='text'
                 value={ this.state.body }
                 onChange={ this.update('body') } />
-
-              <input type="submit" value='Post' />
+              <input type='submit' value='Post' />
             </div>
+
           </form>
         </div>
       );
