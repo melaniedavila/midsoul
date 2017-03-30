@@ -1,7 +1,7 @@
+import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import ErrorsList from '../../errors/errors_list';
 import LoadingIcon from '../../loading/loading_icon';
-import React from 'react';
 
 export default class UserEdit extends React.Component {
   constructor(props) {
@@ -18,8 +18,10 @@ export default class UserEdit extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    const { requestSingleUser } = this.props;
+
     if (this.props.params.userId !== nextProps.params.userId) {
-      this.props.requestSingleUser(nextProps.params.userId);
+      requestSingleUser(nextProps.params.userId);
     }
 
     this.state = nextProps.user;
@@ -46,12 +48,15 @@ export default class UserEdit extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateUser(this.state);
+    const { updateUser } = this.props;
+    updateUser(this.state);
   }
 
   errors() {
-    if (this.props.errors.length > 0) {
-      const errorListItems = this.props.errors.map((error, idx) => {
+    const { errors } = this.props;
+
+    if (errors.length > 0) {
+      const errorListItems = errors.map((error, idx) => {
           return (<li className="error" key={idx}>{error}</li>);
         });
 
@@ -60,8 +65,8 @@ export default class UserEdit extends React.Component {
   }
 
   render () {
-    const user = this.props.user;
-    const errors = this.props.errors;
+    const { user, errors } = this.props;
+
     if (!user) {
       return <LoadingIcon />;
 
@@ -75,7 +80,7 @@ export default class UserEdit extends React.Component {
           <div className='edit-form-and-link'>
             <form onSubmit={this.handleSubmit}>
               <div className='errors-list'>
-                {this.errors()}
+                { this.errors() }
               </div>
 
               <label>First Name:</label>
