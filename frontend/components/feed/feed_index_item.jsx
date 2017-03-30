@@ -92,7 +92,7 @@ export default class FeedIndexItem extends React.Component {
                 <i className="fa fa-comment-o" aria-hidden="true"></i>
                 <p>{ feedItem.feedable.comments.length }</p>
               </div>
-              <div className='activity-comments'>
+              <div>
                 { comments }
                 { commentForm }
               </div>
@@ -146,7 +146,7 @@ export default class FeedIndexItem extends React.Component {
                 <i className="fa fa-comment-o" aria-hidden="true"></i>
                 <p>{ feedItem.feedable.comments.length }</p>
               </div>
-              <div className='activity-comments'>
+              <div>
                 { comments }
                 { commentForm }
               </div>
