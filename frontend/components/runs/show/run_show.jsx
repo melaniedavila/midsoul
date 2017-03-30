@@ -23,27 +23,27 @@ export default class RunShow extends React.Component {
   }
 
   handleDeleteRunClick (e) {
+    const { deleteRun } = this.props;
+
     return (e) => {
       e.preventDefault();
-      this.props.deleteRun(this.props.run.id)
+      deleteRun(this.props.run.id)
         .then(() => (hashHistory.push('/my-runs')));
     };
   }
 
   render () {
-    const run = this.props.run;
-    const errors = this.props.errors;
+    const { errors, run, currentUser } = this.props;
 
     if (!run || !run.runner) {
       return <LoadingIcon />;
     } else {
       let deleteButton;
-      const currentUser = this.props.currentUser;
       if (currentUser && currentUser.id === run.runner_id) {
         deleteButton = (
           <button
             onClick={this.handleDeleteRunClick()}>
-            DELETE RUN
+            Delete Run
           </button>
         );
       }
@@ -52,25 +52,27 @@ export default class RunShow extends React.Component {
       return (
         <div className='run-show-details'>
           <div className='run-icon-and-title'>
-            <img src={window.midSoulAssets.runIcon} alt='Running Silhouette'></img>
-            <h3>{run.title}</h3>
+            <img  src={window.midSoulAssets.runIcon}
+                  alt='Running Silhouette'></img>
+            <h3>{ run.title }</h3>
           </div>
           <ErrorsList errors={ errors } />
           <div className='run-show-base-details-flex-container'>
               <div className='run-show-user-thumb-container'>
                 <Link to={`/users/${run.runner.id}`}>
-                  <img src={run.runner.profile_picture} alt='Profile picture'></img>
+                  <img  src={run.runner.profile_picture}
+                        alt='Profile picture'></img>
                 </Link>
               </div>
               <div className='run-date-and-description-container'>
-                <h4 className='run-date'>{dateString}</h4>
-                <h3>{run.description}</h3>
+                <h4 className='run-date'>{ dateString }</h4>
+                <h3>{ run.description }</h3>
               </div>
           </div>
           <div className='run-show-stats-container'>
             <div className='run-distance-flex-container'>
               <p className='tag'>Distance:</p>
-              <p className='measurement'>{(run.route.distance).toFixed(2)}</p>
+              <p className='measurement'>{ (run.route.distance).toFixed(2) }</p>
               <p className='unit'>miles</p>
             </div>
 
@@ -82,14 +84,14 @@ export default class RunShow extends React.Component {
 
             <div className='run-pace-flex-container'>
               <p className='tag'>Pace:</p>
-              <p className='measurement'>{((run.duration / 60) / run.route.distance).toFixed(2)}</p>
+              <p className='measurement'>{ ((run.duration / 60) / run.route.distance).toFixed(2) }</p>
               <p className='unit'>mins/mi</p>
             </div>
           </div>
 
           <div className='run-show-links'>
             <Link to="/my-runs">Back to My Runs</Link>
-            {deleteButton}
+            { deleteButton }
           </div>
 
           <div className='run-show-map'>
@@ -102,10 +104,11 @@ export default class RunShow extends React.Component {
           <div className='run-comment-index-and-form'>
             <h2>Comments</h2>
             <div className='run-show-comments'>
-              <CommentIndex comments={run.comments}/>
+              <CommentIndex comments={run.comments} />
             </div>
             <div className='run-show-new-comment-form'>
-              <NewCommentContainer activityType={'Run'} activityId={run.id}/>
+              <NewCommentContainer  activityType={'Run'}
+                                    activityId={run.id} />
             </div>
           </div>
         </div>
