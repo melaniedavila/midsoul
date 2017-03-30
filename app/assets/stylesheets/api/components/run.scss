@@ -114,11 +114,16 @@
     }
 
     .run-duration-fields {
-
+      .duration-with-margin {
+        margin-left: 7px;
+      }
+      
       input {
         width: 10%;
       }
     }
+
+
   }
 }
 
