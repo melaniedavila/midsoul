@@ -27,11 +27,13 @@ export default class NewRun extends React.Component {
 
   update(field) {
     return function (e) {
-      const fieldVal = this.numericField(field) ? parseInt(e.currentTarget.value) : e.currentTarget.value;
-      const newState = { [field]: fieldVal }
+      const fieldVal = this.numericField(field) ?
+                parseInt(e.currentTarget.value) : e.currentTarget.value;
+      const newState = { [field]: fieldVal };
+      const { routes } = this.props;
 
       if (field === 'route_id') {
-        newState['route'] = this.props.routes.find(route => route.id === fieldVal)
+        newState['route'] = routes.find(route => route.id === fieldVal);
       }
 
       this.setState(newState);
@@ -39,8 +41,10 @@ export default class NewRun extends React.Component {
   }
 
   errors() {
-    if (this.props.errors.length > 0) {
-      const errorListItems = this.props.errors.map((error, idx) => {
+    const { errors } = this.props;
+
+    if (errors.length > 0) {
+      const errorListItems = errors.map((error, idx) => {
           return (<li className="error" key={idx}>{error}</li>);
         });
 
@@ -83,6 +87,7 @@ export default class NewRun extends React.Component {
 
   render() {
     var mapImg;
+    const { routes } = this.props;
 
     if (this.state.route) {
       mapImg = (<img src={`https://maps.googleapis.com/maps/api/staticmap?size=500x250&path=color:0x0c5d94%7Cenc:${this.state.route.polyline}&key=${window.googleMapsApiKey}`}
@@ -91,13 +96,13 @@ export default class NewRun extends React.Component {
 
     return (
       <main className='log-run-main'>
-        <h3 className='log-run-header'>Log A Run</h3>
+        <h3>Log A Run</h3>
         <div className='new-run-flex-container'>
           <div className='new-run-flex-left'>
             <form onSubmit={this.handleSubmit}>
 
               <div className='errors-list'>
-                {this.errors()}
+                { this.errors() }
               </div>
 
               <label>Title:</label>
@@ -119,19 +124,21 @@ export default class NewRun extends React.Component {
                     type="number"
                     value={this.state.durationHours}
                     min={0}
-                    onChange={this.update('durationHours')} />hours&nbsp;&nbsp;
+                    onChange={this.update('durationHours')} />hours
                   <input
+                    className='duration-with-margin'
                     type="number"
                     value={this.state.durationMinutes}
                     max={59}
                     min={0}
-                    onChange={this.update('durationMinutes')} />mins&nbsp;&nbsp;
+                    onChange={this.update('durationMinutes')} />mins
                   <input
+                    className='duration-with-margin'
                     type="number"
                     value={this.state.durationSeconds}
                     max={59}
                     min={0}
-                    onChange={this.update('durationSeconds')} />secs&nbsp;&nbsp;
+                    onChange={this.update('durationSeconds')} />secs
                 </div>
 
               <label>Description:</label>
@@ -144,21 +151,21 @@ export default class NewRun extends React.Component {
                   onChange={this.update('route_id')}
                   defaultValue='Select Route'>
                   <option disabled>Select Route</option>
-                  {this.props.routes.map((route) => {
+                  { routes.map((route) => {
                     return (
                       <option
                         key={route.id}
                         value={route.id}>{route.title}
                       </option>
                     );
-                  })}
+                  }) }
                 </select>
               <input type="submit" value='Save Run' />
             </form>
           </div>
 
           <div className='new-run-flex-right'>
-            {mapImg}
+            { mapImg }
           </div>
 
         </div>
