@@ -3,14 +3,15 @@
 
 // NEW RUN
 .log-run-main {
+
   h3 {
-    display: block;
-    margin: 0 auto;
-    font-size: 22px;
-    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
-    font-weight: 500px;
-    padding: 20px 0px 20px 0px;
     border-bottom: 1px solid $medium-gray;
+    display: block;
+    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
+    font-size: 22px;
+    font-weight: 500px;
+    margin: 0 auto;
+    padding: 20px 0px 20px 0px;
     text-align: center;
     text-transform: uppercase;
   }
@@ -22,87 +23,88 @@
 }
 
 .new-run-flex-left {
+
   form {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
     border: 1px solid $medium-gray;
     border-radius: 5px;
-    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
     margin-left: 10px;
+    margin-top: 50px;
+    padding: 20px;
 
     .errors-list {
-      width: 90%;
-      text-align: left;
       margin: 0 auto;
+      text-align: left;
+      width: 90%;
 
       ul {
+        background: $error-pink;
+        border: 1px solid $error-pink;
         border-radius: 5px;
         margin-bottom: 20px;
-        border: 1px solid $error-pink;
-        background: $error-pink;
 
         li {
+          color: $dark-gray;
+          font-size: 14px;
           list-style: circle;
           list-style-position: inside;
-          font-size: 14px;
-          color: $dark-gray;
           margin: 7px;
         }
       }
     }
 
     label {
-      font-size: 18px;
-      font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
-      font-weight: 500px;
       color: $darker-gray;
+      font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
+      font-size: 18px;
+      font-weight: 500px;
     }
 
     textarea {
+      border-color: $medium-gray;
+      border-radius: 3px;
       height: 100px;
-      width: 93%;
       margin-bottom: 20px;
       padding-left: 5px;
       resize:none;
-      border-radius: 3px;
-      border-color: $medium-gray;
+      width: 93%;
     }
 
     input[type=text], input[type=date],
     input[type=number], input[type=select] {
       border: 1px solid $medium-gray;
       border-radius: 3px;
-      width: 95%;
       height: 30px;
       margin-bottom: 20px;
       padding-left: 5px;
+      width: 95%;
     }
 
     input[type=text]:focus, textarea:focus,
     input[type=date]:focus, input[type=number]:focus,
     select:focus {
-      box-shadow: 0 0 5px rgba(81, 203, 238, 1);
       border: 1px solid rgba(81, 203, 238, 1);
+      box-shadow: 0 0 5px rgba(81, 203, 238, 1);
     }
 
 
     input[type=submit] {
       background-color: $dark-gray;
-      color: white;
-      font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
-      font-weight: 500px;
-      font-size: 14px;
-      line-height: 36px;
       border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
+      font-size: 14px;
+      font-weight: 500px;
+      letter-spacing: 0.8px;
+      line-height: 36px;
+      margin-top: 20px;
+      padding: 0 12px;
+      text-align: center;
+      text-transform: uppercase;
       transition: background-color 0.2s;
       transition: color 0.05s;
-      letter-spacing: 0.8px;
-      padding: 0 12px;
-      cursor: pointer;
-      text-align: center;
-      margin-top: 20px;
-      text-transform: uppercase;
     }
 
     input[type=submit]:hover {
@@ -111,6 +113,7 @@
     }
 
     .run-duration-fields {
+
       input {
         width: 10%;
       }
@@ -119,36 +122,38 @@
 }
 
 .new-run-flex-right {
-  display: flex;
-  align-items: center;
   align-content: center;
+  align-items: center;
+  display: flex;
   margin: 0 auto;
-  width: 60%;
   margin-top: 50px;
+  width: 60%;
 }
 
 
 // RUNS INDEX
 
 .empty-runs, .runs-index {
+
   h2 {
+    color: $dark-gray;
     display: flex;
-    justify-content: center;
-    padding: 15px;
     font-size: 32px;
     font-weight: bold;
-    color: $dark-gray;
-    text-transform: uppercase;
+    justify-content: center;
     margin-bottom: 20px;
     margin-top: 15px;
+    padding: 15px;
+    text-transform: uppercase;
   }
 }
 
 .empty-runs {
+
   h4 {
     display: flex;
-    justify-content: center;
     font-size: 18px;
+    justify-content: center;
     margin-top: 15px;
   }
 }
@@ -164,12 +169,14 @@
       padding: 20px;
 
       a {
+
         img {
           border: 1px solid $medium-gray;
         }
       }
 
       a:hover {
+
         img {
           border: 1px solid $midSoul-blue;
         }
@@ -191,53 +198,52 @@
 
 // RUN SHOW
 .run-show-details {
-  padding: 15px;
-  margin: 25px;
   display: flex;
   flex-direction: column;
+  margin: 25px;
+  padding: 15px;
 
   .run-icon-and-title {
-    display: flex;
-    flex-direction: row;
     align-items: center;
     border-bottom: 1px solid $medium-gray;
+    display: flex;
+    flex-direction: row;
     margin-bottom: 25px;
 
     img {
-      width: 22px;
-      height: 22px;
       font-size: 22px;
+      height: 22px;
       margin-right: 10px;
+      width: 22px;
     }
 
     h3 {
-      text-transform: uppercase;
-      font-size: 22px;
-      font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
-      font-weight: 700;
       color: $dark-gray;
+      font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
     }
   }
 
   .run-show-base-details-flex-container {
-    display: flex;
     align-content: flex-start;
+    display: flex;
 
     .run-show-user-thumb-container {
-      width: 100px;
       height: 100px;
+      width: 100px;
     }
   }
 
   h4 {
-    font-size: 20px;
-    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
-    font-weight: 700;
     color: black;
+    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
+    font-size: 20px;
+    font-weight: 700;
   }
 
   p {
-    font-size: 16px;
     color: black;
     font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
     font-weight: 500;
@@ -252,10 +258,10 @@
     .run-distance-flex-container,
     .run-duration-flex-container,
     .run-pace-flex-container {
+      align-items: center;
       background: $stats-neutral;
       display: flex;
       flex-direction: column;
-      align-items: center;
       width: 33.33%;
     }
 
@@ -264,16 +270,16 @@
     }
 
     .run-pace-flex-container, .run-duration-flex-container {
-      border-top: 1px solid $medium-gray;
-      border-right: 1px solid $medium-gray;
       border-bottom: 1px solid $medium-gray;
+      border-right: 1px solid $medium-gray;
+      border-top: 1px solid $medium-gray;
     }
 
     .tag {
-      text-transform: uppercase;
       color: $medium-gray;
       font-size: 14px;
       margin: 8px 0 4px 0;
+      text-transform: uppercase;
     }
 
     .measurement {
@@ -282,8 +288,8 @@
     }
 
     .unit {
-      font-size: 12px;
       color: $medium-gray;
+      font-size: 12px;
       margin: 4px 0 8px 0;
     }
   }
@@ -293,27 +299,27 @@
     justify-content: space-between;
 
     a {
-      padding-bottom: 15px;
       font-size: 13px;
+      padding-bottom: 15px;
     }
 
     button {
-      text-transform: uppercase;
-      z-index: 100;
       background-color: $dark-gray;
-      color: white;
-      font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
-      font-weight: 500px;
-      font-size: 14px;
-      line-height: 36px;
       border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
+      font-size: 14px;
+      font-weight: 500px;
+      letter-spacing: 0.8px;
+      line-height: 36px;
+      margin-bottom: 10px;
+      padding: 0 12px;
+      text-align: center;
+      text-transform: uppercase;
       transition: background-color 0.2s;
       transition: color 0.05s;
-      letter-spacing: 0.8px;
-      padding: 0 12px;
-      margin-bottom: 10px;
-      cursor: pointer;
-      text-align: center;
+      z-index: 100;
     }
 
     button:hover {
@@ -323,170 +329,28 @@
   }
 
   .run-show-map {
-    display: flex;
-    align-items: center;
     align-content: center;
-    width: 60%;
+    align-items: center;
+    display: flex;
     margin-top: 15px;
+    width: 60%;
   }
 
   .run-comment-index-and-form {
     margin-top: 30px;
 
     h2 {
-      font-size: 20px;
-      text-transform: uppercase;
       border-bottom: 1px solid $medium-gray;
-      padding-bottom: 12px;
+      font-size: 22px;
       margin-bottom: 20px;
-    }
-
-    .run-show-comments {
-      .comments-index {
-        .comments-list {
-          .comment-index-item {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            margin: 5px 0 0 0;
-            border-bottom: 1px solid $medium-gray;
-            margin-top: 15px;
-            padding-bottom: 15px;
-
-            .comment-author-img {
-              width: 58px;
-              height: 58px;
-              margin-left: 5px;
-            }
-
-            .comment-details {
-              display: flex;
-              justify-content: space-between;
-              width: 100%;
-              margin-left: 5px;
-
-              .comment-vertical-flex-container {
-                display: flex;
-                flex-flow: column;
-
-                .comment-date {
-                  margin: 3px;
-                  font-size: 12px;
-                  padding-left: 4px;
-                }
-
-                .comment-author-name-and-comment-body {
-                  margin-left: 3px;
-                  display: flex;
-                  flex-direction: row;
-
-                  .comment-author-name, .comment-body {
-                    margin-top: 3px;
-                    font-size: 13px;
-                  }
-
-                  .comment-author-name {
-                    font-weight: bold;
-                    margin-left: 4px;
-                  }
-
-                  .comment-body {
-                    margin-left: 1px;
-                  }
-
-                  a {
-                    text-decoration: none;
-                    margin-right: 1px;
-
-                    p {
-                      color: $midSoul-blue;
-                    }
-                  }
-
-                  a:hover {
-                    p {
-                      color: $hover-blue;
-                    }
-                  }
-                }
-              }
-            }
-
-            .delete-comment {
-              margin-right: 15px;
-              color: $medium-gray;
-
-              button {
-                font-size: 13px;
-              }
-
-              button:hover {
-                color: $dark-gray;
-                transition: all .2s ease-out;
-              }
-            }
-          }
-        }
-      }
+      padding-bottom: 12px;
+      text-transform: uppercase;
     }
 
     .run-show-new-comment-form {
       margin: 0;
-      padding-top: 3px;
       margin-left: -1px;
-
-      .new-comment-textarea-and-submit-and-user-img {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        a {
-          margin-left: 5px;
-
-          img {
-            width: 52.66px;
-            height: 52.66px;
-            margin-right: 15px;
-            margin-bottom: 3px;
-          }
-        }
-
-        input[type=text] {
-          border: 1px solid $medium-gray;
-          border-radius: 3px;
-          margin-right: 15px;
-          padding-left: 5px;
-          height: 31px;
-          width: 560px;
-        }
-
-        input[type=text]:focus {
-          border: 1px solid $teal;
-          transition: all .3s ease-out;
-        }
-
-        input[type=submit] {
-          border: 1px solid $teal;
-          border-radius: 3px;
-          width: 76px;
-          height: 34px;
-          text-align: center;
-          color: $teal;
-          font-weight: bold;
-          font-size: 15px;
-        }
-
-        input[type=submit]:hover {
-          border: 1px solid $hover-teal;
-          border-radius: 3px;
-          height: 34px;
-          text-align: center;
-          color: $hover-teal;
-          font-weight: bold;
-          font-size: 15px;
-          transition: all .3s ease-out;
-        }
-      }
+      padding-top: 3px;
     }
   }
 }
@@ -497,7 +361,7 @@
   margin-left: 10px;
 
   .run-date {
-    padding: 0;
     font-size: 15px;
+    padding: 0;
   }
 }
