@@ -99,150 +99,150 @@
   }
 }
 
-.user-show-details {
 
-  .user-show-and-activity-feed-flex-container {
-    display: flex;
-    justify-content: space-around;
-    min-width: 1080px;
+// USER SHOW
 
-    .user-activity-details {
-      margin: 98px 20px 0 0;
-    }
+.user-show-and-activity-feed-flex-container {
+  display: flex;
+  justify-content: space-around;
+  min-width: 1080px;
+
+  .user-activity-details {
+    margin: 98px 20px 0 0;
+  }
+}
+
+.user-show-details-flex-container {
+  align-content: flex-start;
+  display: flex;
+}
+
+.user-show-details-flex-left {
+  padding: 0 20px 20px 20px;
+  min-width: 205px;
+
+  img {
+    border: 1px solid $medium-gray;
+    margin: 0;
+    width: 204px;
   }
 
-  .user-show-details-flex-container {
-    align-content: flex-start;
-    display: flex;
-
-    .user-show-details-flex-left {
-      padding: 0 20px 20px 20px;
-      min-width: 205px;
-
-      .user-name-and-edit-button-flex-container {
-        display: flex;
-        flex-direction: column;
-
-        h2 {
-          display: block;
-          font-size: 32px;
-          font-weight: bold;
-          padding: 20px 20px 0 0;
-        }
-
-        button {
-          background: white;
-          color: $medium-gray;
-          font-size: 13px;
-          margin: 0;
-          padding: 0;
-          text-transform: uppercase;
-        }
-
-        button:hover{
-          color: $dark-gray;
-          transition: all .2s ease-out;
-        }
-      }
-
-
-      img {
-        border: 1px solid $medium-gray;
-        margin: 0;
-        width: 204px;
-      }
-
-      .other-user-profile-pic {
-        margin-top: 33px;
-      }
-
-      button, .user-show-friend-request-status {
-        background-color: $dark-gray;
-        border-radius: 3px;
-        color: white;
-        text-transform: uppercase;
-        font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
-        font-size: 14px;
-        font-weight: 500px;
-        letter-spacing: 0.8px;
-        line-height: 36px;
-        margin: 15px 0px 10px 35px;
-        padding: 0 12px;
-        text-align: center;
-        transition: background-color 0.2s;
-        transition: color 0.05s;
-        z-index: 100;
-      }
-
-      .user-show-friend-request-status {
-        background-color: $dark-gray;
-        color: white;
-        font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
-        font-size: 14px;
-        font-weight: 500px;
-        letter-spacing: 0.8px;
-        line-height: 36px;
-        margin-bottom: 10px;
-        margin-left: 0px;
-        padding: 0;
-        text-align: center;
-        text-transform: uppercase;
-        transition: background-color 0.2s;
-        transition: color 0.05s;
-        width: 205px;
-        z-index: 100;
-
-        i {
-          margin-left: 5px;
-        }
-
-      }
-      .user-show-details-flex-user-stats {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        margin-top: 20px;
-
-        .user-stat-tags {
-          display: flex;
-          flex-direction: column;
-          margin-right: 15px;
-          text-transform: uppercase;
-
-          p {
-            -webkit-font-smoothing: antialiased;
-            font-size: 15px;
-            font-weight: bold;
-            margin: 0 0 10px 0;
-          }
-        }
-
-        .user-stat-counts {
-          display: flex;
-          flex-direction: column;
-
-          p {
-            font-size: 15px;
-            margin: 0 0 10px 0;
-          }
-        }
-      }
-    }
-
+  .other-user-profile-pic {
+    margin-top: 33px;
   }
 
-  .feed-index {
+  button, .user-show-friend-request-status {
+    background-color: $dark-gray;
+    border-radius: 3px;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
+    font-size: 14px;
+    font-weight: 500px;
+    letter-spacing: 0.8px;
+    line-height: 36px;
+    margin: 15px 0px 10px 35px;
+    padding: 0 12px;
+    text-align: center;
+    transition: background-color 0.2s;
+    transition: color 0.05s;
+    z-index: 100;
+  }
+
+  .user-name-and-edit-button-flex-container {
+    display: flex;
+    flex-direction: column;
 
     h2 {
-      margin: 0 0 60px 0;
+      display: block;
+      font-size: 32px;
+      font-weight: bold;
+      padding: 20px 20px 0 0;
+    }
+
+    button {
+      background: white;
+      color: $medium-gray;
+      font-size: 13px;
+      margin: 0;
       padding: 0;
+      text-transform: uppercase;
+    }
+
+    button:hover{
+      color: $dark-gray;
+      transition: all .2s ease-out;
     }
   }
 
-  .feed-index-item-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin: 0 0 60px 0;
+  .user-show-friend-request-status {
+    background-color: $dark-gray;
+    color: white;
+    font-family: 'Open Sans', Helvetica, Arial, $sans-serif;
+    font-size: 14px;
+    font-weight: 500px;
+    letter-spacing: 0.8px;
+    line-height: 36px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+    transition: color 0.05s;
+    width: 205px;
+    z-index: 100;
+
+    i {
+      margin-left: 5px;
+    }
   }
+}
+
+.user-show-details-flex-user-stats {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+
+  .user-stat-tags {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    text-transform: uppercase;
+
+    p {
+      -webkit-font-smoothing: antialiased;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  .user-stat-counts {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: 15px;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+
+
+// USER SHOW PAGE FEED ITEMS
+.feed-index {
+
+  h2 {
+    margin: 0 0 60px 0;
+    padding: 0;
+  }
+}
+
+.feed-index-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 0 0 60px 0;
 }
