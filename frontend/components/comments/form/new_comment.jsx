@@ -15,7 +15,7 @@ export default class NewComment extends React.Component {
   errors() {
     if (this.props.errors.length > 0) {
       const errorListItems = this.props.errors.map((error, idx) => {
-          return (<li className="error" key={idx}>{error}</li>);
+          return (<li className="error" key={ idx }>{ error }</li>);
         });
 
       return (<ul>{ errorListItems }</ul>);
@@ -26,7 +26,7 @@ export default class NewComment extends React.Component {
     e.preventDefault();
     const id = this.props.activityId;
     const comment = this.state;
-    this.setState({body: ''});
+    this.setState({ body: '' });
 
     if (this.props.activityType === 'Route') {
       this.props.createRouteComment(id, comment);
@@ -40,19 +40,20 @@ export default class NewComment extends React.Component {
     if (currentUser) {
       return (
         <div className='new-comment-form-container'>
-          <form onSubmit={this.handleSubmit.bind(this)}>
+          <form onSubmit={ this.handleSubmit.bind(this) }>
             <div className='errors-list'>
-              {this.errors()}
+              { this.errors() }
             </div>
 
             <div className='new-comment-textarea-and-submit-and-user-img'>
-              <Link to={`/users/${currentUser.id}`}>
-                <img src={currentUser.profile_picture} alt='Profile picture'></img>
+              <Link to={ `/users/${currentUser.id}` }>
+                <img src={ currentUser.profile_picture }
+                      alt='Profile picture'></img>
               </Link>
               <input
                 type='text'
-                value={this.state.body}
-                onChange={this.update('body')} />
+                value={ this.state.body }
+                onChange={ this.update('body') } />
 
               <input type="submit" value='Post' />
             </div>
