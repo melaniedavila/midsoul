@@ -116,7 +116,7 @@ export default class NewRoute extends React.Component {
 
   newRouteParams() {
     const directions = this.directionsRenderer.getDirections();
-    var polyline, distance;
+    let polyline, distance;
     if (directions) {
       polyline = directions.routes[0].overview_polyline;
       // In meters:
