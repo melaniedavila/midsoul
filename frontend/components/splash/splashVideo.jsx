@@ -10,7 +10,7 @@ export default class SplashVideo extends React.Component {
                     type="video/mp4" />
             <source src={ window.midSoulAssets.splashPageWEBM }
                     type="video/webm" />
-            <img  src={window.midSoulAssets.splashPageImage} 
+            <img  src={ window.midSoulAssets.splashPageImage }
                   alt='Running shoes'></img>
           </video>
         </div>
