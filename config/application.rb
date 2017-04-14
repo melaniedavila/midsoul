@@ -15,6 +15,54 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+class RangeFilter
+  def initialize(app)
+    @app = app
+  end
+
+  def call(env)
+    dup._call(env)
+  end
+
+  def _call(env)
+    @status, @headers, @response = @app.call(env)
+    range = env["HTTP_RANGE"]
+    if @status == 200 and range and /\Abytes=(\d*)-(\d*)\z/ =~ range
+      @first_byte, @last_byte = $1, $2
+
+
+      @data = "".encode("BINARY")
+      @response.each do |s|
+        @data << s
+      end
+      @length = @data.bytesize if @length.nil?
+      if @last_byte.empty?
+        @last_byte = @length - 1
+      else
+        @last_byte = @last_byte.to_i
+      end
+      if @first_byte.empty?
+        @first_byte = @length - @last_byte
+        @last_byte = @length - 1
+      else
+        @first_byte = @first_byte.to_i
+      end
+      @range_length = @last_byte - @first_byte + 1
+      @headers["Content-Range"] = "bytes #{@first_byte}-#{@last_byte}/#{@length}"
+      @headers["Content-Length"] = @range_length.to_s
+      [@status, @headers, self]
+    else
+      [@status, @headers, @response]
+    end
+  end
+
+  def each(&block)
+    block.call(@data[@first_byte..@last_byte])
+    @response.close if @response.respond_to?(:close)
+  end
+
+end
+
 module Midsoul
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -48,5 +96,7 @@ module Midsoul
         s3_region: ENV.fetch('AWS_REGION')
       }
     }
+
+    Rails.application.middleware.use RangeFilter
   end
 end
