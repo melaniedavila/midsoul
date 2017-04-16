@@ -11,9 +11,20 @@ export default class MultiUserFeedIndex extends React.Component {
     const { feedItems, loading } = this.props;
 
     feedItems.sort((feedItemA, feedItemB) => {
-        return feedItemA.feedable.sortby_date < feedItemB.feedable.sortby_date;
+      if (feedItemA.feedable_type === 'Route') {
+        var sortby_date1 = feedItemA.feedable.sortby_date
+      } else if (feedItemA.feedable_type === 'Run') {
+        var sortby_date1 = `${feedItemA.feedable.date}T00:00:00-05:00`
       }
-    );
+
+      if (feedItemB.feedable_type === 'Route') {
+        var sortby_date2 = feedItemB.feedable.sortby_date
+      } else if (feedItemB.feedable_type === 'Run') {
+        var sortby_date2 = `${feedItemB.feedable.date}T00:00:00-05:00`
+      }
+
+      return sortby_date1 < sortby_date2;
+    });
 
     if (loading) {
       return <LoadingIcon />;
