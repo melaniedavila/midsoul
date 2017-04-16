@@ -17,6 +17,8 @@ gem 'validates_email_format_of'
 gem 'font-awesome-rails'
 gem 'rails_real_favicon'
 
+gem 'puma'
+
 group :development, :test do
   gem 'annotate'
   gem 'better_errors'
