@@ -3,5 +3,5 @@
 set -ex
 
 git push heroku master
-heroku run bundle install
-heroku run bundle exec rake db:reset
+# heroku run bundle install
+# heroku run bundle exec rake db:reset
