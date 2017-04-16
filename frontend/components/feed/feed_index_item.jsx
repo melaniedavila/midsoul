@@ -19,16 +19,13 @@ export default class FeedIndexItem extends React.Component {
   }
 
   routeDateTimeString () {
-    const activityDateTime = new Date(this.state.feedItem.feedable.created_at)
+    const activityDateTime = new Date(this.state.feedItem.feedable.created_at);
     return activityDateTime.toDateString();
   }
 
-  runDateTimeString () {
-    const runDate = this.state.feedItem.feedable.date;
-    const orderedRunDate = [runDate.slice(5, 7),
-                            runDate.slice(8,10),
-                            runDate.slice(2,4)].join('-');
-    return new Date(orderedRunDate).toDateString();
+  runDateTimeString() {
+    const activityDateTime = new Date(`${this.state.feedItem.feedable.date}T00:00:00-05:00`)
+    return activityDateTime.toDateString();
   }
 
   toggleCommentsSection(e) {
