@@ -6,19 +6,17 @@
   background-color: rgba(0, 0, 0, .5);
   display: flex;
   justify-content: center;
-  left: 50%;
+  left: 42%;
   position: absolute;
-  top: 45%;
+  top: 28%;
   z-index: 100;
 
   form {
     align-items: center;
-    background-color: rgba(0, 0, 0, .5);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
     width: 250px;
 
     h4 {
